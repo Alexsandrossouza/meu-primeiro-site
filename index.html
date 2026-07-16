@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Primeiro Site</title>
-    <!-- Aqui nós dizemos ao HTML para carregar as regras de design do style.css -->
+    <title>Planet Games - Xbox 360</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Site destinado a games. Em criação.</h1>
-    <p>Este é o nosso primeiro site criado do zero no VS Code!</p>
-    
-    <!-- Criamos os botões e demos uma "class" para cada um ser estilizado no CSS -->
-    <button class="btn-verde">Jogos</button>
-    <button class="btn-azul">Não clique aqui ainda!</button>
-<script src="script.js"></script>
-</body>
-</html>
+    <header class="navbar">
+        <div class="logo">
+            <span class="icon">🎮</span> PLANET<span class="green-text">GAMES</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Produto</a>
+            <a href="#">Jogos</a>
+            <a href="#">Planos</a>
+            <a href="#">FAQ</a>
+        </nav>
+        <button class="btn-comprar">Comprar agora</button>
+    </header>
+
+    <main class="hero">
+        <div class="hero-left">
+            <div class="badge">● ESTOQUE LIMITADO</div>
+            <h1>O clássico que <br><span class="glow-text">nunca envelhece.</span></h1>
+            <p class="subtitle">
+                Xbox 360 revisado, testado e pronto para jogar. Reviva GTA V, Halo, Forza e centenas de clássicos com a qualidade Planet Games.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-verde btn-ofertas">Ver ofertas</button>
+                <button class="btn-outline">Saiba mais</button>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="image-container">
+                <img src="fundo.jpg" alt="Xbox 360" class="xbox-img">
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

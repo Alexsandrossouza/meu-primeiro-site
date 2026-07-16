@@ -1,75 +1,215 @@
-/* Estilo geral da página (fundo e textos) */
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
 body {
-    /* Define a imagem de fundo (agora com o nome correto!) */
-    background-image: url('fundo.jpg');
-    
-    /* Garante que a imagem vai cobrir toda a tela sem distorcer */
-    background-size: cover;
-    
-    /* Centraliza a imagem na tela */
-    background-position: center;
-    
-    /* Impede que a imagem fique se repetindo como um mosaico */
-    background-repeat: no-repeat;
-    
-    /* Deixa o fundo fixo enquanto você rola a página */
-    background-attachment: fixed;
-    
-    /* Uma cor escura de segurança caso a imagem demore para carregar */
-    background-color: #121214; 
-    
-    /* Fontes */
-    font-family: Arial, sans-serif;
+    background-color: #060809; /* Preto azulado bem escuro de fundo */
     color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-
-/* Estilo do título principal */
-h1 {
-    color: #04d361; /* Verde chamativo */
-    font-size: 2.5rem;
+/* 1. BARRA DE NAVEGAÇÃO */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(6, 8, 9, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Estilo do parágrafo */
-p {
-    color: #9b51e0; /* Roxo bonito */
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+.logo {
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Configurações comuns para TODOS os botões */
-button {
+.green-text {
+    color: #00ff66; /* Verde Neon */
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ff66;
+}
+
+/* Botão Comprar do Topo */
+.btn-comprar {
+    background-color: #00ff66;
+    color: #000000;
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.3s; /* Deixa a mudança de cor suave */
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+    transition: all 0.3s ease;
 }
 
-/* Estilo específico do Botão Verde */
-.btn-verde {
-    padding: 10px 20px;
-    background-color: #04d361;
-    color: #1a1a1a; /* Texto escuro para contrastar */
+.btn-comprar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.7);
 }
 
-/* Estilo específico do Botão Azul */
-.btn-azul {
-    padding: 20px 20px;
-    background-color: #50d304;
-    color: rgb(14, 13, 13); /* Aquele verde limão que você usou */
-    margin-top: 50px;
-    display: block; /* 👈 ADICIONE ESTA LINHA */
+/* 2. ÁREA HERO (CONTEÚDO) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    min-height: calc(100vh - 80px);
+    gap: 50px;
 }
 
-/* Cria um container semi-transparente escuro para destacar os textos e botões */
-.container {
-    background-color: rgba(18, 18, 20, 0.75); /* Preto com 75% de opacidade */
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px); /* Deixa o fundo levemente borrado atrás do painel */
+.hero-left {
+    flex: 1;
     max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
+}
+
+/* Badge "Estoque Limitado" */
+.badge {
+    display: inline-block;
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    background-color: rgba(0, 255, 102, 0.05);
+    color: #00ff66;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* Texto Verde com Brilho */
+.glow-text {
+    color: #00ff66;
+    text-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* Botões de Ação */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-verde {
+    background-color: #00ff66;
+    color: #000000;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-verde:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #ffffff;
+}
+
+/* Lado Direito: Imagem com efeito de luz ao fundo */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Adiciona uma sombra verde suave atrás da imagem para simular o LED verde */
+    box-shadow: 0 0 50px rgba(0, 255, 102, 0.15);
+}
+
+.xbox-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 968px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    .nav-links {
+        display: none; /* Esconde menu no celular para simplificar */
+    }
+    .hero {
+        flex-direction: column;
+        padding: 40px 5%;
+        text-align: center;
+    }
+    .badge {
+        margin-bottom: 15px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
 }
