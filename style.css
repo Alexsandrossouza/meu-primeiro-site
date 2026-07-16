@@ -6,12 +6,21 @@
     font-family: 'Inter', sans-serif;
 }
 
-body {
-    background-color: #060809; /* Preto azulado bem escuro de fundo */
+ body {
+    /* Usando exatamente o nome que está na sua pasta com .jpg.png no final! */
+    background-image: linear-gradient(rgba(6, 8, 9, 0.85), rgba(6, 8, 9, 0.85)), url('fundo.jpg.png');
+    
+    /* Configurações para a imagem cobrir toda a tela perfeitamente */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
     color: #ffffff;
     min-height: 100vh;
     overflow-x: hidden;
 }
+
 
 /* 1. BARRA DE NAVEGAÇÃO */
 .navbar {
@@ -62,7 +71,7 @@ body {
     background-color: #00ff66;
     color: #000000;
     border: none;
-    padding: 10px 22px;
+    padding: 14px 27px;
     border-radius: 8px;
     font-weight: 700;
     font-size: 0.9rem;
