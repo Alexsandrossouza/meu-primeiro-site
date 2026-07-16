@@ -1,10 +1,28 @@
 /* Estilo geral da página (fundo e textos) */
 body {
-    background-color: #1a1a1a; /* Fundo escuro igual ao do seu print */
-    color: #ffffff;            /* Cor do texto geral em branco */
+   body {
+    /* Define a imagem de fundo (troque pelo link ou nome da sua imagem) */
+    background-image: url('fundo.jpg'); 
+    
+    /* Garante que a imagem vai cobrir toda a tela sem distorcer */
+    background-size: cover;
+    
+    /* Centraliza a imagem na tela */
+    background-position: center;
+    
+    /* Impede que a imagem fique se repetindo como um mosaico */
+    background-repeat: no-repeat;
+    
+    /* Deixa o fundo fixo enquanto você rola a página */
+    background-attachment: fixed;
+    
+    /* Uma cor escura de segurança caso a imagem demore para carregar */
+    background-color: #121214; 
+    
+    /* O restante das configurações que você já tinha */
     font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 100px;
+    color: #ffffff; /* Texto branco para contrastar com o fundo gamer escuro */
+}
 }
 
 /* Estilo do título principal */
@@ -43,4 +61,16 @@ button {
     color: rgb(255, 0, 64); /* Aquele verde limão que você usou */
     margin-top: 50px;
     display: block; /* 👈 ADICIONE ESTA LINHA */
+}
+
+/* Cria um container semi-transparente escuro para destacar os textos e botões */
+.container {
+    background-color: rgba(18, 18, 20, 0.75); /* Preto com 75% de opacidade */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px); /* Deixa o fundo levemente borrado atrás do painel */
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
 }
