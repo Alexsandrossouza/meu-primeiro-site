@@ -39,7 +39,8 @@ button {
 /* Estilo específico do Botão Azul */
 .btn-azul {
     padding: 20px 20px;
-    background-color: #2604d3;
-    color: rgb(191, 255, 0); /* Aquele verde limão que você usou */
+    background-color: #0704d3;
+    color: rgb(255, 0, 64); /* Aquele verde limão que você usou */
     margin-top: 50px;
+    display: block; /* 👈 ADICIONE ESTA LINHA */
 }
