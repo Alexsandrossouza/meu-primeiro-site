@@ -1,8 +1,7 @@
 /* Estilo geral da página (fundo e textos) */
 body {
-   body {
-    /* Define a imagem de fundo (troque pelo link ou nome da sua imagem) */
-    background-image: url('fundo.jpg'); 
+    /* Define a imagem de fundo (agora com o nome correto!) */
+    background-image: url('fundo.jpg');
     
     /* Garante que a imagem vai cobrir toda a tela sem distorcer */
     background-size: cover;
@@ -19,11 +18,11 @@ body {
     /* Uma cor escura de segurança caso a imagem demore para carregar */
     background-color: #121214; 
     
-    /* O restante das configurações que você já tinha */
+    /* Fontes */
     font-family: Arial, sans-serif;
-    color: #ffffff; /* Texto branco para contrastar com o fundo gamer escuro */
+    color: #ffffff;
 }
-}
+
 
 /* Estilo do título principal */
 h1 {
@@ -57,8 +56,8 @@ button {
 /* Estilo específico do Botão Azul */
 .btn-azul {
     padding: 20px 20px;
-    background-color: #0704d3;
-    color: rgb(255, 0, 64); /* Aquele verde limão que você usou */
+    background-color: #50d304;
+    color: rgb(14, 13, 13); /* Aquele verde limão que você usou */
     margin-top: 50px;
     display: block; /* 👈 ADICIONE ESTA LINHA */
 }
