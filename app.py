@@ -2,6 +2,11 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# ROTA DA PÁGINA INICIAL (Resolve o erro "Not Found")
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 @app.route("/jogos")
 def jogos():
     # Lista de jogos fácil de atualizar!
@@ -9,9 +14,9 @@ def jogos():
         {
             "titulo": "Minecraft",
             "plataforma": "Xbox 360",
-            "tamanho": "1.1 GB",
+            "tamanho": "1.460 GB",
             "imagem": "Minecraft-Xbox-360-Edition.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-SEU-LINK-AQUI"
+            "link": "https://sto1.romsforever.co/0:/Xbox-360-Digital/Minecraft%20-%20Xbox%20360%20Edition%20(World)%20(v61)%20(Title%20Update).zip?token=c3xZcFthXAVOQyAgUX5VMw4ATkUlcFl%2BVmZQAk4VdXMNfgBmCQAIEHZ8XXFYZFFRRg%3D%3D"
         },
         {
             "titulo": "Resident Evil Operation Raccoon City",
