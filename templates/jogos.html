@@ -1,21 +1,30 @@
-<main class="hero">
-  <div class="hero-left">
-    <div class="badge">• DOWNLOAD DISPONÍVEL</div>
-    <h1>Minecraft <br><span class="glow-text">Xbox 360 Edition</span></h1>
-    <p class="subtitle">
-      Baixe agora a versão completa e testada para o seu console.
-    </p>
-    <div class="hero-buttons">
-      <!-- Troque o link abaixo pelo link do seu arquivo no Google Drive, MediaFire, Mega, etc. -->
-      <a href="https://sto1.romsforever.co/0:/Xbox-360-Digital/Minecraft%20-%20Xbox%20360%20Edition%20(World)%20(v61)%20(Title%20Update).zip?token=cHxQalV%2BX1laEHN0FXVWaFxURhlwc10%3D" target="_blank" class="btn-verde btn-ofertas" style="text-decoration: none;">
-        Baixar Jogo
-      </a>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogos - Planet Games</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
-  <div class="hero-right">
-    <div class="image-container">
-      <img src="{{ url_for('static', filename='Minecraft-Xbox-360-Edition.jpg') }}" alt="Minecraft Xbox 360" class="xbox-img">
+    <h2 class="titulo-pagina">Xbox 360 Games</h2>
+
+    <!-- Container da Grid -->
+    <div class="grid-jogos">
+        {% for jogo in jogos %}
+        <div class="card-jogo">
+            <div class="capa-box">
+                <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
+            </div>
+            <div class="card-info">
+                <h3>{{ jogo.titulo }}</h3>
+                <span class="badge">{{ jogo.plataforma }}</span>
+                <p class="detalhes">📦 {{ jogo.tamanho }}</p>
+                <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Comprar / Baixar</a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-  </div>
-</main>
+
+</body>
+</html>
