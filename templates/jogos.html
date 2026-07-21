@@ -21,33 +21,36 @@
         </nav>
     </header>
 
-    <main class="container-jogos">
-    <!-- Esse é o laço que você provavelmente já usa para listar seus jogos -->
-    {% for jogo in jogos %}
+       <main class="container-jogos">
+        <div class="grid-jogos">
+            {% for jogo in jogos %}
                 <div class="card-jogo">
-            <!-- Aqui em cima fica a sua tag da imagem (capa-box) se houver -->
-            
-            <!-- ABRA A CARD-INFO AQUI -->
-            <div class="card-info">
-                <h3>{{ jogo.titulo }}</h3>
-                <p>Plataforma: {{ jogo.plataforma }}</p>
-                <p>Tamanho: {{ jogo.tamanho }}</p>
+                    <!-- 1. TRAZ AS FOTOS DE VOLTA COM O TAMANHO ORIGINAL -->
+                    <div class="capa-box">
+                        <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
+                    </div>
 
-                <!-- O CONTAINER DOS BOTÕES FICA DENTRO DA CARD-INFO -->
-                <div class="botoes-container">
-                    {% if jogo.link_part1 %}
-                        <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
-                        <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
-                    {% else %}
-                        <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
-                    {% endif %}
+                    <!-- 2. ORGANIZA AS INFORMAÇÕES EXATAMENTE COMO ESTAVA -->
+                    <div class="card-info">
+                        <h3>{{ jogo.titulo }}</h3>
+                        <span class="badge">{{ jogo.plataforma }}</span>
+                        <p class="detalhes">Tamanho: {{ jogo.tamanho }}</p>
+
+                        <!-- 3. APLICA OS BOTÕES LADO A LADO SEM QUEBRAR O LAYOUT -->
+                        <div class="botoes-container">
+                            {% if jogo.link_part1 %}
+                                <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
+                                <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
+                            {% else %}
+                                <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
-                   </div> <!-- Linha 45: Fecha card-info -->
-    
-                </div> <!-- Linha 47: Fecha card-jogo -->
-    
-    {% endfor %} <!-- ADICIONE ESSA LINHA AQUI -->
-</main>
+            {% endfor %}
+        </div>
+    </main>
+
 
 
 
