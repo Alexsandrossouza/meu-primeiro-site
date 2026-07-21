@@ -22,6 +22,23 @@
     </header>
 
        <main class="container-jogos">
+
+    <h1 class="titulo-pagina">Todos os Jogos</h1>
+
+    <!-- 🔍 ADICIONE O CONTAINER DA BUSCA DE VOLTA EXATAMENTE AQUI -->
+    <div class="busca-container">
+        <input type="text" id="campoBusca" placeholder="Pesquise seu jogo...">
+    </div>
+
+    <!-- Mensagem de jogo não encontrado (controlada pelo seu JavaScript) -->
+    <div id="mensagemNaoEncontrado" style="display: none; text-align: center; color: #94a3b8; margin-top: 20px;">
+        Este jogo não foi encontrado em nosso site.
+    </div>
+
+    <div class="grid-jogos">
+        {% for jogo in jogos %}
+            <!-- O restante dos cards dos jogos continua aqui para baixo -->
+
         <div class="grid-jogos">
             {% for jogo in jogos %}
                 <div class="card-jogo">
