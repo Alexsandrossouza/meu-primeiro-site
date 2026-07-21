@@ -21,36 +21,28 @@
         </nav>
     </header>
 
-    <main style="padding: 20px 8%;">
-        <h2 class="titulo-pagina">Catálogo de Jogos Xbox 360</h2>
+    <main class="container-jogos">
+    <!-- Esse é o laço que você provavelmente já usa para listar seus jogos -->
+    {% for jogo in jogos %}
+        <div class="card-jogo">
+            <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
+            <h2>{{ jogo.titulo }}</h2>
+            <p>Plataforma: {{ jogo.plataforma }}</p>
+            <p>Tamanho: {{ jogo.tamanho }}</p>
 
-        <!-- BARRA DE PESQUISA -->
-        <div class="busca-container">
-            <input type="text" id="campoBusca" placeholder="🔍 Pesquisar jogo pelo nome..." onkeyup="filtrarJogos()">
-        </div>
-
-        <!-- MENSAGEM SE NÃO ENCONTRAR JOGO -->
-        <div id="mensagemSemJogo" style="display: none; text-align: center; margin: 40px 0; color: #94a3b8; font-size: 1.2rem;">
-            ⚠️ Nenhum jogo encontrado com esse nome.
-        </div>
-
-        <div class="grid-jogos" id="gridJogos">
-            {% for jogo in jogos %}
-            <div class="card-jogo">
-                <div class="capa-box">
-                    <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
-                </div>
-                <div class="card-info">
-                    <!-- A classe nome-jogo é essencial aqui -->
-                    <h3 class="nome-jogo">{{ jogo.titulo }}</h3>
-                    <span class="badge">{{ jogo.plataforma }}</span>
-                    <p class="detalhes">💾 {{ jogo.tamanho }}</p>
-                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar / Comprar</a>
-                </div>
+            <!-- A FÓRMULA DOS BOTÕES FICA EXATAMENTE AQUI -->
+            <div class="botoes-download">
+                {% if jogo.link_part1 %}
+                    <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-download">Parte 1</a>
+                    <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-download">Parte 2</a>
+                {% else %}
+                    <a href="{{ jogo.link }}" target="_blank" class="btn-download">Baixar Jogo</a>
+                {% endif %}
             </div>
-            {% endfor %}
         </div>
-    </main>
+    {% endfor %}
+</main>
+
 
     <!-- SCRIPT DE FILTRO + MENSAGEM -->
     <script>
