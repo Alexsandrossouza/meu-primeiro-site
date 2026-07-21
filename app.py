@@ -40,11 +40,11 @@ def jogos():
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
         },
         {
-            "titulo": "Grand Theft Auto V",
+            "titulo": "Assassin's creed rogue",
             "plataforma": "Xbox 360",
-            "tamanho": "16.5 GB",
-            "imagem": "gta-v.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
+            "tamanho": "5.5 GB",
+            "imagem": "Assassin's creed rogue.jpg",
+            "link": "https://www.mediafire.com/file/willx6ys2qozko8/uGA&ugTkvX6a.rar/file"
         },
         {
             "titulo": "Gears of War 3",
@@ -75,7 +75,7 @@ def jogos():
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
         },
         {
-            "titulo": "Gears of War 3",
+            "titulo": "Assassin's Creed Rogue",
             "plataforma": "Xbox 360",
             "tamanho": "7.5 GB",
             "imagem": "gears-of-war-3.jpg",
