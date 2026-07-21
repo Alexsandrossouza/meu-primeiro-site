@@ -1,4 +1,6 @@
-/* Configurações Globais */
+/* ============================================================
+   1. CONFIGURAÇÕES GLOBAIS E BODY
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -6,23 +8,20 @@
     font-family: 'Inter', sans-serif;
 }
 
- body {
-    /* Usando exatamente o nome que está na sua pasta com .jpg.png no final! */
+body {
     background-image: linear-gradient(rgba(6, 8, 9, 0.85), rgba(6, 8, 9, 0.85)), url('fundo.jpg.png');
-    
-    /* Configurações para a imagem cobrir toda a tela perfeitamente */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
     color: #ffffff;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-
-/* 1. BARRA DE NAVEGAÇÃO */
+/* ============================================================
+   2. BARRA DE NAVEGAÇÃO (NAVBAR)
+   ============================================================ */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -66,26 +65,29 @@
     color: #00ff66;
 }
 
-/* Botão Comprar do Topo */
-.btn-comprar {
+/* Botão Comprar do Topo Navbar */
+.navbar .btn-comprar {
     background-color: #00ff66;
-    color: #000000;
+    color: #000000 !important;
     border: none;
-    padding: 14px 27px;
+    padding: 12px 24px;
     border-radius: 8px;
     font-weight: 700;
     font-size: 0.9rem;
     cursor: pointer;
+    text-decoration: none;
     box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
     transition: all 0.3s ease;
 }
 
-.btn-comprar:hover {
+.navbar .btn-comprar:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 25px rgba(0, 255, 102, 0.7);
 }
 
-/* 2. ÁREA HERO (CONTEÚDO) */
+/* ============================================================
+   3. ÁREA HERO (PÁGINA INICIAL)
+   ============================================================ */
 .hero {
     display: flex;
     align-items: center;
@@ -100,7 +102,6 @@
     max-width: 600px;
 }
 
-/* Badge "Estoque Limitado" */
 .badge {
     display: inline-block;
     border: 1px solid rgba(0, 255, 102, 0.3);
@@ -121,7 +122,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Texto Verde com Brilho */
 .glow-text {
     color: #00ff66;
     text-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
@@ -134,7 +134,6 @@ h1 {
     margin-bottom: 35px;
 }
 
-/* Botões de Ação */
 .hero-buttons {
     display: flex;
     gap: 15px;
@@ -175,7 +174,6 @@ h1 {
     border-color: #ffffff;
 }
 
-/* Lado Direito: Imagem com efeito de luz ao fundo */
 .hero-right {
     flex: 1;
     display: flex;
@@ -187,7 +185,6 @@ h1 {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    /* Adiciona uma sombra verde suave atrás da imagem para simular o LED verde */
     box-shadow: 0 0 50px rgba(0, 255, 102, 0.15);
 }
 
@@ -199,105 +196,9 @@ h1 {
     object-fit: cover;
 }
 
-/* Responsivo para celulares */
-@media (max-width: 968px) {
-    .navbar {
-        padding: 15px 5%;
-    }
-    .nav-links {
-        display: none; /* Esconde menu no celular para simplificar */
-    }
-    .hero {
-        flex-direction: column;
-        padding: 40px 5%;
-        text-align: center;
-    }
-    .badge {
-        margin-bottom: 15px;
-    }
-    h1 {
-        font-size: 2.5rem;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-}/* Layout da Grade de Jogos */
-.grid-jogos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Card individual do Jogo */
-.card-jogo {
-    background: #5adf6b;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-jogo:hover {
-    transform: translateY(-5px);
-}
-
-.capa-box img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-}
-
-.card-info {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex-grow: 1;
-}
-
-.card-info h3 {
-    font-size: 1rem;
-    margin: 0;
-    color: #222;
-}
-
-.badge {
-    align-self: flex-start;
-    background: #e60012;
-    color: white;
-    font-size: 0.75rem;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-weight: bold;
-}
-
-.detalhes {
-    font-size: 0.85rem;
-    color: #666;
-    margin: 0;
-}
-
-.btn-comprar {
-    margin-top: auto;
-    display: block;
-    text-align: center;
-    background: #107c41; /* Verde Xbox */
-    color: rgb(231, 239, 240);
-    text-decoration: none;
-    padding: 8px;
-    border-radius: 6px;
-    font-weight: bold;
-}
 /* ============================================================
-   3. LAYOUT DA GRADE DE JOGOS (PLANET GAMES STYLE)
+   4. GRADE DE JOGOS (PLANET GAMES STYLE)
    ============================================================ */
-
-/* Título principal da página de jogos */
 .titulo-pagina {
     text-align: center;
     font-size: 2rem;
@@ -306,7 +207,6 @@ h1 {
     color: #ffffff;
 }
 
-/* Container do Grid */
 .grid-jogos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -316,7 +216,6 @@ h1 {
     margin: 0 auto 60px auto;
 }
 
-/* Card individual do Jogo (Fundo escuro e borda estilizada) */
 .card-jogo {
     background: rgba(18, 24, 27, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -334,7 +233,6 @@ h1 {
     box-shadow: 0 10px 25px rgba(0, 255, 102, 0.2);
 }
 
-/* Ajuste e proporção da Capa */
 .capa-box {
     width: 100%;
     height: 270px;
@@ -353,7 +251,6 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Informações do Jogo */
 .card-info {
     padding: 16px;
     display: flex;
@@ -370,7 +267,6 @@ h1 {
     line-height: 1.3;
 }
 
-/* Badge específica para a Plataforma nos Cards */
 .card-info .badge {
     align-self: flex-start;
     border: 1px solid rgba(0, 255, 102, 0.4);
@@ -389,7 +285,6 @@ h1 {
     margin: 0;
 }
 
-/* Botão de Ação do Card */
 .card-info .btn-comprar {
     margin-top: auto;
     display: block;
@@ -409,4 +304,30 @@ h1 {
     background-color: #1aef77;
     box-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
     transform: none;
+}
+
+/* ============================================================
+   5. RESPONSIVIDADE (CELULARES)
+   ============================================================ */
+@media (max-width: 968px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    .nav-links {
+        display: none;
+    }
+    .hero {
+        flex-direction: column;
+        padding: 40px 5%;
+        text-align: center;
+    }
+    .badge {
+        margin-bottom: 15px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
 }

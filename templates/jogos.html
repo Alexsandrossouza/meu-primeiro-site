@@ -2,29 +2,45 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogos - Planet Games</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <h2 class="titulo-pagina">Xbox 360 Games</h2>
-
-    <!-- Container da Grid -->
-    <div class="grid-jogos">
-        {% for jogo in jogos %}
-        <div class="card-jogo">
-            <div class="capa-box">
-                <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
-            </div>
-            <div class="card-info">
-                <h3>{{ jogo.titulo }}</h3>
-                <span class="badge">{{ jogo.plataforma }}</span>
-                <p class="detalhes">📦 {{ jogo.tamanho }}</p>
-                <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Comprar / Baixar</a>
-            </div>
+    <!-- Header / Navbar mantendo o padrão do site -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="icon">🎮</span> PLANET<span class="green-text">GAMES</span>
         </div>
-        {% endfor %}
-    </div>
+        <nav class="nav-links">
+            <a href="/">Início</a>
+            <a href="/produtos">Produto</a>
+            <a href="/jogos">Jogos</a>
+            <a href="#">Planos</a>
+            <a href="#">FAQ</a>
+        </nav>
+    </header>
+
+    <main class="container-jogos">
+        <h2 class="titulo-secao">Catálogo de Jogos Xbox 360</h2>
+
+        <div class="grid-jogos">
+            {% for jogo in jogos %}
+            <div class="card-jogo">
+                <div class="capa-box">
+                    <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
+                </div>
+                <div class="card-info">
+                    <h3>{{ jogo.titulo }}</h3>
+                    <span class="badge-plataforma">{{ jogo.plataforma }}</span>
+                    <p class="tamanho-jogo">💾 {{ jogo.tamanho }}</p>
+                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar-card">Baixar / Comprar</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
 
 </body>
 </html>
