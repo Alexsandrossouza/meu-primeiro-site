@@ -22,21 +22,21 @@ def jogos():
             "titulo": "Resident Evil Operation Raccoon City",
             "plataforma": "Xbox 360",
             "tamanho": "4.2 GB",
-            "imagem": "static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
+            "imagem": "Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
             "link": "https://produto.mercadolivre.com.br/MLB-SEU-LINK-AQUI"
         },
         {
             "titulo": "Grand Theft Auto V",
             "plataforma": "Xbox 360",
             "tamanho": "16.5 GB",
-            "imagem": "Grand-Theft-Auto-V",
+            "imagem": "Grand-Theft-Auto-V.jpg",
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
         },
         {
             "titulo": "Gears of War 3",
             "plataforma": "Xbox 360",
             "tamanho": "7.5 GB",
-            "imagem": "Gears-of-War-3-scaled",
+            "imagem": "Gears-of-War-3-scaled.jpg",
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
         },
         {
