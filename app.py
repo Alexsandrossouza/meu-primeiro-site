@@ -24,8 +24,63 @@ def jogos():
             "tamanho": "4.2 GB",
             "imagem": "Resident-Evil-Operation-Raccoon-City.jpg",
             "link": "https://produto.mercadolivre.com.br/MLB-SEU-LINK-AQUI"
+        },
+        {
+            "titulo": "Grand Theft Auto V",
+            "plataforma": "Xbox 360",
+            "tamanho": "16.5 GB",
+            "imagem": "gta-v.jpg",
+            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
+        },
+        {
+            "titulo": "Gears of War 3",
+            "plataforma": "Xbox 360",
+            "tamanho": "7.5 GB",
+            "imagem": "gears-of-war-3.jpg",
+            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
+        },
+        {
+            "titulo": "Grand Theft Auto V",
+            "plataforma": "Xbox 360",
+            "tamanho": "16.5 GB",
+            "imagem": "gta-v.jpg",
+            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
+        },
+        {
+            "titulo": "Gears of War 3",
+            "plataforma": "Xbox 360",
+            "tamanho": "7.5 GB",
+            "imagem": "gears-of-war-3.jpg",
+            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
+        },
+        {
+            "titulo": "Grand Theft Auto V",
+            "plataforma": "Xbox 360",
+            "tamanho": "16.5 GB",
+            "imagem": "gta-v.jpg",
+            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
+        },
+        {
+            "titulo": "Gears of War 3",
+            "plataforma": "Xbox 360",
+            "tamanho": "7.5 GB",
+            "imagem": "gears-of-war-3.jpg",
+            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
+        },
+        {
+            "titulo": "Grand Theft Auto V",
+            "plataforma": "Xbox 360",
+            "tamanho": "16.5 GB",
+            "imagem": "gta-v.jpg",
+            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
+        },
+        {
+            "titulo": "Gears of War 3",
+            "plataforma": "Xbox 360",
+            "tamanho": "7.5 GB",
+            "imagem": "gears-of-war-3.jpg",
+            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
         }
-        
         # Para adicionar um jogo novo, é só copiar e colar um bloco desse aqui!
     ]
     return render_template("jogos.html", jogos=lista_de_jogos)
