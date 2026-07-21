@@ -83,5 +83,24 @@ def jogos():
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
         }
         # Para adicionar um jogo novo, é só copiar e colar um bloco desse aqui!
+        @app.route('/produtos')
+def produtos():
+    # Substitua pelos dados reais dos seus anúncios do Mercado Livre
+    meus_anuncios = [
+        {
+            "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
+            "preco": "R$ 450,00",
+            "imagem": "xbox-anuncio1.jpg",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Controle Xbox 360 Sem Fio Original",
+            "preco": "R$ 150,00",
+            "imagem": "controle-anuncio2.jpg",
+            "link_ml": "https://mercadolivre.com.br"
+        }
+    ]
+    return render_template('produtos.html', anuncios=meus_anuncios)
+
     ]
     return render_template("jogos.html", jogos=lista_de_jogos)
