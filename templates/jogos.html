@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Header / Navbar mantendo o padrão do site -->
     <header class="navbar">
         <div class="logo">
             <span class="icon">🎮</span> PLANET<span class="green-text">GAMES</span>
@@ -22,42 +21,62 @@
         </nav>
     </header>
 
-    <main class="container-jogos">
-        <h2 class="titulo-secao">Catálogo de Jogos Xbox 360</h2>
-        <!-- BARRA DE PESQUISA QUE ESTÁ FALTANDO -->
-<div class="busca-container">
-    <input type="text" id="campoBusca" placeholder="🔍 Pesquisar jogo pelo nome..." onkeyup="filtrarJogos()">
-</div>
-        <div class="grid-jogos">
+    <main style="padding: 20px 8%;">
+        <h2 class="titulo-pagina">Catálogo de Jogos Xbox 360</h2>
+
+        <!-- BARRA DE PESQUISA -->
+        <div class="busca-container">
+            <input type="text" id="campoBusca" placeholder="🔍 Pesquisar jogo pelo nome..." onkeyup="filtrarJogos()">
+        </div>
+
+        <!-- MENSAGEM SE NÃO ENCONTRAR JOGO -->
+        <div id="mensagemSemJogo" style="display: none; text-align: center; margin: 40px 0; color: #94a3b8; font-size: 1.2rem;">
+            ⚠️ Nenhum jogo encontrado com esse nome.
+        </div>
+
+        <div class="grid-jogos" id="gridJogos">
             {% for jogo in jogos %}
             <div class="card-jogo">
                 <div class="capa-box">
                     <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
                 </div>
                 <div class="card-info">
-                    <h3>{{ jogo.titulo }}</h3>
-                    <span class="badge-plataforma">{{ jogo.plataforma }}</span>
-                    <p class="tamanho-jogo">💾 {{ jogo.tamanho }}</p>
-                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar-card">Baixar / Comprar</a>
+                    <!-- A classe nome-jogo é essencial aqui -->
+                    <h3 class="nome-jogo">{{ jogo.titulo }}</h3>
+                    <span class="badge">{{ jogo.plataforma }}</span>
+                    <p class="detalhes">💾 {{ jogo.tamanho }}</p>
+                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar / Comprar</a>
                 </div>
             </div>
             {% endfor %}
         </div>
     </main>
-   <!-- SCRIPT DA PESQUISA -->
+
+    <!-- SCRIPT DE FILTRO + MENSAGEM -->
     <script>
         function filtrarJogos() {
-            let input = document.getElementById('campoBusca').value.toLowerCase();
+            let input = document.getElementById('campoBusca').value.toLowerCase().trim();
             let cards = document.getElementsByClassName('card-jogo');
+            let mensagem = document.getElementById('mensagemSemJogo');
+            let jogosVisiveis = 0;
 
             for (let i = 0; i < cards.length; i++) {
+                // Pega o texto do título do jogo
                 let titulo = cards[i].querySelector('.nome-jogo').innerText.toLowerCase();
                 
                 if (titulo.includes(input)) {
                     cards[i].style.display = "flex";
+                    jogosVisiveis++;
                 } else {
                     cards[i].style.display = "none";
                 }
+            }
+
+            // Exibe ou esconde a mensagem de "Jogo não encontrado"
+            if (jogosVisiveis === 0) {
+                mensagem.style.display = "block";
+            } else {
+                mensagem.style.display = "none";
             }
         }
     </script>
