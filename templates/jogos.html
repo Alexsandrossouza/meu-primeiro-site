@@ -2,18 +2,20 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogos - Planet Games</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
     <header class="navbar">
         <div class="logo">
-            <span class="icon">🎮</span> PLANET<span class="green-text">GAMES</span>
+            <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
         </div>
         <nav class="nav-links">
-            <a href="/">Início</a>
             <a href="/produtos">Produto</a>
             <a href="/jogos">Jogos</a>
             <a href="#">Planos</a>
@@ -21,39 +23,36 @@
         </nav>
     </header>
 
-       <main class="container-jogos">
+    <!-- CONTEÚDO PRINCIPAL DOS JOGOS -->
+    <main class="container-jogos">
+        <h1 class="titulo-pagina">Todos os Jogos</h1>
 
-    <h1 class="titulo-pagina">Todos os Jogos</h1>
+        <!-- BARRA DE BUSCA -->
+        <div class="busca-container">
+            <input type="text" id="campoBusca" placeholder="Pesquise seu jogo...">
+        </div>
 
-    <!-- 🔍 ADICIONE O CONTAINER DA BUSCA DE VOLTA EXATAMENTE AQUI -->
-    <div class="busca-container">
-        <input type="text" id="campoBusca" placeholder="Pesquise seu jogo...">
-    </div>
+        <!-- MENSAGEM DE NÃO ENCONTRADO -->
+        <div id="mensagemNaoEncontrado" style="display: none; text-align: center; color: #94a3b8; margin-top: 20px; font-weight: bold;">
+            Este jogo não foi encontrado em nosso site.
+        </div>
 
-    <!-- Mensagem de jogo não encontrado (controlada pelo seu JavaScript) -->
-    <div id="mensagemNaoEncontrado" style="display: none; text-align: center; color: #94a3b8; margin-top: 20px;">
-        Este jogo não foi encontrado em nosso site.
-    </div>
-
-    <div class="grid-jogos">
-        {% for jogo in jogos %}
-            <!-- O restante dos cards dos jogos continua aqui para baixo -->
-
+        <!-- GRADE COM OS 5 BALÕES POR FILA -->
         <div class="grid-jogos">
             {% for jogo in jogos %}
                 <div class="card-jogo">
-                    <!-- 1. TRAZ AS FOTOS DE VOLTA COM O TAMANHO ORIGINAL -->
+                    <!-- FOTO DO JOGO -->
                     <div class="capa-box">
                         <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
                     </div>
 
-                    <!-- 2. ORGANIZA AS INFORMAÇÕES EXATAMENTE COMO ESTAVA -->
+                    <!-- INFORMAÇÕES DO CARD -->
                     <div class="card-info">
                         <h3>{{ jogo.titulo }}</h3>
                         <span class="badge">{{ jogo.plataforma }}</span>
                         <p class="detalhes">Tamanho: {{ jogo.tamanho }}</p>
 
-                        <!-- 3. APLICA OS BOTÕES LADO A LADO SEM QUEBRAR O LAYOUT -->
+                        <!-- BOTÕES DE DOWNLOAD -->
                         <div class="botoes-container">
                             {% if jogo.link_part1 %}
                                 <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
@@ -68,37 +67,7 @@
         </div>
     </main>
 
-
-
-
-    <!-- SCRIPT DE FILTRO + MENSAGEM -->
-    <script>
-        function filtrarJogos() {
-            let input = document.getElementById('campoBusca').value.toLowerCase().trim();
-            let cards = document.getElementsByClassName('card-jogo');
-            let mensagem = document.getElementById('mensagemSemJogo');
-            let jogosVisiveis = 0;
-
-            for (let i = 0; i < cards.length; i++) {
-                // Pega o texto do título do jogo
-                let titulo = cards[i].querySelector('.nome-jogo').innerText.toLowerCase();
-                
-                if (titulo.includes(input)) {
-                    cards[i].style.display = "flex";
-                    jogosVisiveis++;
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
-
-            // Exibe ou esconde a mensagem de "Jogo não encontrado"
-            if (jogosVisiveis === 0) {
-                mensagem.style.display = "block";
-            } else {
-                mensagem.style.display = "none";
-            }
-        }
-    </script>
-
+    <!-- Seu arquivo JavaScript original que faz a busca funcionar -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
