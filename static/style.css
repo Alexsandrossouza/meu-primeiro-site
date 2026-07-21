@@ -364,3 +364,16 @@ h1 {
     border-color: #00ff66;
     box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
 }
+/* Container para alinhar os botões lado a lado caso haja mais de um */
+.botoes-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto; /* Mantém os botões sempre colados no final do card */
+}
+
+/* Garante que se houver dois botões, eles dividam o espaço igualmente */
+.botoes-container .btn-comprar {
+    flex: 1;
+    margin-top: 0 !important; 
+}
