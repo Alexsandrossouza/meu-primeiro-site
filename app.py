@@ -7,6 +7,19 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+# 🛒 AGORA ADICIONE A ROTA DE PRODUTOS LOGO ABAIXO:
+@app.route("/produtos")
+def produtos():
+    meus_anuncios = [
+        {
+            "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
+            "preco": "R$ 450,00",
+            "imagem": "fundo.jpg.png", # Usando uma imagem que já existe na sua pasta static
+            "link_ml": "https://mercadolivre.com.br" # Substitua pelo link real do seu anúncio
+        }
+    ]
+    return render_template("produtos.html", anuncios=meus_anuncios)
+
 # ROTA DA PÁGINA DE JOGOS
 @app.route("/jogos")
 def jogos():
