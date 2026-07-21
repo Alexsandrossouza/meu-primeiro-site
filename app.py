@@ -47,11 +47,12 @@ def jogos():
             "link": "https://www.mediafire.com/file/willx6ys2qozko8/uGA&ugTkvX6a.rar/file"
         },
         {
-            "titulo": "Gears of War 3",
+            "titulo": "Red Dead Redemption",
             "plataforma": "Xbox 360",
             "tamanho": "7.5 GB",
-            "imagem": "gears-of-war-3.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
+            "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
+            "link": "https://www.mediafire.com/file/6adboemuos4q8tu/lrIdF9u$UZh.part1.rar/file"
+            "link": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
         },
         {
             "titulo": "Grand Theft Auto V",
