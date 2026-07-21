@@ -119,8 +119,7 @@ def produtos():
             "preco": "R$ 150,00",
             "imagem": "controle-anuncio2.jpg",
             "link_ml": "https://mercadolivre.com.br"
-        }
-        ,
+        },
         {
             "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
             "preco": "R$ 450,00",
