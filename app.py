@@ -47,12 +47,12 @@ def jogos():
             "link": "https://www.mediafire.com/file/willx6ys2qozko8/uGA&ugTkvX6a.rar/file"
         },
         {
-            "titulo": "Red Dead Redemption",
-            "plataforma": "Xbox 360",
-            "tamanho": "7.5 GB",
-            "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
-            "link": "https://www.mediafire.com/file/6adboemuos4q8tu/lrIdF9u$UZh.part1.rar/file"
-            "link": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
+        "titulo": "Red Dead Redemption",
+        "plataforma": "Xbox 360",
+        "tamanho": "7.5 GB",
+        "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
+        "link_part1": "https://www.mediafire.com/file/6adboemuos4q8tu/lRIdF9u$UZh.part1.rar/file",
+        "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
         },
         {
             "titulo": "Grand Theft Auto V",
