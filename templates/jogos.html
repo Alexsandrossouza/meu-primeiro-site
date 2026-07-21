@@ -41,6 +41,23 @@
             {% endfor %}
         </div>
     </main>
+    <!-- SCRIPT DE FILTRO EM TEMPO REAL -->
+    <script>
+        function filtrarJogos() {
+            let input = document.getElementById('campoBusca').value.toLowerCase();
+            let cards = document.getElementsByClassName('card-jogo');
+
+            for (let i = 0; i < cards.length; i++) {
+                let titulo = cards[i].querySelector('.nome-jogo').innerText.toLowerCase();
+                
+                if (titulo.includes(input)) {
+                    cards[i].style.display = "flex";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>

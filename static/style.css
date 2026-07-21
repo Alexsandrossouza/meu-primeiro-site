@@ -331,3 +331,35 @@ h1 {
         justify-content: center;
     }
 }
+/* =========================================
+   ESTILO DA BARRA DE PESQUISA
+   ========================================= */
+
+.busca-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#campoBusca {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    background-color: rgba(18, 24, 27, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    color: #ffffff;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#campoBusca::placeholder {
+    color: #888888;
+}
+
+#campoBusca:focus {
+    border-color: #00ff66;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+}
