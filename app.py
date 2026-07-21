@@ -120,5 +120,19 @@ def produtos():
             "imagem": "controle-anuncio2.jpg",
             "link_ml": "https://mercadolivre.com.br"
         }
+        ,
+        {
+            "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
+            "preco": "R$ 450,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br" 
+        },
+        {
+            "titulo": "Controle Xbox 360 Sem Fio Original",
+            "preco": "R$ 150,00",
+            "imagem": "controle-anuncio2.jpg",
+            "link_ml": "https://mercadolivre.com.br"
+        }
+        
     ]
     return render_template("produtos.html", anuncios=meus_anuncios)
