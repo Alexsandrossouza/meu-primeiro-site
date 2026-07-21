@@ -2,25 +2,16 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# ROTA DA PÁGINA INICIAL
+# ============================================================
+# 1. ROTA DA PÁGINA INICIAL
+# ============================================================
 @app.route("/")
 def index():
     return render_template("index.html")
 
-# 🛒 AGORA ADICIONE A ROTA DE PRODUTOS LOGO ABAIXO:
-@app.route("/produtos")
-def produtos():
-    meus_anuncios = [
-        {
-            "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
-            "preco": "R$ 450,00",
-            "imagem": "fundo.jpg.png", # Usando uma imagem que já existe na sua pasta static
-            "link_ml": "https://mercadolivre.com.br" # Substitua pelo link real do seu anúncio
-        }
-    ]
-    return render_template("produtos.html", anuncios=meus_anuncios)
-
-# ROTA DA PÁGINA DE JOGOS
+# ============================================================
+# 2. ROTA DA PÁGINA DE JOGOS
+# ============================================================
 @app.route("/jogos")
 def jogos():
     lista_de_jogos = [
@@ -60,12 +51,12 @@ def jogos():
             "link": "https://www.mediafire.com/file/willx6ys2qozko8/uGA&ugTkvX6a.rar/file"
         },
         {
-        "titulo": "Red Dead Redemption",
-        "plataforma": "Xbox 360",
-        "tamanho": "7.5 GB",
-        "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
-        "link_part1": "https://www.mediafire.com/file/6adboemuos4q8tu/lRIdF9u$UZh.part1.rar/file",
-        "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
+            "titulo": "Red Dead Redemption",
+            "plataforma": "Xbox 360",
+            "tamanho": "7.5 GB",
+            "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
+            "link_part1": "https://www.mediafire.com/file/6adboemuos4q8tu/lRIdF9u$UZh.part1.rar/file",
+            "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
         },
         {
             "titulo": "Grand Theft Auto V",
@@ -95,16 +86,21 @@ def jogos():
             "imagem": "gears-of-war-3.jpg",
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
         }
-        # Para adicionar um jogo novo, é só copiar e colar um bloco desse aqui!
-        @app.route('/produtos')
+    ] # Fecha corretamente a lista_de_jogos
+    
+    return render_template("jogos.html", jogos=lista_de_jogos)
+
+# ============================================================
+# 3. ROTA DA PÁGINA DE PRODUTOS
+# ============================================================
+@app.route("/produtos")
 def produtos():
-    # Substitua pelos dados reais dos seus anúncios do Mercado Livre
     meus_anuncios = [
         {
             "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
             "preco": "R$ 450,00",
-            "imagem": "xbox-anuncio1.jpg",
-            "link_ml": "https://mercadolivre.com.br"
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br" 
         },
         {
             "titulo": "Controle Xbox 360 Sem Fio Original",
@@ -113,9 +109,4 @@ def produtos():
             "link_ml": "https://mercadolivre.com.br"
         }
     ]
-    return render_template('produtos.html', anuncios=meus_anuncios)
-
-     } # Fecha a chave do último jogo
-    ] # <--- ADICIONE ESTE COLCHETE EXATAMENTE AQUI PARA RESOLVER O ERRO DA LINHA 26!
-    
-    return render_template("jogos.html", jogos=lista_jogos)
+    return render_template("produtos.html", anuncios=meus_anuncios)
