@@ -10,17 +10,49 @@
 <body>
 
     <header class="navbar">
+    <!-- 1. Clicar no logo também vai levar para o Início -->
+    <a href="/" style="text-decoration: none; color: inherit;">
         <div class="logo">
-            <span class="icon">🎮</span> PLANET<span class="green-text">GAMES</span>
+            <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
         </div>
-        <nav class="nav-links">
-            <a href="/produtos">Produto</a>
-            <a href="/jogos">Jogos</a>
-            <a href="#">Planos</a>
-            <a href="#">FAQ</a>
-        </nav>
+    </a>
+
+    <nav class="nav-links">
+        <!-- 2. O link Início agora aponta para a raiz do site -->
+        <a href="/">Início</a>
+        <a href="/produtos">Produto</a>
+        <a href="/jogos">Jogos</a>
+        <a href="#">Planos</a>
+        <a href="#">FAQ</a>
+    </nav>
         <a href="https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" target="_blank" class="btn-verde btn-comprar" style="text-decoration: none; display: inline-block;">Comprar agora</a>   
     </header>
+        <main class="container-jogos">
+        <h1 class="titulo-pagina">Anúncios no Mercado Livre</h1>
+
+        <div class="grid-jogos">
+            {% for anuncio in anuncios %}
+                <div class="card-jogo">
+                    <div class="capa-box">
+                        <img src="{{ url_for('static', filename=anuncio.imagem) }}" alt="{{ anuncio.titulo }}">
+                    </div>
+
+                    <div class="card-info">
+                        <h3>{{ anuncio.titulo }}</h3>
+                        <span class="badge" style="border-color: #00ff66; color: #00ff66;">Mercado Livre</span>
+                        <p class="detalhes" style="font-size: 1.2rem; color: #ffffff; font-weight: bold; margin-top: 5px;">
+                            {{ anuncio.preco }}
+                        </p>
+
+                        <div class="botoes-container">
+                            <a href="{{ anuncio.link_ml }}" target="_blank" class="btn-comprar">Ver no Mercado Livre</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
     <main class="hero">
         <div class="hero-left">
             <div class="badge">● ESTOQUE LIMITADO</div>

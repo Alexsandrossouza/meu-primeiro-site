@@ -12,16 +12,24 @@
 
     <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
     <header class="navbar">
+    <!-- 1. Clicar no logo também vai levar para o Início -->
+    <a href="/" style="text-decoration: none; color: inherit;">
         <div class="logo">
             <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
         </div>
-        <nav class="nav-links">
-            <a href="/produtos">Produto</a>
-            <a href="/jogos">Jogos</a>
-            <a href="#">Planos</a>
-            <a href="#">FAQ</a>
-        </nav>
-    </header>
+    </a>
+
+    <nav class="nav-links">
+        <!-- 2. O link Início agora aponta para a raiz do site -->
+        <a href="/">Início</a>
+        
+        <a href="/produtos">Produto</a>
+        <a href="/jogos">Jogos</a>
+        <a href="#">Planos</a>
+        <a href="#">FAQ</a>
+    </nav>
+</header>
+
 
     <!-- CONTEÚDO PRINCIPAL DOS JOGOS -->
     <main class="container-jogos">
