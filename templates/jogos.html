@@ -24,24 +24,31 @@
     <main class="container-jogos">
     <!-- Esse é o laço que você provavelmente já usa para listar seus jogos -->
     {% for jogo in jogos %}
-        <div class="card-jogo">
-            <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
-            <h2>{{ jogo.titulo }}</h2>
-            <p>Plataforma: {{ jogo.plataforma }}</p>
-            <p>Tamanho: {{ jogo.tamanho }}</p>
+                <div class="card-jogo">
+            <!-- Aqui em cima fica a sua tag da imagem (capa-box) se houver -->
+            
+            <!-- ABRA A CARD-INFO AQUI -->
+            <div class="card-info">
+                <h3>{{ jogo.titulo }}</h3>
+                <p>Plataforma: {{ jogo.plataforma }}</p>
+                <p>Tamanho: {{ jogo.tamanho }}</p>
 
-            <!-- A FÓRMULA DOS BOTÕES FICA EXATAMENTE AQUI -->
-            <div class="botoes-download">
-                {% if jogo.link_part1 %}
-                    <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-download">Parte 1</a>
-                    <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-download">Parte 2</a>
-                {% else %}
-                    <a href="{{ jogo.link }}" target="_blank" class="btn-download">Baixar Jogo</a>
-                {% endif %}
-            </div>
-        </div>
-    {% endfor %}
+                <!-- O CONTAINER DOS BOTÕES FICA DENTRO DA CARD-INFO -->
+                <div class="botoes-container">
+                    {% if jogo.link_part1 %}
+                        <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
+                        <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
+                    {% else %}
+                        <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
+                    {% endif %}
+                </div>
+                   </div> <!-- Linha 45: Fecha card-info -->
+    
+                </div> <!-- Linha 47: Fecha card-jogo -->
+    
+    {% endfor %} <!-- ADICIONE ESSA LINHA AQUI -->
 </main>
+
 
 
     <!-- SCRIPT DE FILTRO + MENSAGEM -->
