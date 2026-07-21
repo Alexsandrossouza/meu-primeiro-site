@@ -103,10 +103,10 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
         },
         {
-            "titulo": "Controle Xbox 360 Sem Fio Original",
-            "preco": "R$ 150,00",
-            "imagem": "controle-anuncio2.jpg",
-            "link_ml": "https://mercadolivre.com.br"
+            "titulo": "Dinavision3",
+            "preco": "R$ 1000,00",
+            "imagem": "Dinavison3.webp",
+            "link_ml": "https://www.mercadolivre.com.br/dynavision-3/up/MLBU4391533258"
         },
         {
             "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
