@@ -1,36 +1,31 @@
-// ==========================================
-// 1. BOTÃO VERDE (SAIBA MAIS / OFERTAS)
-// ==========================================
-// APAGUE ESTE BLOCO TODO:
-// No seu arquivo static/script.js:
-const botaoVerde = document.querySelector('.btn-ofertas'); // Usamos .btn-ofertas para não dar conflito!
+document.addEventListener('DOMContentLoaded', function() {
+    const campoBusca = document.getElementById('campoBusca');
+    const cardsJogos = document.querySelectorAll('.card-jogo');
+    const mensagemNaoEncontrado = document.getElementById('mensagemNaoEncontrado');
 
-if (botaoVerde) {
-    botaoVerde.addEventListener('click', () => {
-        alert('Aproveite! Xbox 360 com 20% de desconto e frete grátis hoje!');
-    });
-}
+    // Executa a função toda vez que o usuário digitar uma letra
+    campoBusca.addEventListener('input', function() {
+        const termoBusca = campoBusca.value.toLowerCase().trim();
+        let encontrouQualquerJogo = false;
 
-// ==========================================
-// 2. BOTÃO AZUL (CURIOSO)
-// ==========================================
-const botaoAzul = document.querySelector('.btn-azul');
-if (botaoAzul) {
-    botaoAzul.addEventListener('click', () => {
-        alert('Fique por dentro das novidades, e não perca nenhuma oferta! 😉');
-    });  
-}
+        cardsJogos.forEach(function(card) {
+            // Pega o título do jogo dentro do h3 do card
+            const tituloJogo = card.querySelector('.card-info h3').textContent.toLowerCase();
 
-// ==========================================
-// 3. BOTÃO COMPRAR AGORA (NOVA PÁGINA)
-// ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    const botaoComprar = document.querySelector('.btn-comprar');
-
-    if (botaoComprar) {
-        botaoComprar.addEventListener('click', () => {
-            window.open('https://www.mercadolivre.com.br', '_blank');
+            // Se o título conter o que foi digitado, mostra o card. Senão, esconde.
+            if (tituloJogo.includes(termoBusca)) {
+                card.style.display = 'flex'; // Mantém o formato original do card
+                encontrouQualquerJogo = true;
+            } else {
+                card.style.display = 'none'; // Esconde o card
+            }
         });
-    }
-}); // <--- FECHA O IF DO BOTAO COMPRAR AQUI!
 
+        // Controle da mensagem de "Não encontrado"
+        if (encontrouQualquerJogo) {
+            mensagemNaoEncontrado.style.display = 'none';
+        } else {
+            mensagemNaoEncontrado.style.display = 'block';
+        }
+    });
+});
