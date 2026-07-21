@@ -209,10 +209,11 @@ h1 {
 
 .grid-jogos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 25px;
-    padding: 20px 8%;
-    max-width: 1300px;
+    /* Reduzido para 180px para caber 4 cards perfeitamente lado a lado */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 5%;
+    max-width: 1400px;
     margin: 0 auto 60px auto;
 }
 
