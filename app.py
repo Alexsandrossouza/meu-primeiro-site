@@ -115,5 +115,7 @@ def produtos():
     ]
     return render_template('produtos.html', anuncios=meus_anuncios)
 
-    ]
-    return render_template("jogos.html", jogos=lista_de_jogos)
+     } # Fecha a chave do último jogo
+    ] # <--- ADICIONE ESTE COLCHETE EXATAMENTE AQUI PARA RESOLVER O ERRO DA LINHA 26!
+    
+    return render_template("jogos.html", jogos=lista_jogos)
