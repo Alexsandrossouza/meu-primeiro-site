@@ -73,11 +73,11 @@ def jogos():
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
         },
         {
-            "titulo": "Grand Theft Auto V",
+            "titulo": "skyrim",
             "plataforma": "Xbox 360",
-            "tamanho": "16.5 GB",
-            "imagem": "gta-v.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
+            "tamanho": "4.36 GB",
+            "imagem": "skyrim.jpg",
+            "link": "https://www.mediafire.com/file/iguca3f8nfnb71y/6%2525NBmVHwdPY%2526.rar/file"
         },
         {
             "titulo": "Assassin's Creed Rogue",
