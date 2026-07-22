@@ -109,10 +109,10 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/dynavision-3/up/MLBU4391533258"
         },
         {
-            "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
-            "preco": "R$ 450,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br" 
+            "titulo": "Estação De Retrabalho Reballing Bga Laser 10000 (Usado)",
+            "preco": "R$ 3.500,00",
+            "imagem": "D_NQ_NP_2X_815419-MLB110019916669_042026-F-estacao-de-retrabalho-reballing-bga-laser-10000.webp",
+            "link_ml": "https://www.mercadolivre.com.br/estacao-de-retrabalho-reballing-bga-laser-10000/up/MLBU4128396704" 
         },
         {
             "titulo": "Controle Xbox 360 Sem Fio Original",
