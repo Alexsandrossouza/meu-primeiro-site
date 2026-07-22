@@ -24,8 +24,7 @@ def jogos():
         },
         {
             "titulo": "Resident Evil Operation Raccoon City",
-            "plataforma": "Xbox 360",
-            "plataforma": "Formato:XEX",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "5.430 GB",
             "imagem": "Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
             "link": "https://www.mediafire.com/file/2a69bohl9wnzd2x/REORC-XEX.rar/file"
@@ -35,7 +34,7 @@ def jogos():
             "plataforma": "Xbox 360",
             "tamanho": "16.5 GB",
             "imagem": "Grand-Theft-Auto-V.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
+            "link": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file"
         },
         {
             "titulo": "Gears of War 3",
@@ -49,7 +48,8 @@ def jogos():
             "plataforma": "Xbox 360",
             "tamanho": "5.5 GB",
             "imagem": "Assassin's creed rogue.jpg",
-            "link": "https://www.mediafire.com/file/willx6ys2qozko8/uGA&ugTkvX6a.rar/file"
+            "link_part1": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file",
+            "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part2.rar/file"
         },
         {
             "titulo": "Red Dead Redemption",
