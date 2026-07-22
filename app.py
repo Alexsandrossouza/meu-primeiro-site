@@ -16,6 +16,13 @@ def index():
 def jogos():
     lista_de_jogos = [
         {
+        "titulo": "GodStix",
+        "plataforma": "Xbox 360 - Formato: XEX",
+        "tamanho": "310 MB",
+        "imagem": "godstix.jpg",
+        "link": "/static/godstix-installer.zip"
+        },
+        {
             "titulo": "Minecraft",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "1.990 GB",
@@ -65,8 +72,10 @@ def jogos():
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "4.74 GB",
             "imagem": "ACE-6-X360-PackFront_FINAL.jpg",
-            "link": "https://www.mediafire.com/file/zm171ke4fs2pt7m/AC6FOL-XEX.rar/file"
-        },
+            "link_part1": "https://www.mediafire.com/file/hdnsmo5dd9okdjp/Ace_Combat_6_AnDreXplay.part1.rar/file",
+            "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
+        
+        }, 
         {
             "titulo": "Gears of War 3",
             "plataforma": "Xbox 360-Formato:XEX",
