@@ -17,7 +17,7 @@ def jogos():
     lista_de_jogos = [
         {
             "titulo": "Minecraft",
-            "plataforma": "Xbox 360",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "1.990 GB",
             "imagem": "Minecraft-Xbox-360-Edition.jpg",
             "link": "https://www.mediafire.com/file/nzhg7ertaij3o2w/M-X360-E-DLC-TU-XBLA.rar/file"
@@ -31,7 +31,7 @@ def jogos():
         },
         {
             "titulo": "Grand Theft Auto V",
-            "plataforma": "Xbox 360",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "16.5 GB",
             "imagem": "Grand-Theft-Auto-V.jpg",
             "link_part1": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file",
@@ -39,14 +39,14 @@ def jogos():
         },
         {
             "titulo": "Gears of War 3",
-            "plataforma": "Xbox 360",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7.5 GB",
             "imagem": "Gears-of-War-3-scaled.jpg",
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
         },
         {
             "titulo": "Assassin's creed rogue",
-            "plataforma": "Xbox 360",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "5.58 GB",
             "imagem": "Assassin's creed rogue.jpg",
             "link": "https://www.mediafire.com/file/b7c7ta1w0ok19g3/ACR-XEX.rar/file"
@@ -54,36 +54,36 @@ def jogos():
         },
         {
             "titulo": "Red Dead Redemption",
-            "plataforma": "Xbox 360",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "5.58 GB",
             "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
             "link_part1": "https://www.mediafire.com/file/6adboemuos4q8tu/lRIdF9u$UZh.part1.rar/file",
             "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
         },
         {
-            "titulo": "Grand Theft Auto V",
-            "plataforma": "Xbox 360",
-            "tamanho": "16.5 GB",
-            "imagem": "gta-v.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GTA"
+            "titulo": "Ace Combat 6 Fires Of Liberation",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "4.74 GB",
+            "imagem": "ACE-6-X360-PackFront_FINAL.jpg",
+            "link": "https://www.mediafire.com/file/zm171ke4fs2pt7m/AC6FOL-XEX.rar/file"
         },
         {
             "titulo": "Gears of War 3",
-            "plataforma": "Xbox 360",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7.5 GB",
             "imagem": "gears-of-war-3.jpg",
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
         },
         {
             "titulo": "skyrim",
-            "plataforma": "Xbox 360",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "4.36 GB",
             "imagem": "skyrim.jpg",
             "link": "https://www.mediafire.com/file/iguca3f8nfnb71y/6%2525NBmVHwdPY%2526.rar/file"
         },
         {
             "titulo": "Assassin's Creed Rogue",
-            "plataforma": "Xbox 360",
+            "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7.5 GB",
             "imagem": "gears-of-war-3.jpg",
             "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
