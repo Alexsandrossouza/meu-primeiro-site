@@ -115,21 +115,21 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/estacao-de-retrabalho-reballing-bga-laser-10000/up/MLBU4128396704" 
         },
         {
-            "titulo": "Controle Xbox 360 Sem Fio Original",
-            "preco": "R$ 150,00",
-            "imagem": "controle-anuncio2.jpg",
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 0,00",
+            "imagem": "fundo.jpg.png",
             "link_ml": "https://mercadolivre.com.br"
         },
         {
-            "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
-            "preco": "R$ 450,00",
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
             "imagem": "fundo.jpg.png",
             "link_ml": "https://mercadolivre.com.br" 
         },
         {
-            "titulo": "Controle Xbox 360 Sem Fio Original",
-            "preco": "R$ 150,00",
-            "imagem": "controle-anuncio2.jpg",
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
             "link_ml": "https://mercadolivre.com.br"
         }
         
