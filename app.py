@@ -80,7 +80,7 @@ def jogos():
             "titulo": "Alice-Madness-Returns-X360",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "2.1 / 2.1 GB",
-            "imagem": "Alice-Madness-Returns-X360.jpg",
+            "imagem": "Alice-Madness-Returns-X360.webp",
             "link_part1": "https://send.now/8ph8gtwv7on7",
             "link_part2": "https://send.now/7rxsxftbp9ia"
         },
