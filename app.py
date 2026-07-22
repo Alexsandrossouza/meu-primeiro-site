@@ -77,11 +77,12 @@ def jogos():
         
         }, 
         {
-            "titulo": "Gears of War 3",
+            "titulo": "Alice-Madness-Returns-X360",
             "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "7.5 GB",
-            "imagem": "gears-of-war-3.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
+            "tamanho": "2.1 / 2.1 GB",
+            "imagem": "Alice-Madness-Returns-X360.jpg",
+            "link_part1": "https://send.now/8ph8gtwv7on7",
+            "link_part2": "https://send.now/7rxsxftbp9ia"
         },
         {
             "titulo": "skyrim",
