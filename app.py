@@ -19,7 +19,7 @@ def jogos():
         "titulo": "GodStix",
         "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "310 MB",
-        "imagem": "godstix.jpg",
+        "imagem": "logo menor godstix.gpeg",
         "link": "/static/godstix-installer.zip"
         },
         {
