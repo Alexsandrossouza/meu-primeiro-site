@@ -18,16 +18,17 @@ def jogos():
         {
             "titulo": "Minecraft",
             "plataforma": "Xbox 360",
-            "tamanho": "1.460 GB",
+            "tamanho": "1.990 GB",
             "imagem": "Minecraft-Xbox-360-Edition.jpg",
-            "link": "https://sto1.romsforever.co/0:/Xbox-360-Digital/Minecraft%20-%20Xbox%20360%20Edition%20(World)%20(v61)%20(Title%20Update).zip?token=c3xZcFthXAVOQyAgUX5VMw4ATkUlcFl%2BVmZQAk4VdXMNfgBmCQAIEHZ8XXFYZFFRRg%3D%3D"
+            "link": "https://www.mediafire.com/file/nzhg7ertaij3o2w/M-X360-E-DLC-TU-XBLA.rar/file"
         },
         {
             "titulo": "Resident Evil Operation Raccoon City",
             "plataforma": "Xbox 360",
-            "tamanho": "4.2 GB",
+            "plataforma": "Formato:XEX",
+            "tamanho": "5.430 GB",
             "imagem": "Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-SEU-LINK-AQUI"
+            "link": "https://www.mediafire.com/file/2a69bohl9wnzd2x/REORC-XEX.rar/file"
         },
         {
             "titulo": "Grand Theft Auto V",
