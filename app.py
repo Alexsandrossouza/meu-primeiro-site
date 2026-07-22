@@ -34,7 +34,8 @@ def jogos():
             "plataforma": "Xbox 360",
             "tamanho": "16.5 GB",
             "imagem": "Grand-Theft-Auto-V.jpg",
-            "link": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file"
+            "link_part1": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file",
+            "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part2.rar/file"
         },
         {
             "titulo": "Gears of War 3",
@@ -46,15 +47,15 @@ def jogos():
         {
             "titulo": "Assassin's creed rogue",
             "plataforma": "Xbox 360",
-            "tamanho": "5.5 GB",
+            "tamanho": "5.58 GB",
             "imagem": "Assassin's creed rogue.jpg",
-            "link_part1": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file",
-            "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part2.rar/file"
+            "link": "https://www.mediafire.com/file/b7c7ta1w0ok19g3/ACR-XEX.rar/file"
+            
         },
         {
             "titulo": "Red Dead Redemption",
             "plataforma": "Xbox 360",
-            "tamanho": "7.5 GB",
+            "tamanho": "5.58 GB",
             "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
             "link_part1": "https://www.mediafire.com/file/6adboemuos4q8tu/lRIdF9u$UZh.part1.rar/file",
             "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
