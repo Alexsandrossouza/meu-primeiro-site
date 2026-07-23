@@ -20,7 +20,7 @@ def jogos():
         "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "310 MB",
         "imagem": "logo menor godstix.jpeg",
-        "link": "/static/godstix-installer.zip"
+        "link": "https://4br.me/godstix""
         },
         {
             "titulo": "Minecraft",
@@ -110,7 +110,7 @@ def produtos():
     meus_anuncios = [
         {
             "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
-            "preco": "R$ 1450,00",
+            "preco": "R$ 1490,00",
             "imagem": "xbox360 call of duty.webp",
             "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
         },
