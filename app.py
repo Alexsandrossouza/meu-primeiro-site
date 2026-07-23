@@ -127,14 +127,14 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/estacao-de-retrabalho-reballing-bga-laser-10000/up/MLBU4128396704" 
         },
         {
-            "titulo": "Logo mais novidades",
+            "titulo": "Controle Xbox Wireless",
             "preco": "R$ 0,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br"
+            "imagem": "Controle Xbox Wireless.webp",
+            "link_ml": "https://meli.la/31BVKKm"
         },
         {
             "titulo": "Logo mais novidades",
-            "preco": "R$ 00,00",
+            "preco": "R$ 449,00",
             "imagem": "fundo.jpg.png",
             "link_ml": "https://mercadolivre.com.br" 
         },
