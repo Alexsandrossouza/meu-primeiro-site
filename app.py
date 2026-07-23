@@ -20,7 +20,7 @@ def jogos():
         "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "310 MB",
         "imagem": "logo menor godstix.jpeg",
-        "link": "https://4br.me/godstix""
+        "link": "https://4br.me/godstix"
         },
         {
             "titulo": "Minecraft",
