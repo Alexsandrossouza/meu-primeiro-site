@@ -43,8 +43,17 @@
     </nav>
         <a href="https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" target="_blank" class="btn-verde btn-comprar" style="text-decoration: none; display: inline-block;">Comprar agora</a>   
     </header>
-        <main class="container-jogos">
+        <main class="container-produtos">
         <h1 class="titulo-pagina">Anúncios no Mercado Livre</h1>
+        <!-- BARRA DE BUSCA -->
+        <div class="busca-container">
+            <input type="text" id="campoBusca" placeholder="Pesquise seu produto...">
+        </div>
+
+        <!-- MENSAGEM DE NÃO ENCONTRADO -->
+        <div id="mensagemNaoEncontrado" style="display: none; text-align: center; color: #94a3b8; margin-top: 20px; font-weight: bold;">
+            Este produto não foi encontrado em nosso site.
+        </div>
 
         <div class="grid-jogos">
             {% for anuncio in anuncios %}
