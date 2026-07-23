@@ -143,6 +143,84 @@ def produtos():
             "preco": "R$ 00,00",
             "imagem": "fundo.jpg.png",
             "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
+        },
+        {
+            "titulo": "Logo mais novidades",
+            "preco": "R$ 00,00",
+            "imagem": "fundo.jpg.png",
+            "link_ml": "https://mercadolivre.com.br"
         }
         
     ]
