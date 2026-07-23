@@ -128,15 +128,15 @@ def produtos():
         },
         {
             "titulo": "Controle Xbox Wireless",
-            "preco": "R$ 0,00",
+            "preco": "R$ 449,00",
             "imagem": "Controle Xbox Wireless.webp",
             "link_ml": "https://meli.la/31BVKKm"
         },
         {
-            "titulo": "Logo mais novidades",
-            "preco": "R$ 449,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br" 
+            "titulo": "Bateria Controle Para Xbox Séries S X 1200mah Cabo 3m",
+            "preco": "R$ 58,99",
+            "imagem": "Bateria Controle Para Xbox Séries S X 1200mah Cabo 3m.webp",
+            "link_ml": "https://meli.la/1imnURo" 
         },
         {
             "titulo": "Logo mais novidades",
