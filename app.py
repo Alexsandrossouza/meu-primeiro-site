@@ -49,7 +49,7 @@ def jogos():
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7.5 GB",
             "imagem": "Gears-of-War-3-scaled.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
+            "link": "https://www.mediafire.com/file/gzsi3qy0lnsu70o/G3%25E2%2588%2586R%2524_o_WIII_%2528TriploPlay_BR%2529.rar/file"
         },
         {
             "titulo": "Assassin's creed rogue",
