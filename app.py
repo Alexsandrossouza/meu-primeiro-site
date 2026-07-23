@@ -141,7 +141,7 @@ def produtos():
         {
             "titulo": "Adaptador Videogame Game Stick M15 2 Controles Game Stick",
             "preco": "R$ 189,90",
-            "imagem": "Adaptador Videogame Game Stick M15 2 Controles Game Stick,webp",
+            "imagem": "Adaptador Videogame Game Stick M15 2 Controles Game Stick.webp",
             "link_ml": "https://meli.la/2HXaJs1"
         },
         {
