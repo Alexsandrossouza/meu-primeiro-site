@@ -139,16 +139,16 @@ def produtos():
             "link_ml": "https://meli.la/1imnURo" 
         },
         {
-            "titulo": "Logo mais novidades",
-            "preco": "R$ 00,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br"
+            "titulo": "Adaptador Videogame Game Stick M15 2 Controles Game Stick",
+            "preco": "R$ 189,90",
+            "imagem": "Adaptador Videogame Game Stick M15 2 Controles Game Stick,webp",
+            "link_ml": "https://meli.la/2HXaJs1"
         },
         {
-            "titulo": "Logo mais novidades",
-            "preco": "R$ 00,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br"
+            "titulo": "Pc Gamer Completo I7 3.4ghz 16gb Ssd 480gb 500w Monitor 19",
+            "preco": "R$ 2026,58",
+            "imagem": "Pc Gamer Completo I7 3.4ghz 16gb Ssd 480gb 500w Monitor 19.webp",
+            "link_ml": "https://meli.la/1okF9RD"
         },
         {
             "titulo": "Logo mais novidades",
