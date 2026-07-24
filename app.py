@@ -36,7 +36,7 @@ def jogos():
             "titulo": "Resident Evil Operation Raccoon City",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "5.430 GB",
-            "categoria": "acao",
+            "categoria": "terror",
             "imagem": "Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
             "link": "https://www.mediafire.com/file/2a69bohl9wnzd2x/REORC-XEX.rar/file"
         },
