@@ -151,7 +151,7 @@ def produtos():
             "link_ml": "https://meli.la/1okF9RD"
         },
         {
-            "titulo": "Smart TV 4K 50",
+            "titulo": "Smart TV 4K 50 LG Portal de Games Processador AI α7 Ger8 4K",
             "preco": "R$ 2.351,31",
             "imagem": "Smart TV 4K 50.webp",
             "link_ml": "https://meli.la/23HsZa6"
