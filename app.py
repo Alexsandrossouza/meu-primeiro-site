@@ -176,7 +176,7 @@ def produtos():
         },
         {
             "titulo": "Fonte Para Xbox 360 Slim Bivolt Conector 2 Pinos Com Cabo De Energia",
-            "preco": "R$ 62,00",
+            "preco": "R$ 99,00",
             "imagem": "Fonte Para Xbox 360 Slim.webp",
             "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482?matt_event_ts=1784855371221&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=bc9b8d58-7167-45fe-92c0-2d58299a47f6#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=09ae3e1d-fc7c-4df2-a245-402526c490f5&tracking_id=b41e3428-1dc0-479b-aa2e-ea5fe448d6b0&c_id=/home/card-featured/element&c_uid=b53849f6-547f-43df-957f-29de2303d02f"
         },
