@@ -42,7 +42,7 @@ def jogos():
         {   
         
             "titulo": "Grand Theft Auto V",
-            "card-jogo": "Ação",
+            "card-jogo": "acao",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "16.5 GB",
             "imagem": "Grand-Theft-Auto-V.jpg",
@@ -51,7 +51,7 @@ def jogos():
         },
         {   
             "titulo": "Gears of War 3",
-            "card-jogo": "Ação",
+            "card-jogo": "acao",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7.5 GB",
             "imagem": "Gears-of-War-3-scaled.jpg",
