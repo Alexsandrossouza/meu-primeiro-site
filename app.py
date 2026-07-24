@@ -157,10 +157,10 @@ def produtos():
             "link_ml": "https://meli.la/23HsZa6"
         },
         {
-            "titulo": "Logo mais novidades",
-            "preco": "R$ 00,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br"
+            "titulo": "Bicicleta Elétrica Starmega V8 750W Preto",
+            "preco": "R$ 5.930",
+            "imagem": "Bicicleta Elétrica Starmega V8 750W Preto.webp",
+            "link_ml": "https://meli.la/1kZjs4K"
         },
         {
             "titulo": "Logo mais novidades",
