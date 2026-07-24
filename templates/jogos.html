@@ -44,56 +44,7 @@
         
     </nav>
 </header>
-<main class="container-jogos">
 
-    <!-- BOTÕES DE FILTRO DE GÊNERO -->
-    <div class="tags-container">
-        <button class="tag-btn active" onclick="filtrar('todos', this)">Todos</button>
-        <button class="tag-btn" onclick="filtrar('acao', this)">Ação</button>
-        <button class="tag-btn" onclick="filtrar('corrida', this)">Corrida</button>
-        <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
-        <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
-    </div>
-
-    <!-- GRADE COM OS CARDS DOS JOGOS -->
-    <div class="grid-jogos">
-        {% for jogo in jogos %}
-        <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
-            
-            <!-- CAPA DO JOGO -->
-            <div class="capa-box">
-                <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
-            </div>
-
-            <!-- INFORMAÇÕES DO JOGO -->
-            <div class="card-info">
-                <h3>{{ jogo.titulo }}</h3>
-                <span class="badge">{{ jogo.plataforma }}</span>
-                <p class="detalhes">Tamanho: {{ jogo.tamanho }}</p>
-            </div>
-
-            <!-- BOTÃO DE TRAILER (Abre o Vídeo no Popup) -->
-            {% if jogo.trailer %}
-            <button class="btn-trailer" onclick="abrirVideo('{{ jogo.trailer }}')">
-                ▶ Assistir Trailer
-            </button>
-            {% endif %}
-
-            <!-- BOTÕES DE DOWNLOAD -->
-            <div class="botoes-container">
-                {% if jogo.link_part1 %}
-                    <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
-                    <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
-                {% else %}
-                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
-                {% endif %}
-            </div>
-
-        </div>
-        {% endfor %}
-    </div>
-
-</main>
 
 
     <!-- CONTEÚDO PRINCIPAL DOS JOGOS -->
