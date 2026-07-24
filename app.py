@@ -22,7 +22,7 @@ def jogos():
         "categoria": "app",                                      # <--- Categoria AQUI
         "imagem": "logo menor godstix.jpeg",                     # <--- Imagem do jogo AQUI
         "link": "https://4br.me/godstix",                        # <--- link do jogo AQUI
-        "video": "https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=Wt01fROQNUM" # <--- VÍDEO AQUI
+        "video": "https://www.youtube.com/watch?v=Wt01fROQNUM" # <--- VÍDEO AQUI
                        
         },
         {
