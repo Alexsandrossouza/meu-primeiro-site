@@ -151,10 +151,10 @@ def produtos():
             "link_ml": "https://meli.la/1okF9RD"
         },
         {
-            "titulo": "Logo mais novidades",
-            "preco": "R$ 00,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br"
+            "titulo": "Smart TV 4K 50",
+            "preco": "R$ 2.351,31",
+            "imagem": "Smart TV 4K 50.webp",
+            "link_ml": "https://meli.la/23HsZa6"
         },
         {
             "titulo": "Logo mais novidades",
