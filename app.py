@@ -140,7 +140,7 @@ def produtos():
         },
         {
             "titulo": "Controle Xbox Wireless",
-            "preco": "R$ 449,00",
+            "preco": "R$ 453,00",
             "imagem": "Controle Xbox Wireless.webp",
             "link_ml": "https://www.mercadolivre.com.br/controle-xbox-wireless-series-xs-carbon-black/p/MLB16268160?matt_event_ts=1784854788466&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=f378a9c6-f5db-4f85-9431-9179d9ca369c#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=7227b8a6-476c-473c-ab96-cc9326b19a6e&tracking_id=d9d292f1-9185-4aa5-8b22-d3b7358331c3&c_id=/home/card-featured/element&c_uid=3ab3fc9c-94f0-4867-9c4e-9c917f03f5a8"
         },
