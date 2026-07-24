@@ -16,12 +16,13 @@ def index():
 def jogos():
     lista_de_jogos = [
         {
-        "titulo": "GodStix",
-        "plataforma": "Xbox 360 - Formato: XEX",
-        "tamanho": "310 KB",
-        "categoria": "app",
-        "imagem": "logo menor godstix.jpeg",
-        "link": "https://4br.me/godstix",
+        "titulo": "GodStix",                                     # <--- Nome do jogo AQUI
+        "plataforma": "Xbox 360 - Formato: XEX",                 # <--- Plataforma e formato do jogo AQUI
+        "tamanho": "310 KB",                                     # <--- Tamanho do jogo AQUI
+        "categoria": "app",                                      # <--- Categoria AQUI
+        "imagem": "logo menor godstix.jpeg",                     # <--- Imagem do jogo AQUI
+        "link": "https://4br.me/godstix",                        # <--- link do jogo AQUI
+        "video": "https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=Wt01fROQNUM" # <--- VÍDEO AQUI
                        
         },
         {
