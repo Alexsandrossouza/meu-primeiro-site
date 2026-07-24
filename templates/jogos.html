@@ -56,49 +56,79 @@
             <input type="text" id="campoBusca" placeholder="Pesquise seu jogo...">
         </div>
 
-   <main class="container-jogos">
-
-    <!-- BOTÕES DE FILTRO -->
-    <div class="tags-container">
-        <button class="tag-btn active" onclick="filtrar('todos', this)">Todos</button>
-        <button class="tag-btn" onclick="filtrar('acao', this)">Ação</button>
-        <button class="tag-btn" onclick="filtrar('corrida', this)">Corrida</button>
-        <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
-        <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
-    </div>
-
-    <!-- GRADE DINÂMICA (PUXA TUDO DO APP.PY) -->
-    <div class="grid-jogos">
-        {% for jogo in jogos %}
-        <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
-            
-            <div class="capa-box">
-                <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
-            </div>
-
-            <div class="card-info">
-                <h3>{{ jogo.titulo }}</h3>
-                <span class="badge">{{ jogo.plataforma }}</span>
-                <p class="detalhes">Tamanho: {{ jogo.tamanho }}</p>
-            </div>
-
-            {% if jogo.trailer %}
-            <button class="btn-trailer" onclick="abrirVideo('{{ jogo.trailer }}')">
-                ▶ Assistir Trailer
-            </button>
-            {% endif %}
-
-            <div class="botoes-container">
-                {% if jogo.link_part1 %}
-                    <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
-                    <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
-                {% else %}
-                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
-                {% endif %}
-            </div>
-
+        <!-- MENSAGEM DE NÃO ENCONTRADO -->
+        <div id="mensagemNaoEncontrado" style="display: none; text-align: center; color: #94a3b8; margin-top: 20px; font-weight: bold;">
+            Este jogo não foi encontrado em nosso site.
         </div>
-        {% endfor %}
+        <!-- BOTOES DE FILTRO (TAGS) -->
+    <div class="tags-container">
+    <button class="tag-btn active" onclick="filtrar('todos', this)">Todos</button>
+    <button class="tag-btn" onclick="filtrar('acao', this)">Ação</button>
+    <button class="tag-btn" onclick="filtrar('corrida', this)">Corrida</button>
+    <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
+    <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
+</div>
+
+        <!-- GRADE COM OS 5 BALÕES POR FILA -->
+        <div class="grid-jogos">
+            {% for jogo in jogos %}
+                <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
+                    <!-- FOTO DO JOGO -->
+                    <div class="capa-box">
+                        <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
+                    </div>
+
+                    <!-- INFORMAÇÕES DO CARD -->
+                    <div class="card-info">
+                        <h3>{{ jogo.titulo }}</h3>
+                        <span class="badge">{{ jogo.plataforma }}</span>
+                        <p class="detalhes">Tamanho: {{ jogo.tamanho }}</p>
+
+                        <!-- BOTÕES DE DOWNLOAD -->
+                        <div class="botoes-container">
+                            {% if jogo.link_part1 %}
+                                <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
+                                <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
+                            {% else %}
+                                <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+      
+<!-- LISTA DE JOGOS -->
+<div class="jogos-grid">
+
+    <!-- 1. JOGO: GTA V (Categoria: Ação) -->
+        <div class="card-jogo" data-categoria="acao">
+        <img src="static/gta5.jpg" alt="GTA V">
+        <h3>Grand Theft Auto V</h3>
+        <p class="formato">Xbox 360 - Formato: XEX</p>
+        <p class="tamanho">Tamanho: 16.5 GB</p>
+        
+        <!-- Botão para acionar a janela popup do vídeo -->
+        <button class="btn-trailer" onclick="abrirVideo('https://www.youtube.com/embed/QkkoHAzjinY')">
+            ▶ Assistir Trailer
+        </button>
     </div>
 
-</main>
+    <div class="card-jogo" data-categoria="corrida">
+        <h3>Forza Horizon</h3>
+        <button onclick="abrirVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">▶ Ver Vídeo</button>
+    </div>
+    </main>
+
+    <!-- Seu arquivo JavaScript original que faz a busca funcionar -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- JANELA FLUTUANTE DO VIDEO -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharVideo()">&times;</span>
+            <iframe id="youtubeIframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
