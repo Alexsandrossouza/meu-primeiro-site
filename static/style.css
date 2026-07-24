@@ -35,6 +35,25 @@ body {
     z-index: 100;
 }
 
+.btn-video {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #00ff66; /* Verde Xbox */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-video:hover {
+    background-color: #00ff66;
+    color: #000000;
+}
+
 .logo {
     font-size: 1.3rem;
     font-weight: 900;
