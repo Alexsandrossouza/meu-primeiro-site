@@ -125,12 +125,13 @@ def jogos():
             "link": "https://4br.me/0zkNnxq61"
         },
         {
-            "titulo": "RESIDENT EVIL 6 BR",
+            "titulo": "Cover Call of Duty Black Ops II",
             "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "7,27 GB",
+            "tamanho": "3,9 / 3,3 GB",
             "categoria": "acao",
-            "imagem": "RESIDENT EVIL 6 BR.webp",
-            "link": "https://4br.me/0zkNnxq61"
+            "imagem": "Cover Call of Duty Black Ops II.webp",
+            "link_part1": "https://4br.me/fQPWXmbK",
+            "link_part2": "https://4br.me/BiU9BmkwJ"
         },
         {
             "titulo": "RESIDENT EVIL 6 BR",
@@ -151,7 +152,7 @@ def jogos():
         {
             "titulo": "RESIDENT EVIL 6 BR",
             "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "7,27 GB",
+            "tamanho": "3,9 / 3,3 GB",
             "categoria": "acao",
             "imagem": "RESIDENT EVIL 6 BR.webp",
             "link": "https://4br.me/0zkNnxq61"
