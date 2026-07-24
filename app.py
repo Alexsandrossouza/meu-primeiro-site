@@ -117,7 +117,7 @@ def jogos():
 
         },
         {
-            "titulo": "RESIDENT EVIL 6 BR",
+            "titulo": "RESIDENT EVIL 6 BR Senha:RAFARGH6",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7,27 GB",
             "categoria": "terror",
