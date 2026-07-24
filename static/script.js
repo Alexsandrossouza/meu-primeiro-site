@@ -50,5 +50,24 @@ function filtrar(categoria) {
         } else {
             card.style.display = 'none';
         }
+        function filtrar(categoria, elemento) {
+    // 1. Filtra os cards dos jogos
+    const cards = document.querySelectorAll('.card-jogo');
+    cards.forEach(card => {
+        if (categoria === 'todos' || card.getAttribute('data-categoria') === categoria) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    // 2. Atualiza qual botão de filtro está destacado/ativo
+    const botoes = document.querySelectorAll('.tag-btn');
+    botoes.forEach(btn => btn.classList.remove('active'));
+    
+    if (elemento) {
+        elemento.classList.add('active');
+    }
+}
     });
 }
