@@ -115,10 +115,10 @@ def jogos():
         {
             "titulo": "RESIDENT EVIL 6 BR",
             "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "7.5 GB",
+            "tamanho": "6 GB",
             "categoria": "acao",
             "imagem": "RESIDENT EVIL 6 BR.webp",
-            "link": "https://1024terabox.com/s/1CfOwg4sw7WD4bD3NXvL9LQ"
+            "link": "https://4br.me/0zkNnxq61"
         }
     ] # Fecha corretamente a lista_de_jogos
     
