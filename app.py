@@ -170,7 +170,7 @@ def produtos():
         },
         {
             "titulo": "Bicicleta Elétrica Starmega V8 750W Preto",
-            "preco": "R$ 5.930",
+            "preco": "R$ 5.930,15",
             "imagem": "Bicicleta Elétrica Starmega V8 750W Preto.webp",
             "link_ml": "https://www.mercadolivre.com.br/bicicleta-eletrica-starmega-v8-750w-preto-32kmh-bateria-48v-50km-autonomia/p/MLB62709217?matt_event_ts=1784852452281&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=3bffc0b2-8743-401c-973f-e089abf38584#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e08982cd-74f0-4f0d-822f-df58384d2dc4&tracking_id=bfebed83-e8a2-4c67-b27d-12304a1ff151&c_id=/home/card-featured/element&c_uid=06724b41-cd72-430c-8500-eaf921b72d4a"
         },
