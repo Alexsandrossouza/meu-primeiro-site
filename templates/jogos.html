@@ -58,7 +58,7 @@
             <button class="tag-btn" onclick="filtrar('acao', this)">Ação</button>
             <button class="tag-btn" onclick="filtrar('app', this)">App</button>
             <button class="tag-btn" onclick="filtrar('corrida', this)">Corrida</button>
-            <button class="tag-btn" onclick="filtrar('emulador', this)">Emulador</button><button class="tag-btn" onclick="filtrar('corrida', this)">Corrida</button>
+            <button class="tag-btn" onclick="filtrar('emulador', this)">Emulador</button>
             <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
             <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
             <button class="tag-btn" onclick="filtrar('terror', this)">Terror</button>
@@ -96,6 +96,9 @@
                                 <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
                             {% else %}
                                 <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
+                                <!-- NOVO BOTÃO DE VÍDEO (Abaixo do download) -->
+                            {% if jogo.video %}
+                                <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;"> ▶ Assistir Vídeo  </a>
                             {% endif %}
                         </div>
                     </div>

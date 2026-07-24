@@ -22,7 +22,7 @@ def jogos():
         "categoria": "app",
         "imagem": "logo menor godstix.jpeg",
         "link": "https://4br.me/godstix",
-                
+                       
         },
         {
             "titulo": "Minecraft",
