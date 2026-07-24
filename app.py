@@ -113,12 +113,12 @@ def jogos():
 
         },
         {
-            "titulo": "Assassin's Creed Rogue",
+            "titulo": "RESIDENT EVIL 6 BR",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7.5 GB",
             "categoria": "acao",
-            "imagem": "gears-of-war-3.jpg",
-            "link": "https://produto.mercadolivre.com.br/MLB-LINK-GEARS"
+            "imagem": "RESIDENT EVIL 6 BR.jpg",
+            "link": "https://1024terabox.com/s/1CfOwg4sw7WD4bD3NXvL9LQ"
         }
     ] # Fecha corretamente a lista_de_jogos
     
