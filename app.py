@@ -104,6 +104,16 @@ def jogos():
             "link": "https://www.mediafire.com/file/iguca3f8nfnb71y/6%2525NBmVHwdPY%2526.rar/file"
         },
         {
+            "titulo": "Horizon",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "3.4 / 3.33 GB",
+            "categoria": "acao",
+            "imagem": "horizon.jpg",
+            "link_part1": "https://www.mediafire.com/file/8j9kyfwlbfinfzy/Forza_Horizon_AnDreXplay.part1.rar/file",
+            "link_part2": "https://www.mediafire.com/file/472dfnbantnzpbb/Forza_Horizon_AnDreXplay.part2.rar/file"
+
+        },
+        {
             "titulo": "Assassin's Creed Rogue",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7.5 GB",
