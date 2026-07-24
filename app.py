@@ -109,6 +109,12 @@ def jogos():
 def produtos():
     meus_anuncios = [
         {
+            "titulo": "Console Playstation 5 Slim Edição Digital 825 Gb",
+            "preco": "R$ 5.999",
+            "imagem": "Console Playstation 5 Slim Edição Digital 825 Gb.webp",
+            "link_ml": "https://www.mercadolivre.com.br/console-playstation-5-slim-edicao-digital-825-gb/p/MLB54963150?matt_event_ts=1784855563122&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=9b062123-ff53-48b4-b067-68aee2c88129#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=7355be09-2858-406d-8548-b2bea75a08ca&tracking_id=0e91f254-993b-4754-917a-4dd52d72b422&c_id=/home/card-featured/element&c_uid=e52090c4-6893-4538-a7e7-014145d6197e"
+        },
+        {
             "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
             "preco": "R$ 1490,00",
             "imagem": "xbox360 call of duty.webp",
@@ -125,6 +131,12 @@ def produtos():
             "preco": "R$ 3.500,00",
             "imagem": "D_NQ_NP_2X_815419-MLB110019916669_042026-F-estacao-de-retrabalho-reballing-bga-laser-10000.webp",
             "link_ml": "https://www.mercadolivre.com.br/estacao-de-retrabalho-reballing-bga-laser-10000/up/MLBU4128396704" 
+        },
+        {
+            "titulo": "Console Sony Playstation 5 Edição Slim Disk 1tb Branco",
+            "preco": "R$ 4.799",
+            "imagem": "Console Sony Playstation 5 Edição Slim Disk 1tb Branco.webp",
+            "link_ml": "https://www.mercadolivre.com.br/console-sony-playstation-5-edicao-slim-disk-1tb-branco-controle-sem-fio-dualsense-ps5-branco/p/MLB52897777?matt_event_ts=1784855828309&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=063eb4df-e25d-4b19-b2dd-00706c6865ce#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=cbe6155e-03a9-4679-aaab-7043d8c902c5&tracking_id=ef79fe72-937d-43a7-aae2-e3326b0bd274&c_id=/home/card-featured/element&c_uid=83431a9d-a1e6-4f68-8a58-95a3b01275d1"
         },
         {
             "titulo": "Controle Xbox Wireless",
@@ -163,16 +175,16 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/bicicleta-eletrica-starmega-v8-750w-preto-32kmh-bateria-48v-50km-autonomia/p/MLB62709217?matt_event_ts=1784852452281&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=3bffc0b2-8743-401c-973f-e089abf38584#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=e08982cd-74f0-4f0d-822f-df58384d2dc4&tracking_id=bfebed83-e8a2-4c67-b27d-12304a1ff151&c_id=/home/card-featured/element&c_uid=06724b41-cd72-430c-8500-eaf921b72d4a"
         },
         {
-            "titulo": "Logo mais novidades",
-            "preco": "R$ 00,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br"
+            "titulo": "Fonte Para Xbox 360 Slim Bivolt Conector 2 Pinos Com Cabo De Energia",
+            "preco": "R$ 62,00",
+            "imagem": "Fonte Para Xbox 360 Slim.webp",
+            "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482?matt_event_ts=1784855371221&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=bc9b8d58-7167-45fe-92c0-2d58299a47f6#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=09ae3e1d-fc7c-4df2-a245-402526c490f5&tracking_id=b41e3428-1dc0-479b-aa2e-ea5fe448d6b0&c_id=/home/card-featured/element&c_uid=b53849f6-547f-43df-957f-29de2303d02f"
         },
         {
-            "titulo": "Logo mais novidades",
-            "preco": "R$ 00,00",
-            "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br"
+            "titulo": "Console Sony Playstation 5 Edição Slim Disk 1tb Branco",
+            "preco": "R$ 4.799",
+            "imagem": "Console Sony Playstation 5 Edição Slim Disk 1tb Branco.webp",
+            "link_ml": "https://www.mercadolivre.com.br/console-sony-playstation-5-edicao-slim-disk-1tb-branco-controle-sem-fio-dualsense-ps5-branco/p/MLB52897777?matt_event_ts=1784855828309&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=063eb4df-e25d-4b19-b2dd-00706c6865ce#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=cbe6155e-03a9-4679-aaab-7043d8c902c5&tracking_id=ef79fe72-937d-43a7-aae2-e3326b0bd274&c_id=/home/card-featured/element&c_uid=83431a9d-a1e6-4f68-8a58-95a3b01275d1"
         },
         {
             "titulo": "Logo mais novidades",
