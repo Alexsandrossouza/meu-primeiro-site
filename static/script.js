@@ -27,5 +27,28 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             mensagemNaoEncontrado.style.display = 'block';
         }
+        
     });
 });
+// Funções para abrir e fechar o Modal do Vídeo
+function abrirVideo(linkYoutube) {
+    document.getElementById('youtubeIframe').src = linkYoutube + "?autoplay=1";
+    document.getElementById('videoModal').style.display = 'flex';
+}
+
+function fecharVideo() {
+    document.getElementById('youtubeIframe').src = "";
+    document.getElementById('videoModal').style.display = 'none';
+}
+
+// Função do Filtro por Gênero
+function filtrar(categoria) {
+    const cards = document.querySelectorAll('.card-jogo');
+    cards.forEach(card => {
+        if (categoria === 'todos' || card.getAttribute('data-categoria') === categoria) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}

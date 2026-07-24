@@ -112,5 +112,13 @@
 
     <!-- Seu arquivo JavaScript original que faz a busca funcionar -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- JANELA FLUTUANTE DO VIDEO -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharVideo()">&times;</span>
+            <iframe id="youtubeIframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
 </body>
 </html>
