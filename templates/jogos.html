@@ -62,13 +62,11 @@
             <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
             <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
             <button class="tag-btn" onclick="filtrar('terror', this)">Terror</button>
-        
         </div>
 
         <!-- GRADE COM OS JOGOS DO APP.PY -->
         <div class="grid-jogos">
             {% for jogo in jogos %}
-                <!-- AQUI FOI ADICIONADO O data-categoria -->
                 <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
                     
                     <!-- FOTO DO JOGO -->
@@ -82,23 +80,26 @@
                         <span class="badge">{{ jogo.plataforma }}</span>
                         <p class="detalhes">Tamanho: {{ jogo.tamanho }}</p>
 
-                        <!-- BOTÃO DE TRAILER (SE HOUVER TRAILER NO APP.PY) -->
+                        <!-- BOTÃO DE TRAILER -->
                         {% if jogo.trailer %}
                             <button class="btn-trailer" onclick="abrirVideo('{{ jogo.trailer }}')">
                                 ▶ Assistir Trailer
                             </button>
                         {% endif %}
 
-                        <!-- BOTÕES DE DOWNLOAD -->
+                        <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
                         <div class="botoes-container">
                             {% if jogo.link_part1 %}
                                 <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
                                 <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
                             {% else %}
                                 <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
-                                <!-- NOVO BOTÃO DE VÍDEO (Abaixo do download) -->
+                            {% endif %}
+
                             {% if jogo.video %}
-                                <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;"> ▶ Assistir Vídeo  </a>
+                                <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;">
+                                    ▶ Assistir Vídeo
+                                </a>
                             {% endif %}
                         </div>
                     </div>
