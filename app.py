@@ -29,6 +29,7 @@ def jogos():
             "titulo": "Minecraft",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "1.990 GB",
+            "categoria": "rpg",
             "imagem": "Minecraft-Xbox-360-Edition.jpg",
             "link": "https://www.mediafire.com/file/nzhg7ertaij3o2w/M-X360-E-DLC-TU-XBLA.rar/file"
         },
