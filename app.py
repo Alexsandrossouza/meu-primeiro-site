@@ -39,6 +39,14 @@ def jogos():
             "imagem": "Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
             "link": "https://www.mediafire.com/file/2a69bohl9wnzd2x/REORC-XEX.rar/file"
         },
+        {
+          "titulo": "Grand Theft Auto V",
+          "plataforma": "Xbox 360 - Formato: XEX",
+          "tamanho": "16.5 GB",
+          "imagem": "gta5.jpg",
+          "categoria": "acao",
+          "link": "https://..."
+        },
         {   
         
             "titulo": "Grand Theft Auto V",
