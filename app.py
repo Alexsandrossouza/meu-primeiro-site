@@ -232,7 +232,7 @@ def produtos():
             "titulo": "Logo mais novidades",
             "preco": "R$ 00,00",
             "imagem": "fundo.jpg.png",
-            "link_ml": "https://mercadolivre.com.br"
+            "link_ml": #"https://www.mercadolivre.com.br/regua-extensao-eletrica-6-tomadas-filtro-linha-10a-cabo-1-metro/p/MLB48564616?matt_event_ts=1784856595936&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=d5513f86-25b6-42c1-ab65-0a1488bace0c#reviews"
         }
         
     ]
