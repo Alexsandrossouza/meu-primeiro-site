@@ -88,6 +88,26 @@
                 </div>
             {% endfor %}
         </div>
+        <!-- BOTOES DE FILTRO (TAGS) -->
+    <div class="tags-container">
+    <button class="tag-btn active" onclick="filtrar('todos')">Todos</button>
+    <button class="tag-btn" onclick="filtrar('acao')">Ação</button>
+    <button class="tag-btn" onclick="filtrar('corrida')">Corrida</button>
+    <button class="tag-btn" onclick="filtrar('futebol')">Futebol</button>
+    <button class="tag-btn" onclick="filtrar('rpg')">RPG</button>
+</div>
+
+<!-- LISTA DE JOGOS -->
+<div class="jogos-grid">
+    <div class="card-jogo" data-categoria="acao">
+        <h3>GTA V</h3>
+        <button onclick="abrirVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">▶ Ver Vídeo</button>
+    </div>
+
+    <div class="card-jogo" data-categoria="corrida">
+        <h3>Forza Horizon</h3>
+        <button onclick="abrirVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">▶ Ver Vídeo</button>
+    </div>
     </main>
 
     <!-- Seu arquivo JavaScript original que faz a busca funcionar -->
