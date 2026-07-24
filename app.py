@@ -82,6 +82,7 @@ def jogos():
             "titulo": "Ace Combat 6 Fires Of Liberation",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "4.74 GB",
+            "categoria": "acao",
             "imagem": "ACE-6-X360-PackFront_FINAL.jpg",
             "link_part1": "https://www.mediafire.com/file/hdnsmo5dd9okdjp/Ace_Combat_6_AnDreXplay.part1.rar/file",
             "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
@@ -91,6 +92,7 @@ def jogos():
             "titulo": "Alice-Madness-Returns-X360",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "2.1 / 2.1 GB",
+            "categoria": "acao",
             "imagem": "Alice-Madness-Returns-X360.webp",
             "link_part1": "https://send.now/8ph8gtwv7on7",
             "link_part2": "https://send.now/7rxsxftbp9ia"
@@ -99,6 +101,7 @@ def jogos():
             "titulo": "skyrim",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "4.36 GB",
+            "categoria": "acao",
             "imagem": "skyrim.jpg",
             "link": "https://www.mediafire.com/file/iguca3f8nfnb71y/6%2525NBmVHwdPY%2526.rar/file"
         },
@@ -106,7 +109,7 @@ def jogos():
             "titulo": "Horizon",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "3.4 / 3.33 GB",
-            "categoria": "acao",
+            "categoria": "corrida",
             "imagem": "horizon.jpg",
             "link_part1": "https://www.mediafire.com/file/8j9kyfwlbfinfzy/Forza_Horizon_AnDreXplay.part1.rar/file",
             "link_part2": "https://www.mediafire.com/file/472dfnbantnzpbb/Forza_Horizon_AnDreXplay.part2.rar/file"
@@ -116,7 +119,7 @@ def jogos():
             "titulo": "RESIDENT EVIL 6 BR",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "7,27 GB",
-            "categoria": "acao",
+            "categoria": "terror",
             "imagem": "RESIDENT EVIL 6 BR.webp",
             "link": "https://4br.me/0zkNnxq61"
         },
