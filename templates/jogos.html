@@ -71,7 +71,7 @@
         <!-- GRADE COM OS 5 BALÕES POR FILA -->
         <div class="grid-jogos">
             {% for jogo in jogos %}
-                <div class="card-jogo">
+                <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
                     <!-- FOTO DO JOGO -->
                     <div class="capa-box">
                         <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
@@ -109,7 +109,7 @@
 <div class="jogos-grid">
 
     <!-- 1. JOGO: GTA V (Categoria: Ação) -->
-    <div class="card-jogo" data-categoria="acao">
+        <div class="card-jogo" data-categoria="acao">
         <img src="static/gta5.jpg" alt="GTA V">
         <h3>Grand Theft Auto V</h3>
         <p class="formato">Xbox 360 - Formato: XEX</p>
