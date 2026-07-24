@@ -4,11 +4,7 @@
     <!-- Ícone da aba do navegador (Favicon) -->
     <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
 
-    <!-- O restante das suas tags head continua aqui -->
-</head>
-
-    <!-- GOOGLE ANALYTICS AQUI -->
-    <!-- Google tag (gtag.js) -->
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -28,24 +24,19 @@
 
     <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
     <header class="navbar">
-    <!-- 1. Clicar no logo também vai levar para o Início -->
-    <a href="/" style="text-decoration: none; color: inherit;">
-        <div class="logo">
-            <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
-        </div>
-    </a>
+        <a href="/" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
+            </div>
+        </a>
 
-    <nav class="nav-links">
-        <!-- 2. O link Início agora aponta para a raiz do site -->
-        <a href="/">Início</a>        
-        <a href="/produtos">Produto</a>
-        <a href="/jogos">Jogos</a>
-        <a href="#">Planos</a>
-        
-    </nav>
-</header>
-
-
+        <nav class="nav-links">
+            <a href="/">Início</a>        
+            <a href="/produtos">Produto</a>
+            <a href="/jogos">Jogos</a>
+            <a href="#">Planos</a>
+        </nav>
+    </header>
 
     <!-- CONTEÚDO PRINCIPAL DOS JOGOS -->
     <main class="container-jogos">
@@ -60,19 +51,22 @@
         <div id="mensagemNaoEncontrado" style="display: none; text-align: center; color: #94a3b8; margin-top: 20px; font-weight: bold;">
             Este jogo não foi encontrado em nosso site.
         </div>
-        <!-- BOTOES DE FILTRO (TAGS) -->
-    <div class="tags-container">
-    <button class="tag-btn active" onclick="filtrar('todos', this)">Todos</button>
-    <button class="tag-btn" onclick="filtrar('acao', this)">Ação</button>
-    <button class="tag-btn" onclick="filtrar('corrida', this)">Corrida</button>
-    <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
-    <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
-</div>
 
-        <!-- GRADE COM OS 5 BALÕES POR FILA -->
+        <!-- BOTÕES DE FILTRO (TAGS) -->
+        <div class="tags-container">
+            <button class="tag-btn active" onclick="filtrar('todos', this)">Todos</button>
+            <button class="tag-btn" onclick="filtrar('acao', this)">Ação</button>
+            <button class="tag-btn" onclick="filtrar('corrida', this)">Corrida</button>
+            <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
+            <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
+        </div>
+
+        <!-- GRADE COM OS JOGOS DO APP.PY -->
         <div class="grid-jogos">
             {% for jogo in jogos %}
+                <!-- AQUI FOI ADICIONADO O data-categoria -->
                 <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
+                    
                     <!-- FOTO DO JOGO -->
                     <div class="capa-box">
                         <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
@@ -84,6 +78,13 @@
                         <span class="badge">{{ jogo.plataforma }}</span>
                         <p class="detalhes">Tamanho: {{ jogo.tamanho }}</p>
 
+                        <!-- BOTÃO DE TRAILER (SE HOUVER TRAILER NO APP.PY) -->
+                        {% if jogo.trailer %}
+                            <button class="btn-trailer" onclick="abrirVideo('{{ jogo.trailer }}')">
+                                ▶ Assistir Trailer
+                            </button>
+                        {% endif %}
+
                         <!-- BOTÕES DE DOWNLOAD -->
                         <div class="botoes-container">
                             {% if jogo.link_part1 %}
@@ -94,35 +95,13 @@
                             {% endif %}
                         </div>
                     </div>
+
                 </div>
             {% endfor %}
         </div>
-      
-<!-- LISTA DE JOGOS -->
-<div class="jogos-grid">
-
-    <!-- 1. JOGO: GTA V (Categoria: Ação) -->
-        <div class="card-jogo" data-categoria="acao">
-        <img src="static/gta5.jpg" alt="GTA V">
-        <h3>Grand Theft Auto V</h3>
-        <p class="formato">Xbox 360 - Formato: XEX</p>
-        <p class="tamanho">Tamanho: 16.5 GB</p>
-        
-        <!-- Botão para acionar a janela popup do vídeo -->
-        <button class="btn-trailer" onclick="abrirVideo('https://www.youtube.com/embed/QkkoHAzjinY')">
-            ▶ Assistir Trailer
-        </button>
-    </div>
-
-    <div class="card-jogo" data-categoria="corrida">
-        <h3>Forza Horizon</h3>
-        <button onclick="abrirVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">▶ Ver Vídeo</button>
-    </div>
     </main>
 
-    <!-- Seu arquivo JavaScript original que faz a busca funcionar -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <!-- JANELA FLUTUANTE DO VIDEO -->
+    <!-- JANELA FLUTUANTE DO VÍDEO (MODAL) -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="fecharVideo()">&times;</span>
