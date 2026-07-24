@@ -130,31 +130,31 @@ def produtos():
             "titulo": "Controle Xbox Wireless",
             "preco": "R$ 449,00",
             "imagem": "Controle Xbox Wireless.webp",
-            "link_ml": "https://meli.la/31BVKKm"
+            "link_ml": "https://www.mercadolivre.com.br/controle-xbox-wireless-series-xs-carbon-black/p/MLB16268160?matt_event_ts=1784854788466&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=f378a9c6-f5db-4f85-9431-9179d9ca369c#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=7227b8a6-476c-473c-ab96-cc9326b19a6e&tracking_id=d9d292f1-9185-4aa5-8b22-d3b7358331c3&c_id=/home/card-featured/element&c_uid=3ab3fc9c-94f0-4867-9c4e-9c917f03f5a8"
         },
         {
             "titulo": "Bateria Controle Para Xbox Séries S X 1200mah Cabo 3m",
             "preco": "R$ 58,99",
             "imagem": "Bateria Controle Para Xbox Séries S X 1200mah Cabo 3m.webp",
-            "link_ml": "https://meli.la/1imnURo" 
+            "link_ml": "https://www.mercadolivre.com.br/bateria-controle-para-xbox-series-s-x-1200mah-cabo-3m/up/MLBU2183606506?pdp_filters=item_id%3AMLB5111737986&matt_event_ts=1784854708638&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=bbaeb5d2-5e1d-4122-b944-2cb191b65be9#polycard_client=recommendations_home_affiliate-profile&wid=MLB5111737986&sid=recos&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=248e2154-2a69-4f9b-9e63-dd215d90d021&tracking_id=5114acaf-1fff-435d-a621-5e95f10f1a17&c_id=/home/card-featured/element&c_uid=9743aa93-d0d9-4daf-861a-6998a54d9ad3" 
         },
         {
             "titulo": "Adaptador Videogame Game Stick M15 2 Controles Game Stick",
             "preco": "R$ 189,90",
             "imagem": "Adaptador Videogame Game Stick M15 2 Controles Game Stick.webp",
-            "link_ml": "https://meli.la/2HXaJs1"
+            "link_ml": "https://www.mercadolivre.com.br/adaptador-videogame-game-stick-m15-2-controles-game-stick/up/MLBU3956288428?pdp_filters=item_id%3AMLB6737836486&matt_event_ts=1784854834364&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=903a9199-9509-4c50-af51-82ab34adae9a#polycard_client=recommendations_home_affiliate-profile&wid=MLB6737836486&sid=recos&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=22e91bfa-e50d-49e2-b50a-3bdc053e8cfc&tracking_id=c28cb1f1-9c00-4e03-9450-8bdc3f43131e&c_id=/home/card-featured/element&c_uid=5d9c072e-5234-41a8-8983-c7675865d941"
         },
         {
             "titulo": "Pc Gamer Completo I7 3.4ghz 16gb Ssd 480gb 500w Monitor 19",
             "preco": "R$ 2026,58",
             "imagem": "Pc Gamer Completo I7 3.4ghz 16gb Ssd 480gb 500w Monitor 19.webp",
-            "link_ml": "https://meli.la/1okF9RD"
+            "link_ml": "https://www.mercadolivre.com.br/pc-gamer-completo--i7-34ghz-16gb-ssd-480gb-500w-monitor-19/up/MLBU1986838950?pdp_filters=item_id%3AMLB4111977276&matt_event_ts=1784854876472&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=8d33d786-f550-4b37-a787-7ea57ad1c830#polycard_client=recommendations_home_affiliate-profile&wid=MLB4111977276&sid=recos&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=a5fb4add-075b-46c9-a571-d527eb929e18&tracking_id=338d91f6-2912-4b4d-af64-2d7bec8721b2&c_id=/home/card-featured/element&c_uid=3e10b1ea-531b-46a9-b7ea-837595748f56"
         },
         {
             "titulo": "Smart TV 4K 50 LG Portal de Games Processador AI α7 Ger8 4K",
             "preco": "R$ 2.351,31",
             "imagem": "Smart TV 4K 50.webp",
-            "link_ml": "https://meli.la/23HsZa6"
+            "link_ml": "https://www.mercadolivre.com.br/smart-tv-4k-50-lg-qned73-portal-de-games-processador-ai-7-ger8-4k-super-upscaling-google-cast-integrado-controle-ai-magic-webos-25-modo-esportes-alerta-de-esportes/p/MLB65916422?matt_event_ts=1784854921761&matt_d2id=f90b8b6f-d10a-46b9-8d34-121942b0a302&matt_tracing_id=13759d6b-ca39-4382-8ae8-bb0ad544ab0a#polycard_client=recommendations_home_affiliate-profile&reco_backend=item_decorator&reco_client=home_affiliate-profile&matt_tool_id=64131546&reco_item_pos=0&source=affiliate-profile&reco_backend_type=function&reco_id=0e7a4c83-caee-4b8c-b4bb-cfe7b43ac313&tracking_id=80a7a2c7-2411-4a7d-b05d-46105cf29aaa&c_id=/home/card-featured/element&c_uid=fd9ab8a8-6148-4b2a-83e0-20366381c17a"
         },
         {
             "titulo": "Bicicleta Elétrica Starmega V8 750W Preto",
