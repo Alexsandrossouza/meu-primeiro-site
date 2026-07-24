@@ -115,7 +115,47 @@ def jogos():
         {
             "titulo": "RESIDENT EVIL 6 BR",
             "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "6 GB",
+            "tamanho": "7,27 GB",
+            "categoria": "acao",
+            "imagem": "RESIDENT EVIL 6 BR.webp",
+            "link": "https://4br.me/0zkNnxq61"
+        },
+        {
+            "titulo": "RESIDENT EVIL 6 BR",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "7,27 GB",
+            "categoria": "acao",
+            "imagem": "RESIDENT EVIL 6 BR.webp",
+            "link": "https://4br.me/0zkNnxq61"
+        },
+        {
+            "titulo": "RESIDENT EVIL 6 BR",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "7,27 GB",
+            "categoria": "acao",
+            "imagem": "RESIDENT EVIL 6 BR.webp",
+            "link": "https://4br.me/0zkNnxq61"
+        },
+        {
+            "titulo": "RESIDENT EVIL 6 BR",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "7,27 GB",
+            "categoria": "acao",
+            "imagem": "RESIDENT EVIL 6 BR.webp",
+            "link": "https://4br.me/0zkNnxq61"
+        },
+        {
+            "titulo": "RESIDENT EVIL 6 BR",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "7,27 GB",
+            "categoria": "acao",
+            "imagem": "RESIDENT EVIL 6 BR.webp",
+            "link": "https://4br.me/0zkNnxq61"
+        },
+        {
+            "titulo": "RESIDENT EVIL 6 BR",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "7,27 GB",
             "categoria": "acao",
             "imagem": "RESIDENT EVIL 6 BR.webp",
             "link": "https://4br.me/0zkNnxq61"
