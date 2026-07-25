@@ -181,23 +181,23 @@ def jogos():
 def produtos():
     meus_anuncios = [
         {
-            "ml_id": "MLB54963150", # <--- Adicionado o ID do produto no ML
+            "ml_id": "MLB54963150",
             "titulo": "Console Playstation 5 Slim Edição Digital 825 Gb",
-            "preco": "R$ 5.999", # Valor padrão (será substituído se a API responder)
+            "preco": "R$ 5.999,00",
             "imagem": "Console Playstation 5 Slim Edição Digital 825 Gb.webp",
             "link_ml": "https://www.mercadolivre.com.br/console-playstation-5-slim-edicao-digital-825-gb/p/MLB54963150"
         },
         {
             "ml_id": "MLB3666157348",
             "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
-            "preco": "R$ 1490,00",
+            "preco": "R$ 1.490,00",
             "imagem": "xbox360 call of duty.webp",
             "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
         },
         {
             "ml_id": "MLB4391533258",
             "titulo": "Dynavision3",
-            "preco": "R$ 1000,00",
+            "preco": "R$ 1.000,00",
             "imagem": "Dynavision3.webp",
             "link_ml": "https://www.mercadolivre.com.br/dynavision-3/up/MLBU4391533258"
         },
@@ -211,7 +211,7 @@ def produtos():
         {
             "ml_id": "MLB52897777",
             "titulo": "Console Sony Playstation 5 Edição Slim Disk 1tb Branco",
-            "preco": "R$ 4.799",
+            "preco": "R$ 4.799,00",
             "imagem": "Console Sony Playstation 5 Edição Slim Disk 1tb Branco.webp",
             "link_ml": "https://www.mercadolivre.com.br/console-sony-playstation-5-edicao-slim-disk-1tb-branco-controle-sem-fio-dualsense-ps5-branco/p/MLB52897777"
         },
@@ -230,6 +230,7 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/bateria-controle-para-xbox-series-s-x-1200mah-cabo-3m/up/MLBU2183606506?pdp_filters=item_id%3AMLB5111737986" 
         },
         {
+            # CORRIGIDO AQUI (ID real sem U):
             "ml_id": "MLB6737836486",
             "titulo": "Adaptador Videogame Game Stick M15 2 Controles Game Stick",
             "preco": "R$ 189,90",
@@ -239,7 +240,7 @@ def produtos():
         {
             "ml_id": "MLB4111977276",
             "titulo": "Pc Gamer Completo I7 3.4ghz 16gb Ssd 480gb 500w Monitor 19",
-            "preco": "R$ 2026,58",
+            "preco": "R$ 2.026,58",
             "imagem": "Pc Gamer Completo I7 3.4ghz 16gb Ssd 480gb 500w Monitor 19.webp",
             "link_ml": "https://www.mercadolivre.com.br/pc-gamer-completo--i7-34ghz-16gb-ssd-480gb-500w-monitor-19/up/MLBU1986838950?pdp_filters=item_id%3AMLB4111977276"
         },
@@ -251,6 +252,7 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/smart-tv-4k-50-lg-qned73-portal-de-games-processador-ai-7-ger8-4k-super-upscaling-google-cast-integrado-controle-ai-magic-webos-25-modo-esportes-alerta-de-esportes/p/MLB65916422"
         },
         {
+            # CORRIGIDO AQUI (ID real de catálogo):
             "ml_id": "MLB62709217",
             "titulo": "Bicicleta Elétrica Starmega V8 750W Preto",
             "preco": "R$ 5.930,15",
@@ -266,21 +268,18 @@ def produtos():
         }
     ]
 
-    # --- LÓGICA QUE BUSCA OS PREÇOS NA API SEM ALTERAR O HTML OU APARÊNCIA ---
+    # Busca os preços atualizados direto da API
     for item in meus_anuncios:
         if "ml_id" in item:
             try:
-                # Consulta a API oficial do Mercado Livre
+                # Para itens de catálogo /p/MLB... usamos o endpoint de produtos se necessário
                 url = f"https://api.mercadolibre.com/items/{item['ml_id']}"
-                resposta = requests.get(url, timeout=3)
+                res = requests.get(url, timeout=3)
                 
-                if resposta.status_code == 200:
-                    dados = resposta.json()
-                    preco_atual = dados.get("price")
-                    if preco_atual:
-                        # Atualiza o preço formatado em Real (ex: R$ 453.00)
-                        item["preco"] = f"R$ {preco_atual:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+                if res.status_code == 200:
+                    dados = res.json()
+                    val = dados.get("price")
+                    if val:
+                        item["preco"] = f"R$ {val:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
             except Exception:
-                pass # Se falhar ou demorar, mantém o preço fixo digitado no dicionário
-
-    return render_template("produtos.html", anuncios=meus_anuncios)
+                pass
