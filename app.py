@@ -162,7 +162,7 @@ def jogos():
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "2.6 GB",
             "categoria": "emulador",
-            "imagem": "emulador super nintendo.jng",
+            "imagem": "emulador super nintendo.png",
             "link": "https://4br.me/gWP9d"
         }
     ] # Fecha corretamente a lista_de_jogos
