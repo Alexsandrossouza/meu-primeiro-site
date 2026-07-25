@@ -181,13 +181,6 @@ def jogos():
 def produtos():
     meus_anuncios = [
         {
-            "ml_id": "MLB4923941273",
-            "titulo": "Dynavision3",
-            "preco": "R$ 1.000,20", # Valor padrão/backup correto
-            "imagem": "Dynavision3.webp",
-            "link_ml": "https://produto.mercadolivre.com.br/MLB-4923941273"
-        },
-        {
             "ml_id": "MLB54963150",
             "titulo": "Console Playstation 5 Slim Edição Digital 825 Gb",
             "preco": "R$ 5.999,00",
@@ -202,11 +195,11 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
         },
         {
-            "ml_id": "MLBU4391533258",
+            "ml_id": "MLB4923941273",
             "titulo": "Dynavision3",
-            "preco": "R$ 1.000,10",
+            "preco": "R$ 1.000,00",
             "imagem": "Dynavision3.webp",
-            "link_ml": "https://www.mercadolivre.com.br/dynavision-3/up/MLBU4391533258"
+            "link_ml": "https://produto.mercadolivre.com.br/MLB-4923941273"
         },
         {
             "ml_id": "MLB4128396704",
@@ -271,24 +264,7 @@ def produtos():
             "imagem": "Fonte Para Xbox 360 Slim.webp",
             "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482"
         }
-   
-        # ... outros produtos
     ]
 
-    for item in meus_anuncios:
-        # Pega apenas o ID (ex: MLB4923941273)
-        ml_id = item.get("ml_id", "")
-        if ml_id.startswith("MLB") and not "MLBU" in ml_id:
-            try:
-                # Consulta a API oficial do item
-                url = f"https://api.mercadolibre.com/items/{ml_id}"
-                resposta = requests.get(url, timeout=2)
-                if resposta.status_code == 200:
-                    dados = resposta.json()
-                    preco_api = dados.get("price")
-                    if preco_api:
-                        item["preco"] = f"R$ {preco_api:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
-            except Exception:
-                pass # Em caso de falha de conexão, mantém o preco do dicionário
-
+    # Retorna diretamente sem fazer requisições lentas para o ML
     return render_template("produtos.html", anuncios=meus_anuncios)
