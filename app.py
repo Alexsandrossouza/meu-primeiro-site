@@ -183,7 +183,7 @@ def produtos():
         {
             "ml_id": "MLB4923941273",
             "titulo": "Dynavision3",
-            "preco": "R$ 1.000,00", # Valor padrão/backup correto
+            "preco": "R$ 1.000,20", # Valor padrão/backup correto
             "imagem": "Dynavision3.webp",
             "link_ml": "https://produto.mercadolivre.com.br/MLB-4923941273"
         },
