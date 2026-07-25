@@ -1,9 +1,11 @@
+import re
+from urllib.request import Request, urlopen
 import requests
-from bs4 import BeautifulSoup
 from flask import Flask, render_template
 
-
 app = Flask(__name__)
+
+# ... (restante do seu código)
 
 # ============================================================
 # 1. ROTA DA PÁGINA INICIAL
@@ -179,6 +181,12 @@ def jogos():
 # ============================================================
 @app.route("/produtos")
 def produtos():
+    # 1. Definindo os headers fora da lista de produtos
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+
+    # 2. Lista de produtos organizada corretamente
     meus_anuncios = [
         {
             "ml_id": "MLB54963150",
@@ -230,7 +238,6 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/bateria-controle-para-xbox-series-s-x-1200mah-cabo-3m/up/MLBU2183606506?pdp_filters=item_id%3AMLB5111737986" 
         },
         {
-            # CORRIGIDO AQUI (ID real sem U):
             "ml_id": "MLB6737836486",
             "titulo": "Adaptador Videogame Game Stick M15 2 Controles Game Stick",
             "preco": "R$ 189,90",
@@ -252,7 +259,6 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/smart-tv-4k-50-lg-qned73-portal-de-games-processador-ai-7-ger8-4k-super-upscaling-google-cast-integrado-controle-ai-magic-webos-25-modo-esportes-alerta-de-esportes/p/MLB65916422"
         },
         {
-            # CORRIGIDO AQUI (ID real de catálogo):
             "ml_id": "MLB62709217",
             "titulo": "Bicicleta Elétrica Starmega V8 750W Preto",
             "preco": "R$ 5.930,15",
@@ -268,19 +274,19 @@ def produtos():
         }
     ]
 
-    # Busca os preços atualizados direto da API
+    # 3. Varredura dos links
     for item in meus_anuncios:
-        if "ml_id" in item:
+        link = item.get("link_ml", "")
+        if "mercadolivre.com.br" in link and link != "https://mercadolivre.com.br":
             try:
-                # Para itens de catálogo /p/MLB... usamos o endpoint de produtos se necessário
-                url = f"https://api.mercadolibre.com/items/{item['ml_id']}"
-                res = requests.get(url, timeout=3)
+                req = Request(link, headers=headers)
+                html = urlopen(req, timeout=3).read().decode('utf-8')
+
+                match_preco = re.search(r'itemprop="price"\s+content="([^"]+)"', html)
                 
-                if res.status_code == 200:
-                    dados = res.json()
-                    val = dados.get("price")
-                    if val:
-                        item["preco"] = f"R$ {val:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+                if match_preco:
+                    valor_num = float(match_preco.group(1))
+                    item["preco"] = f"R$ {valor_num:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
             except Exception:
                 pass
 
