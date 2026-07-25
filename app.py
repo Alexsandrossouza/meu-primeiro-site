@@ -138,7 +138,7 @@ def jogos():
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "5.1 GB",
             "categoria": "aventura",
-            "imagem": "Cover_thumb.webp",
+            "imagem": "Cover_thumb.jpg",
             "link": "https://4br.me/p2xAlri9Lq"
         },
         {
