@@ -164,6 +164,62 @@ def jogos():
             "categoria": "emulador",
             "imagem": "emulador super nintendo.png",
             "link": "https://4br.me/gWP9d"
+        },
+        {
+            "titulo": "Castlevania",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "3.92 GB",
+            "categoria": "aventura",
+            "imagem": "Castlevania.webp",
+            "link": "https://4br.me/mxjceVgp"
+        },
+        {
+            "titulo": "Castlevania",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "3.92 GB",
+            "categoria": "aventura",
+            "imagem": "Castlevania.webp",
+            "link": "https://4br.me/mxjceVgp"
+        },
+        {
+            "titulo": "Castlevania",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "3.92 GB",
+            "categoria": "aventura",
+            "imagem": "Castlevania.webp",
+            "link": "https://4br.me/mxjceVgp"
+        },
+        {
+            "titulo": "Castlevania",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "3.92 GB",
+            "categoria": "aventura",
+            "imagem": "Castlevania.webp",
+            "link": "https://4br.me/mxjceVgp"
+        },
+        {
+            "titulo": "Castlevania",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "3.92 GB",
+            "categoria": "aventura",
+            "imagem": "Castlevania.webp",
+            "link": "https://4br.me/mxjceVgp"
+        },
+        {
+            "titulo": "Castlevania",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "3.92 GB",
+            "categoria": "aventura",
+            "imagem": "Castlevania.webp",
+            "link": "https://4br.me/mxjceVgp"
+        },
+        {
+            "titulo": "Castlevania",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "3.92 GB",
+            "categoria": "aventura",
+            "imagem": "Castlevania.webp",
+            "link": "https://4br.me/mxjceVgp"
         }
     ] # Fecha corretamente a lista_de_jogos
     
