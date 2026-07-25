@@ -1,5 +1,3 @@
-import re
-from urllib.request import Request, urlopen
 import requests
 from flask import Flask, render_template
 
@@ -181,13 +179,14 @@ def jogos():
 # ============================================================
 @app.route("/produtos")
 def produtos():
-    # 1. Definindo os headers fora da lista de produtos
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    }
-
-    # 2. Lista de produtos organizada corretamente
     meus_anuncios = [
+        {
+            "ml_id": "MLB4923941273",
+            "titulo": "Dynavision3",
+            "preco": "R$ 1.000,00", # Valor padrão/backup correto
+            "imagem": "Dynavision3.webp",
+            "link_ml": "https://produto.mercadolivre.com.br/MLB-4923941273"
+        },
         {
             "ml_id": "MLB54963150",
             "titulo": "Console Playstation 5 Slim Edição Digital 825 Gb",
@@ -272,22 +271,24 @@ def produtos():
             "imagem": "Fonte Para Xbox 360 Slim.webp",
             "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482"
         }
+   
+        # ... outros produtos
     ]
 
-    # 3. Varredura dos links
     for item in meus_anuncios:
-        link = item.get("link_ml", "")
-        if "mercadolivre.com.br" in link and link != "https://mercadolivre.com.br":
+        # Pega apenas o ID (ex: MLB4923941273)
+        ml_id = item.get("ml_id", "")
+        if ml_id.startswith("MLB") and not "MLBU" in ml_id:
             try:
-                req = Request(link, headers=headers)
-                html = urlopen(req, timeout=3).read().decode('utf-8')
-
-                match_preco = re.search(r'itemprop="price"\s+content="([^"]+)"', html)
-                
-                if match_preco:
-                    valor_num = float(match_preco.group(1))
-                    item["preco"] = f"R$ {valor_num:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+                # Consulta a API oficial do item
+                url = f"https://api.mercadolibre.com/items/{ml_id}"
+                resposta = requests.get(url, timeout=2)
+                if resposta.status_code == 200:
+                    dados = resposta.json()
+                    preco_api = dados.get("price")
+                    if preco_api:
+                        item["preco"] = f"R$ {preco_api:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
             except Exception:
-                pass
+                pass # Em caso de falha de conexão, mantém o preco do dicionário
 
     return render_template("produtos.html", anuncios=meus_anuncios)
