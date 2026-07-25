@@ -203,9 +203,9 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
         },
         {
-            "ml_id": "MLB4391533258",
+            "ml_id": "4923941273",
             "titulo": "Dynavision3",
-            "preco": "R$ 1.000,00",
+            "preco": "R$ 1.000,10",
             "imagem": "Dynavision3.webp",
             "link_ml": "https://www.mercadolivre.com.br/dynavision-3/up/MLBU4391533258"
         },
