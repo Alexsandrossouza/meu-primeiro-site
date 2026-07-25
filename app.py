@@ -134,7 +134,7 @@ def jogos():
             "link_part2": "https://4br.me/BiU9BmkwJ"
         },
         {
-            "titulo": "Thumb",
+            "titulo": "Lollipop Chainsaw",
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "5.1 GB",
             "categoria": "aventura",
