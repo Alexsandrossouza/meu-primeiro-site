@@ -154,7 +154,7 @@ def jogos():
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "739 MB",
             "categoria": "emulador",
-            "imagem": "EMULADOR MEGA DRIVE + 1.071 ROMS.webp",
+            "imagem": "mega driver.png",
             "link": "https://4br.me/h1OfcxAMh"
         },
         {
