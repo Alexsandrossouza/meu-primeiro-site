@@ -228,7 +228,7 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/bateria-controle-para-xbox-series-s-x-1200mah-cabo-3m/up/MLBU2183606506?pdp_filters=item_id%3AMLB5111737986" 
         },
         {
-            "ml_id": "MLB6737836486",
+            "ml_id": "MLBU3956288428",
             "titulo": "Adaptador Videogame Game Stick M15 2 Controles Game Stick",
             "preco": "R$ 189,90",
             "imagem": "Adaptador Videogame Game Stick M15 2 Controles Game Stick.webp",
