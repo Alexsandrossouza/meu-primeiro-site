@@ -71,8 +71,52 @@
             </div>
         </div>
     </main>
-   
+   {% for produto in anuncios %}
+<div class="card-produto">
+  <h3>{{ produto.titulo }}</h3>
+  
+  <!-- Adicione a class "preco-dinamico" e o data-ml-id como abaixo -->
+  <p class="preco-dinamico" data-ml-id="{{ produto.ml_id }}">
+    {{ produto.preco }}
+  </p>
+
+  <a href="{{ produto.link_ml }}" target="_blank">Ver no Mercado Livre</a>
+</div>
+{% endfor %}
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Seleciona todos os elementos de preço da página
+    const elementosPreco = document.querySelectorAll(".preco-dinamico");
+
+    elementosPreco.forEach((el) => {
+      const mlId = el.getAttribute("data-ml-id");
+
+      // Ignora links de catálogo que contêm MLBU ou não começam com MLB
+      if (mlId && mlId.startsWith("MLB") && !mlId.includes("MLBU")) {
+        fetch(`https://api.mercadolibre.com/items/${mlId}`)
+          .then((response) => {
+            if (!response.ok) throw new Error("Erro na API");
+            return response.json();
+          })
+          .then((data) => {
+            if (data.price) {
+              // Formata o valor recebido para R$ X.XXX,XX
+              const precoFormatado = data.price.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+              });
+              // Atualiza o texto na tela do usuário
+              el.innerText = precoFormatado;
+            }
+          })
+          .catch(() => {
+            // Se a API falhar ou o ML bloquear, mantém o preço fixo do app.py
+          });
+      }
+    });
+  });
+</script>
 </body>
 </html>
