@@ -150,20 +150,20 @@ def jogos():
             "link": "https://4br.me/U0ym4hWyZg"
         },
         {
-            "titulo": "RESIDENT EVIL 6 BR",
+            "titulo": "EMULADOR MEGA DRIVE + 1.071 ROMS",
             "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "3,9 / 3,3 GB",
-            "categoria": "acao",
-            "imagem": "RESIDENT EVIL 6 BR.webp",
-            "link": "https://4br.me/0zkNnxq61"
+            "tamanho": "739 MB",
+            "categoria": "emulador",
+            "imagem": "EMULADOR MEGA DRIVE + 1.071 ROMS.webp",
+            "link": "https://4br.me/h1OfcxAMh"
         },
         {
-            "titulo": "RESIDENT EVIL 6 BR",
+            "titulo": "Emulador Super Nintendo + 3247 ROMS",
             "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "7,27 GB",
-            "categoria": "acao",
-            "imagem": "RESIDENT EVIL 6 BR.webp",
-            "link": "https://4br.me/0zkNnxq61"
+            "tamanho": "2.6 GB",
+            "categoria": "emulador",
+            "imagem": "emulador super nintendo.jpg",
+            "link": "https://4br.me/gWP9d"
         }
     ] # Fecha corretamente a lista_de_jogos
     
