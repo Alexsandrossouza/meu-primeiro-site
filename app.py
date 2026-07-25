@@ -142,12 +142,12 @@ def jogos():
             "link": "https://4br.me/p2xAlri9Lq"
         },
         {
-            "titulo": "RESIDENT EVIL 6 BR",
+            "titulo": "Far Cry 4",
             "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "7,27 GB",
+            "tamanho": "6,7 GB",
             "categoria": "acao",
-            "imagem": "RESIDENT EVIL 6 BR.webp",
-            "link": "https://4br.me/0zkNnxq61"
+            "imagem": "Far Cry 4.webp",
+            "link": "https://4br.me/U0ym4hWyZg"
         },
         {
             "titulo": "RESIDENT EVIL 6 BR",
