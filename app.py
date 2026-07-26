@@ -1,9 +1,8 @@
-import requests
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# ... (restante do seu código)
+# ... (Restante das suas rotas)
 
 # ============================================================
 # 1. ROTA DA PÁGINA INICIAL
@@ -180,13 +179,6 @@ def jogos():
 @app.route("/produtos")
 def produtos():
     meus_anuncios = [
-        {
-            "ml_id": "MLB54963150",
-            "titulo": "Console Playstation 5 Slim Edição Digital 825 Gb",
-            "preco": "R$ 5.999,00",
-            "imagem": "Console Playstation 5 Slim Edição Digital 825 Gb.webp",
-            "link_ml": "https://www.mercadolivre.com.br/console-playstation-5-slim-edicao-digital-825-gb/p/MLB54963150"
-        },
         {
             "ml_id": "MLB3666157348",
             "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
