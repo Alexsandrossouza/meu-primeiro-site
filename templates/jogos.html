@@ -63,7 +63,6 @@
             <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
             <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
             <button class="tag-btn" onclick="filtrar('terror', this)">Terror</button>
-            
         </div>
 
         <!-- GRADE COM OS JOGOS DO APP.PY -->
@@ -71,9 +70,13 @@
             {% for jogo in jogos %}
                 <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
                     
-                    <!-- FOTO DO JOGO -->
+                    <!-- FOTO DO JOGO (ACEITA PASTA STATIC OU LINK DA INTERNET) -->
                     <div class="capa-box">
-                        <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
+                        {% if jogo.imagem.startswith('http') %}
+                            <img src="{{ jogo.imagem }}" alt="{{ jogo.titulo }}">
+                        {% else %}
+                            <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
+                        {% endif %}
                     </div>
 
                     <!-- INFORMAÇÕES DO CARD -->
