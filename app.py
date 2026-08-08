@@ -20,10 +20,10 @@ def jogos():
         {
             "titulo": "GodStix",
             "plataforma": "Xbox 360 - Formato: XEX",
-            "tamanho": "310 KB",
+            "tamanho": "30 MB"
             "categoria": "app",
             "imagem": "logo menor godstix.jpeg",
-            "link": "https://4br.me/godstix",
+            "link": "https://4br.me/bkeFbDgA",
             "video": "https://www.youtube.com/watch?v=Wt01fROQNUM"
         },
         {
