@@ -265,14 +265,8 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482"
         }
     ]
+    
+
     return render_template("produtos.html", anuncios=meus_anuncios)
 
-
-# Rota para renderizar a página de produtos
-@app.route('/produtos')
-def produtos():
-    return render_template("produtos.html", anuncios=meus_anuncios)
-
-# Bloco que segura o servidor ligado
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=5000)
