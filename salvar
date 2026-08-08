@@ -6,3 +6,10 @@ git push origin main
 
 cd ~/meu-primeiro-site
 git pull origin main
+
+
+Ver se tá rodando: sudo systemctl status meu-site
+
+Reiniciar o site: sudo systemctl restart meu-site
+
+Parar o site: sudo systemctl stop meu-site
