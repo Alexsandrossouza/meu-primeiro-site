@@ -82,7 +82,7 @@ def jogos():
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "4.74 GB",
             "categoria": "acao",
-            "imagem": "https://m.media-amazon.com/images/I/81xU2pE64dL._AC_SL1500_.jpg", # Usando link direto para nunca falhar
+            "imagem": "https://m.media-amazon.com/images/I/81xU2pE64dL._AC_SL1500_.jpg",
             "link_part1": "https://www.mediafire.com/file/hdnsmo5dd9okdjp/Ace_Combat_6_AnDreXplay.part1.rar/file",
             "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
         }, 
@@ -91,7 +91,7 @@ def jogos():
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "4.7 GB",
             "categoria": "luta",
-            "imagem": "https://m.media-amazon.com/images/I/51M39C0QJAL._AC_.jpg", # Usando link direto
+            "imagem": "https://m.media-amazon.com/images/I/51M39C0QJAL._AC_.jpg",
             "link": "https://www.mediafire.com/file/exemplo_dead_or_alive"
         },
         {
@@ -265,5 +265,14 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482"
         }
     ]
-
     return render_template("produtos.html", anuncios=meus_anuncios)
+
+
+# Rota para renderizar a página de produtos
+@app.route('/produtos')
+def produtos():
+    return render_template("produtos.html", anuncios=meus_anuncios)
+
+# Bloco que segura o servidor ligado
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
