@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador - Planet Games</title>
+    <style>
+        body { background: #0f1115; color: white; font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: #00ff88; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #333; padding: 10px; text-align: left; }
+        th { background: #1a1d24; color: #00ff88; }
+        .card-form { background: #1a1d24; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333; }
+        input, select { background: #0f1115; color: white; border: 1px solid #333; padding: 8px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        .btn { background: #00ff88; color: black; font-weight: bold; padding: 10px; border: none; cursor: pointer; border-radius: 4px; }
+        .btn-danger { background: #ff4444; color: white; }
+        .btn-edit { background: #ffbb00; color: black; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
+        .modal-body { background: #1a1d24; padding: 20px; border-radius: 8px; width: 400px; border: 1px solid #00ff88; }
+    </style>
+</head>
+<body>
+    <div style="display:flex; justify-size:space-between; align-items:center;">
+        <h1>⚡ Admin - Jogos Cadastrados</h1>
+        <a href="/admin/logout" style="color:#ff4444; text-decoration:none; font-weight:bold;">Sair</a>
+    </div>
+
+    <!-- CADASTRAR NOVO JOGO -->
+    <div class="card-form">
+        <h2>Adicionar Novo Jogo</h2>
+        <form action="/admin/jogo/novo" method="POST" enctype="multipart/form-data">
+            <input type="text" name="titulo" placeholder="Título do Jogo" required>
+            <input type="text" name="plataforma" placeholder="Plataforma (ex: Xbox 360-Formato:XEX)" value="Xbox 360-Formato:XEX">
+            <input type="text" name="tamanho" placeholder="Tamanho (ex: 5.5 GB)" required>
+            <input type="text" name="categoria" placeholder="Categoria (ex: acao, terror, rpg)" required>
+            <input type="text" name="link" placeholder="Link de Download">
+            
+            <label style="margin-top:10px; display:block;">Capa do Jogo (Enviar Imagem do Computador):</label>
+            <input type="file" name="imagem_file" accept="image/*">
+            
+            <label style="margin-top:10px; display:block;">OU Nome do arquivo de capa existente:</label>
+            <input type="text" name="imagem_url" placeholder="Ex: capajogo.jpg">
+
+            <button type="submit" class="btn" style="margin-top:10px;">Salvar Jogo</button>
+        </form>
+    </div>
+
+    <!-- LISTA DE JOGOS EXISTENTES -->
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Categoria</th>
+                <th>Tamanho</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jogo in jogos %}
+            <tr>
+                <td>{{ jogo.titulo }}</td>
+                <td>{{ jogo.categoria }}</td>
+                <td>{{ jogo.tamanho }}</td>
+                <td>
+                    <button class="btn btn-edit" onclick="abrirEdicao('{{ jogo.id }}', '{{ jogo.titulo }}', '{{ jogo.plataforma }}', '{{ jogo.tamanho }}', '{{ jogo.categoria }}')">Editar</button>
+                    <form action="/admin/jogo/excluir/{{ jogo.id }}" method="POST" style="display:inline;" onsubmit="return confirm('Deseja excluir?');">
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- MODAL PARA EDITAR -->
+    <div id="modalEdicao" class="modal">
+        <div class="modal-body">
+            <h3>Editar Jogo</h3>
+            <form id="formEdicao" method="POST" enctype="multipart/form-data">
+                <input type="text" id="e_titulo" name="titulo" required>
+                <input type="text" id="e_plataforma" name="plataforma">
+                <input type="text" id="e_tamanho" name="tamanho" required>
+                <input type="text" id="e_categoria" name="categoria" required>
+                
+                <label>Trocar Capa (Arquivo):</label>
+                <input type="file" name="imagem_file" accept="image/*">
+
+                <button type="submit" class="btn" style="margin-top:10px;">Atualizar</button>
+                <button type="button" class="btn btn-danger" onclick="fecharEdicao()" style="margin-top:5px;">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function abrirEdicao(id, titulo, plataforma, tamanho, categoria) {
+            document.getElementById('formEdicao').action = '/admin/jogo/editar/' + id;
+            document.getElementById('e_titulo').value = titulo;
+            document.getElementById('e_plataforma').value = plataforma;
+            document.getElementById('e_tamanho').value = tamanho;
+            document.getElementById('e_categoria').value = categoria;
+            document.getElementById('modalEdicao').style.display = 'flex';
+        }
+        function fecharEdicao() {
+            document.getElementById('modalEdicao').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

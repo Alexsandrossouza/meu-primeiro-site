@@ -1,6 +1,21 @@
-from flask import Flask, render_template
+import os
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
+app.secret_key = 'chave_secreta_planet_games_super_segura'
+
+# Configuração de upload de capas
+UPLOAD_FOLDER = os.path.join('static', 'capas')
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+# Senha do Painel de Administração
+ADMIN_PASSWORD = "planet123"
+
+def arquivo_permitido(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # ============================================================
 # 1. ROTA DA PÁGINA INICIAL
@@ -9,180 +24,202 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/admin')
-def admin():
-    return render_template('admin.html')
+# ============================================================
+# ROTA DO BATE-PAPO
+# ============================================================
+@app.route("/chat")
+def chat():
+    return render_template("chat.html")
 
 # ============================================================
 # 2. ROTA DA PÁGINA DE JOGOS
 # ============================================================
+lista_de_jogos = [
+    {
+        "id": 1,
+        "titulo": "GodStix",
+        "plataforma": "Xbox 360 - Formato: XEX",
+        "tamanho": "30 MB",
+        "categoria": "app",
+        "imagem": "logo menor godstix.jpeg",
+        "link": "https://4br.me/bkeFbDgA",
+        "video": "https://www.youtube.com/watch?v=Wt01fROQNUM"
+    },
+    {
+        "id": 2,
+        "titulo": "Minecraft",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "1.990 GB",
+        "categoria": "rpg",
+        "imagem": "Minecraft-Xbox-360-Edition.jpg",
+        "link": "https://www.mediafire.com/file/nzhg7ertaij3o2w/M-X360-E-DLC-TU-XBLA.rar/file"
+    },
+    {
+        "id": 3,
+        "titulo": "Resident Evil Operation Raccoon City",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "5.430 GB",
+        "categoria": "terror",
+        "imagem": "Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
+        "link": "https://www.mediafire.com/file/2a69bohl9wnzd2x/REORC-XEX.rar/file"
+    },
+    {   
+        "id": 4,
+        "titulo": "Grand Theft Auto V",
+        "card-jogo": "acao",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "16.5 GB",
+        "categoria": "acao",
+        "imagem": "Grand-Theft-Auto-V.jpg",
+        "link_part1": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file",
+        "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part1.rar/file"
+    },
+    {   
+        "id": 5,
+        "titulo": "Gears of War 3",
+        "card-jogo": "acao",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "7.5 GB",
+        "categoria": "acao",
+        "imagem": "Gears-of-War-3-scaled.jpg",
+        "link": "https://www.mediafire.com/file/gzsi3qy0lnsu70o/G3%25E2%2588%2586R%2524_o_WIII_%2528TriploPlay_BR%2529.rar/file"
+    },
+    {
+        "id": 6,
+        "titulo": "Assassin's creed rogue",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "5.58 GB",
+        "categoria": "acao",
+        "imagem": "Assassin's creed rogue.jpg",
+        "link": "https://www.mediafire.com/file/b7c7ta1w0ok19g3/ACR-XEX.rar/file"
+    },
+    {
+        "id": 7,
+        "titulo": "Red Dead Redemption",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "5.58 GB",
+        "categoria": "acao",
+        "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
+        "link_part1": "https://www.mediafire.com/file/6adboemuos4q8tu/lRIdF9u$UZh.part1.rar/file",
+        "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
+    },
+    {
+        "id": 8,
+        "titulo": "Ace Combat 6 Fires Of Liberation",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "4.74 GB",
+        "categoria": "acao",
+        "imagem": "https://m.media-amazon.com/images/I/81xU2pE64dL._AC_SL1500_.jpg",
+        "link_part1": "https://www.mediafire.com/file/hdnsmo5dd9okdjp/Ace_Combat_6_AnDreXplay.part1.rar/file",
+        "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
+    }, 
+    {
+        "id": 9,
+        "titulo": "Dead or Alive 4",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "4.7 GB",
+        "categoria": "luta",
+        "imagem": "https://m.media-amazon.com/images/I/51M39C0QJAL._AC_.jpg",
+        "link": "https://www.mediafire.com/file/exemplo_dead_or_alive"
+    },
+    {
+        "id": 10,
+        "titulo": "Alice-Madness-Returns-X360 Senha:AnDrex",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "2.1 / 2.1 GB",
+        "categoria": "acao",
+        "imagem": "Alice-Madness-Returns-X360.webp",
+        "link_part1": "https://send.now/8ph8gtwv7on7",
+        "link_part2": "https://send.now/7rxsxftbp9ia"
+    },
+    {
+        "id": 11,
+        "titulo": "skyrim",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "4.36 GB",
+        "categoria": "acao",
+        "imagem": "skyrim.jpg",
+        "link": "https://www.mediafire.com/file/iguca3f8nfnb71y/6%2525NBmVHwdPY%2526.rar/file"
+    },
+    {
+        "id": 12,
+        "titulo": "Horizon",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "3.4 / 3.33 GB",
+        "categoria": "corrida",
+        "imagem": "horizon.jpg",
+        "link_part1": "https://www.mediafire.com/file/8j9kyfwlbfinfzy/Forza_Horizon_AnDreXplay.part1.rar/file",
+        "link_part2": "https://www.mediafire.com/file/472dfnbantnzpbb/Forza_Horizon_AnDreXplay.part2.rar/file"
+    },
+    {
+        "id": 13,
+        "titulo": "RESIDENT EVIL 6 BR Senha:RAFARGH6",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "7,27 GB",
+        "categoria": "terror",
+        "imagem": "RESIDENT EVIL 6 BR.webp",
+        "link": "https://4br.me/0zkNnxq61"
+    },
+    {
+        "id": 14,
+        "titulo": "Call of Duty Black Ops II",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "3,9 / 3,3 GB",
+        "categoria": "acao",
+        "imagem": "Cover Call of Duty Black Ops II.webp",
+        "link_part1": "https://4br.me/fQPWXmbK",
+        "link_part2": "https://4br.me/BiU9BmkwJ"
+    },
+    {
+        "id": 15,
+        "titulo": "Lollipop Chainsaw",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "5.1 GB",
+        "categoria": "aventura",
+        "imagem": "Cover_thumb.jpg",
+        "link": "https://4br.me/p2xAlri9Lq"
+    },
+    {
+        "id": 16,
+        "titulo": "Far Cry 4",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "6,7 GB",
+        "categoria": "acao",
+        "imagem": "Far Cry 4.webp",
+        "link": "https://4br.me/U0ym4hWyZg"
+    },
+    {
+        "id": 17,
+        "titulo": "EMULADOR MEGA DRIVE + 1.071 ROMS",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "739 MB",
+        "categoria": "emulador",
+        "imagem": "mega driver.png",
+        "link": "https://4br.me/h1OfcxAMh"
+    },
+    {
+        "id": 18,
+        "titulo": "Emulador Super Nintendo + 3247 ROMS",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "2.6 GB",
+        "categoria": "emulador",
+        "imagem": "emulador super nintendo.png",
+        "link": "https://4br.me/gWP9d"
+    },
+    {
+        "id": 19,
+        "titulo": "Castlevania",
+        "plataforma": "Xbox 360-Formato:XEX",
+        "tamanho": "3.92 GB",
+        "categoria": "aventura",
+        "imagem": "Castlevania.webp",
+        "link": "https://4br.me/mxjceVgp"
+    }
+]
+
 @app.route("/jogos")
 def jogos():
-    lista_de_jogos = [
-        {
-            "titulo": "GodStix",
-            "plataforma": "Xbox 360 - Formato: XEX",
-            "tamanho": "30 MB",
-            "categoria": "app",
-            "imagem": "logo menor godstix.jpeg",
-            "link": "https://4br.me/bkeFbDgA",
-            "video": "https://www.youtube.com/watch?v=Wt01fROQNUM"
-        },
-        {
-            "titulo": "Minecraft",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "1.990 GB",
-            "categoria": "rpg",
-            "imagem": "Minecraft-Xbox-360-Edition.jpg",
-            "link": "https://www.mediafire.com/file/nzhg7ertaij3o2w/M-X360-E-DLC-TU-XBLA.rar/file"
-        },
-        {
-            "titulo": "Resident Evil Operation Raccoon City",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "5.430 GB",
-            "categoria": "terror",
-            "imagem": "Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
-            "link": "https://www.mediafire.com/file/2a69bohl9wnzd2x/REORC-XEX.rar/file"
-        },
-        {   
-            "titulo": "Grand Theft Auto V",
-            "card-jogo": "acao",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "16.5 GB",
-            "categoria": "acao",
-            "imagem": "Grand-Theft-Auto-V.jpg",
-            "link_part1": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file",
-            "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part1.rar/file"
-        },
-        {   
-            "titulo": "Gears of War 3",
-            "card-jogo": "acao",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "7.5 GB",
-            "categoria": "acao",
-            "imagem": "Gears-of-War-3-scaled.jpg",
-            "link": "https://www.mediafire.com/file/gzsi3qy0lnsu70o/G3%25E2%2588%2586R%2524_o_WIII_%2528TriploPlay_BR%2529.rar/file"
-        },
-        {
-            "titulo": "Assassin's creed rogue",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "5.58 GB",
-            "categoria": "acao",
-            "imagem": "Assassin's creed rogue.jpg",
-            "link": "https://www.mediafire.com/file/b7c7ta1w0ok19g3/ACR-XEX.rar/file"
-        },
-        {
-            "titulo": "Red Dead Redemption",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "5.58 GB",
-            "categoria": "acao",
-            "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
-            "link_part1": "https://www.mediafire.com/file/6adboemuos4q8tu/lRIdF9u$UZh.part1.rar/file",
-            "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
-        },
-        {
-            "titulo": "Ace Combat 6 Fires Of Liberation",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "4.74 GB",
-            "categoria": "acao",
-            "imagem": "https://m.media-amazon.com/images/I/81xU2pE64dL._AC_SL1500_.jpg",
-            "link_part1": "https://www.mediafire.com/file/hdnsmo5dd9okdjp/Ace_Combat_6_AnDreXplay.part1.rar/file",
-            "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
-        }, 
-        {
-            "titulo": "Dead or Alive 4",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "4.7 GB",
-            "categoria": "luta",
-            "imagem": "https://m.media-amazon.com/images/I/51M39C0QJAL._AC_.jpg",
-            "link": "https://www.mediafire.com/file/exemplo_dead_or_alive"
-        },
-        {
-            "titulo": "Alice-Madness-Returns-X360 Senha:AnDrex",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "2.1 / 2.1 GB",
-            "categoria": "acao",
-            "imagem": "Alice-Madness-Returns-X360.webp",
-            "link_part1": "https://send.now/8ph8gtwv7on7",
-            "link_part2": "https://send.now/7rxsxftbp9ia"
-        },
-        {
-            "titulo": "skyrim",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "4.36 GB",
-            "categoria": "acao",
-            "imagem": "skyrim.jpg",
-            "link": "https://www.mediafire.com/file/iguca3f8nfnb71y/6%2525NBmVHwdPY%2526.rar/file"
-        },
-        {
-            "titulo": "Horizon",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "3.4 / 3.33 GB",
-            "categoria": "corrida",
-            "imagem": "horizon.jpg",
-            "link_part1": "https://www.mediafire.com/file/8j9kyfwlbfinfzy/Forza_Horizon_AnDreXplay.part1.rar/file",
-            "link_part2": "https://www.mediafire.com/file/472dfnbantnzpbb/Forza_Horizon_AnDreXplay.part2.rar/file"
-        },
-        {
-            "titulo": "RESIDENT EVIL 6 BR Senha:RAFARGH6",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "7,27 GB",
-            "categoria": "terror",
-            "imagem": "RESIDENT EVIL 6 BR.webp",
-            "link": "https://4br.me/0zkNnxq61"
-        },
-        {
-            "titulo": "Call of Duty Black Ops II",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "3,9 / 3,3 GB",
-            "categoria": "acao",
-            "imagem": "Cover Call of Duty Black Ops II.webp",
-            "link_part1": "https://4br.me/fQPWXmbK",
-            "link_part2": "https://4br.me/BiU9BmkwJ"
-        },
-        {
-            "titulo": "Lollipop Chainsaw",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "5.1 GB",
-            "categoria": "aventura",
-            "imagem": "Cover_thumb.jpg",
-            "link": "https://4br.me/p2xAlri9Lq"
-        },
-        {
-            "titulo": "Far Cry 4",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "6,7 GB",
-            "categoria": "acao",
-            "imagem": "Far Cry 4.webp",
-            "link": "https://4br.me/U0ym4hWyZg"
-        },
-        {
-            "titulo": "EMULADOR MEGA DRIVE + 1.071 ROMS",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "739 MB",
-            "categoria": "emulador",
-            "imagem": "mega driver.png",
-            "link": "https://4br.me/h1OfcxAMh"
-        },
-        {
-            "titulo": "Emulador Super Nintendo + 3247 ROMS",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "2.6 GB",
-            "categoria": "emulador",
-            "imagem": "emulador super nintendo.png",
-            "link": "https://4br.me/gWP9d"
-        },
-        {
-            "titulo": "Castlevania",
-            "plataforma": "Xbox 360-Formato:XEX",
-            "tamanho": "3.92 GB",
-            "categoria": "aventura",
-            "imagem": "Castlevania.webp",
-            "link": "https://4br.me/mxjceVgp"
-        }
-    ]
     return render_template("jogos.html", jogos=lista_de_jogos)
-
 
 # ============================================================
 # 3. ROTA DA PÁGINA DE PRODUTOS
@@ -268,8 +305,88 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482"
         }
     ]
-    
-
     return render_template("produtos.html", anuncios=meus_anuncios)
 
-app.run(host='0.0.0.0', port=5000)
+# ============================================================
+# 4. ROTAS DO PAINEL ADMIN (SENHA, UPLOAD, EDIÇÃO E EXCLUSÃO)
+# ============================================================
+@app.route("/admin/login", methods=["GET", "POST"])
+def admin_login():
+    if request.method == "POST":
+        senha = request.form.get("senha")
+        if senha == ADMIN_PASSWORD:
+            session['admin_logged_in'] = True
+            return redirect(url_for("admin"))
+        else:
+            flash("Senha incorreta!")
+    return render_template("admin_login.html")
+
+@app.route("/admin/logout")
+def admin_logout():
+    session.pop('admin_logged_in', None)
+    return redirect(url_for("admin_login"))
+
+@app.route("/admin")
+def admin():
+    if not session.get('admin_logged_in'):
+        return redirect(url_for("admin_login"))
+    return render_template("admin.html", jogos=lista_de_jogos)
+
+@app.route("/admin/jogo/novo", methods=["POST"])
+def novo_jogo():
+    if not session.get('admin_logged_in'):
+        return redirect(url_for("admin_login"))
+
+    imagem_file = request.files.get("imagem_file")
+    imagem_nome = request.form.get("imagem_url")
+
+    if imagem_file and imagem_file.filename != '' and arquivo_permitido(imagem_file.filename):
+        filename = secure_filename(imagem_file.filename)
+        imagem_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        imagem_nome = filename
+
+    novo_id = max([j["id"] for j in lista_de_jogos], default=0) + 1
+    lista_de_jogos.append({
+        "id": novo_id,
+        "titulo": request.form.get("titulo"),
+        "plataforma": request.form.get("plataforma", "Xbox 360-Formato:XEX"),
+        "tamanho": request.form.get("tamanho"),
+        "categoria": request.form.get("categoria"),
+        "imagem": imagem_nome if imagem_nome else "default.jpg",
+        "link": request.form.get("link", "")
+    })
+    return redirect(url_for("admin"))
+
+@app.route("/admin/jogo/editar/<int:jogo_id>", methods=["POST"])
+def editar_jogo(jogo_id):
+    if not session.get('admin_logged_in'):
+        return redirect(url_for("admin_login"))
+
+    jogo = next((j for j in lista_de_jogos if j["id"] == jogo_id), None)
+    if jogo:
+        jogo["titulo"] = request.form.get("titulo")
+        jogo["plataforma"] = request.form.get("plataforma")
+        jogo["tamanho"] = request.form.get("tamanho")
+        jogo["categoria"] = request.form.get("categoria")
+        if request.form.get("link"):
+            jogo["link"] = request.form.get("link")
+
+        imagem_file = request.files.get("imagem_file")
+        if imagem_file and imagem_file.filename != '' and arquivo_permitido(imagem_file.filename):
+            filename = secure_filename(imagem_file.filename)
+            imagem_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            jogo["imagem"] = filename
+
+    return redirect(url_for("admin"))
+
+@app.route("/admin/jogo/excluir/<int:jogo_id>", methods=["POST"])
+def excluir_jogo(jogo_id):
+    if not session.get('admin_logged_in'):
+        return redirect(url_for("admin_login"))
+
+    global lista_de_jogos
+    lista_de_jogos = [j for j in lista_de_jogos if j["id"] != jogo_id]
+    return redirect(url_for("admin"))
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

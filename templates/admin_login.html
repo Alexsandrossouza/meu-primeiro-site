@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Admin</title>
+    <style>
+        body { background: #0f1115; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: #1a1d24; padding: 30px; border-radius: 8px; border: 1px solid #00ff88; width: 300px; text-align: center; }
+        input { width: 90%; padding: 10px; margin: 10px 0; background: #0f1115; border: 1px solid #333; color: white; }
+        button { background: #00ff88; color: black; font-weight: bold; padding: 10px; width: 100%; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2 style="color:#00ff88;">🔒 Painel Admin</h2>
+        <form action="/admin/login" method="POST">
+            <input type="password" name="senha" placeholder="Senha do Admin" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>
