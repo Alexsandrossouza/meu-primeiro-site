@@ -18,6 +18,33 @@ def arquivo_permitido(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # ============================================================
+# FUNÇÃO INTELIGENTE DE BUSCAR IMAGENS NA PASTA STATIC
+# ============================================================
+def buscar_imagem_static(nome_imagem):
+    if not nome_imagem:
+        return 'sem-capa.jpg'
+        
+    # Se já for um link de internet (http/https), mantém como está
+    if nome_imagem.startswith('http://') or nome_imagem.startswith('https://'):
+        return nome_imagem
+
+    # Remove qualquer extensão se você digitou (ex: "foto.jpg" vira "foto")
+    nome_base = os.path.splitext(nome_imagem)[0]
+
+    # Extensões que serão testadas na pasta static
+    extensoes = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.JPG', '.PNG', '.WEBP']
+    
+    pasta_static = os.path.join(app.root_path, 'static')
+
+    for ext in extensoes:
+        arquivo_teste = f"{nome_base}{ext}"
+        caminho_completo = os.path.join(pasta_static, arquivo_teste)
+        if os.path.isfile(caminho_completo):
+            return arquivo_teste  # Achou o arquivo na pasta static!
+
+    return nome_imagem
+
+# ============================================================
 # 1. ROTA DA PÁGINA INICIAL
 # ============================================================
 @app.route("/")
@@ -219,7 +246,14 @@ lista_de_jogos = [
 
 @app.route("/jogos")
 def jogos():
-    return render_template("jogos.html", jogos=lista_de_jogos)
+    # Processa os nomes das imagens para encontrar o arquivo real com a extensão na pasta static
+    jogos_processados = []
+    for j in lista_de_jogos:
+        j_copy = dict(j)
+        j_copy["imagem"] = buscar_imagem_static(j.get("imagem", ""))
+        jogos_processados.append(j_copy)
+
+    return render_template("jogos.html", jogos=jogos_processados)
 
 # ============================================================
 # 3. ROTA DA PÁGINA DE PRODUTOS
