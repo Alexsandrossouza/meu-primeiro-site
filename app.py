@@ -2,8 +2,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# ... (Restante das suas rotas)
-
 # ============================================================
 # 1. ROTA DA PÁGINA INICIAL
 # ============================================================
@@ -11,8 +9,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+
 # ============================================================
-# 2. ROTA DA PÁGINA DE JOGOS (INTACTA)
+# 2. ROTA DA PÁGINA DE JOGOS
 # ============================================================
 @app.route("/jogos")
 def jogos():
@@ -20,7 +19,7 @@ def jogos():
         {
             "titulo": "GodStix",
             "plataforma": "Xbox 360 - Formato: XEX",
-            "tamanho": "30 MB"
+            "tamanho": "30 MB",
             "categoria": "app",
             "imagem": "logo menor godstix.jpeg",
             "link": "https://4br.me/bkeFbDgA",
@@ -50,7 +49,7 @@ def jogos():
             "categoria": "acao",
             "imagem": "Grand-Theft-Auto-V.jpg",
             "link_part1": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file",
-            "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part2.rar/file"
+            "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part1.rar/file"
         },
         {   
             "titulo": "Gears of War 3",
@@ -83,10 +82,18 @@ def jogos():
             "plataforma": "Xbox 360-Formato:XEX",
             "tamanho": "4.74 GB",
             "categoria": "acao",
-            "imagem": "ACE-6-X360-PackFront_FINAL.jpg",
+            "imagem": "https://m.media-amazon.com/images/I/81xU2pE64dL._AC_SL1500_.jpg", # Usando link direto para nunca falhar
             "link_part1": "https://www.mediafire.com/file/hdnsmo5dd9okdjp/Ace_Combat_6_AnDreXplay.part1.rar/file",
             "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
         }, 
+        {
+            "titulo": "Dead or Alive 4",
+            "plataforma": "Xbox 360-Formato:XEX",
+            "tamanho": "4.7 GB",
+            "categoria": "luta",
+            "imagem": "https://m.media-amazon.com/images/I/51M39C0QJAL._AC_.jpg", # Usando link direto
+            "link": "https://www.mediafire.com/file/exemplo_dead_or_alive"
+        },
         {
             "titulo": "Alice-Madness-Returns-X360 Senha:AnDrex",
             "plataforma": "Xbox 360-Formato:XEX",
@@ -173,8 +180,9 @@ def jogos():
     ]
     return render_template("jogos.html", jogos=lista_de_jogos)
 
+
 # ============================================================
-# 3. ROTA DA PÁGINA DE PRODUTOS (COM BUSCA AUTOMÁTICA DE PREÇO)
+# 3. ROTA DA PÁGINA DE PRODUTOS
 # ============================================================
 @app.route("/produtos")
 def produtos():
@@ -258,5 +266,4 @@ def produtos():
         }
     ]
 
-    # Retorna diretamente sem fazer requisições lentas para o ML
     return render_template("produtos.html", anuncios=meus_anuncios)
