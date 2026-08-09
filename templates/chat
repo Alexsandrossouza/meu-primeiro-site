@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <!-- Ícone da aba do navegador (Favicon) -->
-    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- O restante das suas tags head continua aqui -->
-</head>
+    <!-- Ícone da aba do navegador (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}">
