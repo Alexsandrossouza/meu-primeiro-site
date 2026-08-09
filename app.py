@@ -51,12 +51,6 @@ def buscar_imagem_static(nome_imagem):
 def index():
     return render_template("index.html")
 
-# ============================================================
-# ROTA DO BATE-PAPO
-# ============================================================
-@app.route("/chat")
-def chat():
-    return render_template("chat.html")
 
 # ============================================================
 # 2. ROTA DA PÁGINA DE JOGOS
@@ -254,6 +248,16 @@ def jogos():
         jogos_processados.append(j_copy)
 
     return render_template("jogos.html", jogos=jogos_processados)
+
+
+# ============================================================
+# ROTA DO BATE-PAPO
+# ============================================================
+@app.route("/chat")   
+def chat():
+    chat_processados = []
+    return render_template("chat.html")
+
 
 # ============================================================
 # 3. ROTA DA PÁGINA DE PRODUTOS
