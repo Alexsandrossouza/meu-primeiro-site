@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Ícone da aba do navegador (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
+
+    <!-- O restante das suas tags head continua aqui -->
+</head>
