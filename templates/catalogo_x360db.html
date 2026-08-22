@@ -118,24 +118,22 @@
         <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo...">
     </div>
 
-    <div class="container-fluid">
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-            {% for jogo in jogos %}
-            <div class="col card-item">
-                <div class="card h-100 card-game border-0 shadow-sm">
-                    <img src="{{ jogo.capa }}" 
-                         class="card-img-top" 
-                         alt="{{ jogo.nome }}"
-                         onerror="this.onerror=null; this.src='https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa';">
-                    <div class="card-body-custom">
-                        <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
-                        <span class="card-id-custom">{{ jogo.id }}</span>
-                    </div>
-                </div>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+    {% for jogo in jogos %}
+    <div class="col card-item">
+        <div class="card h-100 card-game border-0 shadow-sm">
+            <img src="{{ jogo.capa }}" 
+                 class="card-img-top" 
+                 alt=""
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa';">
+            <div class="card-body-custom" style="padding: 10px; background-color: #1c2326;">
+                <div class="card-title-custom" style="font-weight: bold; font-size: 0.85rem; color: #fff;">{{ jogo.nome }}</div>
+                <small style="color: #7f8c8d; font-family: monospace;">{{ jogo.id }}</small>
             </div>
-            {% endfor %}
         </div>
     </div>
+    {% endfor %}
+</div>
 
     <script>
         function filtrarJogos() {
