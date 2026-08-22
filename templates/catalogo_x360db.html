@@ -113,23 +113,24 @@
 
     <!-- Grade dos Cards de Jogos (Modelado no seu design) -->
     <div class="container my-4">
-    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
         {% for jogo in jogos %}
         <div class="col">
-            <div class="card h-100 bg-dark text-white border-secondary">
+            <div class="card h-100 bg-dark text-white border-0 shadow-sm" style="border-radius: 8px; overflow: hidden;">
                 <img src="{{ jogo.capa }}" 
                      class="card-img-top" 
                      alt="{{ jogo.nome }}"
+                     style="aspect-ratio: 3/4; object-fit: cover;"
                      onerror="this.onerror=null; this.src='https://via.placeholder.com/150x200?text=Sem+Capa';">
-                <div class="card-body p-2 text-center">
-                    <h6 class="card-title text-truncate mb-1" title="{{ jogo.nome }}">{{ jogo.nome }}</h6>
-                    <small class="text-muted d-block">{{ jogo.formato }}</small>
+                <div class="card-body p-2 text-start bg-secondary bg-opacity-25">
+                    <h6 class="card-title text-truncate fw-bold mb-0" style="font-size: 0.9rem;" title="{{ jogo.nome }}">{{ jogo.nome }}</h6>
+                    <small class="text-muted font-monospace" style="font-size: 0.75rem;">{{ jogo.id }}</small>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-</div>
+
 
     <!-- Script de Filtro Instantâneo -->
     <script>
