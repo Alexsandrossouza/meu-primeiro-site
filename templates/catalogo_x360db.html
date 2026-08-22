@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Ícone da aba do navegador (Favicon) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo - PLANET GAMES</title>
+
+    <!-- Ícone da aba (Favicon) -->
     <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
+
+    <!-- CSS Bootstrap e Estilos Personalizados -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 
     <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80"></script>
@@ -10,39 +19,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-SW3JKVWY80');
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planet Games - Xbox 360</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <script src="/static/script.js" defer></script>
-</head>
-<body>
-
-    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
-    <header class="navbar">
-        <a href="/" style="text-decoration: none; color: inherit;">
-            <div class="logo">
-                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
-            </div>
-        </a>
-
-        <nav>
-          <a href="/>Início"</a>
-          <a href="/produtos">Produto</a>
-          <a href="/xboxclassico">Xbox Clássico</a>
-          <a href="/catalogo-completo">Catálogo x360db</a>
-          <a href="/chat">Bate-Papo</a>
-          <a href="/admin">Painel Admin</a>
-       </nav>
-    </header>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Completo - PLANET GAMES</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #0b0f12;
@@ -112,37 +91,61 @@
 </head>
 <body>
 
+    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
+    <header class="navbar">
+        <a href="/" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
+            </div>
+        </a>
+
+        <nav>
+            <a href="/">Início</a>
+            <a href="/produtos">Produto</a>
+            <a href="/xboxclassico">Xbox Clássico</a>
+            <a href="/catalogo-completo">Catálogo x360db</a>
+            <a href="/chat">Bate-Papo</a>
+            <a href="/admin">Painel Admin</a>
+        </nav>
+    </header>
+
     <h1 class="header-title">Catálogo de Jogos Xbox 360</h1>
 
     <div class="search-box">
-        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo...">
+        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo por nome ou ID...">
     </div>
 
+    <!-- GRADE DE JOGOS -->
     <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-    {% for jogo in jogos %}
-    <div class="col card-item">
-        <div class="card h-100 card-game border-0 shadow-sm">
-            <img src="{{ jogo.capa }}" 
-                 class="card-img-top" 
-                 alt=""
-                 onerror="this.onerror=null; this.src='https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa';">
-            <div class="card-body-custom" style="padding: 10px; background-color: #1c2326;">
-                <div class="card-title-custom" style="font-weight: bold; font-size: 0.85rem; color: #fff;">{{ jogo.nome }}</div>
-                <small style="color: #7f8c8d; font-family: monospace;">{{ jogo.id }}</small>
+        {% for jogo in jogos %}
+        <div class="col card-item">
+            <div class="card h-100 card-game border-0 shadow-sm">
+                <img src="{{ jogo.capa }}" 
+                     class="card-img-top" 
+                     alt="{{ jogo.nome }}"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa';">
+                <div class="card-body-custom">
+                    <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
+                    <span class="card-id-custom">{{ jogo.id }}</span>
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 
+    <!-- SCRIPT DE BUSCA FUNCIONAL -->
     <script>
         function filtrarJogos() {
             let input = document.getElementById('inputBusca').value.toLowerCase();
             let itens = document.getElementsByClassName('card-item');
 
             for (let i = 0; i < itens.length; i++) {
-                let title = itens[i].querySelector('.card-title-custom').innerText.toLowerCase();
-                let id = itens[i].querySelector('.card-id-custom').innerText.toLowerCase();
+                let titleElement = itens[i].querySelector('.card-title-custom');
+                let idElement = itens[i].querySelector('.card-id-custom');
+                
+                let title = titleElement ? titleElement.innerText.toLowerCase() : '';
+                let id = idElement ? idElement.innerText.toLowerCase() : '';
+
                 if (title.includes(input) || id.includes(input)) {
                     itens[i].style.display = "";
                 } else {
