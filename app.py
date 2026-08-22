@@ -251,6 +251,17 @@ lista_de_jogos = [
         "link": "https://4br.me/mxjceVgp"
 
 
+    },
+    {
+        "id": 19,
+        "titulo": "Call of Duty Black Ops.rar",
+        "plataforma": "Xbox 360 - Formato: XEX",
+        "tamanho": "6.460 GB",
+        "categoria": "acao",
+        "imagem": "boxart.jpg",
+        "link": "https://planetgames.net.br/download/Call of Duty Black Ops.rar"
+
+
     }
 
 
@@ -302,13 +313,6 @@ def produtos():
             "preco": "R$ 1.490,00",
             "imagem": "xbox360 call of duty.webp",
             "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
-        },
-        {
-            "ml_id": "MLB4923941273",
-            "titulo": "Dynavision3",
-            "preco": "R$ 1.000,30",
-            "imagem": "Dynavision3.webp",
-            "link_ml": "https://produto.mercadolivre.com.br/MLB-4923941273"
         },
         {
             "ml_id": "MLB4128396704",
@@ -373,6 +377,7 @@ def produtos():
             "imagem": "Fonte Para Xbox 360 Slim.webp",
             "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482"
         }
+       
     ]
     return render_template("produtos.html", anuncios=meus_anuncios)
 
