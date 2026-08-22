@@ -49,6 +49,7 @@ def index():
 # ============================================================
 # 2. ROTA DA PÁGINA DE JOGOS
 # ============================================================
+
 lista_de_jogos = [
     {
         "id": 1,
@@ -247,7 +248,11 @@ lista_de_jogos = [
         "categoria": "aventura",
         "imagem": "Castlevania.webp",
         "link": "https://4br.me/mxjceVgp"
-    }https://planetgames.net.br/xboxclassico
+
+
+    }
+
+
 ]
 
 @app.route("/jogos")

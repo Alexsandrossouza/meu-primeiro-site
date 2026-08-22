@@ -1838,3 +1838,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
     {
     ^
 SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 242
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?

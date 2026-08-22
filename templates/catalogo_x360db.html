@@ -110,18 +110,24 @@
     </div>
 
     <!-- Grade dos Cards de Jogos (Modelado no seu design) -->
-    <div class="grid-jogos" id="gridJogos">
+    <div class="container my-4">
+    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
         {% for jogo in jogos %}
-        <div class="card-game">
-            <img src="{{ jogo.capa }}" alt="{{ jogo.nome }}" onerror="this.src='https://via.placeholder.com/200x270/12171a/00ff66?text=Sem+Capa'">
-            <div class="card-info">
-                <div class="card-title">{{ jogo.nome }}</div>
-                <span class="badge-green">{{ jogo.plataforma }} - {{ jogo.formato }}</span>
-                <a href="https://github.com/Alexsandrossouza/x360db/tree/main/titles/{{ jogo.id }}" target="_blank" class="btn-download">Ver no x360db</a>
+        <div class="col">
+            <div class="card h-100 bg-dark text-white border-secondary">
+                <img src="{{ jogo.capa }}" 
+                     class="card-img-top" 
+                     alt="{{ jogo.nome }}"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/150x200?text=Sem+Capa';">
+                <div class="card-body p-2 text-center">
+                    <h6 class="card-title text-truncate mb-1" title="{{ jogo.nome }}">{{ jogo.nome }}</h6>
+                    <small class="text-muted d-block">{{ jogo.formato }}</small>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
+</div>
 
     <!-- Script de Filtro Instantâneo -->
     <script>
