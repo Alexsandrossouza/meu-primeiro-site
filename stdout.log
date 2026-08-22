@@ -177,3 +177,25 @@ Erro ao carregar games.json: [Errno 2] No such file or directory: 'games.json'
 Erro ao carregar games.json: [Errno 2] No such file or directory: 'games.json'
 Erro ao carregar games.json: [Errno 2] No such file or directory: 'games.json'
 Erro ao carregar games.json: [Errno 2] No such file or directory: 'games.json'
+ * Serving Flask app 'app'
+ * Debug mode: off
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'
+Status da requisição: 200
+Erro na requisição: 'list' object has no attribute 'items'

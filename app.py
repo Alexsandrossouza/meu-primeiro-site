@@ -461,7 +461,6 @@ from flask import Flask, send_from_directory, abort
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
 
-
 import requests
 
 @app.route('/catalogo-completo')
@@ -475,21 +474,18 @@ def catalogo_completo():
         if res.status_code == 200:
             data = res.json()
             
-            # O JSON é uma lista de jogos
-            for item in data[:120]:
+            # Sem o limite [:120] para puxar TODOS os jogos do arquivo
+            for item in data:
                 id_jogo = str(item.get('id', '')).upper().strip()
                 title = item.get('title', 'Jogo sem título')
                 
-                # Trata título caso venha em formato de dicionário ou lista
                 if isinstance(title, dict):
                     title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
                 elif isinstance(title, list) and title:
                     title = title[0]
 
-                # Pega a capa direto do JSON ou usa o padrão do GitHub se falhar
-                capa_url = item.get('boxart')
-                if not capa_url:
-                    capa_url = f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
+                # Link correto das capas direto do repositório GitHub
+                capa_url = f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
 
                 jogos.append({
                     'id': id_jogo,
