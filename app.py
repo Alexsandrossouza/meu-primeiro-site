@@ -461,6 +461,7 @@ from flask import Flask, send_from_directory, abort
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
 
+
 import requests
 
 @app.route('/catalogo-completo')
@@ -471,27 +472,30 @@ def catalogo_completo():
     
     try:
         res = requests.get(url, headers=headers, timeout=10)
-        print(f"Status da requisição: {res.status_code}") # Log para verificação
-        
         if res.status_code == 200:
             data = res.json()
-            # Pega os primeiros 120 jogos para renderizar rápido
-            for id_jogo, info in list(data.items())[:120]:
-                title = info.get('title', 'Jogo sem título')
+            
+            # O JSON é uma lista de jogos
+            for item in data[:120]:
+                id_jogo = str(item.get('id', '')).upper().strip()
+                title = item.get('title', 'Jogo sem título')
+                
+                # Trata título caso venha em formato de dicionário ou lista
                 if isinstance(title, dict):
                     title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
                 elif isinstance(title, list) and title:
                     title = title[0]
 
-                id_limpo = str(id_jogo).upper().strip()
+                # Pega a capa direto do JSON ou usa o padrão do GitHub se falhar
+                capa_url = item.get('boxart')
+                if not capa_url:
+                    capa_url = f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
 
                 jogos.append({
-                    'id': id_limpo,
+                    'id': id_jogo,
                     'nome': title,
-                    'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
+                    'capa': capa_url
                 })
-        else:
-            print(f"Erro ao baixar JSON: Código {res.status_code}")
     except Exception as e:
         print(f"Erro na requisição: {e}")
         
