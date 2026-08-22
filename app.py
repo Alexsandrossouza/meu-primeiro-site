@@ -19,44 +19,50 @@ def arquivo_permitido(filename):
 
 import os
 
+import os
+
 # ============================================================
-# FUNÇÃO INTELIGENTE DE BUSCAR IMAGENS NA PASTA STATIC
+# FUNÇÃO INTELIGENTE DE BUSCAR IMAGENS (HOME + CATÁLOGO)
 # ============================================================
-def buscar_imagem_static(id_ou_nome):
-    if not id_ou_nome:
-        return 'sem-capa.jpg'
+import os
+
+# ============================================================
+# FUNÇÃO DEFINITIVA DE BUSCAR IMAGENS (HOME + CATÁLOGO)
+# ============================================================
+def buscar_imagem_static(nome_ou_id):
+    if not nome_ou_id:
+        return '/static/sem-capa.jpg'
         
-    # Se já for um link HTTP da internet, retorna ele mesmo
-    if str(id_ou_nome).startswith('http://') or str(id_ou_nome).startswith('https://'):
-        return id_ou_nome
+    valor = str(nome_ou_id).strip()
+    
+    # 1. Se já for link da internet (http/https), retorna o link direto
+    if valor.startswith(('http://', 'https://')):
+        return valor
 
-    id_jogo = str(id_ou_nome).upper().strip()
-    extensoes = ['.jpg', '.png', '.jpeg', '.webp', '.gif']
     pasta_static = os.path.join(app.root_path, 'static')
+    extensoes = ['.jpg', '.png', '.jpeg', '.webp', '.gif', '.JPG', '.PNG', '.WEBP']
 
-    # 1. TESTE: Procura dentro da pasta x360db-main/titles/ID/boxart.ext
+    # 2. PROCURA NA HOME / JOGOS MANUAIS (ex: "Minecraft", "GodStix", "10231.jpg")
+    for ext in ['', '.jpg', '.png', '.jpeg', '.webp']:
+        teste = f"{valor}{ext}" if not valor.lower().endswith(('.jpg', '.png', '.jpeg', '.webp')) else valor
+        
+        # Testa dentro da pasta static/capas/
+        if os.path.isfile(os.path.join(pasta_static, 'capas', teste)):
+            return f"/static/capas/{teste}"
+            
+        # Testa solto direto em static/
+        if os.path.isfile(os.path.join(pasta_static, teste)):
+            return f"/static/{teste}"
+
+    # 3. PROCURA NO CATÁLOGO XBOX 360 (ex: pelo ID em static/x360db-main/titles/ID/boxart.*)
+    id_upper = valor.upper()
     for ext in extensoes:
-        relativo = f"x360db-main/titles/{id_jogo}/boxart{ext}"
-        caminho_abs = os.path.join(pasta_static, relativo)
-        if os.path.isfile(caminho_abs):
-            return relativo
+        relativo_x360 = os.path.join('x360db-main', 'titles', id_upper, f"boxart{ext}")
+        if os.path.isfile(os.path.join(pasta_static, relativo_x360)):
+            return f"/static/x360db-main/titles/{id_upper}/boxart{ext}"
 
-    # 2. TESTE: Procura direto em static/capas/ID.ext
-    for ext in extensoes:
-        relativo = f"capas/{id_jogo}{ext}"
-        caminho_abs = os.path.join(pasta_static, relativo)
-        if os.path.isfile(caminho_abs):
-            return relativo
-
-    # 3. TESTE: Procura direto na raiz de static/
-    for ext in extensoes:
-        relativo = f"{id_jogo}{ext}"
-        caminho_abs = os.path.join(pasta_static, relativo)
-        if os.path.isfile(caminho_abs):
-            return relativo
-
-    # Se não encontrar em nenhum lugar, retorna a imagem padrão de sem capa
-    return 'sem-capa.jpg'
+    # Se não achou em nenhum lugar, manda a imagem padrão
+    return '/static/sem-capa.jpg'
 
 # ============================================================
 # 1. ROTA DA PÁGINA INICIAL
