@@ -473,8 +473,6 @@ def catalogo_completo():
         res = requests.get(url, headers=headers, timeout=10)
         if res.status_code == 200:
             data = res.json()
-            
-            # Sem o limite [:120] para puxar TODOS os jogos do arquivo
             for item in data:
                 id_jogo = str(item.get('id', '')).upper().strip()
                 title = item.get('title', 'Jogo sem título')
@@ -484,7 +482,7 @@ def catalogo_completo():
                 elif isinstance(title, list) and title:
                     title = title[0]
 
-                # Link correto das capas direto do repositório GitHub
+                # Link das capas oficiais direto do GitHub do Alexsandrossouza
                 capa_url = f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
 
                 jogos.append({

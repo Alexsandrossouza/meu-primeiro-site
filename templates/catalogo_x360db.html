@@ -90,7 +90,126 @@
                     itens[i].style.display = "none";
                 }
             }
+        }<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo - PLANET GAMES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0b0f12;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
+        .header-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .search-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .search-box input {
+            width: 80%;
+            max-width: 450px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #1a2a22;
+            background-color: #121a15;
+            color: #fff;
+            outline: none;
+            text-align: center;
+        }
+        .card-game {
+            background-color: #12171a !important;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #1e282c;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card-game:hover {
+            transform: translateY(-5px);
+            border-color: #00ff66 !important;
+        }
+        .card-img-top {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #000;
+        }
+        .card-body-custom {
+            padding: 10px;
+            background-color: #1c2326;
+        }
+        .card-title-custom {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-id-custom {
+            font-size: 0.75rem;
+            color: #7f8c8d;
+            font-family: monospace;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="header-title">Catálogo de Jogos Xbox 360</h1>
+
+    <div class="search-box">
+        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo...">
+    </div>
+
+    <div class="container-fluid">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+            {% for jogo in jogos %}
+            <div class="col card-item">
+                <div class="card h-100 card-game border-0 shadow-sm">
+                    <img src="{{ jogo.capa }}" 
+                         class="card-img-top" 
+                         alt="{{ jogo.nome }}"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa';">
+                    <div class="card-body-custom">
+                        <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
+                        <span class="card-id-custom">{{ jogo.id }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        function filtrarJogos() {
+            let input = document.getElementById('inputBusca').value.toLowerCase();
+            let itens = document.getElementsByClassName('card-item');
+
+            for (let i = 0; i < itens.length; i++) {
+                let title = itens[i].querySelector('.card-title-custom').innerText.toLowerCase();
+                let id = itens[i].querySelector('.card-id-custom').innerText.toLowerCase();
+                if (title.includes(input) || id.includes(input)) {
+                    itens[i].style.display = "";
+                } else {
+                    itens[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
     </script>
 
 </body>

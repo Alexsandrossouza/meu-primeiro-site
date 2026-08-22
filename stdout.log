@@ -199,3 +199,5 @@ Status da requisição: 200
 Erro na requisição: 'list' object has no attribute 'items'
 Status da requisição: 200
 Erro na requisição: 'list' object has no attribute 'items'
+ * Serving Flask app 'app'
+ * Debug mode: off
