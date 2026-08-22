@@ -22600,3 +22600,26 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.1.121:5000
 Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 14:43:16] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:43:19] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:43:20] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:44:39] "POST /admin/jogo/novo HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 14:44:39] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:44:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:44:49] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:44:49] "GET /static/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 14:45:01] "GET /download/Apps/Dash_Launch_v3.21.rar HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 14:58:11] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:58:15] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:58:18] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:58:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 14:58:24] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:00:45] "POST /admin/jogo/editar/19 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:00:46] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:01:08] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:01:10] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:01:11] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:01:18] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:01:39] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:01:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:01:45] "GET /jogos HTTP/1.1" 200 -
