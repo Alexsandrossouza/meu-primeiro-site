@@ -259,7 +259,7 @@ lista_de_jogos = [
         "tamanho": "6.460 GB",
         "categoria": "acao",
         "imagem": "boxart.jpg",
-        "link": "https://planetgames.net.br/download/Call of Duty Black Ops.rar"
+        "link": "https://planetgames.net.br/download/Call%20of%20Duty%20Black%20Ops.rar"
 
 
     }
