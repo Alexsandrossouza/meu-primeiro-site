@@ -42,9 +42,10 @@ def buscar_imagem_static(nome_imagem):
 # ============================================================
 # 1. ROTA DA PÁGINA INICIAL
 # ============================================================
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    anuncios = [] # Ou a sua lógica para carregar anúncios
+    return render_template('index.html', anuncios=anuncios)
 
 # ============================================================
 # 2. ROTA DA PÁGINA DE JOGOS
@@ -460,20 +461,18 @@ from flask import Flask, send_from_directory, abort
 # ===================================================
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
-
 import requests
 
 @app.route('/catalogo-completo')
 def catalogo_completo():
     jogos = []
-    url = "https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/games.json"
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    url = "https://cdn.jsdelivr.net/gh/Alexsandrossouza/x360db@main/games.json"
     
     try:
-        res = requests.get(url, headers=headers, timeout=10)
+        res = requests.get(url, timeout=10)
         if res.status_code == 200:
             data = res.json()
-            for item in data:
+            for item in data[:200]: # Pega os 200 primeiros para carregar ultra rápido
                 id_jogo = str(item.get('id', '')).upper().strip()
                 title = item.get('title', 'Jogo sem título')
                 
@@ -482,8 +481,8 @@ def catalogo_completo():
                 elif isinstance(title, list) and title:
                     title = title[0]
 
-                # Link das capas oficiais direto do GitHub do Alexsandrossouza
-                capa_url = f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
+                # Imagem via CDN rápido (sem bloqueio de CORS)
+                capa_url = f"https://cdn.statically.io/gh/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
 
                 jogos.append({
                     'id': id_jogo,
@@ -491,7 +490,7 @@ def catalogo_completo():
                     'capa': capa_url
                 })
     except Exception as e:
-        print(f"Erro na requisição: {e}")
+        print(f"Erro: {e}")
         
     return render_template("catalogo_x360db.html", jogos=jogos)
 

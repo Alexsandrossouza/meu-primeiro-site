@@ -51,19 +51,13 @@
             <div class="badge">● ESTOQUE LIMITADO</div>
             <h1>O clássico que <br><span class="glow-text">nunca envelhece.</span></h1>
             <p class="subtitle">
-                Xbox 360 revisado, testado e pronto para jogar. Reviva GTA V, Halo, Forza e centenas de clássicos com a qualidade Planet Games.                
+                Xbox 360 revisado, testado e pronto para jogar. Reviva GTA V, Halo, Forza e centenas de clássicos com a qualidade Planet Games.
             </p>
             <div class="hero-buttons">
                 <a href="/produtos" class="btn-verde btn-ofertas">Ver ofertas</a>
-                <!-- Botão Jogos Xbox 360 -->
-<a href="{{ url_for('catalogo_completo') }}" class="btn-verde">
-    Jogos Xbox 360
-</a>
-
-<!-- Botão Jogos Xbox Clássico -->
-<a href="{{ url_for('jogos_xbox_classico') }}" class="btn-verde">
-    Jogos Xbox Clássico
-</a>
+                <!-- Rotas corrigidas sem espaço -->
+                <a href="/jogos" class="btn-verde btn-ofertas">Jogos Xbox 360</a>
+                <a href="/xboxclassico" class="btn-verde btn-ofertas">Jogos Xbox Clássico</a>
                 <a href="https://www.youtube.com/watch?v=SEU_VIDEO_AQUI" target="_blank" class="btn-video"> ▶ Assistir Vídeo</a>
             </div>
         </div>
@@ -74,13 +68,18 @@
         </div>
     </main>
 
-    {% for produto in anuncios %}
-    <div class="card-produto">
-        <h3>{{ produto.titulo }}</h3>
-        <p class="preco-dinamico" data-ml-id="{{ produto.ml_id }}">{{ produto.preco }}</p>
-        <a href="{{ produto.link_ml }}" target="_blank">Ver no Mercado Livre</a>
+    <!-- Exibe produtos do Mercado Livre apenas se houver anúncios passados pela rota -->
+    {% if anuncios %}
+    <div class="container-anuncios">
+        {% for produto in anuncios %}
+        <div class="card-produto">
+            <h3>{{ produto.titulo }}</h3>
+            <p class="preco-dinamico" data-ml-id="{{ produto.ml_id }}">{{ produto.preco }}</p>
+            <a href="{{ produto.link_ml }}" target="_blank">Ver no Mercado Livre</a>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+    {% endif %}
 
     <script>
     document.addEventListener("DOMContentLoaded", () => {
