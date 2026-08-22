@@ -22637,3 +22637,70 @@ Press CTRL+C to quit
 127.0.0.1 - - [22/Aug/2026 15:04:01] "GET /jogos HTTP/1.1" 200 -
 127.0.0.1 - - [22/Aug/2026 15:04:12] "GET /jogos HTTP/1.1" 200 -
 127.0.0.1 - - [22/Aug/2026 15:04:23] "GET /jogos HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 15:15:17] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:15:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:15:27] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:15:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:15:31] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:15:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:15:36] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:15:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:15:39] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:17:17] "POST /admin/jogo/editar/19 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:17:18] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:17:25] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:17:26] "GET /static/sem-capa.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 15:17:27] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 15:17:36] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:18:06] "POST /admin/jogo/editar/19 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:18:06] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:18:12] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:18:16] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:18:31] "POST /admin/jogo/editar/1 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:18:31] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:18:36] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:18:38] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:18:39] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:18:46] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:19:09] "POST /admin/jogo/editar/1 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:19:10] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:19:12] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:19:14] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:19:15] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:19:17] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:19:51] "POST /admin/jogo/editar/1 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:19:52] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:19:54] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:19:56] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:02] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:03] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:10] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:44] "POST /admin/jogo/editar/1 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:20:45] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:49] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:51] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:52] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:53] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:55] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:20:59] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:21:05] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:21:39] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:21:40] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:22:58] "POST /admin/jogo/editar/1 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:22:58] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:23:01] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:23:05] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:23:48] "POST /admin/jogo/editar/1 HTTP/1.1" 302 -
+127.0.0.1 - - [22/Aug/2026 15:23:49] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:23:52] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 15:23:53] "GET /jogos HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit

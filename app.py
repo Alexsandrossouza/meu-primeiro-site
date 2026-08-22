@@ -27,7 +27,7 @@ import os
 import os
 
 # ============================================================
-# FUNÇÃO DEFINITIVA DE BUSCAR IMAGENS (HOME + CATÁLOGO)
+# FUNÇÃO INTELIGENTE QUE ENCONTRA NA SUBPASTA ARTWORK
 # ============================================================
 def buscar_imagem_static(nome_ou_id):
     if not nome_ou_id:
@@ -35,33 +35,36 @@ def buscar_imagem_static(nome_ou_id):
         
     valor = str(nome_ou_id).strip()
     
-    # 1. Se já for link da internet (http/https), retorna o link direto
+    # Se já for link de fora (http/https), retorna direto
     if valor.startswith(('http://', 'https://')):
         return valor
 
     pasta_static = os.path.join(app.root_path, 'static')
     extensoes = ['.jpg', '.png', '.jpeg', '.webp', '.gif', '.JPG', '.PNG', '.WEBP']
 
-    # 2. PROCURA NA HOME / JOGOS MANUAIS (ex: "Minecraft", "GodStix", "10231.jpg")
+    # 1. HOME / CAPAS MANUAIS (ex: static/capas/Minecraft.jpg)
     for ext in ['', '.jpg', '.png', '.jpeg', '.webp']:
         teste = f"{valor}{ext}" if not valor.lower().endswith(('.jpg', '.png', '.jpeg', '.webp')) else valor
-        
-        # Testa dentro da pasta static/capas/
         if os.path.isfile(os.path.join(pasta_static, 'capas', teste)):
             return f"/static/capas/{teste}"
-            
-        # Testa solto direto em static/
         if os.path.isfile(os.path.join(pasta_static, teste)):
             return f"/static/{teste}"
 
-    # 3. PROCURA NO CATÁLOGO XBOX 360 (ex: pelo ID em static/x360db-main/titles/ID/boxart.*)
+    # 2. XBOX 360 - TESTA DENTRO DA PASTA 'artwork' (O CAMINHO DO SEU PRINT!)
     id_upper = valor.upper()
     for ext in extensoes:
-        relativo_x360 = os.path.join('x360db-main', 'titles', id_upper, f"boxart{ext}")
-        if os.path.isfile(os.path.join(pasta_static, relativo_x360)):
-            return f"/static/x360db-main/titles/{id_upper}/boxart{ext}"
+        # Testa: static/x360db-main/titles/4A3007D1/artwork/boxart.jpg
+        relativo_artwork = f"x360db-main/titles/{id_upper}/artwork/boxart{ext}"
+        if os.path.isfile(os.path.join(pasta_static, relativo_artwork)):
+            return f"/static/{relativo_artwork}"
 
-    # Se não achou em nenhum lugar, manda a imagem padrão
+    # 3. XBOX 360 - TESTA DIRETO NA PASTA DO ID (Caso algum jogo não tenha a pasta artwork)
+    for ext in extensoes:
+        relativo_direto = f"x360db-main/titles/{id_upper}/boxart{ext}"
+        if os.path.isfile(os.path.join(pasta_static, relativo_direto)):
+            return f"/static/{relativo_direto}"
+
+    # Caso não ache em nenhum lugar
     return '/static/sem-capa.jpg'
 
 # ============================================================
