@@ -1,8 +1,15 @@
 git add .
-git commit -m "pagina inicial"
+git commit -m "criando o caminho de download da pasta"
 git push origin main
 
 
+
+salvar cmd: nssm restart MeuSiteFlask
+
+https://planetgames.net.br/download/       %20   %20
+
+
+==========================================================================================
 
 cd ~/meu-primeiro-site
 git pull origin main
@@ -13,3 +20,7 @@ Ver se tá rodando: sudo systemctl status meu-site
 Reiniciar o site: sudo systemctl restart meu-site
 
 Parar o site: sudo systemctl stop meu-site
+
+
+
+ssh planet-games@192.168.0.147

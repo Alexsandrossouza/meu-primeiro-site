@@ -1,0 +1,1658 @@
+error: uv trampoline failed to spawn Python child process
+  Caused by: entity not found (os error 2)
+
+error: uv trampoline failed to spawn Python child process
+  Caused by: entity not found (os error 2)
+
+error: uv trampoline failed to spawn Python child process
+  Caused by: entity not found (os error 2)
+
+error: uv trampoline failed to spawn Python child process
+  Caused by: entity not found (os error 2)
+
+error: uv trampoline failed to spawn Python child process
+  Caused by: entity not found (os error 2)
+
+error: uv trampoline failed to spawn Python child process
+  Caused by: entity not found (os error 2)
+
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\app.py", line 431, in <module>
+    @app.route('/download/<path:filename>')
+     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 362, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\sansio\app.py", line 657, in add_url_rule
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: View function mapping is overwriting an existing endpoint function: baixar_arquivo
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [20/Aug/2026 23:21:32] "GET / HTTP/1.1" 200 -
+[2026-08-20 23:21:36,529] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 341, in pagina_xbox_classico
+    return render_template('xboxclassico.html')
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:21:36] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:21:41] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:42] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [20/Aug/2026 23:21:46] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Bicicleta%20Elétrica%20Starmega%20V8%20750W%20Preto.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/xbox360%20call%20of%20duty.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Dynavision3.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/D_NQ_NP_2X_815419-MLB110019916669_042026-F-estacao-de-retrabalho-reballing-bga-laser-10000.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Console%20Sony%20Playstation%205%20Edição%20Slim%20Disk%201tb%20Branco.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Controle%20Xbox%20Wireless.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Bateria%20Controle%20Para%20Xbox%20Séries%20S%20X%201200mah%20Cabo%203m.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Adaptador%20Videogame%20Game%20Stick%20M15%202%20Controles%20Game%20Stick.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Smart%20TV%204K%2050.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Pc%20Gamer%20Completo%20I7%203.4ghz%2016gb%20Ssd%20480gb%20500w%20Monitor%2019.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:47] "GET /static/Fonte%20Para%20Xbox%20360%20Slim.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:21:52] "GET /admin HTTP/1.1" 200 -
+[2026-08-20 23:21:56,565] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 250, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [20/Aug/2026 23:21:56] "GET /chat HTTP/1.1" 500 -
+[2026-08-20 23:21:59,916] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 341, in pagina_xbox_classico
+    return render_template('xboxclassico.html')
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:21:59] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:22:48] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [20/Aug/2026 23:22:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:29:12] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:29:19] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:29:24] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:29:25] "GET /jogos HTTP/1.1" 200 -
+[2026-08-20 23:29:26,406] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 341, in pagina_xbox_classico
+    "ml_id": "MLB68824482",
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:29:26] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:29:32] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:29:34] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:29:39] "GET / HTTP/1.1" 200 -
+[2026-08-20 23:29:48,609] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 341, in pagina_xbox_classico
+    "ml_id": "MLB68824482",
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:29:48] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:29:52] "GET /produtos HTTP/1.1" 200 -
+[2026-08-20 23:30:00,012] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 341, in pagina_xbox_classico
+    "ml_id": "MLB68824482",
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:30:00] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:30:04] "GET /jogos HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [20/Aug/2026 23:42:19] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:42:20] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [20/Aug/2026 23:42:23] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:42:25] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:42:27] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:42:31] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:42:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:42:35] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:42:48] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:42:51] "GET /jogos HTTP/1.1" 200 -
+[2026-08-20 23:42:55,255] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 253, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:42:55] "GET /xboxclassico HTTP/1.1" 500 -
+[2026-08-20 23:42:57,396] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 253, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:42:57] "GET /xboxclassico HTTP/1.1" 500 -
+[2026-08-20 23:43:25,630] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 253, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:43:25] "GET /xboxclassico HTTP/1.1" 500 -
+[2026-08-20 23:43:30,413] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 253, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:43:30] "GET /xboxclassico HTTP/1.1" 500 -
+[2026-08-20 23:43:35,890] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 253, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:43:35] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:48:38] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:48:42] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:48:47] "GET /jogos HTTP/1.1" 200 -
+[2026-08-20 23:48:48,514] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 253, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:48:48] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:48:54] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:49:36] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:49:38] "GET / HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [20/Aug/2026 23:54:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:54:47] "GET /static/favicon.png.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [20/Aug/2026 23:54:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:54:52] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:54:59] "GET /jogos HTTP/1.1" 200 -
+[2026-08-20 23:55:07,507] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:55:07] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:55:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:55:23] "GET /produtos HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [20/Aug/2026 23:57:41] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:57:46] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:57:55] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [20/Aug/2026 23:58:06] "GET /produtos HTTP/1.1" 200 -
+[2026-08-20 23:58:08,163] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [20/Aug/2026 23:58:08] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [20/Aug/2026 23:58:11] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:01:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:01:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:01:30] "GET /static/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:01:30] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:01:32] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:01:38] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:01:48] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:08:41] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:08:45] "GET /jogos HTTP/1.1" 200 -
+[2026-08-21 00:10:28,997] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [21/Aug/2026 00:10:29] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:13:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:13:32] "GET /jogos HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [21/Aug/2026 00:20:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:20:56] "GET / HTTP/1.1" 200 -
+[2026-08-21 00:20:59,160] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [21/Aug/2026 00:20:59] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:21:02] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:21:04] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:21:06] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:21:07] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:21:08] "GET /jogos HTTP/1.1" 200 -
+[2026-08-21 00:21:09,785] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xboxclassico.html", xboxclassico=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xboxclassico.html
+127.0.0.1 - - [21/Aug/2026 00:21:09] "GET /xboxclassico HTTP/1.1" 500 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [21/Aug/2026 00:27:30] "GET /jogos HTTP/1.1" 200 -
+[2026-08-21 00:27:32,941] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xbox_classico.html", jogos=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xbox_classico.html
+127.0.0.1 - - [21/Aug/2026 00:27:32] "GET /xboxclassico HTTP/1.1" 500 -
+[2026-08-21 00:27:34,408] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xbox_classico.html", jogos=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xbox_classico.html
+127.0.0.1 - - [21/Aug/2026 00:27:34] "GET /xboxclassico HTTP/1.1" 500 -
+[2026-08-21 00:27:35,500] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xbox_classico.html", jogos=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xbox_classico.html
+127.0.0.1 - - [21/Aug/2026 00:27:35] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:27:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:27:41] "GET /jogos HTTP/1.1" 200 -
+[2026-08-21 00:27:42,414] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xbox_classico.html", jogos=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xbox_classico.html
+127.0.0.1 - - [21/Aug/2026 00:27:42] "GET /xboxclassico HTTP/1.1" 500 -
+[2026-08-21 00:27:46,787] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xbox_classico.html", jogos=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xbox_classico.html
+127.0.0.1 - - [21/Aug/2026 00:27:46] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:29:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:29:18] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:29:18] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:29:18] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:29:20] "GET /static/favicon.png.jpeg HTTP/1.1" 304 -
+[2026-08-21 00:29:50,666] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xbox_classico.html", jogos=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xbox_classico.html
+127.0.0.1 - - [21/Aug/2026 00:29:50] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:29:51] "GET /favicon.ico HTTP/1.1" 404 -
+[2026-08-21 00:29:57,306] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xbox_classico.html", jogos=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xbox_classico.html
+127.0.0.1 - - [21/Aug/2026 00:29:57] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:30:03] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:30:03] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:04] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 00:30:05] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:30:15] "GET /admin HTTP/1.1" 302 -
+127.0.0.1 - - [21/Aug/2026 00:30:15] "GET /admin/login HTTP/1.1" 200 -
+[2026-08-21 00:30:19,759] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 281, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [21/Aug/2026 00:30:19] "GET /chat HTTP/1.1" 500 -
+[2026-08-21 00:30:22,161] ERROR in app: Exception on /xboxclassico [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 273, in xboxclassico
+    return render_template("xbox_classico.html", jogos=jogos_processados)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: xbox_classico.html
+127.0.0.1 - - [21/Aug/2026 00:30:22] "GET /xboxclassico HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:31:46] "GET / HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [21/Aug/2026 00:35:19] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:35:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:35:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:35:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:35:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:35:38] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:35:41] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:35:45] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:36:04] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:36:07] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:36:09] "GET /jogos HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [21/Aug/2026 00:41:01] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:03] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:06] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:08] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:09] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:10] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:11] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:12] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:13] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:15] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:19] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:22] "GET /jogos HTTP/1.1" 200 -
+[2026-08-21 00:41:23,898] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 282, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [21/Aug/2026 00:41:23] "GET /chat HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:41:29] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:31] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:32] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:34] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:35] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:40] "GET /xboxclassico HTTP/1.1" 200 -
+[2026-08-21 00:41:44,609] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 282, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [21/Aug/2026 00:41:44] "GET /chat HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:41:48] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:41:52] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:42:08] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:45:12] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:45:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:45:27] "GET /Jogos%20Xbox%20Clássico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 00:45:37] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:45:44] "GET /Jogos%20Xbox%20Clássico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 00:47:27] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 00:47:29] "GET /admin HTTP/1.1" 302 -
+127.0.0.1 - - [21/Aug/2026 00:47:31] "GET /admin/login HTTP/1.1" 200 -
+[2026-08-21 00:47:33,977] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 282, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [21/Aug/2026 00:47:33] "GET /chat HTTP/1.1" 500 -
+127.0.0.1 - - [21/Aug/2026 00:47:35] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:47:37] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:47:45] "GET /Jogos%20Xbox%20Clássico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 00:48:03] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:48:40] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:51:18] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:51:23] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:51:25] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:51:29] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:51:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:51:32] "GET /Jogos%20Xbox%20Clássico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 00:56:10] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:56:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:56:14] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:56:16] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:56:27] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:56:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 00:56:34] "GET /Jogos%20Xbox%20Clássico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 00:56:38] "GET /Jogos%20Xbox%20360 HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 00:56:42] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 01:27:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 03:18:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 03:18:33] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 03:18:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 03:18:35] "GET /static/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 03:24:35] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 03:24:37] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 04:06:55] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 05:35:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:03:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:03:53] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:03:53] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:03:53] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:03:53] "GET /static/favicon.png.jpeg HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:03:56] "GET /Jogos%20Xbox%20Clássico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 08:03:59] "GET /Jogos%20Xbox%20360 HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 08:04:01] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Dynavision3.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Pc%20Gamer%20Completo%20I7%203.4ghz%2016gb%20Ssd%20480gb%20500w%20Monitor%2019.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Smart%20TV%204K%2050.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/D_NQ_NP_2X_815419-MLB110019916669_042026-F-estacao-de-retrabalho-reballing-bga-laser-10000.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Controle%20Xbox%20Wireless.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/xbox360%20call%20of%20duty.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Adaptador%20Videogame%20Game%20Stick%20M15%202%20Controles%20Game%20Stick.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Bicicleta%20Elétrica%20Starmega%20V8%20750W%20Preto.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Fonte%20Para%20Xbox%20360%20Slim.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Console%20Sony%20Playstation%205%20Edição%20Slim%20Disk%201tb%20Branco.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:02] "GET /static/Bateria%20Controle%20Para%20Xbox%20Séries%20S%20X%201200mah%20Cabo%203m.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:07] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:08] "GET /static/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 08:04:20] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:04:27] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:04:32] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:17:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 08:41:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 09:31:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 09:31:47] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 09:31:47] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 09:31:47] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 09:33:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 09:43:13] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 12:25:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 13:14:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 13:22:10] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 13:22:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 13:40:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 14:03:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 14:03:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 15:48:36] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 15:48:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 16:00:08] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 16:00:10] "GET /Jogos%20Xbox%20360 HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 16:00:12] "GET /Jogos%20Xbox%20Clássico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 16:50:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 16:50:34] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:34] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 16:50:34] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:38] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 16:50:39] "GET /static/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 17:01:02] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -

@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Ícone da aba do navegador (Favicon) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}">
 
-    <!-- Título do Site -->
-    <title>Baixar Programas godstix e Jogos de Xbox 360 rgh - Planet Games</title>
-
-    <!-- Descrição para o Google -->
-    <meta name="description" content="Faça o download dos melhores programas e jogos para Xbox 360 RGH e PC. Encontre emuladores de Super Nintendo, Mega Drive e muito mais!">
-
-    <!-- Meta tag personalizada (Referência) -->
+    <!-- Meta Tags e SEO -->
+    <title>Planet Games - Xbox 360 & Clássico</title>
+    <meta name="description" content="Faça o download dos melhores programas e jogos para Xbox 360 RGH e PC.">
     <meta name="godstix" content="iyJdVVEnnz4zBsqHvNBENPhIYNM5Dc7m2ji_L0vZ5sc" />
 
-    <!-- Seu arquivo CSS -->
+    <!-- Estilos e Scripts -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <!-- GOOGLE ANALYTICS AQUI -->
-    <!-- Google tag (gtag.js) -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-SW3JKVWY80');
     </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planet Games - Xbox 360</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <script src="/static/script.js" defer></script>
 </head>
 
 <body>
 
-   <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
+    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
     <header class="navbar">
-        <a href="/" style="text-decoration: none; color: inherit;">
+        <a href="/" class="logo-link">
             <div class="logo">
                 <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
-    </div>
-    <nav>
-    <a href="/produtos">Produto</a>
-    <a href="/jogos">Jogos</a>
-   <a href="/chat">Bate-Papo</a>
-    <a href="/admin">Painel Admin</a>
-</nav>
-    
-</header>
+            </div>
+        </a>
+
+        <nav class="menu-nav">
+            <a href="/produtos">Produto</a>
+            <a href="/jogos">Xbox 360</a>
+            <a href="/xboxclassico">Xbox Clássico</a>
+            <a href="/chat">Bate-Papo</a>
+            <a href="/admin">Painel Admin</a>
+        </nav>
+    </header>
+
     <main class="hero">
         <div class="hero-left">
             <div class="badge">● ESTOQUE LIMITADO</div>
@@ -61,11 +53,11 @@
                 Xbox 360 revisado, testado e pronto para jogar. Reviva GTA V, Halo, Forza e centenas de clássicos com a qualidade Planet Games.                
             </p>
             <div class="hero-buttons">
-            <a href="https://planet-games.onrender.com/produtos" class="btn-verde btn-ofertas" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
-            Ver ofertas</a>
-            <a href="https://planet-games.onrender.com/jogos" class="btn-verde btn-ofertas" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
-            Download de jogos</a>
-            <a href="https://www.youtube.com/watch?v=SEU_VIDEO_AQUI" target="_blank" class="btn-video"> ▶ Assistir Vídeo</a>
+                <a href="/produtos" class="btn-verde btn-ofertas">Ver ofertas</a>
+                <a href="/Jogos Xbox 360" class="btn-verde btn-ofertas">Jogos Xbox 360</a>
+                <a href="/Jogos Xbox Clássico" class="btn-verde btn-ofertas">Jogos Xbox Clássico</a>
+                <a href="https://www.youtube.com/watch?v=SEU_VIDEO_AQUI" target="_blank" class="btn-video"> ▶ Assistir Vídeo</a>
+            </div>
         </div>
         <div class="hero-right">
             <div class="image-container">
@@ -73,52 +65,41 @@
             </div>
         </div>
     </main>
-   {% for produto in anuncios %}
-<div class="card-produto">
-  <h3>{{ produto.titulo }}</h3>
-  
-  <!-- Adicione a class "preco-dinamico" e o data-ml-id como abaixo -->
-  <p class="preco-dinamico" data-ml-id="{{ produto.ml_id }}">
-    {{ produto.preco }}
-  </p>
 
-  <a href="{{ produto.link_ml }}" target="_blank">Ver no Mercado Livre</a>
-</div>
-{% endfor %}
+    {% for produto in anuncios %}
+    <div class="card-produto">
+        <h3>{{ produto.titulo }}</h3>
+        <p class="preco-dinamico" data-ml-id="{{ produto.ml_id }}">{{ produto.preco }}</p>
+        <a href="{{ produto.link_ml }}" target="_blank">Ver no Mercado Livre</a>
+    </div>
+    {% endfor %}
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Seleciona todos os elementos de preço da página
-    const elementosPreco = document.querySelectorAll(".preco-dinamico");
+    document.addEventListener("DOMContentLoaded", () => {
+        const elementosPreco = document.querySelectorAll(".preco-dinamico");
 
-    elementosPreco.forEach((el) => {
-      const mlId = el.getAttribute("data-ml-id");
+        elementosPreco.forEach((el) => {
+            const mlId = el.getAttribute("data-ml-id");
 
-      // Ignora links de catálogo que contêm MLBU ou não começam com MLB
-      if (mlId && mlId.startsWith("MLB") && !mlId.includes("MLBU")) {
-        fetch(`https://api.mercadolibre.com/items/${mlId}`)
-          .then((response) => {
-            if (!response.ok) throw new Error("Erro na API");
-            return response.json();
-          })
-          .then((data) => {
-            if (data.price) {
-              // Formata o valor recebido para R$ X.XXX,XX
-              const precoFormatado = data.price.toLocaleString("pt-BR", {
-                style: "currency",
-                currency: "BRL"
-              });
-              // Atualiza o texto na tela do usuário
-              el.innerText = precoFormatado;
+            if (mlId && mlId.startsWith("MLB") && !mlId.includes("MLBU")) {
+                fetch(`https://api.mercadolibre.com/items/${mlId}`)
+                    .then((response) => {
+                        if (!response.ok) throw new Error("Erro na API");
+                        return response.json();
+                    })
+                    .then((data) => {
+                        if (data.price) {
+                            const precoFormatado = data.price.toLocaleString("pt-BR", {
+                                style: "currency",
+                                currency: "BRL"
+                            });
+                            el.innerText = precoFormatado;
+                        }
+                    })
+                    .catch(() => {});
             }
-          })
-          .catch(() => {
-            // Se a API falhar ou o ML bloquear, mantém o preço fixo do app.py
-          });
-      }
+        });
     });
-  });
-</script>
+    </script>
 </body>
 </html>

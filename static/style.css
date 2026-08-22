@@ -67,21 +67,23 @@ body {
     color: #00ff66; /* Verde Neon */
 }
 
-.nav-links {
+/* Suporte tanto para .nav-links quanto para a tag <nav> dentro da navbar */
+.nav-links, .navbar nav {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
-.nav-links a {
-    color: #94a3b8;
-    text-decoration: none;
+.nav-links a, .navbar nav a {
+    color: #94a3b8 !important; /* Força o cinza padrão para evitar o roxo/azul do navegador */
+    text-decoration: none !important;
     font-size: 0.95rem;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #00ff66;
+.nav-links a:hover, .navbar nav a:hover {
+    color: #00ff66 !important; /* Verde neon ao passar o mouse */
 }
 
 /* Botão Comprar do Topo Navbar */
@@ -228,7 +230,6 @@ h1 {
 
 .grid-jogos {
     display: grid;
-    /* Reduzido para 180px para caber 4 cards perfeitamente lado a lado */
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 20px;
     padding: 20px 5%;
@@ -330,7 +331,6 @@ h1 {
    5. RESPONSIVIDADE (CELULARES E DISPOSITIVOS MÓVEIS)
    ============================================================ */
 @media (max-width: 968px) {
-    /* Ajuste da Barra de Navegação no Celular */
     .navbar {
         flex-direction: column;
         gap: 15px;
@@ -338,15 +338,14 @@ h1 {
         text-align: center;
     }
 
-    /* Em vez de 'display: none', exibimos os links organizados */
-    .nav-links {
+    .nav-links, .navbar nav {
         display: flex;
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .nav-links a {
+    .nav-links a, .navbar nav a {
         font-size: 0.85rem;
     }
 
@@ -355,7 +354,6 @@ h1 {
         font-size: 0.8rem;
     }
 
-    /* Ajuste da Hero (Início) */
     .hero {
         flex-direction: column;
         padding: 30px 5%;
@@ -380,7 +378,6 @@ h1 {
         width: 100%;
     }
 
-    /* Força os Jogos a ficarem em 2 colunas perfeitas no Celular */
     .grid-jogos {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px;
@@ -389,7 +386,7 @@ h1 {
 }
 
 /* ============================================================
-   6. ESTILO DA BARRA DE PESQUISA
+   6. BARRA DE PESQUISA E BOTÕES DE FILTRO
    ============================================================ */
 .busca-container {
     margin-bottom: 30px;
@@ -420,7 +417,6 @@ h1 {
     box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
 }
 
-/* Container de botões flexíveis */
 .botoes-container {
     display: flex;
     gap: 10px;
@@ -433,52 +429,6 @@ h1 {
     margin-top: 0 !important;
 }
 
-/* =========================================
-   ESTILO DA BARRA DE PESQUISA
-   ========================================= */
-
-.busca-container {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-#campoBusca {
-    width: 100%;
-    max-width: 500px;
-    padding: 14px 20px;
-    font-size: 1rem;
-    background-color: rgba(18, 24, 27, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 30px;
-    color: #ffffff;
-    outline: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-#campoBusca::placeholder {
-    color: #888888;
-}
-
-#campoBusca:focus {
-    border-color: #00ff66;
-    box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
-}
-/* Container para alinhar os botões lado a lado caso haja mais de um */
-.botoes-container {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    margin-top: auto; /* Mantém os botões sempre colados no final do card */
-}
-
-/* Garante que se houver dois botões, eles dividam o espaço igualmente */
-.botoes-container .btn-comprar {
-    flex: 1;
-    margin-top: 0 !important; 
-}
-/* Container dos botões de filtro */
 .tags-container {
     display: flex;
     flex-wrap: wrap;
@@ -487,7 +437,6 @@ h1 {
     justify-content: flex-start;
 }
 
-/* Estilo dos Botões de Filtro */
 .tag-btn {
     background-color: #121212;
     color: #ffffff;
@@ -501,7 +450,6 @@ h1 {
     outline: none;
 }
 
-/* Efeito quando passa o mouse por cima */
 .tag-btn:hover {
     border-color: #00ff66;
     color: #00ff66;
@@ -509,7 +457,6 @@ h1 {
     box-shadow: 0 4px 12px rgba(0, 255, 102, 0.2);
 }
 
-/* Botão Selecionado / Ativo */
 .tag-btn.active {
     background-color: #00ff66;
     color: #000000;

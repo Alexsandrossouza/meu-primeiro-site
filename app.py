@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -22,25 +22,20 @@ def arquivo_permitido(filename):
 # ============================================================
 def buscar_imagem_static(nome_imagem):
     if not nome_imagem:
-        return 'sem-capa.jpg'
+        return 'sem-capa.jpg' '.jpg', '.jpeg', '.png', '.webp', '.gif', '.JPG', '.PNG', '.WEBP'
         
-    # Se já for um link de internet (http/https), mantém como está
     if nome_imagem.startswith('http://') or nome_imagem.startswith('https://'):
         return nome_imagem
 
-    # Remove qualquer extensão se você digitou (ex: "foto.jpg" vira "foto")
     nome_base = os.path.splitext(nome_imagem)[0]
-
-    # Extensões que serão testadas na pasta static
     extensoes = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.JPG', '.PNG', '.WEBP']
-    
     pasta_static = os.path.join(app.root_path, 'static')
 
     for ext in extensoes:
         arquivo_teste = f"{nome_base}{ext}"
         caminho_completo = os.path.join(pasta_static, arquivo_teste)
         if os.path.isfile(caminho_completo):
-            return arquivo_teste  # Achou o arquivo na pasta static!
+            return arquivo_teste
 
     return nome_imagem
 
@@ -67,9 +62,29 @@ lista_de_jogos = [
         "video": "https://www.youtube.com/watch?v=Wt01fROQNUM"
     },
     {
+       "id": 1,
+       "titulo": "Dash_Launch_v3.21.7",
+       "plataforma": "Xbox 360 - Formato: XEX",
+       "tamanho": "1.60 MB",
+       "categoria": "app",
+       "imagem": "Dash_Launch_v3.21.jpg",
+       "link": "https://consolemods.org/wiki/images/f/fd/Dash_Launch_v3.21.7z",
+       
+    },
+    {
+        "id": 1,
+        "titulo": "XeXmenu_1.2",
+        "plataforma": "Xbox 360 - Formato: XEX",
+        "tamanho": "104 MB",
+        "categoria": "app",
+        "imagem": "watermarked_img_10289782803069378499.jpg",
+        "link": "https://consolemods.org/wiki/images/5/5c/XeXmenu_1.2.7z",
+        
+    },
+    {
         "id": 2,
         "titulo": "Minecraft",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "1.990 GB",
         "categoria": "rpg",
         "imagem": "Minecraft-Xbox-360-Edition.jpg",
@@ -78,7 +93,7 @@ lista_de_jogos = [
     {
         "id": 3,
         "titulo": "Resident Evil Operation Raccoon City",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "5.430 GB",
         "categoria": "terror",
         "imagem": "Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg",
@@ -87,19 +102,17 @@ lista_de_jogos = [
     {   
         "id": 4,
         "titulo": "Grand Theft Auto V",
-        "card-jogo": "acao",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "16.5 GB",
         "categoria": "acao",
         "imagem": "Grand-Theft-Auto-V.jpg",
         "link_part1": "https://www.mediafire.com/file/k6j6g1xr7rz2ync/GTAV-XEX-DVD1yDVD2.part1.rar/file",
-        "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part1.rar/file"
+        "link_part2": "https://www.mediafire.com/file/1e6lll4a3m0d1me/GTAV-XEX-DVD1yDVD2.part2.rar/file"
     },
     {   
         "id": 5,
         "titulo": "Gears of War 3",
-        "card-jogo": "acao",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "7.5 GB",
         "categoria": "acao",
         "imagem": "Gears-of-War-3-scaled.jpg",
@@ -108,7 +121,7 @@ lista_de_jogos = [
     {
         "id": 6,
         "titulo": "Assassin's creed rogue",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "5.58 GB",
         "categoria": "acao",
         "imagem": "Assassin's creed rogue.jpg",
@@ -117,7 +130,7 @@ lista_de_jogos = [
     {
         "id": 7,
         "titulo": "Red Dead Redemption",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "5.58 GB",
         "categoria": "acao",
         "imagem": "red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg",
@@ -127,17 +140,17 @@ lista_de_jogos = [
     {
         "id": 8,
         "titulo": "Ace Combat 6 Fires Of Liberation",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "4.74 GB",
         "categoria": "acao",
         "imagem": "https://m.media-amazon.com/images/I/81xU2pE64dL._AC_SL1500_.jpg",
         "link_part1": "https://www.mediafire.com/file/hdnsmo5dd9okdjp/Ace_Combat_6_AnDreXplay.part1.rar/file",
-        "link_part2": "https://www.mediafire.com/file/1dh6q2hfdtqb2t3/lrIdF9u$UZh.part2.rar/file"
+        "link_part2": "https://www.mediafire.com/file/exemplo_ace_part2"
     }, 
     {
         "id": 9,
         "titulo": "Dead or Alive 4",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "4.7 GB",
         "categoria": "luta",
         "imagem": "https://m.media-amazon.com/images/I/51M39C0QJAL._AC_.jpg",
@@ -146,7 +159,7 @@ lista_de_jogos = [
     {
         "id": 10,
         "titulo": "Alice-Madness-Returns-X360 Senha:AnDrex",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "2.1 / 2.1 GB",
         "categoria": "acao",
         "imagem": "Alice-Madness-Returns-X360.webp",
@@ -156,7 +169,7 @@ lista_de_jogos = [
     {
         "id": 11,
         "titulo": "skyrim",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "4.36 GB",
         "categoria": "acao",
         "imagem": "skyrim.jpg",
@@ -165,7 +178,7 @@ lista_de_jogos = [
     {
         "id": 12,
         "titulo": "Horizon",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "3.4 / 3.33 GB",
         "categoria": "corrida",
         "imagem": "horizon.jpg",
@@ -175,7 +188,7 @@ lista_de_jogos = [
     {
         "id": 13,
         "titulo": "RESIDENT EVIL 6 BR Senha:RAFARGH6",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "7,27 GB",
         "categoria": "terror",
         "imagem": "RESIDENT EVIL 6 BR.webp",
@@ -184,7 +197,7 @@ lista_de_jogos = [
     {
         "id": 14,
         "titulo": "Call of Duty Black Ops II",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "3,9 / 3,3 GB",
         "categoria": "acao",
         "imagem": "Cover Call of Duty Black Ops II.webp",
@@ -194,7 +207,7 @@ lista_de_jogos = [
     {
         "id": 15,
         "titulo": "Lollipop Chainsaw",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "5.1 GB",
         "categoria": "aventura",
         "imagem": "Cover_thumb.jpg",
@@ -203,7 +216,7 @@ lista_de_jogos = [
     {
         "id": 16,
         "titulo": "Far Cry 4",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "6,7 GB",
         "categoria": "acao",
         "imagem": "Far Cry 4.webp",
@@ -212,7 +225,7 @@ lista_de_jogos = [
     {
         "id": 17,
         "titulo": "EMULADOR MEGA DRIVE + 1.071 ROMS",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "739 MB",
         "categoria": "emulador",
         "imagem": "mega driver.png",
@@ -221,7 +234,7 @@ lista_de_jogos = [
     {
         "id": 18,
         "titulo": "Emulador Super Nintendo + 3247 ROMS",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "2.6 GB",
         "categoria": "emulador",
         "imagem": "emulador super nintendo.png",
@@ -230,17 +243,16 @@ lista_de_jogos = [
     {
         "id": 19,
         "titulo": "Castlevania",
-        "plataforma": "Xbox 360-Formato:XEX",
+        "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "3.92 GB",
         "categoria": "aventura",
         "imagem": "Castlevania.webp",
         "link": "https://4br.me/mxjceVgp"
-    }
+    }https://planetgames.net.br/xboxclassico
 ]
 
 @app.route("/jogos")
 def jogos():
-    # Processa os nomes das imagens para encontrar o arquivo real com a extensão na pasta static
     jogos_processados = []
     for j in lista_de_jogos:
         j_copy = dict(j)
@@ -250,12 +262,23 @@ def jogos():
     return render_template("jogos.html", jogos=jogos_processados)
 
 
+@app.route("/xboxclassico")
+def xboxclassico():
+    jogos_processados = []
+    for j in lista_de_jogos:
+        j_copy = dict(j)
+        j_copy["imagem"] = buscar_imagem_static(j.get("imagem", ""))
+        jogos_processados.append(j_copy)
+        
+    return render_template("jogos_xbox_classico.html", jogos=jogos_processados)
+
+
+
 # ============================================================
 # ROTA DO BATE-PAPO
 # ============================================================
 @app.route("/chat")   
 def chat():
-    chat_processados = []
     return render_template("chat.html")
 
 
@@ -303,7 +326,7 @@ def produtos():
         {
             "ml_id": "MLB5111737986",
             "titulo": "Bateria Controle Para Xbox Séries S X 1200mah Cabo 3m",
-            "preco": "R$ 58,99",
+            "preco": "R$ 64,99",
             "imagem": "Bateria Controle Para Xbox Séries S X 1200mah Cabo 3m.webp",
             "link_ml": "https://www.mercadolivre.com.br/bateria-controle-para-xbox-series-s-x-1200mah-cabo-3m/up/MLBU2183606506?pdp_filters=item_id%3AMLB5111737986" 
         },
@@ -344,6 +367,7 @@ def produtos():
         }
     ]
     return render_template("produtos.html", anuncios=meus_anuncios)
+
 
 # ============================================================
 # 4. ROTAS DO PAINEL ADMIN (SENHA, UPLOAD, EDIÇÃO E EXCLUSÃO)
@@ -426,5 +450,25 @@ def excluir_jogo(jogo_id):
     lista_de_jogos = [j for j in lista_de_jogos if j["id"] != jogo_id]
     return redirect(url_for("admin"))
 
+import os
+from flask import Flask, send_from_directory, abort
+
+# ===================================================
+# ROTAS DE DOWNLOAD DOS JOGOS
+# ===================================================
+
+@app.route('/download/xbox360/<filename>')
+def download_360(filename):
+    return send_from_directory(r'D:\Download\Xbox360', filename)
+
+@app.route('/download/xboxclassico/<filename>')
+def download_classico(filename):
+    return send_from_directory(r'D:\Download\XboxClassico', filename)
+
+@app.route('/download/Emuladores/<filename>')
+def download_emuladores(filename):
+    return send_from_directory(r'D:\Download\Emuladores', filename)
+
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=False)
