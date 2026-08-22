@@ -1,6 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Ícone da aba do navegador (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SW3JKVWY80');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Games - Xbox 360</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
+    <header class="navbar">
+        <a href="/" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
+            </div>
+        </a>
+
+        <nav>
+          <a href="/>Início"</a>
+          <a href="/produtos">Produto</a>
+          <a href="/xboxclassico">Xbox Clássico</a>
+          <a href="/catalogo-completo">Catálogo x360db</a>
+          <a href="/chat">Bate-Papo</a>
+          <a href="/admin">Painel Admin</a>
+       </nav>
+    </header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Completo - PLANET GAMES</title>
