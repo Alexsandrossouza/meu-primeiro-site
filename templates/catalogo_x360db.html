@@ -1,27 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Completo - PLANET GAMES</title>
-
-    <!-- Ícone da aba (Favicon) -->
-    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
-
-    <!-- CSS Bootstrap e Estilos Personalizados -->
+    <!-- Importação do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-
-    <!-- GOOGLE ANALYTICS -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SW3JKVWY80');
-    </script>
-
     <style>
         body {
             background-color: #0b0f12;
@@ -91,61 +75,54 @@
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
-    <header class="navbar">
-        <a href="/" style="text-decoration: none; color: inherit;">
-            <div class="logo">
-                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
-            </div>
-        </a>
-
-        <nav>
-            <a href="/">Início</a>
-            <a href="/produtos">Produto</a>
-            <a href="/xboxclassico">Xbox Clássico</a>
-            <a href="/catalogo-completo">Catálogo x360db</a>
-            <a href="/chat">Bate-Papo</a>
-            <a href="/admin">Painel Admin</a>
-        </nav>
-    </header>
-
     <h1 class="header-title">Catálogo de Jogos Xbox 360</h1>
 
     <div class="search-box">
-        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo por nome ou ID...">
+        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo...">
     </div>
 
-    <!-- GRADE DE JOGOS -->
-    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-        {% for jogo in jogos %}
-        <div class="col card-item">
-            <div class="card h-100 card-game border-0 shadow-sm">
-                <img src="{{ jogo.capa }}" 
-                     class="card-img-top" 
-                     alt="{{ jogo.nome }}"
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa';">
-                <div class="card-body-custom">
-                    <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
-                    <span class="card-id-custom">{{ jogo.id }}</span>
+    <div class="container-fluid">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+            {% for jogo in jogos %}
+            <div class="col card-item">
+                <div class="card h-100 card-game border-0 shadow-sm">
+                    <img src="{{ jogo.capa }}" 
+                         class="card-img-top" 
+                         alt="{{ jogo.nome }}"
+                         onerror="tratarErroImagem(this, '{{ jogo.id }}')">
+                    <div class="card-body-custom">
+                        <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
+                        <span class="card-id-custom">{{ jogo.id }}</span>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 
-    <!-- SCRIPT DE BUSCA FUNCIONAL -->
     <script>
+        // Tenta carregar extensões/caminhos alternativos caso a imagem principal falhe
+        function tratarErroImagem(img, id) {
+            if (!img.dataset.tentativa) {
+                img.dataset.tentativa = "1";
+                img.src = "/static/x360db-main/titles/" + id + "/boxart.jpg";
+            } else if (img.dataset.tentativa === "1") {
+                img.dataset.tentativa = "2";
+                img.src = "/static/x360db-main/artwork/boxart/" + id + ".png";
+            } else {
+                img.onerror = null;
+                img.src = "https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa";
+            }
+        }
+
+        // Filtro em tempo real por nome ou ID
         function filtrarJogos() {
             let input = document.getElementById('inputBusca').value.toLowerCase();
             let itens = document.getElementsByClassName('card-item');
 
             for (let i = 0; i < itens.length; i++) {
-                let titleElement = itens[i].querySelector('.card-title-custom');
-                let idElement = itens[i].querySelector('.card-id-custom');
-                
-                let title = titleElement ? titleElement.innerText.toLowerCase() : '';
-                let id = idElement ? idElement.innerText.toLowerCase() : '';
-
+                let title = itens[i].querySelector('.card-title-custom').innerText.toLowerCase();
+                let id = itens[i].querySelector('.card-id-custom').innerText.toLowerCase();
                 if (title.includes(input) || id.includes(input)) {
                     itens[i].style.display = "";
                 } else {

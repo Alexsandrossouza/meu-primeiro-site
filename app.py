@@ -464,38 +464,42 @@ from flask import Flask, send_from_directory, abort
 # ===================================================
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
-import requests
+import json
+import os
 
 @app.route('/catalogo-completo')
 def catalogo_completo():
     jogos = []
-    # Usamos a API do GitHub do x360db diretamente
-    url = "https://cdn.jsdelivr.net/gh/Alexsandrossouza/x360db@main/games.json"
+    
+    # Caminho do games.json na pasta static/x360db-main/
+    json_path = os.path.join(app.root_path, 'static', 'x360db-main', 'games.json')
     
     try:
-        res = requests.get(url, timeout=10)
-        if res.status_code == 200:
-            data = res.json()
-            for item in data[:300]:  # Pega os 300 primeiros jogos para carregar rápido
-                id_jogo = str(item.get('id', '')).upper().strip()
-                title = item.get('title', 'Jogo sem título')
+        if os.path.exists(json_path):
+            with open(json_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
                 
-                # Trata casos em que o título é um dicionário ou lista
-                if isinstance(title, dict):
-                    title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
-                elif isinstance(title, list) and title:
-                    title = title[0]
+                for item in data:
+                    id_jogo = str(item.get('id', '')).upper().strip()
+                    title = item.get('title', 'Jogo sem título')
+                    
+                    if isinstance(title, dict):
+                        title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
+                    elif isinstance(title, list) and title:
+                        title = title[0]
 
-                # Capa obtida através do CDN rápido da Boxart do repositório
-                capa_url = f"https://cdn.statically.io/gh/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
+                    # Aponta para a pasta local das capinhas dentro de static/
+                    capa_url = f"/static/x360db-main/titles/{id_jogo}/boxart.png"
 
-                jogos.append({
-                    'id': id_jogo,
-                    'nome': title,
-                    'capa': capa_url
-                })
+                    jogos.append({
+                        'id': id_jogo,
+                        'nome': title,
+                        'capa': capa_url
+                    })
+        else:
+            print(f"Arquivo não encontrado em: {json_path}")
     except Exception as e:
-        print(f"Erro ao carregar x360db: {e}")
+        print(f"Erro ao ler games.json local: {e}")
         
     return render_template("catalogo_x360db.html", jogos=jogos)
 
