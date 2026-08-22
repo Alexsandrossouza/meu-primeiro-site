@@ -487,19 +487,22 @@ def catalogo_completo():
             for id_jogo, info in list(data.items())[:120]:
                 title = info.get('title', 'Jogo sem título')
                 
-                # Extrai o nome limpo caso seja dicionário ou lista
+                # Trata título em formato de dicionário ou lista
                 if isinstance(title, dict):
                     title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
                 elif isinstance(title, list) and title:
                     title = title[0]
 
+                # Formata o ID em maiúsculo (ex: 5841087B) para casar com as pastas do GitHub
+                id_limpo = str(id_jogo).upper().strip()
+
                 jogos.append({
-                    'id': id_jogo,
+                    'id': id_limpo,
                     'nome': title,
-                    'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
+                    'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
                 })
     except Exception as e:
-        print(f"Erro ao carregar o catálogo: {e}")
+        print(f"Erro ao carregar catálogo: {e}")
         
     return render_template("catalogo_x360db.html", jogos=jogos)
 
