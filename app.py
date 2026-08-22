@@ -271,14 +271,14 @@ def jogos():
 def xboxclassico():
     jogos_processados = []
     
-    # Certifique-se de usar a lista correta do Xbox Clássico aqui
-    for j in lista_de_jogos_classico:  
+    # Substitua 'lista_de_jogos' pela sua lista contendo os jogos do Xbox Clássico
+    for j in lista_de_jogos: 
         j_copy = dict(j)
         j_copy["imagem"] = buscar_imagem_static(j.get("imagem", ""))
         jogos_processados.append(j_copy)
 
-    # Certifique-se de que o nome entre aspas seja O MESMO do arquivo na pasta templates
-    return render_template("jogos_xbox_classico.html", jogos=jogos_processados)
+    # Nome exato do arquivo que está na sua pasta templates:
+    return render_template("xboxclassico.html", jogos=jogos_processados)
 
 
 
