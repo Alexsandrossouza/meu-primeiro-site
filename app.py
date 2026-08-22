@@ -46,7 +46,6 @@ def buscar_imagem_static(nome_imagem):
 def index():
     return render_template("index.html")
 
-
 # ============================================================
 # 2. ROTA DA PÁGINA DE JOGOS
 # ============================================================

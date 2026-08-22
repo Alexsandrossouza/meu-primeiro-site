@@ -1656,3 +1656,185 @@ jinja2.exceptions.TemplateNotFound: chat.html
 127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/mega%20driver.png HTTP/1.1" 304 -
 127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
 127.0.0.1 - - [21/Aug/2026 18:20:51] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:34:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 18:35:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 18:50:41] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:51] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:52] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 18:52:56] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 20:00:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 20:58:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 21:05:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 21:06:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 21:06:01] "GET /static/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 21:06:01] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 21:06:02] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 21:06:02] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 21:06:05] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 21:06:05] "GET /static/favicon.png.jpeg HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:06:54] "HEAD / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:29:43] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:29:44] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:44] "GET /static/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:44] "GET /static/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:47] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:29:52] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Dynavision3.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/xbox360%20call%20of%20duty.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Fonte%20Para%20Xbox%20360%20Slim.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Console%20Sony%20Playstation%205%20Edição%20Slim%20Disk%201tb%20Branco.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Pc%20Gamer%20Completo%20I7%203.4ghz%2016gb%20Ssd%20480gb%20500w%20Monitor%2019.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Smart%20TV%204K%2050.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Controle%20Xbox%20Wireless.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Adaptador%20Videogame%20Game%20Stick%20M15%202%20Controles%20Game%20Stick.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/D_NQ_NP_2X_815419-MLB110019916669_042026-F-estacao-de-retrabalho-reballing-bga-laser-10000.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Bicicleta%20Elétrica%20Starmega%20V8%20750W%20Preto.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:55] "GET /static/Bateria%20Controle%20Para%20Xbox%20Séries%20S%20X%201200mah%20Cabo%203m.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 22:29:58] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:30:03] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:30:30] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 22:34:29] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:10:18] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:17:52] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 23:17:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Aug/2026 23:17:54] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:17:55] "GET /static/favicon.png.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [21/Aug/2026 23:17:56] "GET /Jogos%20Xbox%20Clássico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 23:17:57] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [21/Aug/2026 23:18:06] "GET /xboxclassico HTTP/1.1" 200 -
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 243
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 242
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 242
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 242
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 242
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 242
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+  File "C:\meu-primeiro-site\app.py", line 242
+    {
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
