@@ -10,40 +10,18 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-SW3JKVWY80');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planet Games - Xbox 360</title>
+    <title>Catálogo Completo - PLANET GAMES</title>
+    
     <link rel="stylesheet" href="/static/style.css">
     <script src="/static/script.js" defer></script>
-</head>
-<body>
-
-    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
-    <header class="navbar">
-        <a href="/" style="text-decoration: none; color: inherit;">
-            <div class="logo">
-                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
-            </div>
-        </a>
-
-        <nav>
-          <a href="/>Início"</a>
-          <a href="/produtos">Produto</a>
-          <a href="/xboxclassico">Xbox Clássico</a>
-          <a href="/catalogo-completo">Catálogo x360db</a>
-          <a href="/chat">Bate-Papo</a>
-          <a href="/admin">Painel Admin</a>
-       </nav>
-    </header>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Completo - PLANET GAMES</title>
     <!-- Importação do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             background-color: #0b0f12;
@@ -113,20 +91,40 @@
 </head>
 <body>
 
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header class="navbar mb-4">
+        <a href="/" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
+            </div>
+        </a>
+
+        <nav>
+          <a href="/">Início</a>
+          <a href="/produtos">Produto</a>
+          <a href="/xboxclassico">Xbox Clássico</a>
+          <a href="/catalogo-completo">Catálogo x360db</a>
+          <a href="/chat">Bate-Papo</a>
+          <a href="/admin">Painel Admin</a>
+       </nav>
+    </header>
+
     <h1 class="header-title">Catálogo de Jogos Xbox 360</h1>
 
     <div class="search-box">
-        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo...">
+        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo por nome ou ID...">
     </div>
 
     <div class="container-fluid">
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3" id="listaJogos">
             {% for jogo in jogos %}
-            <div class="col card-item">
+            <!-- Exibe apenas os primeiros 40 de início para ficar ultra rápido -->
+            <div class="col card-item {% if loop.index > 40 %}d-none{% endif %}">
                 <div class="card h-100 card-game border-0 shadow-sm">
                     <img src="{{ jogo.capa }}" 
                          class="card-img-top" 
                          alt="{{ jogo.nome }}"
+                         loading="lazy"
                          onerror="tratarErroImagem(this, '{{ jogo.id }}')">
                     <div class="card-body-custom">
                         <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
@@ -136,35 +134,68 @@
             </div>
             {% endfor %}
         </div>
+
+        <div class="text-center my-4" id="btnContainer">
+            <button id="btnCarregarMais" onclick="carregarMais()" class="btn btn-outline-success">Carregar Mais Jogos</button>
+        </div>
     </div>
 
     <script>
-        // Tenta carregar extensões/caminhos alternativos caso a imagem principal falhe
+        let limiteExibicao = 40;
+
+        // Procura na subpasta artwork/ e extensões alternadas se falhar
         function tratarErroImagem(img, id) {
             if (!img.dataset.tentativa) {
                 img.dataset.tentativa = "1";
-                img.src = "/static/x360db-main/titles/" + id + "/boxart.jpg";
+                img.src = "/static/x360db-main/titles/" + id + "/artwork/boxart.jpg";
             } else if (img.dataset.tentativa === "1") {
                 img.dataset.tentativa = "2";
-                img.src = "/static/x360db-main/artwork/boxart/" + id + ".png";
+                img.src = "/static/x360db-main/titles/" + id + "/artwork/boxart.png";
+            } else if (img.dataset.tentativa === "2") {
+                img.dataset.tentativa = "3";
+                img.src = "/static/x360db-main/titles/" + id + "/boxart.jpg";
             } else {
                 img.onerror = null;
                 img.src = "https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa";
             }
         }
 
-        // Filtro em tempo real por nome ou ID
+        // Pesquisa em TODOS os milhares de jogos
         function filtrarJogos() {
-            let input = document.getElementById('inputBusca').value.toLowerCase();
+            let input = document.getElementById('inputBusca').value.toLowerCase().trim();
             let itens = document.getElementsByClassName('card-item');
+            let btn = document.getElementById('btnCarregarMais');
 
+            if (input !== "") {
+                btn.style.display = "none";
+                for (let i = 0; i < itens.length; i++) {
+                    let title = itens[i].querySelector('.card-title-custom').innerText.toLowerCase();
+                    let id = itens[i].querySelector('.card-id-custom').innerText.toLowerCase();
+
+                    if (title.includes(input) || id.includes(input)) {
+                        itens[i].classList.remove('d-none');
+                    } else {
+                        itens[i].classList.add('d-none');
+                    }
+                }
+            } else {
+                btn.style.display = "inline-block";
+                resetarExibicao();
+            }
+        }
+
+        function carregarMais() {
+            limiteExibicao += 40;
+            resetarExibicao();
+        }
+
+        function resetarExibicao() {
+            let itens = document.getElementsByClassName('card-item');
             for (let i = 0; i < itens.length; i++) {
-                let title = itens[i].querySelector('.card-title-custom').innerText.toLowerCase();
-                let id = itens[i].querySelector('.card-id-custom').innerText.toLowerCase();
-                if (title.includes(input) || id.includes(input)) {
-                    itens[i].style.display = "";
+                if (i < limiteExibicao) {
+                    itens[i].classList.remove('d-none');
                 } else {
-                    itens[i].style.display = "none";
+                    itens[i].classList.add('d-none');
                 }
             }
         }
