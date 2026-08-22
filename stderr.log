@@ -2004,3 +2004,9 @@ jinja2.exceptions.TemplateNotFound: chat.html
 127.0.0.1 - - [22/Aug/2026 00:23:58] "GET /xboxclassico HTTP/1.1" 200 -
 127.0.0.1 - - [22/Aug/2026 00:24:11] "GET /catalogo-completo HTTP/1.1" 200 -
 127.0.0.1 - - [22/Aug/2026 00:24:14] "GET /xboxclassico HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 00:30:57] "GET /catalogo-completo HTTP/1.1" 200 -
