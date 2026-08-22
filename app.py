@@ -476,33 +476,31 @@ def download_emuladores(filename):
 import requests
 from flask import Flask, render_template
 
+import json
+
 @app.route('/catalogo-completo')
 def catalogo_completo():
-    url = "https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/games.json"
     jogos = []
     try:
-        response = requests.get(url, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            for id_jogo, info in list(data.items())[:120]:
-                title = info.get('title', 'Jogo sem título')
-                
-                # Trata título em formato de dicionário ou lista
-                if isinstance(title, dict):
-                    title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
-                elif isinstance(title, list) and title:
-                    title = title[0]
+        with open('games.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            
+        for id_jogo, info in list(data.items())[:120]:
+            title = info.get('title', 'Jogo sem título')
+            if isinstance(title, dict):
+                title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
+            elif isinstance(title, list) and title:
+                title = title[0]
 
-                # Formata o ID em maiúsculo (ex: 5841087B) para casar com as pastas do GitHub
-                id_limpo = str(id_jogo).upper().strip()
+            id_limpo = str(id_jogo).upper().strip()
 
-                jogos.append({
-                    'id': id_limpo,
-                    'nome': title,
-                    'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
-                })
+            jogos.append({
+                'id': id_limpo,
+                'nome': title,
+                'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
+            })
     except Exception as e:
-        print(f"Erro ao carregar catálogo: {e}")
+        print(f"Erro ao carregar games.json: {e}")
         
     return render_template("catalogo_x360db.html", jogos=jogos)
 
