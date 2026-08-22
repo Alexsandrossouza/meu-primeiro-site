@@ -461,21 +461,6 @@ from flask import Flask, send_from_directory, abort
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
 
-@app.route('/download/xbox360/<filename>')
-def download_360(filename):
-    return send_from_directory(r'D:\Download\Xbox360', filename)
-
-@app.route('/download/xboxclassico/<filename>')
-def download_classico(filename):
-    return send_from_directory(r'D:\Download\XboxClassico', filename)
-
-@app.route('/download/Emuladores/<filename>')
-def download_emuladores(filename):
-    return send_from_directory(r'D:\Download\Emuladores', filename)
-
-import requests
-from flask import Flask, render_template
-
 import json
 
 @app.route('/catalogo-completo')

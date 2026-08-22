@@ -2130,3 +2130,168 @@ jinja2.exceptions.TemplateNotFound: chat.html
 127.0.0.1 - - [22/Aug/2026 01:22:39] "GET /jogos HTTP/1.1" 200 -
 127.0.0.1 - - [22/Aug/2026 01:22:45] "GET / HTTP/1.1" 200 -
 127.0.0.1 - - [22/Aug/2026 01:22:47] "GET /catalogo-completo HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 01:28:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:28:54] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:28:54] "GET /static/Smart%20TV%204K%2050.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/Bateria%20Controle%20Para%20Xbox%20Séries%20S%20X%201200mah%20Cabo%203m.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/Pc%20Gamer%20Completo%20I7%203.4ghz%2016gb%20Ssd%20480gb%20500w%20Monitor%2019.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/Console%20Sony%20Playstation%205%20Edição%20Slim%20Disk%201tb%20Branco.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/Dynavision3.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/Controle%20Xbox%20Wireless.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/Fonte%20Para%20Xbox%20360%20Slim.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/Adaptador%20Videogame%20Game%20Stick%20M15%202%20Controles%20Game%20Stick.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/D_NQ_NP_2X_815419-MLB110019916669_042026-F-estacao-de-retrabalho-reballing-bga-laser-10000.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/xbox360%20call%20of%20duty.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:55] "GET /static/Bicicleta%20Elétrica%20Starmega%20V8%20750W%20Preto.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:28:57] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:28:58] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 01:29:00] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:29:01] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:29:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:29:08] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:29:28] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:29:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:29:32] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:31:02] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:31:05] "GET /catalogo-completo HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 01:52:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:52:31] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:52:33] "GET /catalogo-completo HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 01:53:10] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:12] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:13] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:21] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:23] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:24] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:35] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:37] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:41] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:53:44] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:27] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:30] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:30] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:31] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:33] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:46] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:48] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:48] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:57:58] "GET /catalogo-completo HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 01:58:34] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:58:36] "GET /catalogo-completo HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 01:59:54] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:59:56] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:59:57] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:59:58] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 01:59:59] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:00] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:04] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:08] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:11] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:19] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:20] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:00:21] "GET /catalogo-completo HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 02:02:18] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:02:20] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:02:22] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:02:27] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 02:24:53] "GET /catalogo-completo HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 03:07:50] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 03:07:51] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:03] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Assassin's%20creed%20rogue.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:04] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 03:08:18] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:22] "GET /Jogos%20Xbox%20360 HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/Pc%20Gamer%20Completo%20I7%203.4ghz%2016gb%20Ssd%20480gb%20500w%20Monitor%2019.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/D_NQ_NP_2X_815419-MLB110019916669_042026-F-estacao-de-retrabalho-reballing-bga-laser-10000.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/Console%20Sony%20Playstation%205%20Edição%20Slim%20Disk%201tb%20Branco.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/Fonte%20Para%20Xbox%20360%20Slim.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/Dynavision3.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/Controle%20Xbox%20Wireless.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/xbox360%20call%20of%20duty.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/Adaptador%20Videogame%20Game%20Stick%20M15%202%20Controles%20Game%20Stick.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/Smart%20TV%204K%2050.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:25] "GET /static/Bicicleta%20Elétrica%20Starmega%20V8%20750W%20Preto.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:26] "GET /static/Bateria%20Controle%20Para%20Xbox%20Séries%20S%20X%201200mah%20Cabo%203m.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 03:08:30] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 03:08:34] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 03:08:48] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 03:10:00] "GET / HTTP/1.1" 200 -
