@@ -464,38 +464,25 @@ from flask import Flask, send_from_directory, abort
 # ===================================================
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
-import requests
-
-@app.route('/catalogo-completo')
+@app.route("/catalogo-completo") # Ou a rota equivalente da pagina da foto
 def catalogo_completo():
-    jogos = []
-    url = "https://cdn.jsdelivr.net/gh/Alexsandrossouza/x360db@main/games.json"
+    jogos_processados = []
     
-    try:
-        res = requests.get(url, timeout=10)
-        if res.status_code == 200:
-            data = res.json()
-            for item in data[:200]: # Pega os 200 primeiros para carregar ultra rápido
-                id_jogo = str(item.get('id', '')).upper().strip()
-                title = item.get('title', 'Jogo sem título')
-                
-                if isinstance(title, dict):
-                    title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
-                elif isinstance(title, list) and title:
-                    title = title[0]
+    for j in lista_de_jogos:  # Use a sua lista do catálogo
+        j_copy = dict(j)
+        title_id = str(j.get("title_id", "")).strip().upper()
 
-                # Imagem via CDN rápido (sem bloqueio de CORS)
-                capa_url = f"https://cdn.statically.io/gh/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
+        # Se não houver URL estática/HTTP explícita, monta a URL do raw do GitHub
+        if not j_copy.get("imagem") or not j_copy["imagem"].startswith("http"):
+            if title_id:
+                # Caminho padrão do repositório x360db no GitHub
+                j_copy["imagem"] = f"https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/{title_id}/boxart.png"
+            else:
+                j_copy["imagem"] = "https://via.placeholder.com/200x270/12171a/ffffff?text=Sem+Capa"
 
-                jogos.append({
-                    'id': id_jogo,
-                    'nome': title,
-                    'capa': capa_url
-                })
-    except Exception as e:
-        print(f"Erro: {e}")
-        
-    return render_template("catalogo_x360db.html", jogos=jogos)
+        jogos_processados.append(j_copy)
+
+    return render_template("catalogo_x360db.html", jogos=jogos_processados)
 
 
 if __name__ == "__main__":
