@@ -461,31 +461,39 @@ from flask import Flask, send_from_directory, abort
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
 
-import json
+import requests
 
 @app.route('/catalogo-completo')
 def catalogo_completo():
     jogos = []
+    url = "https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/games.json"
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    
     try:
-        with open('games.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            
-        for id_jogo, info in list(data.items())[:120]:
-            title = info.get('title', 'Jogo sem título')
-            if isinstance(title, dict):
-                title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
-            elif isinstance(title, list) and title:
-                title = title[0]
+        res = requests.get(url, headers=headers, timeout=10)
+        print(f"Status da requisição: {res.status_code}") # Log para verificação
+        
+        if res.status_code == 200:
+            data = res.json()
+            # Pega os primeiros 120 jogos para renderizar rápido
+            for id_jogo, info in list(data.items())[:120]:
+                title = info.get('title', 'Jogo sem título')
+                if isinstance(title, dict):
+                    title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
+                elif isinstance(title, list) and title:
+                    title = title[0]
 
-            id_limpo = str(id_jogo).upper().strip()
+                id_limpo = str(id_jogo).upper().strip()
 
-            jogos.append({
-                'id': id_limpo,
-                'nome': title,
-                'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
-            })
+                jogos.append({
+                    'id': id_limpo,
+                    'nome': title,
+                    'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
+                })
+        else:
+            print(f"Erro ao baixar JSON: Código {res.status_code}")
     except Exception as e:
-        print(f"Erro ao carregar games.json: {e}")
+        print(f"Erro na requisição: {e}")
         
     return render_template("catalogo_x360db.html", jogos=jogos)
 
