@@ -2481,3 +2481,16 @@ jinja2.exceptions.TemplateNotFound: chat.html
 127.0.0.1 - - [22/Aug/2026 06:23:51] "GET /static/Bateria%20Controle%20Para%20Xbox%20Séries%20S%20X%201200mah%20Cabo%203m.webp HTTP/1.1" 304 -
 127.0.0.1 - - [22/Aug/2026 06:23:51] "GET /static/Console%20Sony%20Playstation%205%20Edição%20Slim%20Disk%201tb%20Branco.webp HTTP/1.1" 304 -
 127.0.0.1 - - [22/Aug/2026 06:23:51] "GET /static/Pc%20Gamer%20Completo%20I7%203.4ghz%2016gb%20Ssd%20480gb%20500w%20Monitor%2019.webp HTTP/1.1" 304 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 06:29:19] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 06:29:37] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 06:33:20] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 06:33:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 06:33:42] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 06:33:45] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 06:33:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 06:33:50] "GET /Jogos%20Xbox%20360 HTTP/1.1" 404 -
