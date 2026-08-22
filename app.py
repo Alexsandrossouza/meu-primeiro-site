@@ -476,23 +476,26 @@ def download_emuladores(filename):
 import requests
 from flask import Flask, render_template
 
-@app.route("/catalogo-completo")
+@app.route('/catalogo-completo')
 def catalogo_completo():
-    # Puxa a lista completa de jogos direto do repositório x360db do seu GitHub
     url = "https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/games.json"
     jogos = []
-    
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
             data = response.json()
-            # Carrega os primeiros 120 jogos para a página abrir de forma ultra rápida
             for id_jogo, info in list(data.items())[:120]:
+                title = info.get('title', 'Jogo sem título')
+                
+                # Extrai o nome limpo caso seja dicionário ou lista
+                if isinstance(title, dict):
+                    title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
+                elif isinstance(title, list) and title:
+                    title = title[0]
+
                 jogos.append({
                     'id': id_jogo,
-                    'nome': info.get('title', 'Jogo sem título'),
-                    'plataforma': 'Xbox 360',
-                    'formato': 'GOD / XEX',
+                    'nome': title,
                     'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_jogo}/boxart.png"
                 })
     except Exception as e:
