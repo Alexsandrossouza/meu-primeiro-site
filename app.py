@@ -470,8 +470,6 @@ import os
 @app.route('/catalogo-completo')
 def catalogo_completo():
     jogos = []
-    
-    # Caminho do games.json na pasta static/x360db-main/
     json_path = os.path.join(app.root_path, 'static', 'x360db-main', 'games.json')
     
     try:
@@ -488,18 +486,23 @@ def catalogo_completo():
                     elif isinstance(title, list) and title:
                         title = title[0]
 
-                    # Aponta para a pasta local das capinhas dentro de static/
-                    capa_url = f"/static/x360db-main/titles/{id_jogo}/boxart.png"
+                    # Checa no HD se a imagem é .jpg ou .png
+                    pasta_jogo = os.path.join(app.root_path, 'static', 'x360db-main', 'titles', id_jogo)
+                    
+                    if os.path.exists(os.path.join(pasta_jogo, 'boxart.jpg')):
+                        capa_url = f"/static/x360db-main/titles/{id_jogo}/boxart.jpg"
+                    elif os.path.exists(os.path.join(pasta_jogo, 'boxart.png')):
+                        capa_url = f"/static/x360db-main/titles/{id_jogo}/boxart.png"
+                    else:
+                        capa_url = "https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa"
 
                     jogos.append({
                         'id': id_jogo,
                         'nome': title,
                         'capa': capa_url
                     })
-        else:
-            print(f"Arquivo não encontrado em: {json_path}")
     except Exception as e:
-        print(f"Erro ao ler games.json local: {e}")
+        print(f"Erro ao ler os dados locais: {e}")
         
     return render_template("catalogo_x360db.html", jogos=jogos)
 
