@@ -55,8 +55,15 @@
             </p>
             <div class="hero-buttons">
                 <a href="/produtos" class="btn-verde btn-ofertas">Ver ofertas</a>
-                <a href="/Jogos Xbox 360" class="btn-verde btn-ofertas">Jogos Xbox 360</a>
-                <a href="/Jogos Xbox Clássico" class="btn-verde btn-ofertas">Jogos Xbox Clássico</a>
+                <!-- Botão Jogos Xbox 360 -->
+<a href="{{ url_for('catalogo_completo') }}" class="btn-verde">
+    Jogos Xbox 360
+</a>
+
+<!-- Botão Jogos Xbox Clássico -->
+<a href="{{ url_for('jogos_xbox_classico') }}" class="btn-verde">
+    Jogos Xbox Clássico
+</a>
                 <a href="https://www.youtube.com/watch?v=SEU_VIDEO_AQUI" target="_blank" class="btn-video"> ▶ Assistir Vídeo</a>
             </div>
         </div>
