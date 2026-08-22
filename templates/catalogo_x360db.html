@@ -123,11 +123,11 @@
             {% for jogo in jogos %}
             <div class="col card-item">
                 <div class="card h-100 card-game border-0 shadow-sm">
-                    <div class="capa-box">
-                    <img src="{{ jogo.imagem }}" 
-                    alt="{{ jogo.titulo }}"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/200x270/12171a/ffffff?text=Sem+Capa';">
-</                  <div class="card-body-custom">
+                    <img src="{{ jogo.capa }}" 
+                         class="card-img-top" 
+                         alt="{{ jogo.nome }}"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa';">
+                    <div class="card-body-custom">
                         <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
                         <span class="card-id-custom">{{ jogo.id }}</span>
                     </div>
