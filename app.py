@@ -17,27 +17,46 @@ ADMIN_PASSWORD = "planet123"
 def arquivo_permitido(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+import os
+
 # ============================================================
 # FUNÇÃO INTELIGENTE DE BUSCAR IMAGENS NA PASTA STATIC
 # ============================================================
-def buscar_imagem_static(nome_imagem):
-    if not nome_imagem:
-        return 'sem-capa.jpg' '.jpg', '.jpeg', '.png', '.webp', '.gif', '.JPG', '.PNG', '.WEBP'
+def buscar_imagem_static(id_ou_nome):
+    if not id_ou_nome:
+        return 'sem-capa.jpg'
         
-    if nome_imagem.startswith('http://') or nome_imagem.startswith('https://'):
-        return nome_imagem
+    # Se já for um link HTTP da internet, retorna ele mesmo
+    if str(id_ou_nome).startswith('http://') or str(id_ou_nome).startswith('https://'):
+        return id_ou_nome
 
-    nome_base = os.path.splitext(nome_imagem)[0]
-    extensoes = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.JPG', '.PNG', '.WEBP']
+    id_jogo = str(id_ou_nome).upper().strip()
+    extensoes = ['.jpg', '.png', '.jpeg', '.webp', '.gif']
     pasta_static = os.path.join(app.root_path, 'static')
 
+    # 1. TESTE: Procura dentro da pasta x360db-main/titles/ID/boxart.ext
     for ext in extensoes:
-        arquivo_teste = f"{nome_base}{ext}"
-        caminho_completo = os.path.join(pasta_static, arquivo_teste)
-        if os.path.isfile(caminho_completo):
-            return arquivo_teste
+        relativo = f"x360db-main/titles/{id_jogo}/boxart{ext}"
+        caminho_abs = os.path.join(pasta_static, relativo)
+        if os.path.isfile(caminho_abs):
+            return relativo
 
-    return nome_imagem
+    # 2. TESTE: Procura direto em static/capas/ID.ext
+    for ext in extensoes:
+        relativo = f"capas/{id_jogo}{ext}"
+        caminho_abs = os.path.join(pasta_static, relativo)
+        if os.path.isfile(caminho_abs):
+            return relativo
+
+    # 3. TESTE: Procura direto na raiz de static/
+    for ext in extensoes:
+        relativo = f"{id_jogo}{ext}"
+        caminho_abs = os.path.join(pasta_static, relativo)
+        if os.path.isfile(caminho_abs):
+            return relativo
+
+    # Se não encontrar em nenhum lugar, retorna a imagem padrão de sem capa
+    return 'sem-capa.jpg'
 
 # ============================================================
 # 1. ROTA DA PÁGINA INICIAL
