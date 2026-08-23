@@ -510,30 +510,29 @@ def catalogo_completo():
         busca = request.args.get('busca', '', type=str).strip().lower()
         itens_por_pagina = 36
 
-        # 1. Caminho correto do arquivo games.json na pasta static
         caminho_json = os.path.join(current_app.static_folder, 'x360db-main', 'games.json')
         
         todos_jogos = []
         if os.path.exists(caminho_json):
             with open(caminho_json, 'r', encoding='utf-8') as f:
                 dados = json.load(f)
-                # Adapta se o JSON for lista ou dicionário
                 if isinstance(dados, list):
                     todos_jogos = dados
                 elif isinstance(dados, dict):
-                    todos_jogos = [{'id': k, 'nome': v.get('name', k) if isinstance(v, dict) else str(v)} for k, v in dados.items()]
+                    todos_jogos = [{'id': k, 'nome': v.get('name', v.get('title', k)) if isinstance(v, dict) else str(v)} for k, v in dados.items()]
 
-        # 2. Filtro de Busca
+        # Busca corrigida: verifica tanto 'nome' quanto 'name' e 'id'
         if busca:
-            jogos_filtrados = [
-                j for j in todos_jogos 
-                if busca in str(j.get('name', j.get('nome', ''))).lower() 
-                or busca in str(j.get('id', '')).lower()
-            ]
+            jogos_filtrados = []
+            for j in todos_jogos:
+                nome_jogo = str(j.get('nome', j.get('name', j.get('title', '')))).lower()
+                id_jogo = str(j.get('id', '')).lower()
+                if busca in nome_jogo or busca in id_jogo:
+                    jogos_filtrados.append(j)
         else:
             jogos_filtrados = todos_jogos
 
-        # 3. Paginação Real (Garante alta velocidade)
+        # Paginação
         total_jogos = len(jogos_filtrados)
         total_paginas = (total_jogos + itens_por_pagina - 1) // itens_por_pagina if total_jogos > 0 else 1
         page = max(1, min(page, total_paginas))
@@ -542,11 +541,10 @@ def catalogo_completo():
         fim = inicio + itens_por_pagina
         jogos_pagina = jogos_filtrados[inicio:fim]
 
-        # 4. Formata a lista e valida as capas locais apenas dos 36 itens da página
         jogos_formatados = []
         for j in jogos_pagina:
             id_jogo = str(j.get('id', '')).strip()
-            nome_jogo = j.get('name', j.get('nome', id_jogo))
+            nome_jogo = j.get('nome', j.get('name', j.get('title', id_jogo)))
             
             rel_artwork_jpg = f"x360db-main/titles/{id_jogo}/artwork/boxart.jpg"
             rel_artwork_png = f"x360db-main/titles/{id_jogo}/artwork/boxart.png"
@@ -559,7 +557,7 @@ def catalogo_completo():
             elif os.path.exists(os.path.join(current_app.static_folder, rel_boxart_jpg)):
                 capa = rel_boxart_jpg
             else:
-                capa = "https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa"
+                capa = None
 
             jogos_formatados.append({
                 'id': id_jogo,

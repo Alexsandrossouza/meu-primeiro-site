@@ -35451,3 +35451,34 @@ Traceback (most recent call last):
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 NameError: name 'carregar_todos_os_jogos_x360' is not defined
 127.0.0.1 - - [22/Aug/2026 23:03:58] "GET /catalogo-completo HTTP/1.1" 500 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 23:06:18] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:06:19] "GET /static/https://via.placeholder.com/200x240/12171a/ffffff%3Ftext=Sem+Capa HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 23:06:29] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:06:30] "GET /static/https://via.placeholder.com/200x240/12171a/ffffff%3Ftext=Sem+Capa HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 23:06:33] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:06:35] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:03] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:03] "GET /static/https://via.placeholder.com/200x240/12171a/ffffff%3Ftext=Sem+Capa HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 23:07:06] "GET /static/https://via.placeholder.com/200x240/12171a/ffffff%3Ftext=Sem+Capa HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/https://via.placeholder.com/200x240/12171a/ffffff%3Ftext=Sem+Capa HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/5848083C/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/58550C55/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/54510840/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/58550B28/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/58550877/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/5451083B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/58550BFB/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/58550B98/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/585505A6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/5855072B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/58550E1C/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:07] "GET /static/x360db-main/titles/58550C6F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:09] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:09] "GET /static/https://via.placeholder.com/200x240/12171a/ffffff%3Ftext=Sem+Capa HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 23:07:36] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:07:37] "GET /static/https://via.placeholder.com/200x240/12171a/ffffff%3Ftext=Sem+Capa HTTP/1.1" 404 -
