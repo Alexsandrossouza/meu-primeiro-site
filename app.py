@@ -499,6 +499,21 @@ from flask import Flask, send_from_directory, abort
 # ===================================================
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
+from flask import send_from_directory
+
+# Rota para liberar o download da pasta no disco D:
+@app.route('/download/<path:filename>')
+def baixar_arquivo(filename):
+    # Caminho exato da sua pasta de jogos no Windows
+    pasta_downloads = r'D:\Download\Xbox360'
+    
+    return send_from_directory(
+        pasta_downloads, 
+        filename, 
+        as_attachment=True
+    )
+
+
 import os
 import json
 from flask import render_template, request, current_app
