@@ -62,12 +62,25 @@
             transform: translateY(-5px);
             border-color: #00ff66 !important;
         }
-        .card-img-top {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            background-color: #000;
+
+        /* --- REDIMENSIONAMENTO DA IMAGEM (NÃO CORTA O BALÃO) --- */
+        .capa-box {
+            height: 230px;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
         }
+        .card-img-top {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Encaixa a capa inteira sem esticar ou cortar */
+            border-radius: 4px;
+        }
+
         .card-body-custom {
             padding: 10px;
             background-color: #1c2326;
@@ -87,11 +100,28 @@
             font-family: monospace;
             display: block;
         }
+
+        /* --- ESTILO DA PAGINAÇÃO --- */
+        .pagination .page-link {
+            background-color: #12171a;
+            border-color: #1e282c;
+            color: #00ff66;
+            padding: 8px 16px;
+        }
+        .pagination .page-link:hover {
+            background-color: #1c2326;
+            color: #00ff66;
+        }
+        .pagination .page-item.disabled .page-link {
+            background-color: #0b0f12;
+            color: #7f8c8d;
+            border-color: #1e282c;
+        }
     </style>
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGAÇÃO -->
+    <!-- BARRA DE NAVEGAÇÃO COMPLETA -->
     <header class="navbar mb-4">
         <a href="/" style="text-decoration: none; color: inherit;">
             <div class="logo">
@@ -111,39 +141,61 @@
 
     <h1 class="header-title">Catálogo de Jogos Xbox 360</h1>
 
-    <div class="search-box">
-        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo por nome ou ID...">
-    </div>
+    <!-- FORMULÁRIO DE BUSCA (PROCESSA VIA SERVIDOR SEM TRAVAR) -->
+    <form action="/catalogo-completo" method="GET" class="search-box">
+        <input type="text" name="busca" value="{{ busca if busca else '' }}" placeholder="Pesquise por nome ou ID (Pressione Enter)...">
+    </form>
 
     <div class="container-fluid">
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3" id="listaJogos">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
             {% for jogo in jogos %}
-            <!-- Exibe apenas os primeiros 40 de início para ficar ultra rápido -->
-            <div class="col card-item {% if loop.index > 40 %}d-none{% endif %}">
+            <div class="col">
                 <div class="card h-100 card-game border-0 shadow-sm">
-                    <img src="{{ jogo.capa }}" 
-                         class="card-img-top" 
-                         alt="{{ jogo.nome }}"
-                         loading="lazy"
-                         onerror="tratarErroImagem(this, '{{ jogo.id }}')">
+                    <div class="capa-box">
+                        <img src="{{ url_for('static', filename=jogo.capa) }}" 
+                             class="card-img-top" 
+                             alt="{{ jogo.nome }}"
+                             loading="lazy"
+                             onerror="tratarErroImagem(this, '{{ jogo.id }}')">
+                    </div>
                     <div class="card-body-custom">
                         <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
                         <span class="card-id-custom">{{ jogo.id }}</span>
                     </div>
                 </div>
             </div>
+            {% else %}
+            <div class="col-12 text-center my-5">
+                <h4>Nenhum jogo encontrado.</h4>
+            </div>
             {% endfor %}
         </div>
 
-        <div class="text-center my-4" id="btnContainer">
-            <button id="btnCarregarMais" onclick="carregarMais()" class="btn btn-outline-success">Carregar Mais Jogos</button>
-        </div>
+        <!-- CONTROLE DE PÁGINAS (36 JOGOS POR PÁGINA) -->
+        {% if total_paginas and total_paginas > 1 %}
+        <nav class="d-flex justify-content-center my-4">
+            <ul class="pagination">
+                {% if page > 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page - 1 }}{% if busca %}&busca={{ busca }}{% endif %}">Anterior</a>
+                </li>
+                {% endif %}
+
+                <li class="page-item disabled">
+                    <span class="page-link">Página {{ page }} de {{ total_paginas }}</span>
+                </li>
+
+                {% if page < total_paginas %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page + 1 }}{% if busca %}&busca={{ busca }}{% endif %}">Próxima</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
     </div>
 
     <script>
-        let limiteExibicao = 40;
-
-        // Procura na subpasta artwork/ e extensões alternadas se falhar
         function tratarErroImagem(img, id) {
             if (!img.dataset.tentativa) {
                 img.dataset.tentativa = "1";
@@ -157,46 +209,6 @@
             } else {
                 img.onerror = null;
                 img.src = "https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa";
-            }
-        }
-
-        // Pesquisa em TODOS os milhares de jogos
-        function filtrarJogos() {
-            let input = document.getElementById('inputBusca').value.toLowerCase().trim();
-            let itens = document.getElementsByClassName('card-item');
-            let btn = document.getElementById('btnCarregarMais');
-
-            if (input !== "") {
-                btn.style.display = "none";
-                for (let i = 0; i < itens.length; i++) {
-                    let title = itens[i].querySelector('.card-title-custom').innerText.toLowerCase();
-                    let id = itens[i].querySelector('.card-id-custom').innerText.toLowerCase();
-
-                    if (title.includes(input) || id.includes(input)) {
-                        itens[i].classList.remove('d-none');
-                    } else {
-                        itens[i].classList.add('d-none');
-                    }
-                }
-            } else {
-                btn.style.display = "inline-block";
-                resetarExibicao();
-            }
-        }
-
-        function carregarMais() {
-            limiteExibicao += 40;
-            resetarExibicao();
-        }
-
-        function resetarExibicao() {
-            let itens = document.getElementsByClassName('card-item');
-            for (let i = 0; i < itens.length; i++) {
-                if (i < limiteExibicao) {
-                    itens[i].classList.remove('d-none');
-                } else {
-                    itens[i].classList.add('d-none');
-                }
             }
         }
     </script>
