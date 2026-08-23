@@ -81,13 +81,15 @@
             text-align: center;
         }
 
-        /* --- CARDS FINOS E PROPORCIONAIS --- */
+        /* --- CARD COM LARGURA RESTRITA E CAPA INTEIRA (IGUAL SEGUNDA FOTO) --- */
         .card-game {
             background-color: #12171a !important;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid #1e282c;
             transition: transform 0.2s, border-color 0.2s;
+            max-width: 200px; /* Impede o card de ficar largo/quadrado */
+            margin: 0 auto;
         }
         .card-game:hover {
             transform: translateY(-5px);
@@ -96,26 +98,28 @@
 
         .capa-box {
             width: 100%;
-            aspect-ratio: 2 / 3; /* Força o formato de capa fina de jogo */
+            height: 270px; /* Altura ideal para capa de DVD vertical */
             background-color: #000000;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .card-img-top {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* NUNCA corta o topo, exibe a imagem 100% inteira */
             display: block;
         }
 
         .card-body-custom {
-            padding: 8px 10px;
+            padding: 10px;
             background-color: #12171a;
         }
         .card-title-custom {
             font-size: 0.85rem;
             font-weight: bold;
             color: #ffffff;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -128,16 +132,16 @@
             margin-bottom: 6px;
         }
 
-        /* ETICUTA VERDE DO FORMATO (SELO DO CARD) */
+        /* ETIQUETA VERDE ABAIXO DO NOME (IGUAL AO SEU PADRÃO) */
         .badge-formato {
             display: inline-block;
-            background-color: rgba(0, 255, 102, 0.1);
+            background-color: rgba(0, 255, 102, 0.08);
             color: #00ff66;
             border: 1px solid #00ff66;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 2px 8px;
             font-size: 0.65rem;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         /* PAGINAÇÃO */
@@ -160,7 +164,7 @@
 </head>
 <body>
 
-    <!-- CABEÇALHO / LAYOUT DA PLANET GAMES -->
+    <!-- CABEÇALHO DA PLANET GAMES -->
     <header class="navbar">
         <a href="/" style="text-decoration: none; color: inherit;">
             <div class="logo">
@@ -185,11 +189,11 @@
     </form>
 
     <div class="container-fluid px-4">
-        <!-- GRID DE CARDS FINOS (8 COLUNAS POR LINHA EM TELA CHEIA) -->
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-2">
+        <!-- GRID COMPATÍVEL: Força 6 colunas finas por linha -->
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 justify-content-center">
             {% for jogo in jogos %}
-            <div class="col">
-                <div class="card h-100 card-game border-0 shadow-sm">
+            <div class="col d-flex justify-content-center">
+                <div class="card h-100 card-game border-0 shadow-sm w-100">
                     <div class="capa-box">
                         {% if jogo.capa %}
                         <img src="{{ url_for('static', filename=jogo.capa) }}" 
@@ -251,7 +255,7 @@
                 img.src = "/static/x360db-main/titles/" + id + "/boxart.jpg";
             } else {
                 img.onerror = null;
-                img.src = "https://via.placeholder.com/200x300/12171a/ffffff?text=Sem+Capa";
+                img.src = "https://via.placeholder.com/200x270/12171a/ffffff?text=Sem+Capa";
             }
         }
     </script>
