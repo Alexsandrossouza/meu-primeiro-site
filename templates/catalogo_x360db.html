@@ -25,22 +25,54 @@
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
+
+        /* --- LAYOUT / NAVBAR DO TOPO --- */
+        .navbar {
+            background-color: #050708;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #12171a;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .green-text {
+            color: #00ff66;
+        }
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #00ff66;
+        }
+
         .header-title {
             text-align: center;
-            margin: 20px 0;
+            margin: 25px 0 15px 0;
             font-size: 32px;
             font-weight: bold;
         }
         .search-box {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .search-box input {
             width: 80%;
             max-width: 450px;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border-radius: 25px;
             border: 1px solid #1a2a22;
             background-color: #121a15;
@@ -48,6 +80,8 @@
             outline: none;
             text-align: center;
         }
+
+        /* --- CARDS FINOS E PROPORCIONAIS --- */
         .card-game {
             background-color: #12171a !important;
             border-radius: 8px;
@@ -60,40 +94,50 @@
             border-color: #00ff66 !important;
         }
 
-        /* --- AJUSTE DA CAIXA DA CAPA (ALTURA PROPORCIONAL AO RETRATO) --- */
         .capa-box {
-            height: 320px; /* Aumentado para comportar a capa vertical completa */
+            width: 100%;
+            aspect-ratio: 2 / 3; /* Força o formato de capa fina de jogo */
             background-color: #000000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4px;
+            overflow: hidden;
         }
         .card-img-top {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Exibe a imagem 100% sem cortar topo nem bordas */
-            border-radius: 4px;
+            object-fit: cover;
+            display: block;
         }
 
         .card-body-custom {
-            padding: 10px;
-            background-color: #1c2326;
+            padding: 8px 10px;
+            background-color: #12171a;
         }
         .card-title-custom {
             font-size: 0.85rem;
             font-weight: bold;
             color: #ffffff;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .card-id-custom {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #7f8c8d;
             font-family: monospace;
             display: block;
+            margin-bottom: 6px;
+        }
+
+        /* ETICUTA VERDE DO FORMATO (SELO DO CARD) */
+        .badge-formato {
+            display: inline-block;
+            background-color: rgba(0, 255, 102, 0.1);
+            color: #00ff66;
+            border: 1px solid #00ff66;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 0.65rem;
+            font-weight: bold;
         }
 
         /* PAGINAÇÃO */
@@ -116,7 +160,8 @@
 </head>
 <body>
 
-    <header class="navbar mb-4">
+    <!-- CABEÇALHO / LAYOUT DA PLANET GAMES -->
+    <header class="navbar">
         <a href="/" style="text-decoration: none; color: inherit;">
             <div class="logo">
                 <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
@@ -135,13 +180,13 @@
 
     <h1 class="header-title">Catálogo de Jogos Xbox 360</h1>
 
-    <!-- FORMULÁRIO DE BUSCA VIA SERVIDOR -->
     <form action="/catalogo-completo" method="GET" class="search-box">
         <input type="text" name="busca" value="{{ busca if busca else '' }}" placeholder="Pesquise por nome ou ID (Pressione Enter)...">
     </form>
 
-    <div class="container-fluid">
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+    <div class="container-fluid px-4">
+        <!-- GRID DE CARDS FINOS (8 COLUNAS POR LINHA EM TELA CHEIA) -->
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-2">
             {% for jogo in jogos %}
             <div class="col">
                 <div class="card h-100 card-game border-0 shadow-sm">
@@ -162,6 +207,7 @@
                     <div class="card-body-custom">
                         <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
                         <span class="card-id-custom">{{ jogo.id }}</span>
+                        <div class="badge-formato">Xbox 360</div>
                     </div>
                 </div>
             </div>
@@ -205,7 +251,7 @@
                 img.src = "/static/x360db-main/titles/" + id + "/boxart.jpg";
             } else {
                 img.onerror = null;
-                img.src = "https://via.placeholder.com/200x280/12171a/ffffff?text=Sem+Capa";
+                img.src = "https://via.placeholder.com/200x300/12171a/ffffff?text=Sem+Capa";
             }
         }
     </script>
