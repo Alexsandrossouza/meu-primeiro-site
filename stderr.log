@@ -35308,3 +35308,146 @@ Press CTRL+C to quit
 127.0.0.1 - - [22/Aug/2026 22:52:40] "GET /static/Pc%20Gamer%20Completo%20I7%203.4ghz%2016gb%20Ssd%20480gb%20500w%20Monitor%2019.webp HTTP/1.1" 304 -
 127.0.0.1 - - [22/Aug/2026 22:52:41] "GET /static/Bicicleta%20Elétrica%20Starmega%20V8%20750W%20Preto.webp HTTP/1.1" 304 -
 127.0.0.1 - - [22/Aug/2026 22:52:41] "GET /static/Fonte%20Para%20Xbox%20360%20Slim.webp HTTP/1.1" 304 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/capas/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/capas/Castlevania.webp HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/capas/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/capas/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/capas/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/sem-capa.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [22/Aug/2026 23:03:29] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:30] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:03:32] "GET /jogos HTTP/1.1" 200 -
+[2026-08-22 23:03:37,672] ERROR in app: Exception on /catalogo-completo [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 513, in catalogo_completo
+    todos_jogos = carregar_todos_os_jogos_x360() # Use a sua função atual que lê o JSON/Banco
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'carregar_todos_os_jogos_x360' is not defined
+127.0.0.1 - - [22/Aug/2026 23:03:37] "GET /catalogo-completo HTTP/1.1" 500 -
+[2026-08-22 23:03:39,887] ERROR in app: Exception on /catalogo-completo [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 513, in catalogo_completo
+    todos_jogos = carregar_todos_os_jogos_x360() # Use a sua função atual que lê o JSON/Banco
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'carregar_todos_os_jogos_x360' is not defined
+127.0.0.1 - - [22/Aug/2026 23:03:39] "GET /catalogo-completo HTTP/1.1" 500 -
+[2026-08-22 23:03:41,039] ERROR in app: Exception on /catalogo-completo [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 513, in catalogo_completo
+    todos_jogos = carregar_todos_os_jogos_x360() # Use a sua função atual que lê o JSON/Banco
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'carregar_todos_os_jogos_x360' is not defined
+127.0.0.1 - - [22/Aug/2026 23:03:41] "GET /catalogo-completo HTTP/1.1" 500 -
+[2026-08-22 23:03:42,206] ERROR in app: Exception on /catalogo-completo [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 513, in catalogo_completo
+    todos_jogos = carregar_todos_os_jogos_x360() # Use a sua função atual que lê o JSON/Banco
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'carregar_todos_os_jogos_x360' is not defined
+127.0.0.1 - - [22/Aug/2026 23:03:42] "GET /catalogo-completo HTTP/1.1" 500 -
+[2026-08-22 23:03:43,326] ERROR in app: Exception on /catalogo-completo [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 513, in catalogo_completo
+    todos_jogos = carregar_todos_os_jogos_x360() # Use a sua função atual que lê o JSON/Banco
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'carregar_todos_os_jogos_x360' is not defined
+127.0.0.1 - - [22/Aug/2026 23:03:43] "GET /catalogo-completo HTTP/1.1" 500 -
+127.0.0.1 - - [22/Aug/2026 23:03:55] "GET / HTTP/1.1" 200 -
+[2026-08-22 23:03:56,889] ERROR in app: Exception on /catalogo-completo [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 513, in catalogo_completo
+    todos_jogos = carregar_todos_os_jogos_x360() # Use a sua função atual que lê o JSON/Banco
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'carregar_todos_os_jogos_x360' is not defined
+127.0.0.1 - - [22/Aug/2026 23:03:56] "GET /catalogo-completo HTTP/1.1" 500 -
+[2026-08-22 23:03:58,583] ERROR in app: Exception on /catalogo-completo [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 513, in catalogo_completo
+    todos_jogos = carregar_todos_os_jogos_x360() # Use a sua função atual que lê o JSON/Banco
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'carregar_todos_os_jogos_x360' is not defined
+127.0.0.1 - - [22/Aug/2026 23:03:58] "GET /catalogo-completo HTTP/1.1" 500 -
