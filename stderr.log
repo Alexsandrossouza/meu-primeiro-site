@@ -36287,3 +36287,34 @@ jinja2.exceptions.TemplateNotFound: chat.html
 127.0.0.1 - - [23/Aug/2026 08:49:46] "GET /download/ADVENTURE%20TIME%20THE%20SECRET%20OF%20THE%20NAMELESS%20KINGDOM.rar HTTP/1.1" 404 -
 127.0.0.1 - - [23/Aug/2026 08:50:28] "GET /download/UFC%20Undisputed%203.rar HTTP/1.1" 404 -
 127.0.0.1 - - [23/Aug/2026 08:52:53] "GET /download/xbox360/UFC%20Undisputed%203.rar HTTP/1.1" 404 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [23/Aug/2026 09:00:31] "GET /download/UFC%20Undisputed%203.rar HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:05:07] "GET /download/UFC%20Undisputed%203.rar HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:05:10] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:05:11] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:11] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:11] "GET /static/capas/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:12] "GET /static/capas/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:12] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:12] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:12] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:13] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:13] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:13] "GET /static/sem-capa.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 09:05:14] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:14] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:14] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:15] "GET /static/capas/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:15] "GET /static/capas/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:15] "GET /static/capas/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:16] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:16] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:16] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:17] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:17] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:17] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:05:18] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
