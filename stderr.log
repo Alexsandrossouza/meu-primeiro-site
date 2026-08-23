@@ -35777,3 +35777,513 @@ Press CTRL+C to quit
 127.0.0.1 - - [22/Aug/2026 23:38:00] "GET /catalogo-completo?busca=call HTTP/1.1" 200 -
 127.0.0.1 - - [22/Aug/2026 23:38:09] "GET /catalogo-completo?busca=call+ HTTP/1.1" 200 -
 127.0.0.1 - - [22/Aug/2026 23:39:06] "GET /xboxclassico HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [22/Aug/2026 23:41:20] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:41:21] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:41:37] "GET /catalogo-completo?busca=call+ HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:42:47] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:42:52] "GET /catalogo-completo?page=2 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:43:01] "GET /catalogo-completo?page=3 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:43:08] "GET /catalogo-completo?page=4 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:43:28] "GET /catalogo-completo?page=5 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:49:39] "GET /catalogo-completo?busca=assa HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:13] "GET /catalogo-completo?page=2&busca=assa HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:26] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:30] "GET /catalogo-completo?page=2 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:34] "GET /catalogo-completo?page=3 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:40] "GET /catalogo-completo?page=4 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:43] "GET /catalogo-completo?page=5 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:47] "GET /catalogo-completo?page=6 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550CA1/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/414707D6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550297/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/484507D6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/4E4D07D8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/484507D2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/584108F0/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550CEA/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550C43/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/5848081B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550EBC/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550EE6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/494607D6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58410A06/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550953/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550934/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/413387D9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/413307D3/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550D26/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550730/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/4B5907E0/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/413307D6/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550166/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/585505B2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550162/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550328/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58411426/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/58550C11/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/5855087B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:48] "GET /static/x360db-main/titles/545A07D3/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:56:59] "GET /catalogo-completo?busca=arcad HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/5752082F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58411259/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/584111F9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58550D3A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/584107D4/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58550C78/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58410A0F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/5855099B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58550286/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58550B60/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58411245/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/5841121D/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58550C9B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58550E25/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58410968/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/585501D4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/4E4D87F3/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/585503CE/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/584109ED/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/585508AB/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/504707D6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58410927/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58410A5D/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58550DBB/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/585507B8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/5841090D/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:00] "GET /static/x360db-main/titles/58410B62/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:03] "GET /static/x360db-main/titles/58550AC0/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:03] "GET /static/x360db-main/titles/58550199/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:03] "GET /static/x360db-main/titles/58410AC2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:03] "GET /static/x360db-main/titles/584108A0/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:03] "GET /static/x360db-main/titles/584108C8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:03] "GET /static/x360db-main/titles/58550CEB/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:11] "GET /catalogo-completo?busca=gta HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:12] "GET /static/x360db-main/titles/545407F2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:17] "GET /catalogo-completo?busca=g HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:23] "GET /catalogo-completo?page=2&busca=g HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:24] "GET /static/x360db-main/titles/58411233/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:24] "GET /static/x360db-main/titles/58550B59/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:24] "GET /static/x360db-main/titles/58550A8A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:24] "GET /static/x360db-main/titles/4D4B07D2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:25] "GET /static/x360db-main/titles/58410B22/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:25] "GET /static/x360db-main/titles/58550319/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:25] "GET /static/x360db-main/titles/58550C2F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:25] "GET /static/x360db-main/titles/585507AA/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:25] "GET /static/x360db-main/titles/5855048E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:27] "GET /catalogo-completo?page=3&busca=g HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:27] "GET /static/x360db-main/titles/58550168/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:27] "GET /static/x360db-main/titles/58550423/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:27] "GET /static/x360db-main/titles/585503E2/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:27] "GET /static/x360db-main/titles/585507A0/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/58550528/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/58550E6F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/5855050E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/5855015F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/5345083F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/58550611/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/433707D1/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/58550518/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/5841095E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/5855057B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/5855044D/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/585509EA/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/585504E9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/585506E5/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/41560901/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:28] "GET /static/x360db-main/titles/5855021E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/58550DA9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/58550A92/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/5855067F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/58550C05/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/58550972/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/415608E4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/5855064D/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/585508C7/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:29] "GET /static/x360db-main/titles/58550BA8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:30] "GET /static/x360db-main/titles/58550690/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:30] "GET /static/x360db-main/titles/5855035F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:30] "GET /static/x360db-main/titles/58550408/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:30] "GET /static/x360db-main/titles/4A5707D2/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:30] "GET /static/x360db-main/titles/585507E4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:30] "GET /static/x360db-main/titles/5855048C/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:30] "GET /static/x360db-main/titles/58410900/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:33] "GET /catalogo-completo?page=4&busca=g HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/58550464/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/494707E1/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/58550CAF/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/4256083D/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/58550AAA/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/58550E04/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/584113ED/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/585508C6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/58550D8B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/5855040D/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/5855093F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:34] "GET /static/x360db-main/titles/58550400/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550967/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550B65/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/585505B9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/585507CE/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550AE9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550E27/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550494/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/585506EB/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/5855071A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/585505C1/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/5855044F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550A3A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550C2A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550A62/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/585504F7/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550975/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/585507FE/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550A25/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/585502D8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550615/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550882/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:35] "GET /static/x360db-main/titles/58550DBA/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:38] "GET /catalogo-completo?page=5&busca=g HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:38] "GET /static/x360db-main/titles/585505B7/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:38] "GET /static/x360db-main/titles/58550C9E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:38] "GET /static/x360db-main/titles/5855069C/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/585506B2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/585506A9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550680/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550C75/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/585504CA/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/5855075B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550DE6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550879/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550720/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/585507AD/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/585509AD/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550A6F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/585506FD/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550D63/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550CF2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/58550AF1/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:39] "GET /static/x360db-main/titles/5855094A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/58550C10/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/585504D5/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/58550D96/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/58550D09/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/585504B6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/585508C4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/585503C1/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/58550DAF/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/58550624/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/58550D13/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:40] "GET /static/x360db-main/titles/58550B5E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:41] "GET /static/x360db-main/titles/443607D6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:41] "GET /static/x360db-main/titles/58410B39/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:57:41] "GET /static/x360db-main/titles/58410B95/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Aug/2026 23:58:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:14] "GET /catalogo-completo?busca=indie HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550799/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550D1B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550CEF/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550EB2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550D75/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550ECB/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550E79/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550325/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:15] "GET /static/x360db-main/titles/58550D5B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:25] "GET /catalogo-completo?busca=a HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:29] "GET /catalogo-completo?page=2&busca=a HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:33] "GET /catalogo-completo?page=3&busca=a HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:39] "GET /catalogo-completo?page=4&busca=a HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:33:44] "GET /catalogo-completo?page=5&busca=a HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:59:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:59:53] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:53] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:53] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:55] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/capas/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/capas/watermarked_img_10289782803069378499.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/sem-capa.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/capas/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/capas/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 00:59:56] "GET /static/capas/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:01] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/5841087B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/584107DE/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/58550BAF/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/584109A8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/58550AE7/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/415608D8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/584109B7/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/58550440/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/58550857/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:02] "GET /static/x360db-main/titles/584112AF/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:05] "GET /static/x360db-main/titles/585502B2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:05] "GET /static/x360db-main/titles/465607D4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:05] "GET /static/x360db-main/titles/585502CC/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:05] "GET /static/x360db-main/titles/584108AA/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:06] "GET /static/x360db-main/titles/58550B89/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:06] "GET /static/x360db-main/titles/58550B35/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:06] "GET /static/x360db-main/titles/58550D64/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:06] "GET /static/x360db-main/titles/58550BBE/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:07] "GET /static/x360db-main/titles/58550ACD/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:07] "GET /static/x360db-main/titles/454107E6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:07] "GET /static/x360db-main/titles/454108E4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:07] "GET /static/x360db-main/titles/5855076A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:08] "GET /static/x360db-main/titles/58550BB0/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:08] "GET /static/x360db-main/titles/58550B97/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:09] "GET /static/x360db-main/titles/58550222/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:09] "GET /static/x360db-main/titles/58550E47/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:10] "GET /static/x360db-main/titles/58550A03/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:10] "GET /static/x360db-main/titles/58550B7B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:10] "GET /static/x360db-main/titles/58550E46/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:10] "GET /static/x360db-main/titles/58550189/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:11] "GET /static/x360db-main/titles/58550BB6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:11] "GET /static/x360db-main/titles/5855090B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:14] "GET /static/x360db-main/titles/58550C4F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:14] "GET /static/x360db-main/titles/58550962/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:15] "GET /static/x360db-main/titles/58550EDF/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:15] "GET /static/x360db-main/titles/58550E87/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:26] "GET /catalogo-completo?page=2 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/584112B6/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/58550512/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/5855019B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/58550B4B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/58550ECD/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/58410975/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/58550828/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/5855064E/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/5855029B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:27] "GET /static/x360db-main/titles/5855055D/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:30] "GET /static/x360db-main/titles/585504B4/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:30] "GET /static/x360db-main/titles/5855025F/artwork/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 01:00:30] "GET /static/x360db-main/titles/5855025F/artwork/boxart.png HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 01:00:31] "GET /static/x360db-main/titles/58550A5F/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:31] "GET /static/x360db-main/titles/5855025F/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 01:00:31] "GET /static/x360db-main/titles/585509D3/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:32] "GET /static/x360db-main/titles/58410A3B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:33] "GET /static/x360db-main/titles/58410841/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:35] "GET /static/x360db-main/titles/585509E6/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:35] "GET /static/x360db-main/titles/4E4A07D1/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:37] "GET /static/x360db-main/titles/5855089E/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:00:37] "GET /static/x360db-main/titles/585509BF/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 01:19:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 01:41:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:08:46] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 02:08:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:08:52] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:08:52] "GET /static/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:09:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:09:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:09:12] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 02:09:12] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 02:09:13] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 02:09:13] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 02:09:20] "GET /static/favicon.png.jpeg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:09:20] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 02:14:35] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 02:14:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:14:59] "GET /static/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:15:00] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:24:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 02:24:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 03:57:59] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 03:58:00] "GET / HTTP/1.1" 200 -
+[2026-08-23 04:30:01,162] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 331, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [23/Aug/2026 04:30:01] "GET /chat HTTP/1.1" 500 -
+127.0.0.1 - - [23/Aug/2026 04:30:10] "GET /.well-known/security.txt HTTP/1.1" 404 -
+[2026-08-23 04:30:30,629] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 331, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [23/Aug/2026 04:30:30] "GET /chat HTTP/1.1" 500 -
+127.0.0.1 - - [23/Aug/2026 05:15:19] "GET /.well-known/security.txt HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 06:29:01] "GET /jogos%20xbox%20360 HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 06:43:14] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:48] "GET /catalogo-completo?page=6&busca=a HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:49] "GET /static/x360db-main/titles/58550CA1/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:49] "GET /static/x360db-main/titles/58550EE6/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:49] "GET /static/x360db-main/titles/415607DC/artwork/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:01:49] "GET /static/x360db-main/titles/545A07D3/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:49] "GET /static/x360db-main/titles/58550A2A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:50] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/5855010C/artwork/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/58411233/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/585503DC/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/4D530805/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/585501B5/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/58410A22/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/4D4B07D2/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/58410AA3/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/475707D1/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/5855055F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/58550B59/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/45410916/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/58550314/artwork/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/58550319/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/5345085E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:51] "GET /static/x360db-main/titles/5855074E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/5855087B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/58550D61/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/585508EE/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/5855010C/artwork/boxart.png HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/58410964/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/58550604/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/58550314/artwork/boxart.png HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/58410846/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:52] "GET /static/x360db-main/titles/58550C11/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:53] "GET /static/x360db-main/titles/415607DC/artwork/boxart.png HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:01:53] "GET /static/x360db-main/titles/5855036E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:01:53] "GET /static/x360db-main/titles/415607DC/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:01:53] "GET /static/x360db-main/titles/58550314/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:01:54] "GET /static/x360db-main/titles/58550A8A/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:01:55] "GET /static/x360db-main/titles/5855010C/boxart.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:02:42] "GET /static/x360db-main/titles/58410B22/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:42] "GET /static/x360db-main/titles/58550C2F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:42] "GET /static/x360db-main/titles/585507AA/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:42] "GET /static/x360db-main/titles/58411222/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:42] "GET /static/x360db-main/titles/5345080C/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:42] "GET /static/x360db-main/titles/5855048E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:52] "GET /catalogo-completo?page=7&busca=a HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/585507D3/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550D0F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/585508E9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550CC6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58411204/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/5345082A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/585507A0/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/54540807/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550518/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550946/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550A58/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/4E4807D1/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550800/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/464F07DC/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550776/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/5345080E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/5855069A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550707/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/585503E2/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/494707D1/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/5855076E/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550DF6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550C0D/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550E3F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550168/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550C39/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/584109A2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/58550611/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/5855050E/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:53] "GET /static/x360db-main/titles/4D4A07E4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:58] "GET /static/x360db-main/titles/5855015F/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:58] "GET /static/x360db-main/titles/58411230/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:58] "GET /static/x360db-main/titles/58550E6F/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:02:58] "GET /static/x360db-main/titles/58550BB9/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:58] "GET /static/x360db-main/titles/58550939/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:02:58] "GET /static/x360db-main/titles/585504D6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:12:02] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/capas/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/capas/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/capas/watermarked_img_10289782803069378499.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/capas/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/sem-capa.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/capas/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:03] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:12:58] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:12:59] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 08:13:28] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:13:40] "GET /download/Call%20of%20Duty%20Black%20Ops.rar HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:45:50] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 08:49:46] "GET /download/ADVENTURE%20TIME%20THE%20SECRET%20OF%20THE%20NAMELESS%20KINGDOM.rar HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:50:28] "GET /download/UFC%20Undisputed%203.rar HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 08:52:53] "GET /download/xbox360/UFC%20Undisputed%203.rar HTTP/1.1" 404 -
