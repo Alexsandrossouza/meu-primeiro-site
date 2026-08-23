@@ -499,45 +499,47 @@ from flask import Flask, send_from_directory, abort
 # ===================================================
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
-from flask import render_template, request
+import json
+import os
 
 @app.route('/catalogo-completo')
 def catalogo_completo():
-    # 1. Pega a página atual da URL (ex: ?page=1) e o termo pesquisado (ex: ?busca=halo)
-    page = request.args.get('page', 1, type=int)
-    busca = request.args.get('busca', '', type=str).strip().lower()
+    jogos = []
+    json_path = os.path.join(app.root_path, 'static', 'x360db-main', 'games.json')
     
-    itens_por_pagina = 36 # Exibe 36 jogos por página (ficam alinhados perfeitamente em 6 colunas)
-    
-    # 2. Carrega todos os jogos na memória
-    todos_jogos = carregar_todos_os_jogos_x360() # Use a sua função atual que lê o JSON/Banco
-    
-    # 3. Se o usuário pesquisou algo, filtra a lista
-    if busca:
-        jogos_filtrados = [j for j in todos_jogos if busca in j['nome'].lower() or busca in str(j['id']).lower()]
-    else:
-        jogos_filtrados = todos_jogos
+    try:
+        if os.path.exists(json_path):
+            with open(json_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                
+                for item in data:
+                    id_jogo = str(item.get('id', '')).upper().strip()
+                    title = item.get('title', 'Jogo sem título')
+                    
+                    if isinstance(title, dict):
+                        title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
+                    elif isinstance(title, list) and title:
+                        title = title[0]
 
-    # 4. Calcula a paginação
-    total_jogos = len(jogos_filtrados)
-    total_paginas = (total_jogos + itens_por_pagina - 1) // itens_por_pagina
-    
-    inicio = (page - 1) * itens_por_pagina
-    fim = inicio + itens_por_pagina
-    jogos_pagina = jogos_filtrados[inicio:fim]
+                    # Checa no HD se a imagem é .jpg ou .png
+                    pasta_jogo = os.path.join(app.root_path, 'static', 'x360db-main', 'titles', id_jogo)
+                    
+                    if os.path.exists(os.path.join(pasta_jogo, 'boxart.jpg')):
+                        capa_url = f"/static/x360db-main/titles/{id_jogo}/boxart.jpg"
+                    elif os.path.exists(os.path.join(pasta_jogo, 'boxart.png')):
+                        capa_url = f"/static/x360db-main/titles/{id_jogo}/boxart.png"
+                    else:
+                        capa_url = "https://via.placeholder.com/200x240/12171a/ffffff?text=Sem+Capa"
 
-    # 5. Aplica a busca da imagem APENAS para os 36 jogos da página atual (deixa o site ultra rápido!)
-    for jogo in jogos_pagina:
-      jogo['capa'] = buscar_imagem_static(jogo['id'])
-
-    return render_template(
-        'catalogo_x360db.html',
-        jogos=jogos_pagina,
-        page=page,
-        total_paginas=total_paginas,
-        busca=busca,
-        total_jogos=total_jogos
-    )
+                    jogos.append({
+                        'id': id_jogo,
+                        'nome': title,
+                        'capa': capa_url
+                    })
+    except Exception as e:
+        print(f"Erro ao ler os dados locais: {e}")
+        
+    return render_template("catalogo_x360db.html", jogos=jogos)
 
 
 if __name__ == "__main__":
