@@ -36318,3 +36318,164 @@ Press CTRL+C to quit
 127.0.0.1 - - [23/Aug/2026 09:05:17] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
 127.0.0.1 - - [23/Aug/2026 09:05:17] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
 127.0.0.1 - - [23/Aug/2026 09:05:18] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [23/Aug/2026 09:06:29] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:06:30] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:06:32] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:06:35] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:06:38] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:06:41] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:06:48] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:06:51] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:08] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:08] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:08] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:11] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/capas/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/capas/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/capas/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/capas/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/capas/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/sem-capa.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:12] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:15] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:16] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:07:17] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:19] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:29] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:30] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:07:43] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:08:03] "POST /admin/jogo/excluir/6 HTTP/1.1" 302 -
+127.0.0.1 - - [23/Aug/2026 09:08:03] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:08:07] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:08:33] "POST /admin/jogo/editar/8 HTTP/1.1" 302 -
+127.0.0.1 - - [23/Aug/2026 09:08:33] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:08:36] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:08:36] "GET /static/capas/ACE-6-X360-PackFront_FINAL.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:08:53] "POST /admin/jogo/editar/9 HTTP/1.1" 302 -
+127.0.0.1 - - [23/Aug/2026 09:08:53] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:08:56] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:08:57] "GET /static/capas/dead_or_alive_4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:11:56] "POST /admin/jogo/editar/19 HTTP/1.1" 302 -
+127.0.0.1 - - [23/Aug/2026 09:11:57] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:12:10] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:14:36] "POST /admin/jogo/novo HTTP/1.1" 302 -
+127.0.0.1 - - [23/Aug/2026 09:14:36] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:14:41] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:14:41] "GET /static/x360db-main/titles/41560817/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:38] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:34:38] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/capas/dead_or_alive_4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/capas/ACE-6-X360-PackFront_FINAL.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/capas/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/capas/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/x360db-main/titles/41560817/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/capas/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/capas/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:39] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:51] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:34:53] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:54] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/5841087B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/584109B7/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/58550857/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/584112AF/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/584109A8/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/584107DE/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/58550AE7/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/58550BAF/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/415608D8/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:55] "GET /static/x360db-main/titles/58550440/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:56] "GET /static/x360db-main/titles/585502B2/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:56] "GET /static/x360db-main/titles/465607D4/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:57] "GET /static/x360db-main/titles/585502CC/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:57] "GET /static/x360db-main/titles/584108AA/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:58] "GET /static/x360db-main/titles/58550B89/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:58] "GET /static/x360db-main/titles/58550B35/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:58] "GET /static/x360db-main/titles/58550D64/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:58] "GET /static/x360db-main/titles/58550BBE/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:59] "GET /static/x360db-main/titles/58550ACD/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:34:59] "GET /static/x360db-main/titles/454107E6/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:00] "GET /static/x360db-main/titles/454108E4/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:00] "GET /static/x360db-main/titles/5855076A/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:00] "GET /static/x360db-main/titles/58550BB0/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:00] "GET /static/x360db-main/titles/58550B97/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:02] "GET /static/x360db-main/titles/58550222/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:02] "GET /static/x360db-main/titles/58550B7B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:02] "GET /static/x360db-main/titles/58550E47/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:02] "GET /static/x360db-main/titles/58550A03/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:03] "GET /static/x360db-main/titles/58550E46/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:03] "GET /static/x360db-main/titles/58550189/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:04] "GET /static/x360db-main/titles/58550BB6/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:04] "GET /static/x360db-main/titles/5855090B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:12] "GET /static/x360db-main/titles/58550C4F/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:12] "GET /static/x360db-main/titles/58550962/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:17] "GET /static/x360db-main/titles/58550EDF/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 09:35:17] "GET /static/x360db-main/titles/58550E87/artwork/boxart.jpg HTTP/1.1" 304 -
+[2026-08-23 09:57:38,060] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 331, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [23/Aug/2026 09:57:38] "GET /chat HTTP/1.1" 500 -
