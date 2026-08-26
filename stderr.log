@@ -36479,3 +36479,1605 @@ Traceback (most recent call last):
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: chat.html
 127.0.0.1 - - [23/Aug/2026 09:57:38] "GET /chat HTTP/1.1" 500 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
+127.0.0.1 - - [23/Aug/2026 10:19:48] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 10:49:19] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 12:38:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 12:38:31] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 12:38:32] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 13:38:55] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /*/[slug] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.aws/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /%2f.aws%2fcredentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /%2fbackend%2f.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.amplifyrc HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /%2f.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.aws/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.boto HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /*update.cgi* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /*/[id] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /..\\..\\..\\..\\..\\..\\var/log/apache2/access.log HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.docker/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.cache HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.docker/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.docker/laravel/app/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env-example HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.docker/secrets.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.dockerignore HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.aws HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env-sample HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.bak HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.backup HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.development HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.dev HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.dist HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.docker HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.docker.dev HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.example HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.int HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.live HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.local HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.old HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.prod HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.project HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.production HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.sample HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.qa HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.save HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.test HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.swp HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env.testing HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.env~ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git-askpass.sh HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git-credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git-secret HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git/COMMIT_EDITMSG HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git/ORIG_HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git/FETCH_HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git/HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:40] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/config.bak HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/config.old HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/description HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/config~ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/hooks HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/hooks/post-commit HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/hooks/pre-commit HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/index HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/info HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/info/exclude HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/logs/HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/logs/refs/heads/main HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/logs/refs/heads/master HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/logs/refs/remotes/origin/main HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/logs/refs/remotes/origin/master HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/objects HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/objects/info HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/objects/pack HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/packed-refs HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/refs/heads/main HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/refs/heads/master HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.git/refs/remotes/origin/HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.gitattributes HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/ISSUE_TEMPLATE HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/CODEOWNERS HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/PULL_REQUEST_TEMPLATE.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/dependabot.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/funding.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/stale.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/workflows HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/workflows/ci.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.github/workflows/main.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.gitlab HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.gitignore HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.gitlab-ci HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.gitlab-ci.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.gitlab/issue_templates HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.gitlab/merge_request_templates HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.gitmodules HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.netlify/functions/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.s3cfg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.stripe/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.terraform.lock.hcl HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.terraform.tfstate HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.terraform/credentials.tfrc.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.vercel/functions/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.well-known/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.well-known/acme-challenge/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.well-known/acme-challenge/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.well-known/stripe/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /.well-known/stripe.txt HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:41] "GET /APP/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /BE/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /API/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /?phpinfo=1 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /?pp=env&pp=env HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /API/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /ADMIN/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /API.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /Api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /BACK/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /Backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /BACKEND/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /Be/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /Docker.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /API/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /API/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /API/config/database.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /API/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /NOTES.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /README.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /[[...optional]] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /[locale]/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /[id] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /DOCS.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /Dockerfile HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /IAM.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /LOG.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /[...catchAll] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /_layouts/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:42] "GET /API/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /BackEnd/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /[slug] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_next/data/*/about.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /[tenant]/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /[workspace]/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /__debug HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /__nextjs_action HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /__nextjs_action/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_api/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_next/data/*/index.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_layouts/15/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_next/data/*/*.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_vercel/insights HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_vti_bin/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_waku/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /about HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /actions/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin-app/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin.html HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_next/static/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_profiler/phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_react/data/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_react/action/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /_profiler/phpinfo HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin/config?cmd=cat%20/root/.aws/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin/phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin_phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /amplify/team-provider-info.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /api-node/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /api-backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /administrator/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin/config/database.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /api/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /admin/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:43] "GET /api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /admin/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/auth/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /admin/server.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /admin/utils.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/login HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/data/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/info.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/node/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/serverless/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/settings.py HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/node/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/node/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/user HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/users/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/node/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/server.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/v1/workflows HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/webhook/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /apis/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /app.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /app.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/v1/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/v1/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /app/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /app/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:44] "GET /api/v1/executions HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/.env.production HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/docker-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/.env.local HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/netlify.toml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /apis/index.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/.terraform/terraform.tfstate HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/amplify.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/terraform.tfstate HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/serverless.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/serverless.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/config/parameters.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/amplify.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/config/development.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/config/parameters.yml.dist HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/next.config.mjs HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /appsettings.Development.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /appsettings.Local.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/next.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/package.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /attacker/docker-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /auth/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /appsettings.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /appsettings.Staging.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /appsettings.Test.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /appsettings.Production.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /articles/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /appsettings.QA.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /apps/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/nuxt.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /app/vercel.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /application/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /aws.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /aws/bucket HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /aws/config/s3.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /aws/metadata HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:45] "GET /aws.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws-codecommit/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws-ses.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws.env.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws.properties HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws/buckets HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws/s3/env.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws/s3/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws/ses/smtp.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /back-end/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws_credentials.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws_s3_config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /back-api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /aws_s3_bucket HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /back/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /backend-api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /be/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:46] "GET /backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /cart HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backup/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/node/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /chat/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /checkout HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/constants.js HTTP/1.1" 404 -
+[2026-08-23 13:48:47,347] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 331, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /chat HTTP/1.1" 500 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /circle.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/node/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/index.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /client/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/node/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /backend/node/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /billing/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /blog HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /blog/[year]/[month]/[slug] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /config.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:47] "GET /config.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config/application.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config/aws.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config/aws.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /beta/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config/aws.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config/aws.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /cms/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /cms/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /compose.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /client/stripe.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config.prod.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config.ts HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config.rb HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /conf.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:48] "GET /config/environment.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/module.config.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/environment.rb HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/config.inc.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/secrets.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/config.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/stripe.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/stripe.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/env.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/env.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/nexmo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/parameters.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/test.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /console/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /configs/application.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /constants.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /constants.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /constants.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/server.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /contact HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /content/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /controlpanel HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /credentials.go HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /credentials.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /credentials.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /crm/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /cron/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /current/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /config/utils.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /deploy.sh HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /demo/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /dev/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /dashboard/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /develop/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /controller.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /developer/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /docker-cloud.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /docker-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /docker/overlay/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /dnscfg.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:49] "GET /development/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /docker/registry/config.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /docs HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /editor/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /credentials.csv HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /credentials.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /elasticsearch.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /elasticsearch_cluster_yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /en/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /dev/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /env.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /env.rb HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /env.txt HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /env.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /erp/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /error/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /etc/apache2/apache2.conf HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /etc/boto.cfg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /fe/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /form HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /form/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /form-test/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /fr/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /graphql HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /front/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /frontend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /home/*/.git-credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /home/*/.aws/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /healthz HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /infos.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /infophp.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /lms/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /info.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /home/*/.gitconfig HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /home/*/.netrc HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /laravel/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /insta-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /integrations/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /local/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /loaders/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /login HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /login?pp=enable&pp=env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /manage/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /market/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /marketing/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /media/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /media/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /metrics HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /myproject/settings.py HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /node/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /node-api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /messages/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /new/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /node/backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /node/api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /index.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /nodeapi/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /nodeweb/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /notifications/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:50] "GET /oauth/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /oauth/authorize HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /old/aws_config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /old/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /opt/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /opt/mailcow-dockerized/mailcow.conf HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/*.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /orders/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/*?*update* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/apt.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/download.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/index.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/refresh.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/install.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/perform.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/save.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/update.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /package-updates/yum.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /payment_gateways/stripe.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /payment/stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /php-info.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /php.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /phpinfo HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /php_info.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /pages/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /payment/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /plugins/payments/stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /posts/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /portal/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /proc/index.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /prod/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /product/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /production/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /products HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /profile/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /project/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /projects/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /public-api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /public/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /public/phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /public_html/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /qa/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /publish/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /readme.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /register HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/executions HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/credentials-for-node HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/credential-translation HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/license HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/login HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/logout HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/node-types HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/oauth1-credential/auth HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/oauth2-credential/auth HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /prod/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/users HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/variables HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/settings HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/tags HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /public/stripe.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/workflows HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /root/.aws/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /root/.aws/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /rest/workflows/run HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /root/.boto HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /root/.git-credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /root/.gitconfig HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /root/.netrc HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:51] "GET /root/.s3cfg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3.key HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3.properties HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3.secret HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3/.aws/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3/.env.bak HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3/bucket.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3/backup HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3/bucket HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3/buckets HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /sam-template.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /s3/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /secrets.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /sendgrid.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /serverless.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /serverless.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /servers/save.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /servers/link.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /service/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /services/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /services/environments.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /settings.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /settings.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /settings.py HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /settings.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /shared/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /settings/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /shop/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /shop/[category]/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /signup HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /software/*.cgi?*u=* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /server/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /software/install-updates.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /software/update.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /src/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /src/config/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /src/config/environment.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /src/config/stripe.ts HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /srv/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /stage/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:52] "GET /staging/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stg/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stripe-credentials.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stripe-keys.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /src/FileUpload.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /src/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /src/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /src/app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /src/config/stripe.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /src/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /src/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /src/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /staging/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /staging/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /staging/config/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /staging/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stripe.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /test HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /test.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stripe.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stripe.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /test/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stripe/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /symfony/_profiler/phpinfo HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /threads/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /stripe/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /trpc/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /user/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /sysinfo.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /teams/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /user/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /template.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /terraform.tfstate HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /v1/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /terraform.tfstate.backup HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /v1/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /v2/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /var/task/amplify.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /var/task/amplify.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /terraform.tfvars HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:53] "GET /var/task/docker-compose.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/docker-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/netlify.toml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /terraform/terraform.tfvars.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/next.config.mjs HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/next.config.ts HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/nuxt.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/nuxt.config.ts HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/package.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /v3/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /v2/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/serverless.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/serverless.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/serverless.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/vercel.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/www/html/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/www/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /vercel.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/amplify/backend/function/*/src/index.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /web/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /waku/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /webhook HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /webhook-test/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /var/task/next.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /webhook-waiting/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /webhook/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /webmin/package-updates/update.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /webhooks/incoming/stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /website/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /workspaces/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /web/app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /wp-content/debug.log HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /web/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /web/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /web/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /web/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /wp-content/mysql.sql HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /wp-json/wp/v2/users HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /wp-json/gravitysmtp/v1/tests/mock-data?page=gravitysmtp-settings HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /wp_mail_smtp.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /web/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /.amplifyrc HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:54] "GET /..\\..\\..\\..\\..\\..\\var/log/apache2/access.log HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /%2f.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /%2f.aws%2fcredentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /*/[id] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.docker/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /%2fbackend%2f.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /*/[slug] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /*update.cgi* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.aws/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.aws/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.docker/laravel/app/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.docker/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.boto HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.docker/secrets.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.dockerignore HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env-example HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env-sample HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.backup HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.cache HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.dev HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.dist HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.docker.dev HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.docker HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.development HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.example HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.live HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.local HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.old HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.prod HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.project HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.qa HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.sample HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.save HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.swp HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.test HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.testing HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.aws HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.bak HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env~ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git-askpass.sh HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git-credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.env.int HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git-secret HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git/COMMIT_EDITMSG HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git/FETCH_HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:55] "GET /.git/HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/ORIG_HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/config.bak HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/config.old HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/config~ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.env.production HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/description HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/hooks/post-commit HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/hooks HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/hooks/pre-commit HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/index HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/info HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/info/exclude HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/logs/HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/logs/refs/heads/main HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/logs/refs/heads/master HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/logs/refs/remotes/origin/main HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/logs/refs/remotes/origin/master HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/objects/info HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/objects/pack HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/objects HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/packed-refs HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/refs/heads/main HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/refs/heads/master HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.git/refs/remotes/origin/HEAD HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.gitattributes HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/CODEOWNERS HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/ISSUE_TEMPLATE HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/PULL_REQUEST_TEMPLATE.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/dependabot.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/funding.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/stale.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/workflows HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/workflows/main.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.gitignore HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.gitlab HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.github/workflows/ci.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.gitlab-ci HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.gitlab-ci.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.gitlab/issue_templates HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.gitlab/merge_request_templates HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.gitmodules HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.s3cfg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.netlify/functions/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.stripe/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.terraform.lock.hcl HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.terraform/credentials.tfrc.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.terraform.tfstate HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.vercel/functions/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.well-known/acme-challenge/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.well-known/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.well-known/acme-challenge/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.well-known/stripe/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /.well-known/stripe.txt HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /?phpinfo=1 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /?pp=env&pp=env HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /API.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /API/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /ADMIN/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /API/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /API/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /API/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /API/config/database.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /API/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /API/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /APP/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /Api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /BACK/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /BACKEND/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /BE/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /Backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /BackEnd/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /DOCS.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /Docker.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /Be/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /IAM.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:56] "GET /Dockerfile HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /LOG.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /README.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /[...catchAll] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /NOTES.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /[[...optional]] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /[locale]/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /[slug] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /[id] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /[tenant]/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /[workspace]/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /__debug HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /__nextjs_action HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /__nextjs_action/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_layouts/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_layouts/15/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_next/data/*/*.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_next/data/*/about.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_next/data/*/index.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_next/static/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_profiler/phpinfo HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_profiler/phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_react/action/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_react/data/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_vti_bin/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_waku/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_vercel/insights HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /about HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /actions/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin.html HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin-app/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /_api/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/config/database.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/config?cmd=cat%20/root/.aws/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/server.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin/utils.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /admin_phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /administrator/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /amplify/team-provider-info.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api-backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api-node/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/data/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/auth/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/info.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/node/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/login HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/node/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/node/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:57] "GET /api/serverless/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/server.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/user HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/settings.py HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/node/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/v1/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/v1/executions HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/users/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/v1/workflows HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/webhook/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /api/v1/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /apis/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /apis/index.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/.env.local HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/.env.production HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/.terraform/terraform.tfstate HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/amplify.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/amplify.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/config/development.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/config/parameters.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/config/parameters.yml.dist HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/docker-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/netlify.toml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/next.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/nuxt.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/next.config.mjs HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/package.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/serverless.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/serverless.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/terraform.tfstate HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /app/vercel.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /application/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /appsettings.Development.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /appsettings.Local.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /appsettings.Production.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /apps/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /appsettings.QA.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /appsettings.Staging.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /appsettings.Test.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /appsettings.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /articles/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /attacker/docker-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /auth/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws-codecommit/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws.env.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws-ses.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws.properties HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws/bucket HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws/config/s3.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws/buckets HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws/metadata HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws/s3/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws/s3/env.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws_s3_bucket HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws_credentials.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws/ses/smtp.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /aws_s3_config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /back-end/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /back-api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /back/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /backend-api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /backend/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /backend/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /backend/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /backend/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /backend/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:58] "GET /backend/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /backend/index.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /backend/node/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /backend/node/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /backend/node/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /backend/node/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /backup/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /be/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /beta/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /billing/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /blog HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /blog/[year]/[month]/[slug] HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /cart HTTP/1.1" 404 -
+[2026-08-23 13:48:59,141] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 331, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /chat HTTP/1.1" 500 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /chat/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /checkout HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /circle.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /client/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /cms/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /compose.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /conf.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /client/stripe.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /cms/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.rb HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.ts HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.prod.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/application.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/aws.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/aws.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/aws.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/config.inc.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/aws.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/config.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/env.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/env.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/environment.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/environment.rb HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/module.config.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/nexmo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/parameters.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/secrets.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/server.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/test.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/utils.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /configs/application.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/stripe.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /config/stripe.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /constants.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /contact HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /console/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /content/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:48:59] "GET /constants.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /constants.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /controlpanel HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /controller.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /credentials.csv HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /credentials.go HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /credentials.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /credentials.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /crm/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /demo/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /cron/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /current/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /credentials.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /deploy.sh HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /dashboard/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /dev/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /dev/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /develop/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /development/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /dnscfg.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /developer/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /docker-cloud.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /docker-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /docker/overlay/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /docker/registry/config.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /docs HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /editor/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /elasticsearch.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /elasticsearch_cluster_yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /en/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /env.rb HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /env.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /env.txt HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /env.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /erp/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /error/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /etc/apache2/apache2.conf HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /fe/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /etc/boto.cfg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /form HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /form-test/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /form/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /fr/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /front/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /frontend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /graphql HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /home/*/.aws/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /healthz HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /home/*/.git-credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /home/*/.netrc HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /home/*/.gitconfig HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /index.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /info.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /infophp.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /infos.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /insta-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /integrations/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /loaders/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /laravel/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /lms/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /local/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /login HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /login?pp=enable&pp=env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /manage/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /market/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /marketing/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /media/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /media/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /metrics HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:00] "GET /messages/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /new/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /myproject/settings.py HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /node-api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /node/backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /node/api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /nodeapi/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /node/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /nodeweb/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /notifications/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /oauth/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /old/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /old/aws_config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /oauth/authorize HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /opt/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /orders/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /opt/mailcow-dockerized/mailcow.conf HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/ HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/*.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/*?*update* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/apt.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/download.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/index.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/install.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/perform.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/refresh.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/save.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/yum.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /package-updates/update.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /pages/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /payment/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /payment/stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /php.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /php_info.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /phpinfo HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /php-info.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /payment_gateways/stripe.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /plugins/payments/stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /portal/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /posts/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /prod/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /proc/index.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /product/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /prod/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /production/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /products HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /profile/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /project/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /projects/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /public-api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /public/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /public/phpinfo.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /public/stripe.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /public_html/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /publish/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /qa/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /readme.md HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /register HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/credential-translation HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/credentials-for-node HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/license HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/executions HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/login HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/logout HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/node-types HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/oauth1-credential/auth HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/oauth2-credential/auth HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/settings HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/users HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/tags HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/variables HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/workflows HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /root/.aws/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /rest/workflows/run HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /root/.aws/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:01] "GET /root/.boto HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /root/.git-credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /root/.gitconfig HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /root/.netrc HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3.key HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /root/.s3cfg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3.properties HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3/.aws/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3/.env.bak HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3/backup HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3.secret HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3/bucket HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3/bucket.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3/buckets HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /s3/credentials HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /sam-template.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /secrets.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /sendgrid.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/api/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/backend/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /server/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /serverless.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /serverless.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /servers/link.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /servers/save.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /service/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /services/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /services/environments.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /settings.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /settings.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /settings.py HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /settings.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /settings/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /shared/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /shop/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /signup HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /shop/[category]/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /software/*.cgi?*u=* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /software/install-updates.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /software/update.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/FileUpload.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/config/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/config/environment.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/config/stripe.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/config/stripe.ts HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /src/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /srv/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stage/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /staging/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /staging/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /staging/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /staging/config/config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stg/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /staging/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stripe-credentials.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stripe-keys.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stripe.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stripe.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stripe.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stripe/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /stripe/config.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /symfony/_profiler/phpinfo HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /sysinfo.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:02] "GET /teams/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /template.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /terraform.tfstate HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /terraform.tfstate.backup HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /terraform.tfvars HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /terraform/terraform.tfvars.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /test HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /test.php HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /test/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /threads/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /trpc/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /user/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /user/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /v1/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /v1/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /v2/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /v2/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /v3/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/amplify.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/amplify.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/amplify/backend/function/*/src/index.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/docker-compose.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/docker-compose.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/netlify.toml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/next.config.mjs HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/next.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/next.config.ts HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/nuxt.config.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/nuxt.config.ts HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/package.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/serverless.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/serverless.yaml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/serverless.yml HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/task/vercel.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/www/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /var/www/html/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /vercel.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /waku/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /web/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /web/app.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /web/config/common.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /web/config/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /web/constant.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /web/constants.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /web/env.js HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /webhook HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /webhook-test/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /webhook-waiting/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /webhook/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /webhooks/incoming/stripe.json HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /webmin/package-updates/update.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /website/.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /workspaces/* HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /wp-content/debug.log HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /wp-json/wp/v2/users HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /wp-content/mysql.sql HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /wp_mail_smtp.ini HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 13:49:03] "GET /wp-json/gravitysmtp/v1/tests/mock-data?page=gravitysmtp-settings HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/capas/Dash_Launch_v3.21.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/sem-capa.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/capas/Castlevania.webp HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/capas/watermarked_img_10289782803069378499.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/capas/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/capas/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:01] "GET /static/favicon.png.jpeg?v=3 HTTP/1.1" 304 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/5841087B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550B7B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/584109B7/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550BAF/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550440/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/584109A8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/415608D8/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/584107DE/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/465607D4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/585502B2/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550AE7/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/584112AF/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550857/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550A03/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/584108AA/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/454108E4/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/5855076A/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550BBE/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550E47/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550B89/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550D64/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550BB0/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550189/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/454107E6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550B97/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550ACD/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/585502CC/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550222/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550E46/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:08] "GET /static/x360db-main/titles/58550B35/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:09] "GET /static/x360db-main/titles/5855090B/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:09] "GET /static/x360db-main/titles/58550E87/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:09] "GET /static/x360db-main/titles/58550962/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:09] "GET /static/x360db-main/titles/58550BB6/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:09] "GET /static/x360db-main/titles/58550C4F/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:10:09] "GET /static/x360db-main/titles/58550EDF/artwork/boxart.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 15:32:34] "GET /.env HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 19:10:21] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [23/Aug/2026 21:26:34] "HEAD / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Aug/2026 22:59:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 00:26:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 02:16:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 02:16:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 04:27:27] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [24/Aug/2026 06:35:28] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [24/Aug/2026 06:35:30] "GET /Jogos%20Xbox%20360 HTTP/1.1" 404 -
+127.0.0.1 - - [24/Aug/2026 07:36:09] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [24/Aug/2026 07:36:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:11] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:12] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:13] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:14] "GET /catalogo-completo HTTP/1.1" 200 -
+[2026-08-24 07:36:15,708] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 331, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [24/Aug/2026 07:36:15] "GET /chat HTTP/1.1" 500 -
+[2026-08-24 07:36:18,331] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 331, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [24/Aug/2026 07:36:18] "GET /chat HTTP/1.1" 500 -
+[2026-08-24 07:36:25,743] ERROR in app: Exception on /chat [GET]
+Traceback (most recent call last):
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\app.py", line 331, in chat
+    return render_template("chat.html")
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\meu-primeiro-site\.venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: chat.html
+127.0.0.1 - - [24/Aug/2026 07:36:25] "GET /chat HTTP/1.1" 500 -
+127.0.0.1 - - [24/Aug/2026 07:36:26] "GET /admin HTTP/1.1" 302 -
+127.0.0.1 - - [24/Aug/2026 07:36:27] "GET /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:32] "GET /download/Call%20of%20Duty%20Black%20Ops.rar HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:33] "GET /catalogo-completo?page=2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:35] "GET /catalogo-completo?page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:36] "GET /catalogo-completo?page=3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:37] "GET /catalogo-completo?page=4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:38] "GET /catalogo-completo?page=5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:39] "GET /catalogo-completo?page=6 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:41] "GET /catalogo-completo?page=7 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:42] "GET /catalogo-completo?page=8 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:43] "GET /catalogo-completo?page=9 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:44] "GET /catalogo-completo?page=10 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:45] "GET /catalogo-completo?page=11 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:46] "GET /catalogo-completo?page=12 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:47] "GET /catalogo-completo?page=13 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 07:36:48] "GET /catalogo-completo?page=14 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 08:44:52] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [24/Aug/2026 08:44:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 09:06:15] "GET /produtos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 10:20:06] "GET /xboxclassico HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/Resident-Evil-Operation-Raccoon-City-Special-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/Cover%20Call%20of%20Duty%20Black%20Ops%20II.webp HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/Grand-Theft-Auto-V.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/Gears-of-War-3-scaled.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/logo%20menor%20godstix.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/capas/Castlevania.webp HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/horizon.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/Alice-Madness-Returns-X360.webp HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/sem-capa.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/RESIDENT%20EVIL%206%20BR.webp HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/Minecraft-Xbox-360-Edition.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/capas/Dash_Launch_v3.21.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/capas/red-dead-redemption-game-of-the-year-edition-xbox-360-1_orig.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:07] "GET /static/skyrim.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:08] "GET /static/mega%20driver.png HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:08] "GET /static/capas/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:08] "GET /static/script.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:09] "GET /static/Cover_thumb.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:09] "GET /static/capas/watermarked_img_10289782803069378499.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:09] "GET /static/fundo.jpg.png HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:09] "GET /static/emulador%20super%20nintendo.png HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:10] "GET /static/Far%20Cry%204.webp HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:15] "GET /jogos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 10:20:23] "GET /catalogo-completo HTTP/1.1" 200 -
+127.0.0.1 - - [24/Aug/2026 10:20:24] "GET /static/x360db-main/titles/5841087B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/58550440/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/58550BAF/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/584107DE/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/58550D64/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/584109A8/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/58550BB0/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/465607D4/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/454108E4/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/58550ACD/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/58550222/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/415608D8/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/58550B35/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/584109B7/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/585502B2/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/58550E46/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/454107E6/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:25] "GET /static/x360db-main/titles/5855076A/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:26] "GET /static/x360db-main/titles/58550857/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:26] "GET /static/x360db-main/titles/585502CC/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:26] "GET /static/x360db-main/titles/58550E47/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:26] "GET /static/x360db-main/titles/584112AF/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:26] "GET /static/x360db-main/titles/58550B97/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/58550A03/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/58550B7B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/58550B89/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/58550189/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/5855090B/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/584108AA/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/58550BB6/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/58550EDF/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:27] "GET /static/x360db-main/titles/58550962/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:30] "GET /static/x360db-main/titles/58550E87/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:31] "GET /static/x360db-main/titles/58550BBE/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:32] "GET /static/x360db-main/titles/58550AE7/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:32] "GET /static/x360db-main/titles/58550C4F/artwork/boxart.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/Aug/2026 10:20:34] "GET / HTTP/1.1" 200 -
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.121:5000
+Press CTRL+C to quit
