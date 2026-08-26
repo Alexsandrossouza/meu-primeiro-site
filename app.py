@@ -17,34 +17,65 @@ ADMIN_PASSWORD = "planet123"
 def arquivo_permitido(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+import os
+
+import os
+
 # ============================================================
-# FUNÇÃO INTELIGENTE DE BUSCAR IMAGENS NA PASTA STATIC
+# FUNÇÃO INTELIGENTE DE BUSCAR IMAGENS (HOME + CATÁLOGO)
 # ============================================================
-def buscar_imagem_static(nome_imagem):
-    if not nome_imagem:
-        return 'sem-capa.jpg' '.jpg', '.jpeg', '.png', '.webp', '.gif', '.JPG', '.PNG', '.WEBP'
+import os
+
+# ============================================================
+# FUNÇÃO UNIFICADA DE BUSCA DE IMAGENS (PAINEL + HOME + X360)
+# ============================================================
+def buscar_imagem_static(nome_ou_id):
+    if not nome_ou_id:
+        return 'sem-capa.jpg'
         
-    if nome_imagem.startswith('http://') or nome_imagem.startswith('https://'):
-        return nome_imagem
+    valor = str(nome_ou_id).strip()
+    
+    # 1. Se for link externo (http/https), retorna o link puro
+    if valor.startswith(('http://', 'https://')):
+        return valor
 
-    nome_base = os.path.splitext(nome_imagem)[0]
-    extensoes = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.JPG', '.PNG', '.WEBP']
     pasta_static = os.path.join(app.root_path, 'static')
+    extensoes = ['.jpg', '.png', '.jpeg', '.webp', '.gif', '.JPG', '.PNG', '.WEBP']
 
+    # 2. TESTA SE É UMA CAPA MANUAL DO PAINEL (Ex: "Castlevania.webp" em static/ ou static/capas/)
+    for ext in ['', '.jpg', '.png', '.jpeg', '.webp']:
+        teste = f"{valor}{ext}" if not valor.lower().endswith(('.jpg', '.png', '.jpeg', '.webp', '.gif')) else valor
+        
+        # Procura em static/capas/
+        if os.path.isfile(os.path.join(pasta_static, 'capas', teste)):
+            return f"capas/{teste}"
+            
+        # Procura solto em static/
+        if os.path.isfile(os.path.join(pasta_static, teste)):
+            return teste
+
+    # 3. TESTA SE É ID DO XBOX 360 DENTRO DE static/x360db-main/titles/ID/artwork/boxart.*
+    id_upper = valor.upper()
     for ext in extensoes:
-        arquivo_teste = f"{nome_base}{ext}"
-        caminho_completo = os.path.join(pasta_static, arquivo_teste)
-        if os.path.isfile(caminho_completo):
-            return arquivo_teste
+        rel_artwork = f"x360db-main/titles/{id_upper}/artwork/boxart{ext}"
+        if os.path.isfile(os.path.join(pasta_static, rel_artwork)):
+            return rel_artwork
 
-    return nome_imagem
+    # 4. TESTA SE O ID ESTÁ DIRETO EM static/x360db-main/titles/ID/boxart.*
+    for ext in extensoes:
+        rel_direto = f"x360db-main/titles/{id_upper}/boxart{ext}"
+        if os.path.isfile(os.path.join(pasta_static, rel_direto)):
+            return rel_direto
+
+    return 'sem-capa.jpg'
 
 # ============================================================
 # 1. ROTA DA PÁGINA INICIAL
 # ============================================================
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    anuncios = [] # Ou a sua lógica para carregar anúncios
+    return render_template('index.html', anuncios=anuncios)
 
 # ============================================================
 # 2. ROTA DA PÁGINA DE JOGOS
@@ -250,6 +281,17 @@ lista_de_jogos = [
         "link": "https://4br.me/mxjceVgp"
 
 
+    },
+    {
+        "id": 19,
+        "titulo": "Call of Duty Black Ops.rar",
+        "plataforma": "Xbox 360 - Formato: XEX",
+        "tamanho": "6.460 GB",
+        "categoria": "acao",
+        "imagem": "boxart.jpg",
+        "link": "https://planetgames.net.br/download/Call%20of%20Duty%20Black%20Ops.rar"
+
+
     }
 
 
@@ -269,12 +311,15 @@ def jogos():
 @app.route("/xboxclassico")
 def xboxclassico():
     jogos_processados = []
-    for j in lista_de_jogos:
+    
+    # Substitua 'lista_de_jogos' pela sua lista contendo os jogos do Xbox Clássico
+    for j in lista_de_jogos: 
         j_copy = dict(j)
         j_copy["imagem"] = buscar_imagem_static(j.get("imagem", ""))
         jogos_processados.append(j_copy)
-        
-    return render_template("jogos_xbox_classico.html", jogos=jogos_processados)
+
+    # Nome exato do arquivo que está na sua pasta templates:
+    return render_template("xboxclassico.html", jogos=jogos_processados)
 
 
 
@@ -298,13 +343,6 @@ def produtos():
             "preco": "R$ 1.490,00",
             "imagem": "xbox360 call of duty.webp",
             "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
-        },
-        {
-            "ml_id": "MLB4923941273",
-            "titulo": "Dynavision3",
-            "preco": "R$ 1.000,30",
-            "imagem": "Dynavision3.webp",
-            "link_ml": "https://produto.mercadolivre.com.br/MLB-4923941273"
         },
         {
             "ml_id": "MLB4128396704",
@@ -369,6 +407,7 @@ def produtos():
             "imagem": "Fonte Para Xbox 360 Slim.webp",
             "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482"
         }
+       
     ]
     return render_template("produtos.html", anuncios=meus_anuncios)
 
@@ -460,51 +499,97 @@ from flask import Flask, send_from_directory, abort
 # ===================================================
 # ROTAS DE DOWNLOAD DOS JOGOS
 # ===================================================
+from flask import send_from_directory
 
-@app.route('/download/xbox360/<filename>')
-def download_360(filename):
-    return send_from_directory(r'D:\Download\Xbox360', filename)
+# Rota para liberar o download da pasta no disco D:
+@app.route('/download/<path:filename>')
+def baixar_arquivo(filename):
+    # Caminho exato da sua pasta de jogos no Windows
+    pasta_downloads = r'D:\Download\Xbox360'
+    
+    return send_from_directory(
+        pasta_downloads, 
+        filename, 
+        as_attachment=True
+    )
 
-@app.route('/download/xboxclassico/<filename>')
-def download_classico(filename):
-    return send_from_directory(r'D:\Download\XboxClassico', filename)
 
-@app.route('/download/Emuladores/<filename>')
-def download_emuladores(filename):
-    return send_from_directory(r'D:\Download\Emuladores', filename)
-
-import requests
-from flask import Flask, render_template
+import os
+import json
+from flask import render_template, request, current_app
 
 @app.route('/catalogo-completo')
 def catalogo_completo():
-    url = "https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/games.json"
-    jogos = []
     try:
-        response = requests.get(url, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            for id_jogo, info in list(data.items())[:120]:
-                title = info.get('title', 'Jogo sem título')
-                
-                # Trata título em formato de dicionário ou lista
-                if isinstance(title, dict):
-                    title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
-                elif isinstance(title, list) and title:
-                    title = title[0]
+        page = request.args.get('page', 1, type=int)
+        busca = request.args.get('busca', '', type=str).strip().lower()
+        itens_por_pagina = 36
 
-                # Formata o ID em maiúsculo (ex: 5841087B) para casar com as pastas do GitHub
-                id_limpo = str(id_jogo).upper().strip()
-
-                jogos.append({
-                    'id': id_limpo,
-                    'nome': title,
-                    'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
-                })
-    except Exception as e:
-        print(f"Erro ao carregar catálogo: {e}")
+        caminho_json = os.path.join(current_app.static_folder, 'x360db-main', 'games.json')
         
-    return render_template("catalogo_x360db.html", jogos=jogos)
+        todos_jogos = []
+        if os.path.exists(caminho_json):
+            with open(caminho_json, 'r', encoding='utf-8') as f:
+                dados = json.load(f)
+                if isinstance(dados, list):
+                    todos_jogos = dados
+                elif isinstance(dados, dict):
+                    todos_jogos = [{'id': k, 'nome': v.get('name', v.get('title', k)) if isinstance(v, dict) else str(v)} for k, v in dados.items()]
+
+        # Busca corrigida: verifica tanto 'nome' quanto 'name' e 'id'
+        if busca:
+            jogos_filtrados = []
+            for j in todos_jogos:
+                nome_jogo = str(j.get('nome', j.get('name', j.get('title', '')))).lower()
+                id_jogo = str(j.get('id', '')).lower()
+                if busca in nome_jogo or busca in id_jogo:
+                    jogos_filtrados.append(j)
+        else:
+            jogos_filtrados = todos_jogos
+
+        # Paginação
+        total_jogos = len(jogos_filtrados)
+        total_paginas = (total_jogos + itens_por_pagina - 1) // itens_por_pagina if total_jogos > 0 else 1
+        page = max(1, min(page, total_paginas))
+        
+        inicio = (page - 1) * itens_por_pagina
+        fim = inicio + itens_por_pagina
+        jogos_pagina = jogos_filtrados[inicio:fim]
+
+        jogos_formatados = []
+        for j in jogos_pagina:
+            id_jogo = str(j.get('id', '')).strip()
+            nome_jogo = j.get('nome', j.get('name', j.get('title', id_jogo)))
+            
+            rel_artwork_jpg = f"x360db-main/titles/{id_jogo}/artwork/boxart.jpg"
+            rel_artwork_png = f"x360db-main/titles/{id_jogo}/artwork/boxart.png"
+            rel_boxart_jpg = f"x360db-main/titles/{id_jogo}/boxart.jpg"
+
+            if os.path.exists(os.path.join(current_app.static_folder, rel_artwork_jpg)):
+                capa = rel_artwork_jpg
+            elif os.path.exists(os.path.join(current_app.static_folder, rel_artwork_png)):
+                capa = rel_artwork_png
+            elif os.path.exists(os.path.join(current_app.static_folder, rel_boxart_jpg)):
+                capa = rel_boxart_jpg
+            else:
+                capa = None
+
+            jogos_formatados.append({
+                'id': id_jogo,
+                'nome': nome_jogo,
+                'capa': capa
+            })
+
+        return render_template(
+            'catalogo_x360db.html',
+            jogos=jogos_formatados,
+            page=page,
+            total_paginas=total_paginas,
+            busca=busca
+        )
+    except Exception as e:
+        print(f"Erro no catálogo: {e}")
+        return f"Erro interno ao carregar o catálogo: {e}", 500
 
 
 if __name__ == "__main__":

@@ -1,0 +1,31 @@
+Finalmente, a primeira versão do projeto está disponível.
+
+Está dividido em 2 partes:
+Script e Interface Web.
+
+Script:
+- Downloads de jogos
+- Instalação da interface web
+- Várias outras coisas.
+
+Interface Web:
+- Controle do Xbox 360
+- Sistema social
+- Salas de chat
+- Várias outras coisas.
+
+Instale a pasta do script em: /Aurora/User/Scripts/Utility
+
+Para instalar a interface web, vá para: Configurações -> Instalar Webui -> Stix
+
+Importante: Para ativar as funções FTP ou XBDM, você precisa instalar a ponte, seja no seu celular ou computador.
+
+A função XBDM depende do plugin xbdm e deve ser instalada com o DashLaunch nos plugins, arquivo xbdm na pasta do script.
+
+Para instalar a ponte no seu celular, você precisa instalar o apk do Termux.
+
+O app é completamente gratuito, e a criação de conta também é gratuita. Se você quiser apoiar o projeto, pode se tornar um VIP e aumentar o limite diário de downloads no script. Atualmente, há um pouco mais de 50 jogos, mas vamos adicionar mais. A velocidade máxima de download que alcançamos foi de 2,7 MB/s, baixando 8 GB em 1 hora.
+
+Podem haver bugs; por favor, envie seu feedback através da interface web, na página de configurações.
+
+Importante: Membros também têm acesso a todo o catálogo do site.

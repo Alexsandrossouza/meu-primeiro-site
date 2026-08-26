@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SW3JKVWY80');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Completo - PLANET GAMES</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
+    
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        
-        /* Estilos adicionais para manter o mesmo padrão da imagem */
+    <style>
         body {
             background-color: #0b0f12;
             color: #ffffff;
@@ -16,9 +27,41 @@
             margin: 0;
             padding: 0;
         }
+
+        /* --- LAYOUT / NAVBAR DO TOPO --- */
+        .navbar {
+            background-color: #050708;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #12171a;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .green-text {
+            color: #00ff66;
+        }
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #00ff66;
+        }
+
         .header-title {
             text-align: center;
-            margin: 30px 0 10px 0;
+            margin: 25px 0 15px 0;
             font-size: 32px;
             font-weight: bold;
         }
@@ -29,7 +72,7 @@
         .search-box input {
             width: 80%;
             max-width: 450px;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border-radius: 25px;
             border: 1px solid #1a2a22;
             background-color: #121a15;
@@ -37,115 +80,182 @@
             outline: none;
             text-align: center;
         }
-        .grid-jogos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 0 40px 40px 40px;
-        }
+
+        /* --- CARD COM LARGURA RESTRITA E CAPA INTEIRA (IGUAL SEGUNDA FOTO) --- */
         .card-game {
-            background: #12171a;
+            background-color: #12171a !important;
             border-radius: 12px;
-            border: 1px solid #1e282c;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border: 1px solid #1e282c;
             transition: transform 0.2s, border-color 0.2s;
+            max-width: 200px; /* Impede o card de ficar largo/quadrado */
+            margin: 0 auto;
         }
         .card-game:hover {
             transform: translateY(-5px);
-            border-color: #00ff66;
+            border-color: #00ff66 !important;
         }
-        .card-game img {
+
+        .capa-box {
             width: 100%;
-            height: 270px;
-            object-fit: cover;
+            height: 270px; /* Altura ideal para capa de DVD vertical */
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .card-info {
-            padding: 12px;
-            text-align: left;
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* NUNCA corta o topo, exibe a imagem 100% inteira */
+            display: block;
         }
-        .card-title {
-            font-size: 15px;
+
+        .card-body-custom {
+            padding: 10px;
+            background-color: #12171a;
+        }
+        .card-title-custom {
+            font-size: 0.85rem;
             font-weight: bold;
-            margin-bottom: 8px;
+            color: #ffffff;
+            margin-bottom: 2px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .badge-green {
-            background: rgba(0, 255, 102, 0.1);
-            color: #00ff66;
-            font-size: 11px;
-            padding: 3px 8px;
-            border-radius: 4px;
-            border: 1px solid rgba(0, 255, 102, 0.3);
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .btn-download {
+        .card-id-custom {
+            font-size: 0.7rem;
+            color: #7f8c8d;
+            font-family: monospace;
             display: block;
-            background: #00ff66;
-            color: #000;
-            font-weight: bold;
-            text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-top: 5px;
-            transition: background 0.2s;
+            margin-bottom: 6px;
         }
-        .btn-download:hover {
-            background: #00cc52;
+
+        /* ETIQUETA VERDE ABAIXO DO NOME (IGUAL AO SEU PADRÃO) */
+        .badge-formato {
+            display: inline-block;
+            background-color: rgba(0, 255, 102, 0.08);
+            color: #00ff66;
+            border: 1px solid #00ff66;
+            border-radius: 10px;
+            padding: 2px 8px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+
+        /* PAGINAÇÃO */
+        .pagination .page-link {
+            background-color: #12171a;
+            border-color: #1e282c;
+            color: #00ff66;
+            padding: 8px 16px;
+        }
+        .pagination .page-link:hover {
+            background-color: #1c2326;
+            color: #00ff66;
+        }
+        .pagination .page-item.disabled .page-link {
+            background-color: #0b0f12;
+            color: #7f8c8d;
+            border-color: #1e282c;
         }
     </style>
 </head>
 <body>
 
-    <!-- Título Principal -->
+    <!-- CABEÇALHO DA PLANET GAMES -->
+    <header class="navbar">
+        <a href="/" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
+            </div>
+        </a>
+
+        <nav>
+          <a href="/">Início</a>
+          <a href="/produtos">Produto</a>
+          <a href="/xboxclassico">Xbox Clássico</a>
+          <a href="/catalogo-completo">Catálogo x360db</a>
+          <a href="/chat">Bate-Papo</a>
+          <a href="/admin">Painel Admin</a>
+       </nav>
+    </header>
+
     <h1 class="header-title">Catálogo de Jogos Xbox 360</h1>
 
-    <!-- Campo de Pesquisa em Tempo Real -->
-    <div class="search-box">
-        <input type="text" id="inputBusca" onkeyup="filtrarJogos()" placeholder="Pesquise seu jogo...">
-    </div>
+    <form action="/catalogo-completo" method="GET" class="search-box">
+        <input type="text" name="busca" value="{{ busca if busca else '' }}" placeholder="Pesquise por nome ou ID (Pressione Enter)...">
+    </form>
 
-    <!-- Grade dos Cards de Jogos (Modelado no seu design) -->
-    <div class="container my-4">
-    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-        {% for jogo in jogos %}
-        <div class="col">
-            <div class="card h-100 bg-dark text-white border-0 shadow-sm" style="border-radius: 8px; overflow: hidden; background-color: #12171a !important;">
-                <img src="{{ jogo.capa }}" 
-                     class="card-img-top" 
-                     alt="{{ jogo.nome }}"
-                     style="aspect-ratio: 3/4; object-fit: cover;"
-                     onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/xenia-manager/x360db/main/docs/assets/no-cover.png';">
-                <div class="card-body p-2 text-start" style="background-color: #1c2326;">
-                    <div class="fw-bold text-truncate text-white" style="font-size: 0.85rem;" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
-                    <small class="text-muted font-monospace d-block" style="font-size: 0.75rem;">{{ jogo.id }}</small>
+    <div class="container-fluid px-4">
+        <!-- GRID COMPATÍVEL: Força 6 colunas finas por linha -->
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 justify-content-center">
+            {% for jogo in jogos %}
+            <div class="col d-flex justify-content-center">
+                <div class="card h-100 card-game border-0 shadow-sm w-100">
+                    <div class="capa-box">
+                        {% if jogo.capa %}
+                        <img src="{{ url_for('static', filename=jogo.capa) }}" 
+                             class="card-img-top" 
+                             alt="{{ jogo.nome }}"
+                             loading="lazy">
+                        {% else %}
+                        <img src="/static/x360db-main/titles/{{ jogo.id }}/artwork/boxart.jpg" 
+                             class="card-img-top" 
+                             alt="{{ jogo.nome }}"
+                             loading="lazy"
+                             onerror="tratarErroImagem(this, '{{ jogo.id }}')">
+                        {% endif %}
+                    </div>
+                    <div class="card-body-custom">
+                        <div class="card-title-custom" title="{{ jogo.nome }}">{{ jogo.nome }}</div>
+                        <span class="card-id-custom">{{ jogo.id }}</span>
+                        <div class="badge-formato">Xbox 360</div>
+                    </div>
                 </div>
             </div>
+            {% else %}
+            <div class="col-12 text-center my-5">
+                <h4>Nenhum jogo encontrado.</h4>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+
+        {% if total_paginas and total_paginas > 1 %}
+        <nav class="d-flex justify-content-center my-4">
+            <ul class="pagination">
+                {% if page > 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page - 1 }}{% if busca %}&busca={{ busca }}{% endif %}">Anterior</a>
+                </li>
+                {% endif %}
+
+                <li class="page-item disabled">
+                    <span class="page-link">Página {{ page }} de {{ total_paginas }}</span>
+                </li>
+
+                {% if page < total_paginas %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page + 1 }}{% if busca %}&busca={{ busca }}{% endif %}">Próxima</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
     </div>
-</div>
 
-
-    <!-- Script de Filtro Instantâneo -->
     <script>
-        function filtrarJogos() {
-            let input = document.getElementById('inputBusca').value.toLowerCase();
-            let cards = document.getElementsByClassName('card-game');
-
-            for (let i = 0; i < cards.length; i++) {
-                let title = cards[i].querySelector('.card-title').innerText.toLowerCase();
-                if (title.includes(input)) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
+        function tratarErroImagem(img, id) {
+            if (!img.dataset.tentativa) {
+                img.dataset.tentativa = "1";
+                img.src = "/static/x360db-main/titles/" + id + "/artwork/boxart.png";
+            } else if (img.dataset.tentativa === "1") {
+                img.dataset.tentativa = "2";
+                img.src = "/static/x360db-main/titles/" + id + "/boxart.jpg";
+            } else {
+                img.onerror = null;
+                img.src = "https://via.placeholder.com/200x270/12171a/ffffff?text=Sem+Capa";
             }
         }
     </script>
