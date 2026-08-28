@@ -11,8 +11,7 @@ https://planetgames.net.br/download/       %20   %20
 
 ==========================================================================================
 
-cd ~/meu-primeiro-site
-git pull origin main
+Estastistica= https://analytics.google.com/analytics/web/?authuser=0#/a401996404p546660758/admin/account/create
 
 
 Ver se tá rodando: sudo systemctl status meu-site
