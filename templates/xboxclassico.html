@@ -97,21 +97,34 @@
                         {% endif %}
 
                         <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
-                        <div class="botoes-container">
-                            {% if jogo.get('link_part1') %}
-                                <!-- PARTE 1 -->
-                                {% if jogo.link_part1.startswith('http') %}
-                                    <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
-                                {% else %}
-                                    <a href="/download/{{ jogo.link_part1 }}" class="btn-comprar">Parte 1</a>
-                                {% endif %}
+                        {% if jogo.get('link_part1') %}
 
-                                <!-- PARTE 2 -->
-                                {% if jogo.get('link_part2') and jogo.link_part2.startswith('http') %}
-                                    <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
-                                {% elif jogo.get('link_part2') %}
-                                    <a href="/download/{{ jogo.link_part2 }}" class="btn-comprar">Parte 2</a>
-                                {% endif %}
+    <!-- PARTE 1 -->
+    <a href="{{ jogo.link_part1 }}"
+       target="_blank"
+       class="btn-comprar">
+        Parte 1
+    </a>
+
+    <!-- PARTE 2 -->
+    {% if jogo.get('link_part2') %}
+        <a href="{{ jogo.link_part2 }}"
+           target="_blank"
+           class="btn-comprar">
+            Parte 2
+        </a>
+    {% endif %}
+
+{% elif jogo.get('link') %}
+
+    <!-- LINK ÚNICO -->
+    <a href="{{ jogo.link }}"
+       target="_blank"
+       class="btn-comprar">
+        Baixar Jogo
+    </a>
+
+{% endif %}
 
                             {% elif jogo.get('link') %}
                                 <!-- LINK ÚNICO -->

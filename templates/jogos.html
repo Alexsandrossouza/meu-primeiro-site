@@ -96,21 +96,21 @@
                         {% endif %}
 
                         <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
-                        <div class="botoes-container">
-                            {% if jogo.link_part1 %}
-                                <!-- PARTE 1 -->
-                                {% if jogo.link_part1.startswith('http') %}
-                                    <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
+                       
+                            {% else %}
+                                <!-- LINK ÚNICO -->
+                                {% if jogo.link.startswith('http') %}
+                                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
                                 {% else %}
-                                    <a href="/download/xbox360/{{ jogo.link_part1 }}" class="btn-comprar">Parte 1</a>
+                                    <a href="/download/xbox360/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
                                 {% endif %}
+                            {% endif %}
 
-                                <!-- PARTE 2 -->
-                                {% if jogo.link_part2.startswith('http') %}
-                                    <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
-                                {% else %}
-                                    <a href="/download/xbox360/{{ jogo.link_part2 }}" class="btn-comprar">Parte 2</a>
-                                {% endif %}
+                            {% if jogo.video %}
+                                <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;">
+                                    ▶ Assistir Vídeo
+                                </a>
+                            {% endif %}
 
                             {% else %}
                                 <!-- LINK ÚNICO -->
