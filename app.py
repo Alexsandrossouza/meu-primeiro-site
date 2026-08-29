@@ -457,19 +457,30 @@ def excluir_jogo(jogo_id):
 # ============================================================
 # ROTAS DE DOWNLOAD
 # ============================================================
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 from urllib.parse import unquote
 
 @app.route('/download/xbox360/<path:filename>')
 def download_360(filename):
-    # Decodifica caracteres da URL (ex: %20 vira espaço)
     nome_real = unquote(filename)
+    pasta_sub = os.path.join(BASE_DIR, 'Xbox360')
+    
+    # Se o arquivo estiver dentro da pasta Xbox360
+    if os.path.exists(os.path.join(pasta_sub, nome_real)):
+        return send_from_directory(pasta_sub, nome_real, as_attachment=True)
+    
+    # Se o arquivo estiver na pasta raiz (BASE_DIR)
     return send_from_directory(BASE_DIR, nome_real, as_attachment=True)
 
 @app.route('/download/xboxclassico/<path:filename>')
 def download_classico(filename):
-    return send_from_directory(os.path.join(BASE_DIR, 'xboxclassico'), filename, as_attachment=True)
+    nome_real = unquote(filename)
+    pasta_classico = os.path.join(BASE_DIR, 'xboxclassico')
+    return send_from_directory(pasta_classico, nome_real, as_attachment=True)
+
+# ============================================================
+# ROTAS DE DOWNLOAD   FIM
+# ============================================================
+
 
 @app.route('/catalogo-completo')
 def catalogo_completo():
