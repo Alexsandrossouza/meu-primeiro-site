@@ -2,6 +2,9 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
 from werkzeug.utils import secure_filename
 
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+
+
 app = Flask(__name__)
 app.secret_key = 'chave_secreta_planet_games_super_segura'
 
@@ -457,11 +460,248 @@ def excluir_jogo(jogo_id):
 # ============================================================
 # ROTAS DE DOWNLOAD
 # ============================================================
-import os
-from urllib.parse import unquote
+# ============================================================
+# ROTAS DE DOWNLOAD
+# ============================================================
 
-# Define o caminho base onde o app.py está rodando
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# ============================================================
+# PROCURAR ARQUIVO NO HD DE DOWNLOAD
+# ============================================================
+
+CAMINHO_DOWNLOAD = "/mnt/hd2tb/Download"
+
+
+def tamanho_legivel(tamanho):
+    """Converte bytes para KB, MB, GB etc."""
+
+    unidades = ["B", "KB", "MB", "GB", "TB"]
+
+    tamanho = float(tamanho)
+
+    for unidade in unidades:
+
+        if tamanho < 1024:
+            return f"{tamanho:.2f} {unidade}"
+
+        tamanho /= 1024
+
+    return f"{tamanho:.2f} PB"
+
+
+def normalizar_nome(nome):
+    """
+    Deixa os nomes mais fáceis de comparar.
+
+    Exemplo:
+
+    'Alvin And The Chipmunks Chipwrecked.rar'
+
+    vira:
+
+    'alvin and the chipmunks chipwrecked'
+    """
+
+    import unicodedata
+
+    # Remove a extensão do arquivo
+    nome = os.path.splitext(nome)[0]
+
+    # Remove acentos
+    nome = unicodedata.normalize("NFKD", nome)
+
+    nome = "".join(
+        c for c in nome
+        if not unicodedata.combining(c)
+    )
+
+    # Coloca tudo em minúsculas
+    nome = nome.lower().strip()
+
+    # Troca alguns caracteres por espaço
+    caracteres = "_-().[]{}"
+
+    for caractere in caracteres:
+        nome = nome.replace(caractere, " ")
+
+    # Remove espaços duplicados
+    nome = " ".join(nome.split())
+
+    return nome
+
+
+def procurar_arquivo_hd(nome_jogo):
+    """
+    Procura automaticamente o arquivo do jogo
+    dentro do HD de 2 TB.
+
+    Caminho:
+
+    /mnt/hd2tb/Download
+    """
+
+    # --------------------------------------------------------
+    # Verifica se o HD/pasta existe
+    # --------------------------------------------------------
+
+    if not os.path.isdir(CAMINHO_DOWNLOAD):
+        print(
+            f"ERRO: pasta de download não encontrada: "
+            f"{CAMINHO_DOWNLOAD}"
+        )
+
+        return None
+
+    # --------------------------------------------------------
+    # Normaliza o nome do jogo cadastrado
+    # --------------------------------------------------------
+
+    busca = normalizar_nome(nome_jogo)
+
+    if not busca:
+        return None
+
+    melhor_resultado = None
+
+    # --------------------------------------------------------
+    # Percorre o Download e todas as subpastas
+    # --------------------------------------------------------
+
+    for raiz, diretorios, arquivos in os.walk(CAMINHO_DOWNLOAD):
+
+        for arquivo in arquivos:
+
+            nome_arquivo = normalizar_nome(arquivo)
+
+            caminho_completo = os.path.join(
+                raiz,
+                arquivo
+            )
+
+            # ------------------------------------------------
+            # Tenta obter o tamanho do arquivo
+            # ------------------------------------------------
+
+            try:
+
+                tamanho = os.path.getsize(
+                    caminho_completo
+                )
+
+                tamanho_formatado = tamanho_legivel(
+                    tamanho
+                )
+
+            except OSError:
+
+                tamanho_formatado = "Desconhecido"
+
+            # =================================================
+            # 1º - CORRESPONDÊNCIA EXATA
+            # =================================================
+
+            if nome_arquivo == busca:
+
+                print(
+                    f"ARQUIVO ENCONTRADO: {caminho_completo}"
+                )
+
+                return {
+                    "arquivo": arquivo,
+                    "caminho": caminho_completo,
+                    "tamanho": tamanho_formatado
+                }
+
+            # =================================================
+            # 2º - CORRESPONDÊNCIA PARCIAL
+            # =================================================
+
+            if busca in nome_arquivo or nome_arquivo in busca:
+
+                if melhor_resultado is None:
+
+                    melhor_resultado = {
+                        "arquivo": arquivo,
+                        "caminho": caminho_completo,
+                        "tamanho": tamanho_formatado
+                    }
+
+    # =========================================================
+    # Retorna o melhor resultado parcial encontrado
+    # =========================================================
+
+    if melhor_resultado:
+
+        print(
+            f"ARQUIVO ENCONTRADO POR CORRESPONDÊNCIA PARCIAL: "
+            f"{melhor_resultado['caminho']}"
+        )
+
+        return melhor_resultado
+
+    # =========================================================
+    # Nenhum arquivo encontrado
+    # =========================================================
+
+    print(
+        f"NENHUM ARQUIVO ENCONTRADO PARA: {nome_jogo}"
+    )
+
+    return None
+
+# ============================================================
+# API - PROCURAR JOGO NO HD
+# ============================================================
+
+@app.route("/admin/procurar-arquivo", methods=["POST"])
+def admin_procurar_arquivo():
+    
+    if not session.get("admin_logged_in"):
+        return jsonify({
+            "encontrado": False,
+            "erro": "Não autorizado"
+        }), 401
+    
+    dados = request.get_json(silent=True) or {}
+    
+    titulo = dados.get("titulo", "").strip()
+    
+    if not titulo:
+        return jsonify({
+            "encontrado": False,
+            "erro": "Digite o título do jogo."
+        }), 400
+    
+    resultado = procurar_arquivo_hd(titulo)
+    
+    if not resultado:
+        return jsonify({
+            "encontrado": False,
+            "erro": f"Nenhum arquivo encontrado para: {titulo}"
+        })
+    
+    # Descobre o caminho relativo ao /Download
+    caminho_base = "/mnt/hd2tb/Download"
+    
+    caminho_relativo = os.path.relpath(
+        resultado["caminho"],
+        caminho_base
+    )
+    
+    # Converte separadores para URL
+    partes = caminho_relativo.split(os.sep)
+    
+    from urllib.parse import quote
+    
+    link_download = "/download/" + "/".join(
+        quote(parte) for parte in partes
+    )
+    
+    return jsonify({
+        "encontrado": True,
+        "arquivo": resultado["arquivo"],
+        "tamanho": resultado["tamanho"],
+        "link": link_download
+    })
 
 # ============================================================
 # ROTAS DE DOWNLOAD
