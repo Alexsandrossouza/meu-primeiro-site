@@ -466,28 +466,27 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # ============================================================
 # ROTAS DE DOWNLOAD
 # ============================================================
-import os
-from urllib.parse import unquote
-from flask import send_from_directory, abort
-
-# Caminho absoluto da pasta Download no seu HD
-PASTA_DOWNLOADS = '/mnt/hd2tb/Download'
-
-@app.route('/download/<path:filename>')
-def baixar_arquivo(filename):
-    nome_real = unquote(filename)
+@app.route('/download/')
+@app.route('/download/<path:subpath>')
+def listar_download(subpath=''):
+    import os
+    from flask import abort
+    caminho_base = '/mnt/hd2tb/Download'
+    caminho = os.path.join(caminho_base, subpath)
     
-    # Verifica se o arquivo realmente existe na pasta Download (ou subpastas)
-    caminho_completo = os.path.join(PASTA_DOWNLOADS, nome_real)
-    
-    if os.path.isfile(caminho_completo):
-        # Extrai a pasta base e o nome do arquivo para o send_from_directory
-        diretorio = os.path.dirname(caminho_completo)
-        arquivo = os.path.basename(caminho_completo)
-        return send_from_directory(diretorio, arquivo, as_attachment=True)
-    else:
-        # Se não achar o arquivo, retorna 404 limpo
+    if not os.path.exists(caminho):
         abort(404)
+    
+    if os.path.isfile(caminho):
+        return send_from_directory(os.path.dirname(caminho), os.path.basename(caminho))
+    
+    arquivos = os.listdir(caminho)
+    html = f"<h1>Conteúdo de /Download/{subpath}</h1><ul>"
+    for f in arquivos:
+        link = f"/download/{subpath}/{f}" if subpath else f"/download/{f}"
+        html += f'<li><a href="{link}">{f}</a></li>'
+    html += "</ul>"
+    return html
 
 # ============================================================
 # ROTAS DE DOWNLOAD   FIM
