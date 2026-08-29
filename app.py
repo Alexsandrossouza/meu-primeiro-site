@@ -466,23 +466,28 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # ============================================================
 # ROTAS DE DOWNLOAD
 # ============================================================
-@app.route('/download/xbox360/<path:filename>')
-def download_360(filename):
-    nome_real = unquote(filename)
-    pasta_sub = os.path.join(BASE_DIR, 'Xbox360')
-    
-    # Se o arquivo estiver dentro da pasta Xbox360
-    if os.path.exists(os.path.join(pasta_sub, nome_real)):
-        return send_from_directory(pasta_sub, nome_real, as_attachment=True)
-    
-    # Se o arquivo estiver na raiz (BASE_DIR)
-    return send_from_directory(BASE_DIR, nome_real, as_attachment=True)
+import os
+from urllib.parse import unquote
+from flask import send_from_directory, abort
 
-@app.route('/download/xboxclassico/<path:filename>')
-def download_classico(filename):
+# Caminho absoluto da pasta Download no seu HD
+PASTA_DOWNLOADS = '/mnt/hd2tb/Download'
+
+@app.route('/download/<path:filename>')
+def baixar_arquivo(filename):
     nome_real = unquote(filename)
-    pasta_classico = os.path.join(BASE_DIR, 'xboxclassico')
-    return send_from_directory(pasta_classico, nome_real, as_attachment=True)
+    
+    # Verifica se o arquivo realmente existe na pasta Download (ou subpastas)
+    caminho_completo = os.path.join(PASTA_DOWNLOADS, nome_real)
+    
+    if os.path.isfile(caminho_completo):
+        # Extrai a pasta base e o nome do arquivo para o send_from_directory
+        diretorio = os.path.dirname(caminho_completo)
+        arquivo = os.path.basename(caminho_completo)
+        return send_from_directory(diretorio, arquivo, as_attachment=True)
+    else:
+        # Se não achar o arquivo, retorna 404 limpo
+        abort(404)
 
 # ============================================================
 # ROTAS DE DOWNLOAD   FIM
