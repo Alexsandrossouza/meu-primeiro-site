@@ -31,7 +31,7 @@
         </a>
 
         <nav>
-          <a href="/>Início"</a>
+          <a href="/">Início</a>
           <a href="/produtos">Produto</a>
           <a href="/xboxclassico">Xbox Clássico</a>
           <a href="/catalogo-completo">Catálogo x360db</a>
@@ -66,14 +66,14 @@
             <button class="tag-btn" onclick="filtrar('luta', this)">Luta</button>
             <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
             <button class="tag-btn" onclick="filtrar('terror', this)">Terror</button>
-            </div>
+        </div>
 
         <!-- GRADE COM OS JOGOS DO APP.PY -->
         <div class="grid-jogos">
             {% for jogo in jogos %}
                 <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
                     
-                    <!-- FOTO DO JOGO (ACEITA PASTA STATIC OU LINK DA INTERNET) -->
+                    <!-- FOTO DO JOGO -->
                     <div class="capa-box">
                         {% if jogo.imagem.startswith('http') %}
                             <img src="{{ jogo.imagem }}" alt="{{ jogo.titulo }}">
@@ -102,14 +102,14 @@
                                 {% if jogo.link_part1.startswith('http') %}
                                     <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
                                 {% else %}
-                                    <a href="/download/{{ jogo.link_part1 }}" class="btn-comprar">Parte 1</a>
+                                    <a href="/download/xbox360/{{ jogo.link_part1 }}" class="btn-comprar">Parte 1</a>
                                 {% endif %}
 
                                 <!-- PARTE 2 -->
                                 {% if jogo.link_part2.startswith('http') %}
                                     <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
                                 {% else %}
-                                    <a href="/download/{{ jogo.link_part2 }}" class="btn-comprar">Parte 2</a>
+                                    <a href="/download/xbox360/{{ jogo.link_part2 }}" class="btn-comprar">Parte 2</a>
                                 {% endif %}
 
                             {% else %}
@@ -117,7 +117,7 @@
                                 {% if jogo.link.startswith('http') %}
                                     <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
                                 {% else %}
-                                    <a href="/download/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
+                                    <a href="/download/xbox360/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
                                 {% endif %}
                             {% endif %}
 
