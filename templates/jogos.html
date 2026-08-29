@@ -102,7 +102,7 @@
                                 {% if jogo.link.startswith('http') %}
                                     <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
                                 {% else %}
-                                    <a href="/download/xbox360/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
+                                    <a href="/download/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
                                 {% endif %}
                             {% endif %}
 
