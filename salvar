@@ -2,9 +2,14 @@ git add .
 git commit -m "criando o caminho de download da pasta"
 git push origin main
 
+################################
+No terminal do Proxmox:
 
+Bash
+git pull origin main
+systemctl restart meu-site
 
-salvar cmd: nssm restart MeuSiteFlask
+###########################
 
 https://planetgames.net.br/download/       %20   %20
 
