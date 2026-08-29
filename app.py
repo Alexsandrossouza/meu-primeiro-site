@@ -1,6 +1,8 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
+
+
 
 app = Flask(__name__)
 app.secret_key = 'chave_secreta_planet_games_super_segura'
@@ -400,8 +402,111 @@ def admin():
 
 @app.route("/admin/jogo/novo", methods=["POST"])
 def novo_jogo():
+    # ============================================================
+    # CADASTRO DE NOVO JOGO
+    # ============================================================
+
+    # Verifica se o usuário está logado no painel
     if not session.get('admin_logged_in'):
         return redirect(url_for("admin_login"))
+
+    # ============================================================
+    # 1. PEGA OS DADOS DIGITADOS NO FORMULÁRIO
+    # ============================================================
+
+    titulo = request.form.get("titulo", "").strip()
+    plataforma = request.form.get(
+        "plataforma",
+        "Xbox 360-Formato:XEX"
+    ).strip()
+
+    categoria = request.form.get("categoria", "").strip()
+    tamanho_manual = request.form.get("tamanho", "").strip()
+    link_manual = request.form.get("link", "").strip()
+
+    # ============================================================
+    # 2. TRATA A CAPA DO JOGO
+    # ============================================================
+
+    imagem_file = request.files.get("imagem_file")
+    imagem_nome = request.form.get("imagem_url", "").strip()
+
+    if (
+        imagem_file
+        and imagem_file.filename != ''
+        and arquivo_permitido(imagem_file.filename)
+    ):
+        filename = secure_filename(imagem_file.filename)
+
+        imagem_file.save(
+            os.path.join(
+                app.config['UPLOAD_FOLDER'],
+                filename
+            )
+        )
+
+        imagem_nome = filename
+
+    # Se nenhuma imagem foi informada
+    if not imagem_nome:
+        imagem_nome = "default.jpg"
+
+    # ============================================================
+    # 3. PROCURA AUTOMATICAMENTE O JOGO NO HD
+    # ============================================================
+
+    arquivo_encontrado = procurar_arquivo_hd(titulo)
+
+    # Começamos usando os dados digitados manualmente
+    tamanho_final = tamanho_manual
+    link_final = link_manual
+
+    # ============================================================
+    # 4. SE ENCONTRAR O ARQUIVO, USA OS DADOS AUTOMÁTICOS
+    # ============================================================
+
+    if arquivo_encontrado:
+
+        # Usa o tamanho real encontrado no HD
+        tamanho_final = arquivo_encontrado["tamanho"]
+
+        # Descobre o caminho relativo dentro de /Download
+        caminho_relativo = os.path.relpath(
+            arquivo_encontrado["caminho"],
+            "/mnt/hd2tb/Download"
+        )
+
+        # Troca \ por / para funcionar corretamente na URL
+        link_final = caminho_relativo.replace(os.sep, "/")
+
+    # ============================================================
+    # 5. CRIA UM NOVO ID
+    # ============================================================
+
+    novo_id = max(
+        [j["id"] for j in lista_de_jogos],
+        default=0
+    ) + 1
+
+    # ============================================================
+    # 6. ADICIONA O JOGO À LISTA
+    # ============================================================
+
+    lista_de_jogos.append({
+        "id": novo_id,
+        "titulo": titulo,
+        "plataforma": plataforma,
+        "tamanho": tamanho_final,
+        "categoria": categoria,
+        "imagem": imagem_nome,
+        "link": link_final
+    })
+
+    # ============================================================
+    # 7. VOLTA PARA O PAINEL ADMIN
+    # ============================================================
+
+    return redirect(url_for("admin"))
 
     imagem_file = request.files.get("imagem_file")
     imagem_nome = request.form.get("imagem_url")
@@ -457,11 +562,248 @@ def excluir_jogo(jogo_id):
 # ============================================================
 # ROTAS DE DOWNLOAD
 # ============================================================
-import os
-from urllib.parse import unquote
+# ============================================================
+# ROTAS DE DOWNLOAD
+# ============================================================
 
-# Define o caminho base onde o app.py está rodando
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# ============================================================
+# PROCURAR ARQUIVO NO HD DE DOWNLOAD
+# ============================================================
+
+CAMINHO_DOWNLOAD = "/mnt/hd2tb/Download"
+
+
+def tamanho_legivel(tamanho):
+    """Converte bytes para KB, MB, GB etc."""
+
+    unidades = ["B", "KB", "MB", "GB", "TB"]
+
+    tamanho = float(tamanho)
+
+    for unidade in unidades:
+
+        if tamanho < 1024:
+            return f"{tamanho:.2f} {unidade}"
+
+        tamanho /= 1024
+
+    return f"{tamanho:.2f} PB"
+
+
+def normalizar_nome(nome):
+    """
+    Deixa os nomes mais fáceis de comparar.
+
+    Exemplo:
+
+    'Alvin And The Chipmunks Chipwrecked.rar'
+
+    vira:
+
+    'alvin and the chipmunks chipwrecked'
+    """
+
+    import unicodedata
+
+    # Remove a extensão do arquivo
+    nome = os.path.splitext(nome)[0]
+
+    # Remove acentos
+    nome = unicodedata.normalize("NFKD", nome)
+
+    nome = "".join(
+        c for c in nome
+        if not unicodedata.combining(c)
+    )
+
+    # Coloca tudo em minúsculas
+    nome = nome.lower().strip()
+
+    # Troca alguns caracteres por espaço
+    caracteres = "_-().[]{}"
+
+    for caractere in caracteres:
+        nome = nome.replace(caractere, " ")
+
+    # Remove espaços duplicados
+    nome = " ".join(nome.split())
+
+    return nome
+
+
+def procurar_arquivo_hd(nome_jogo):
+    """
+    Procura automaticamente o arquivo do jogo
+    dentro do HD de 2 TB.
+
+    Caminho:
+
+    /mnt/hd2tb/Download
+    """
+
+    # --------------------------------------------------------
+    # Verifica se o HD/pasta existe
+    # --------------------------------------------------------
+
+    if not os.path.isdir(CAMINHO_DOWNLOAD):
+        print(
+            f"ERRO: pasta de download não encontrada: "
+            f"{CAMINHO_DOWNLOAD}"
+        )
+
+        return None
+
+    # --------------------------------------------------------
+    # Normaliza o nome do jogo cadastrado
+    # --------------------------------------------------------
+
+    busca = normalizar_nome(nome_jogo)
+
+    if not busca:
+        return None
+
+    melhor_resultado = None
+
+    # --------------------------------------------------------
+    # Percorre o Download e todas as subpastas
+    # --------------------------------------------------------
+
+    for raiz, diretorios, arquivos in os.walk(CAMINHO_DOWNLOAD):
+
+        for arquivo in arquivos:
+
+            nome_arquivo = normalizar_nome(arquivo)
+
+            caminho_completo = os.path.join(
+                raiz,
+                arquivo
+            )
+
+            # ------------------------------------------------
+            # Tenta obter o tamanho do arquivo
+            # ------------------------------------------------
+
+            try:
+
+                tamanho = os.path.getsize(
+                    caminho_completo
+                )
+
+                tamanho_formatado = tamanho_legivel(
+                    tamanho
+                )
+
+            except OSError:
+
+                tamanho_formatado = "Desconhecido"
+
+            # =================================================
+            # 1º - CORRESPONDÊNCIA EXATA
+            # =================================================
+
+            if nome_arquivo == busca:
+
+                print(
+                    f"ARQUIVO ENCONTRADO: {caminho_completo}"
+                )
+
+                return {
+                    "arquivo": arquivo,
+                    "caminho": caminho_completo,
+                    "tamanho": tamanho_formatado
+                }
+
+            # =================================================
+            # 2º - CORRESPONDÊNCIA PARCIAL
+            # =================================================
+
+            if busca in nome_arquivo or nome_arquivo in busca:
+
+                if melhor_resultado is None:
+
+                    melhor_resultado = {
+                        "arquivo": arquivo,
+                        "caminho": caminho_completo,
+                        "tamanho": tamanho_formatado
+                    }
+
+    # =========================================================
+    # Retorna o melhor resultado parcial encontrado
+    # =========================================================
+
+    if melhor_resultado:
+
+        print(
+            f"ARQUIVO ENCONTRADO POR CORRESPONDÊNCIA PARCIAL: "
+            f"{melhor_resultado['caminho']}"
+        )
+
+        return melhor_resultado
+
+    # =========================================================
+    # Nenhum arquivo encontrado
+    # =========================================================
+
+    print(
+        f"NENHUM ARQUIVO ENCONTRADO PARA: {nome_jogo}"
+    )
+
+    return None
+
+# ============================================================
+# API - PROCURAR JOGO NO HD
+# ============================================================
+
+@app.route("/admin/procurar-arquivo", methods=["POST"])
+def admin_procurar_arquivo():
+    
+    if not session.get("admin_logged_in"):
+        return jsonify({
+            "encontrado": False,
+            "erro": "Não autorizado"
+        }), 401
+    
+    dados = request.get_json(silent=True) or {}
+    
+    titulo = dados.get("titulo", "").strip()
+    
+    if not titulo:
+        return jsonify({
+            "encontrado": False,
+            "erro": "Digite o título do jogo."
+        }), 400
+    
+    resultado = procurar_arquivo_hd(titulo)
+    
+    if not resultado:
+        return jsonify({
+            "encontrado": False,
+            "erro": f"Nenhum arquivo encontrado para: {titulo}"
+        })
+    
+    # Descobre o caminho relativo ao /Download
+    caminho_base = "/mnt/hd2tb/Download"
+    
+    caminho_relativo = os.path.relpath(
+        resultado["caminho"],
+        caminho_base
+    )
+    
+    # Converte separadores para URL
+    partes = caminho_relativo.split(os.sep)
+    
+    from urllib.parse import quote
+    
+    link_download = "/download/" + "/".join(
+        quote(parte) for parte in partes
+    )
+    
+    return jsonify({
+        "encontrado": True,
+        "arquivo": resultado["arquivo"],
+        "tamanho": resultado["tamanho"],
+        "link": link_download
+    })
 
 # ============================================================
 # ROTAS DE DOWNLOAD
