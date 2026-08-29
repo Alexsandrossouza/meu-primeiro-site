@@ -494,16 +494,24 @@ def baixar_arquivo(filename):
 # ============================================================
 
 
-@app.route('/catalogo-completo')
-def catalogo_completo():
+import os
+import requests
+from flask import send_from_directory, request
+
+PASTA_COVERS = '/mnt/hd2tb/Download/covers'
+URL_GAMES_JSON = "https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/games.json"
+
+@app.route('/covers/<path:filename>')
+def serve_cover(filename):
+    return send_from_directory(PASTA_COVERS, filename)
+
+def carregar_jogos():
     jogos = []
-    url = "https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/games.json"
-    
     try:
-        res = requests.get(url, timeout=10)
+        res = requests.get(URL_GAMES_JSON, timeout=15) # aumentei o timeout
         data = res.json()
         
-        for id_jogo, info in list(data.items())[:120]:
+        for id_jogo, info in data.items(): # tirei o [:120] pra pegar tudo
             title = info.get('title', 'Jogo sem título')
             if isinstance(title, dict):
                 title = title.get('en', list(title.values())[0] if title else 'Jogo sem título')
@@ -511,16 +519,47 @@ def catalogo_completo():
                 title = title[0]
 
             id_limpo = str(id_jogo).upper().strip()
+            
+            # 1. Tenta usar capa local primeiro. Se não tiver, usa a do GitHub
+            capa_local = None
+            for ext in ['jpg', 'jpeg', 'png']:
+                if os.path.exists(os.path.join(PASTA_COVERS, id_limpo, f'cover.{ext}')):
+                    capa_local = f'covers/{id_limpo}/cover.{ext}'
+                    break
+            
+            if capa_local:
+                capa = f"/{capa_local}"
+            else:
+                capa = f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
 
             jogos.append({
                 'id': id_limpo,
-                'nome': title,
-                'capa': f"https://raw.githubusercontent.com/Alexsandrossouza/x360db/main/titles/{id_limpo}/boxart.png"
+                'nome': title, # AGORA VOLTA COM NOME
+                'capa': capa
             })
     except Exception as e:
-        print(f"Erro: {e}")
+        print(f"Erro ao carregar games.json: {e}")
         
-    return render_template("catalogo_x360db.html", jogos=jogos)
+    return sorted(jogos, key=lambda x: x['nome'])
+
+@app.route('/catalogo-completo')
+def catalogo_completo():
+    busca = request.args.get('busca', '')
+    todos_jogos = carregar_jogos()
+    
+    if busca:
+        jogos = [j for j in todos_jogos if busca.lower() in j['nome'].lower() or busca.lower() in j['id'].lower()]
+    else:
+        jogos = todos_jogos
+    
+    # Paginação de 30
+    page = int(request.args.get('page', 1))
+    por_pagina = 30
+    total = len(jogos)
+    total_paginas = (total + por_pagina - 1) // por_pagina
+    jogos_pagina = jogos[(page-1)*por_pagina:page*por_pagina]
+    
+    return render_template("catalogo_x360db.html", jogos=jogos_pagina, page=page, total_paginas=total_paginas, busca=busca)
 
 
 if __name__ == "__main__":
