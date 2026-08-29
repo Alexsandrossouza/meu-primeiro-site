@@ -494,42 +494,81 @@ def baixar_arquivo(filename):
 # ============================================================
 
 import os
-from flask import send_from_directory, request
-
-PASTA_COVERS = '/mnt/hd2tb/Download/covers'
-
-@app.route('/covers/<path:filename>')
-def serve_cover(filename):
-    return send_from_directory(PASTA_COVERS, filename)
+import json
+from flask import render_template, request, current_app
 
 @app.route('/catalogo-completo')
 def catalogo_completo():
-    jogos = []
-    busca = request.args.get('busca', '')
-    
-    if os.path.exists(PASTA_COVERS):
-        for id_jogo in sorted(os.listdir(PASTA_COVERS)):
-            caminho = os.path.join(PASTA_COVERS, id_jogo)
-            if os.path.isdir(caminho):
-                nome = id_jogo 
+    try:
+        page = request.args.get('page', 1, type=int)
+        busca = request.args.get('busca', '', type=str).strip().lower()
+        itens_por_pagina = 36
+
+        caminho_json = os.path.join(current_app.static_folder, 'x360db-main', 'games.json')
+        
+        todos_jogos = []
+        if os.path.exists(caminho_json):
+            with open(caminho_json, 'r', encoding='utf-8') as f:
+                dados = json.load(f)
+                if isinstance(dados, list):
+                    todos_jogos = dados
+                elif isinstance(dados, dict):
+                    todos_jogos = [{'id': k, 'nome': v.get('name', v.get('title', k)) if isinstance(v, dict) else str(v)} for k, v in dados.items()]
+
+        # Busca corrigida: verifica tanto 'nome' quanto 'name' e 'id'
+        if busca:
+            jogos_filtrados = []
+            for j in todos_jogos:
+                nome_jogo = str(j.get('nome', j.get('name', j.get('title', '')))).lower()
+                id_jogo = str(j.get('id', '')).lower()
+                if busca in nome_jogo or busca in id_jogo:
+                    jogos_filtrados.append(j)
+        else:
+            jogos_filtrados = todos_jogos
+
+        # Paginação
+        total_jogos = len(jogos_filtrados)
+        total_paginas = (total_jogos + itens_por_pagina - 1) // itens_por_pagina if total_jogos > 0 else 1
+        page = max(1, min(page, total_paginas))
+        
+        inicio = (page - 1) * itens_por_pagina
+        fim = inicio + itens_por_pagina
+        jogos_pagina = jogos_filtrados[inicio:fim]
+
+        jogos_formatados = []
+        for j in jogos_pagina:
+            id_jogo = str(j.get('id', '')).strip()
+            nome_jogo = j.get('nome', j.get('name', j.get('title', id_jogo)))
+            
+            rel_artwork_jpg = f"x360db-main/titles/{id_jogo}/artwork/boxart.jpg"
+            rel_artwork_png = f"x360db-main/titles/{id_jogo}/artwork/boxart.png"
+            rel_boxart_jpg = f"x360db-main/titles/{id_jogo}/boxart.jpg"
+
+            if os.path.exists(os.path.join(current_app.static_folder, rel_artwork_jpg)):
+                capa = rel_artwork_jpg
+            elif os.path.exists(os.path.join(current_app.static_folder, rel_artwork_png)):
+                capa = rel_artwork_png
+            elif os.path.exists(os.path.join(current_app.static_folder, rel_boxart_jpg)):
+                capa = rel_boxart_jpg
+            else:
                 capa = None
-                for ext in ['jpg', 'jpeg', 'png']:
-                    if os.path.exists(os.path.join(caminho, f'cover.{ext}')):
-                        capa = f'covers/{id_jogo}/cover.{ext}'
-                        break
-                if busca:
-                    if busca.lower() in id_jogo.lower():
-                        jogos.append({'id': id_jogo, 'nome': nome, 'capa': capa})
-                else:
-                    jogos.append({'id': id_jogo, 'nome': nome, 'capa': capa})
-    
-    page = int(request.args.get('page', 1))
-    por_pagina = 30
-    total = len(jogos)
-    total_paginas = (total + por_pagina - 1) // por_pagina
-    jogos_pagina = jogos[(page-1)*por_pagina:page*por_pagina]
-    
-    return render_template("catalogo_x360db.html", jogos=jogos_pagina, page=page, total_paginas=total_paginas, busca=busca)
+
+            jogos_formatados.append({
+                'id': id_jogo,
+                'nome': nome_jogo,
+                'capa': capa
+            })
+
+        return render_template(
+            'catalogo_x360db.html',
+            jogos=jogos_formatados,
+            page=page,
+            total_paginas=total_paginas,
+            busca=busca
+        )
+    except Exception as e:
+        print(f"Erro no catálogo: {e}")
+        return f"Erro interno ao carregar o catálogo: {e}", 500
 
 
 if __name__ == "__main__":
