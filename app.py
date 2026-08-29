@@ -454,11 +454,18 @@ def excluir_jogo(jogo_id):
     lista_de_jogos = [j for j in lista_de_jogos if j["id"] != jogo_id]
     return redirect(url_for("admin"))
 
+# ============================================================
+# ROTAS DE DOWNLOAD
+# ============================================================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+from urllib.parse import unquote
 
 @app.route('/download/xbox360/<path:filename>')
 def download_360(filename):
-    return send_from_directory(BASE_DIR, filename, as_attachment=True)
+    # Decodifica caracteres da URL (ex: %20 vira espaço)
+    nome_real = unquote(filename)
+    return send_from_directory(BASE_DIR, nome_real, as_attachment=True)
 
 @app.route('/download/xboxclassico/<path:filename>')
 def download_classico(filename):
