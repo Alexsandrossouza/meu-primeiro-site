@@ -1,8 +1,7 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
 
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
 
 app = Flask(__name__)
@@ -403,8 +402,111 @@ def admin():
 
 @app.route("/admin/jogo/novo", methods=["POST"])
 def novo_jogo():
+    # ============================================================
+    # CADASTRO DE NOVO JOGO
+    # ============================================================
+
+    # Verifica se o usuário está logado no painel
     if not session.get('admin_logged_in'):
         return redirect(url_for("admin_login"))
+
+    # ============================================================
+    # 1. PEGA OS DADOS DIGITADOS NO FORMULÁRIO
+    # ============================================================
+
+    titulo = request.form.get("titulo", "").strip()
+    plataforma = request.form.get(
+        "plataforma",
+        "Xbox 360-Formato:XEX"
+    ).strip()
+
+    categoria = request.form.get("categoria", "").strip()
+    tamanho_manual = request.form.get("tamanho", "").strip()
+    link_manual = request.form.get("link", "").strip()
+
+    # ============================================================
+    # 2. TRATA A CAPA DO JOGO
+    # ============================================================
+
+    imagem_file = request.files.get("imagem_file")
+    imagem_nome = request.form.get("imagem_url", "").strip()
+
+    if (
+        imagem_file
+        and imagem_file.filename != ''
+        and arquivo_permitido(imagem_file.filename)
+    ):
+        filename = secure_filename(imagem_file.filename)
+
+        imagem_file.save(
+            os.path.join(
+                app.config['UPLOAD_FOLDER'],
+                filename
+            )
+        )
+
+        imagem_nome = filename
+
+    # Se nenhuma imagem foi informada
+    if not imagem_nome:
+        imagem_nome = "default.jpg"
+
+    # ============================================================
+    # 3. PROCURA AUTOMATICAMENTE O JOGO NO HD
+    # ============================================================
+
+    arquivo_encontrado = procurar_arquivo_hd(titulo)
+
+    # Começamos usando os dados digitados manualmente
+    tamanho_final = tamanho_manual
+    link_final = link_manual
+
+    # ============================================================
+    # 4. SE ENCONTRAR O ARQUIVO, USA OS DADOS AUTOMÁTICOS
+    # ============================================================
+
+    if arquivo_encontrado:
+
+        # Usa o tamanho real encontrado no HD
+        tamanho_final = arquivo_encontrado["tamanho"]
+
+        # Descobre o caminho relativo dentro de /Download
+        caminho_relativo = os.path.relpath(
+            arquivo_encontrado["caminho"],
+            "/mnt/hd2tb/Download"
+        )
+
+        # Troca \ por / para funcionar corretamente na URL
+        link_final = caminho_relativo.replace(os.sep, "/")
+
+    # ============================================================
+    # 5. CRIA UM NOVO ID
+    # ============================================================
+
+    novo_id = max(
+        [j["id"] for j in lista_de_jogos],
+        default=0
+    ) + 1
+
+    # ============================================================
+    # 6. ADICIONA O JOGO À LISTA
+    # ============================================================
+
+    lista_de_jogos.append({
+        "id": novo_id,
+        "titulo": titulo,
+        "plataforma": plataforma,
+        "tamanho": tamanho_final,
+        "categoria": categoria,
+        "imagem": imagem_nome,
+        "link": link_final
+    })
+
+    # ============================================================
+    # 7. VOLTA PARA O PAINEL ADMIN
+    # ============================================================
+
+    return redirect(url_for("admin"))
 
     imagem_file = request.files.get("imagem_file")
     imagem_nome = request.form.get("imagem_url")
