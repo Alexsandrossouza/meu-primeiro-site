@@ -88,38 +88,45 @@
                         <span class="badge">{{ jogo.plataforma }}</span>
                         <p class="detalhes">Tamanho: {{ jogo.tamanho }}</p>
 
-                        <!-- BOTÃO DE TRAILER -->
-                        {% if jogo.trailer %}
-                            <button class="btn-trailer" onclick="abrirVideo('{{ jogo.trailer }}')">
-                                ▶ Assistir Trailer
-                            </button>
-                        {% endif %}
+                     <!-- BOTÃO DE TRAILER -->
+{% if jogo.trailer %}
+    <button class="btn-trailer" onclick="abrirVideo('{{ jogo.trailer }}')">
+        ▶ Assistir Trailer
+    </button>
+{% endif %}
 
-                        <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
-                       
-                           <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
+<!-- BOTÕES DE DOWNLOAD E VÍDEO -->
+{% if jogo.link %}
+    {% if jogo.link.startswith('http') %}
+        <a href="{{ jogo.link }}"
+           target="_blank"
+           class="btn-comprar">
+            Baixar Jogo
+        </a>
+    {% else %}
+        <a href="/download/{{ jogo.link }}"
+           class="btn-comprar">
+            Baixar Jogo
+        </a>
+    {% endif %}
+{% endif %}
 
-                                 {% if jogo.link %}
-                                    {% if jogo.link.startswith('http') %}
-                                     <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
-                                    {% else %}
-                                    <a href="/download/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
-                                    {% endif %}
-                                    {% endif %}
+{% if jogo.video %}
+    <a href="{{ jogo.video }}"
+       target="_blank"
+       class="btn-comprar"
+       style="margin-top: 8px;">
+        ▶ Assistir Vídeo
+    </a>
+{% endif %}
 
-                                {% if jogo.video %}
-                                 <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;">
-                                 ▶ Assistir Vídeo
-                                 </a>
-                             {% endif %}
-                        </div>
-                    </div>
+</div>
+</div>
 
-                </div>
-            {% endfor %}
-        </div>
-    </main>
+{% endfor %}
 
+</div>
+</main>
     <!-- JANELA FLUTUANTE DO VÍDEO (MODAL) -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
