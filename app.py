@@ -479,33 +479,117 @@ def admin():
     if not session.get('admin_logged_in'):
         return redirect(url_for("admin_login"))
     return render_template("admin.html", jogos=lista_de_jogos)
-
 @app.route("/admin/jogo/novo", methods=["POST"])
 def novo_jogo():
+
     if not session.get('admin_logged_in'):
         return redirect(url_for("admin_login"))
 
     imagem_file = request.files.get("imagem_file")
-    imagem_nome = request.form.get("imagem_url")
+    imagem_nome = request.form.get("imagem_url", "").strip()
 
     if imagem_file and imagem_file.filename != '' and arquivo_permitido(imagem_file.filename):
         filename = secure_filename(imagem_file.filename)
         imagem_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         imagem_nome = filename
 
-    novo_id = max([j["id"] for j in lista_de_jogos], default=0) + 1
+    # ============================================================
+    # DADOS DO JOGO
+    # ============================================================
+
+    titulo = request.form.get("titulo", "").strip()
+    plataforma_form = request.form.get("plataforma", "").strip()
+    arquivo_nome = request.form.get("arquivo", "").strip()
+    categoria = request.form.get("categoria", "").strip()
+    tamanho = request.form.get("tamanho", "").strip()
+
+    # ============================================================
+    # PLATAFORMA
+    # ============================================================
+
+    if plataforma_form == "Xbox 360":
+        plataforma = "Xbox 360 - Formato: XEX"
+        pasta_download = "/mnt/hd2tb/Download/Xbox360"
+    else:
+        plataforma = "Xbox Clássico"
+        pasta_download = "/mnt/hd2tb/Download/xboxclassico"
+
+    # ============================================================
+    # TAMANHO AUTOMÁTICO DO ARQUIVO
+    # ============================================================
+
+    if arquivo_nome:
+
+        caminho_arquivo = os.path.join(
+            pasta_download,
+            arquivo_nome
+        )
+
+        if os.path.isfile(caminho_arquivo):
+
+            tamanho_bytes = os.path.getsize(caminho_arquivo)
+
+            if tamanho_bytes >= 1024 ** 3:
+                tamanho = f"{tamanho_bytes / (1024 ** 3):.2f} GB"
+
+            elif tamanho_bytes >= 1024 ** 2:
+                tamanho = f"{tamanho_bytes / (1024 ** 2):.2f} MB"
+
+            elif tamanho_bytes >= 1024:
+                tamanho = f"{tamanho_bytes / 1024:.2f} KB"
+
+            else:
+                tamanho = f"{tamanho_bytes} bytes"
+
+    # ============================================================
+    # ID
+    # ============================================================
+
+    novo_id = max(
+        [j["id"] for j in lista_de_jogos],
+        default=0
+    ) + 1
+
+    # ============================================================
+    # LINK DO DOWNLOAD
+    # ============================================================
+
+    if arquivo_nome:
+
+        link_download = (
+            f"Xbox360/{arquivo_nome}"
+            if plataforma_form == "Xbox 360"
+            else f"xboxclassico/{arquivo_nome}"
+        )
+
+    else:
+
+        link_download = request.form.get("link", "").strip()
+
+    # ============================================================
+    # CADASTRAR JOGO
+    # ============================================================
+
     lista_de_jogos.append({
+
         "id": novo_id,
-        "titulo": request.form.get("titulo", "").strip(),
-    "plataforma": request.form.get("plataforma", "").strip(),
-    "arquivo": request.form.get("arquivo", "").strip(),
-    "tamanho": request.form.get("tamanho", "").strip(),
-    "categoria": request.form.get("categoria", "").strip(),
-    "imagem": imagem_nome if imagem_nome else "default.jpg",
-    "link": request.form.get("link", "").strip()
+
+        "titulo": titulo,
+
+        "plataforma": plataforma,
+
+        "tamanho": tamanho,
+
+        "categoria": categoria,
+
+        "imagem": imagem_nome if imagem_nome else "default.jpg",
+
+        "link": link_download
+
     })
 
     salvar_jogos()
+
     return redirect(url_for("admin"))
 
 @app.route("/admin/jogo/editar/<int:jogo_id>", methods=["POST"])
@@ -552,26 +636,60 @@ from urllib.parse import unquote
 # ============================================================
 # ROTAS DE DOWNLOAD
 # ============================================================
+# ============================================================
+# ROTAS DE DOWNLOAD
+# ============================================================
+
 @app.route('/download/')
 @app.route('/download/<path:subpath>')
 def listar_download(subpath=''):
+
     import os
-    from flask import abort
+    from flask import abort, send_from_directory
+
     caminho_base = '/mnt/hd2tb/Download'
-    caminho = os.path.join(caminho_base, subpath)
-    
+
+    # Evita caminhos perigosos
+    subpath = subpath.replace('\\', '/').lstrip('/')
+
+    caminho = os.path.normpath(
+        os.path.join(caminho_base, subpath)
+    )
+
+    # Impede sair da pasta Download
+    if not caminho.startswith(os.path.normpath(caminho_base)):
+        abort(403)
+
     if not os.path.exists(caminho):
         abort(404)
-    
+
+    # Se for arquivo, envia para download
     if os.path.isfile(caminho):
-        return send_from_directory(os.path.dirname(caminho), os.path.basename(caminho))
-    
+
+        return send_from_directory(
+            os.path.dirname(caminho),
+            os.path.basename(caminho),
+            as_attachment=True
+        )
+
+    # Se for pasta, lista os arquivos
     arquivos = os.listdir(caminho)
+
     html = f"<h1>Conteúdo de /Download/{subpath}</h1><ul>"
+
     for f in arquivos:
+
+        caminho_item = os.path.join(caminho, f)
+
         link = f"/download/{subpath}/{f}" if subpath else f"/download/{f}"
-        html += f'<li><a href="{link}">{f}</a></li>'
+
+        if os.path.isdir(caminho_item):
+            html += f'<li>📁 <a href="{link}">{f}</a></li>'
+        else:
+            html += f'<li>📦 <a href="{link}">{f}</a></li>'
+
     html += "</ul>"
+
     return html
 
 # ============================================================
