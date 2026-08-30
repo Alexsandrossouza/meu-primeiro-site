@@ -24,8 +24,7 @@
         <a href="/admin/logout" style="color:#ff4444; text-decoration:none; font-weight:bold;">Sair</a>
     </div>
 
-   <!-- CADASTRAR NOVO JOGO -->
-
+  <!-- CADASTRAR NOVO JOGO -->
 <div class="card-form">
 
     <h2>Adicionar Novo Jogo</h2>
@@ -39,41 +38,48 @@
             required
         >
 
+        <!-- PLATAFORMA -->
         <label style="margin-top:10px; display:block;">
             Plataforma:
         </label>
 
         <select name="plataforma" required>
-            <option value="Xbox 360 - Formato: XEX">
-                Xbox 360 - Formato: XEX
-            </option>
-
-            <option value="Xbox Clássico">
-                Xbox Clássico
-            </option>
+            <option value="">Selecione a plataforma</option>
+            <option value="Xbox 360">Xbox 360</option>
+            <option value="Xbox Clássico">Xbox Clássico</option>
         </select>
+
+        <!-- NOME DO ARQUIVO -->
+        <label style="margin-top:10px; display:block;">
+            Nome do arquivo no servidor:
+        </label>
 
         <input
             type="text"
-            name="tamanho"
-            placeholder="Tamanho do jogo (ex: 4.36 GB)"
+            name="arquivo"
+            placeholder="Ex: 007 - Agent Under Fire [].7z"
         >
+
+        <label style="margin-top:10px; display:block;">
+            Categoria:
+        </label>
 
         <input
             type="text"
             name="categoria"
-            placeholder="Categoria (ex: acao, terror, rpg)"
+            placeholder="Ex: acao, aventura, terror, rpg"
             required
         >
 
         <input
             type="text"
             name="link"
-            placeholder="Link de Download"
+            placeholder="Link externo, se houver"
         >
 
+        <!-- CAPA -->
         <label style="margin-top:10px; display:block;">
-            Capa do Jogo (Enviar Imagem do Computador):
+            Capa do Jogo:
         </label>
 
         <input
@@ -83,13 +89,13 @@
         >
 
         <label style="margin-top:10px; display:block;">
-            OU Nome do arquivo de capa existente:
+            OU nome do arquivo de capa existente:
         </label>
 
         <input
             type="text"
             name="imagem_url"
-            placeholder="Ex: capajogo.jpg"
+            placeholder="Ex: 007-agent-under-fire.jpg"
         >
 
         <button

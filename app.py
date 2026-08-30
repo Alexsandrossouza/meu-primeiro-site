@@ -497,11 +497,12 @@ def novo_jogo():
     lista_de_jogos.append({
         "id": novo_id,
         "titulo": request.form.get("titulo", "").strip(),
-        "plataforma": request.form.get("plataforma", "Xbox 360 - Formato: XEX").strip(),
-        "tamanho": request.form.get("tamanho", "").strip(),
-        "categoria": request.form.get("categoria", "").strip(),
-        "imagem": imagem_nome if imagem_nome else "default.jpg",
-        "link": request.form.get("link", "").strip()
+    "plataforma": request.form.get("plataforma", "").strip(),
+    "arquivo": request.form.get("arquivo", "").strip(),
+    "tamanho": request.form.get("tamanho", "").strip(),
+    "categoria": request.form.get("categoria", "").strip(),
+    "imagem": imagem_nome if imagem_nome else "default.jpg",
+    "link": request.form.get("link", "").strip()
     })
 
     salvar_jogos()
@@ -620,21 +621,64 @@ def catalogo_completo():
         jogos_pagina = jogos_filtrados[inicio:fim]
 
         jogos_formatados = []
-        for j in jogos_pagina:
-            id_jogo = str(j.get('id', '')).strip()
-            nome_jogo = j.get('nome', j.get('name', j.get('title', id_jogo)))
-            
-            rel_artwork_jpg = f"x360db-main/titles/{id_jogo}/artwork/boxart.jpg"
-            rel_artwork_png = f"x360db-main/titles/{id_jogo}/artwork/boxart.png"
-            rel_boxart_jpg = f"x360db-main/titles/{id_jogo}/boxart.jpg"
 
-            if os.path.exists(os.path.join(current_app.static_folder, rel_artwork_jpg)):
+        for j in jogos_pagina:
+
+            id_jogo = str(j.get('id', '')).strip()
+
+            nome_jogo = j.get(
+                'nome',
+                j.get(
+                    'name',
+                    j.get('title', id_jogo)
+                )
+            )
+
+            # ====================================================
+            # CAPA XBOX 360 - X360DB
+            # ====================================================
+
+            rel_artwork_jpg = (
+                f"x360db-main/titles/{id_jogo}/artwork/boxart.jpg"
+            )
+
+            rel_artwork_png = (
+                f"x360db-main/titles/{id_jogo}/artwork/boxart.png"
+            )
+
+            rel_boxart_jpg = (
+                f"x360db-main/titles/{id_jogo}/boxart.jpg"
+            )
+
+            if os.path.exists(
+                os.path.join(
+                    current_app.static_folder,
+                    rel_artwork_jpg
+                )
+            ):
+
                 capa = rel_artwork_jpg
-            elif os.path.exists(os.path.join(current_app.static_folder, rel_artwork_png)):
+
+            elif os.path.exists(
+                os.path.join(
+                    current_app.static_folder,
+                    rel_artwork_png
+                )
+            ):
+
                 capa = rel_artwork_png
-            elif os.path.exists(os.path.join(current_app.static_folder, rel_boxart_jpg)):
+
+            elif os.path.exists(
+                os.path.join(
+                    current_app.static_folder,
+                    rel_boxart_jpg
+                )
+            ):
+
                 capa = rel_boxart_jpg
+
             else:
+
                 capa = None
 
             jogos_formatados.append({
