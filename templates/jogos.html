@@ -105,12 +105,24 @@
         </a>
     {% else %}
         <a href="/download/{{ jogo.link }}"
-        <a href="/download/{{ jogo.link2 }}"
-
            class="btn-comprar">
             Baixar Jogo
         </a>
     {% endif %}
+
+{% elif jogo.link_part1 and jogo.link_part2 %}
+    <a href="{{ jogo.link_part1 }}"
+       target="_blank"
+       class="btn-comprar">
+        Baixar Parte 1
+    </a>
+
+    <a href="{{ jogo.link_part2 }}"
+       target="_blank"
+       class="btn-comprar"
+       style="margin-top: 8px;">
+        Baixar Parte 2
+    </a>
 {% endif %}
 
 {% if jogo.video %}
