@@ -60,12 +60,12 @@ def index():
 lista_inicial_de_jogos = [
     {
         "id": 1,
-        "titulo": "GodStix",
+        "titulo": "godstix 0.4.7z",
         "plataforma": "Xbox 360 - Formato: XEX",
-        "tamanho": "30 MB",
+        "tamanho": "5 MB",
         "categoria": "app",
         "imagem": "logo menor godstix.jpeg",
-        "link": "https://4br.me/bkeFbDgA",
+        "link": "https://4br.me/CBlm2IaOKT",
         "video": "https://www.youtube.com/watch?v=Wt01fROQNUM"
     },
     {
