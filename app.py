@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-app.secret_key = 'chave_secreta_planet_games_super_segura'
+app.secret_key = os.environ.get("SECRET_KEY")
 
 # Arquivo permanente onde os jogos cadastrados pelo Admin ficam salvos
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -19,7 +19,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Senha do Painel de Administração
-ADMIN_PASSWORD = "planet123"
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
 
 def arquivo_permitido(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
