@@ -97,35 +97,21 @@
 
                         <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
                        
-                            {% else %}
-                                <!-- LINK ÚNICO -->
-                                {% if jogo.link.startswith('http') %}
-                                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
-                                {% else %}
+                           <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
+
+                                 {% if jogo.link %}
+                                    {% if jogo.link.startswith('http') %}
+                                     <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
+                                    {% else %}
                                     <a href="/download/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
-                                {% endif %}
-                            {% endif %}
+                                    {% endif %}
+                                    {% endif %}
 
-                            {% if jogo.video %}
-                                <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;">
-                                    ▶ Assistir Vídeo
-                                </a>
-                            {% endif %}
-
-                            {% else %}
-                                <!-- LINK ÚNICO -->
-                                {% if jogo.link.startswith('http') %}
-                                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
-                                {% else %}
-                                    <a href="/download/xbox360/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
-                                {% endif %}
-                            {% endif %}
-
-                            {% if jogo.video %}
-                                <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;">
-                                    ▶ Assistir Vídeo
-                                </a>
-                            {% endif %}
+                                {% if jogo.video %}
+                                 <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;">
+                                 ▶ Assistir Vídeo
+                                 </a>
+                             {% endif %}
                         </div>
                     </div>
 
