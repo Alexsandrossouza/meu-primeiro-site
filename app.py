@@ -698,7 +698,12 @@ def listar_download(subpath=''):
 
 import os
 import json
-from flask import render_template, request, current_app
+from flask import render_template, request, current_app, send_from_directory
+
+@app.route('/capas/xbox-classico/<path:nome>')
+def servir_capa_xbox_classico(nome):
+    pasta_covers = '/mnt/hd2tb/Download/covers/xbox classico'
+    return send_from_directory(pasta_covers, nome)
 
 @app.route('/catalogo-completo')
 def catalogo_completo():
