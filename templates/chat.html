@@ -1,16 +1,236 @@
-cat << 'EOF' > /mnt/hd2tb/meu-primeiro-site/templates/chat.html
+cat <<'EOF' > /mnt/hd2tb/meu-primeiro-site/templates/chat.html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Bate-Papo - Planet Games</title>
-    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="icon"
+          type="image/jpeg"
+          href="{{ url_for('static', filename='favicon.png.jpeg') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            background-color: #0b0f12;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+
+            /* Mesmo fundo visual do Planet Games */
+            background-image:
+                linear-gradient(rgba(5, 12, 9, 0.72), rgba(5, 12, 9, 0.82)),
+                url("{{ url_for('static', filename='fundo.jpg') }}");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            background-color: rgba(5, 7, 8, 0.95);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #12171a;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .green-text {
+            color: #00ff66;
+        }
+
+        nav a {
+            color: #cccccc;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #00ff66;
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 45px auto;
+            background: rgba(18, 23, 26, 0.94);
+            border: 1px solid #1e282c;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .chat-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .chat-subtitle {
+            text-align: center;
+            color: #aab4b8;
+            margin-bottom: 30px;
+        }
+
+        .chat-box {
+            min-height: 350px;
+            background: rgba(5, 8, 9, 0.85);
+            border: 1px solid #1e282c;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .empty-chat {
+            text-align: center;
+            color: #7f8c8d;
+            padding-top: 120px;
+        }
+
+        .chat-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-form input {
+            flex: 1;
+            padding: 13px 16px;
+            border-radius: 8px;
+            border: 1px solid #26332d;
+            background: #0b0f12;
+            color: white;
+            outline: none;
+        }
+
+        .chat-form input:focus {
+            border-color: #00ff66;
+        }
+
+        .chat-form button {
+            padding: 13px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #00ff66;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .chat-form button:hover {
+            background: #00e65c;
+        }
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .chat-container {
+                width: 85%;
+                padding: 20px;
+            }
+
+            .chat-form {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Bate-Papo Planet Games</h1>
-    <p>Página de chat em construção...</p>
+
+    <!-- CABEÇALHO -->
+    <header class="navbar">
+
+        <a href="/" style="text-decoration: none; color: inherit;">
+
+            <div class="logo">
+                <span>🎮</span>
+                PLANET <span class="green-text">GAMES</span>
+            </div>
+
+        </a>
+
+        <nav>
+            <a href="/">Início</a>
+            <a href="/produtos">Produto</a>
+            <a href="/xboxclassico">Xbox Clássico</a>
+            <a href="/catalogo-completo">Catálogo x360db</a>
+            <a href="/chat">Bate-Papo</a>
+            <a href="/admin">Painel Admin</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CHAT -->
+    <main class="chat-container">
+
+        <h1 class="chat-title">
+            💬 Bate-Papo <span class="green-text">Planet Games</span>
+        </h1>
+
+        <p class="chat-subtitle">
+            Converse com outros visitantes, peça jogos ou relate problemas.
+        </p>
+
+        <div class="chat-box">
+
+            <div class="empty-chat">
+                💬<br><br>
+                O bate-papo está sendo preparado.
+                <br>
+                Em breve você poderá conversar com a comunidade!
+            </div>
+
+        </div>
+
+        <div class="chat-form">
+
+            <input
+                type="text"
+                placeholder="Digite sua mensagem..."
+                disabled
+            >
+
+            <button disabled>
+                Enviar
+            </button>
+
+        </div>
+
+    </main>
+
 </body>
 </html>
 EOF
