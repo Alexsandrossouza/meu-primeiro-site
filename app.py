@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
 import sqlite3
 
