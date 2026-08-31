@@ -23,6 +23,234 @@
         <h1>⚡ Admin - Jogos Cadastrados</h1>
         <a href="/admin/logout" style="color:#ff4444; text-decoration:none; font-weight:bold;">Sair</a>
     </div>
+        <!-- ========================================== -->
+    <!-- MODERAÇÃO DO BATE-PAPO -->
+    <!-- ========================================== -->
+
+    <div class="card-form" style="margin-top:30px;">
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h2 style="color:#00ff88; margin:0;">
+                💬 Moderação do Bate-Papo
+            </h2>
+
+            <button
+                class="btn"
+                onclick="carregarMensagensChat()"
+            >
+                🔄 Atualizar
+            </button>
+        </div>
+
+        <p style="color:#aaa; margin-top:10px;">
+            Aqui você pode visualizar e excluir mensagens enviadas pelos visitantes.
+        </p>
+
+        <div id="mensagensChatAdmin">
+            <p style="color:#888;">
+                Carregando mensagens...
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+
+        async function carregarMensagensChat() {
+
+            const container = document.getElementById("mensagensChatAdmin");
+
+            container.innerHTML = `
+                <p style="color:#888;">
+                    Carregando mensagens...
+                </p>
+            `;
+
+            try {
+
+                const resposta = await fetch("/api/chat/mensagens");
+
+                if (!resposta.ok) {
+                    throw new Error("Erro ao buscar mensagens");
+                }
+
+                const mensagens = await resposta.json();
+
+                if (!mensagens || mensagens.length === 0) {
+
+                    container.innerHTML = `
+                        <div style="
+                            padding:20px;
+                            text-align:center;
+                            color:#888;
+                            border:1px solid #333;
+                            border-radius:8px;
+                            margin-top:15px;
+                        ">
+                            💬 Nenhuma mensagem no bate-papo.
+                        </div>
+                    `;
+
+                    return;
+                }
+
+                container.innerHTML = "";
+
+                mensagens.forEach(function(msg) {
+
+                    const div = document.createElement("div");
+
+                    div.style.cssText = `
+                        background:#0f1115;
+                        border:1px solid #333;
+                        border-radius:8px;
+                        padding:15px;
+                        margin-top:12px;
+                    `;
+
+                    div.innerHTML = `
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            align-items:center;
+                            gap:10px;
+                            flex-wrap:wrap;
+                        ">
+
+                            <div>
+
+                                <strong style="color:#00ff88;">
+                                    ${escaparHtml(msg.nome)}
+                                </strong>
+
+                                <span style="
+                                    margin-left:8px;
+                                    padding:3px 8px;
+                                    border:1px solid #00ff88;
+                                    border-radius:10px;
+                                    color:#00ff88;
+                                    font-size:12px;
+                                ">
+                                    ${escaparHtml(msg.tipo)}
+                                </span>
+
+                            </div>
+
+                            <small style="color:#777;">
+                                ${escaparHtml(msg.data_hora || "")}
+                            </small>
+
+                        </div>
+
+                        <div style="
+                            margin-top:12px;
+                            padding:12px;
+                            background:#1a1d24;
+                            border-radius:6px;
+                            color:white;
+                        ">
+                            ${escaparHtml(msg.mensagem)}
+                        </div>
+
+                        <div style="margin-top:12px;">
+
+                            <button
+                                class="btn btn-danger"
+                                onclick="excluirMensagemChat(${msg.id})"
+                            >
+                                🗑️ Excluir mensagem
+                            </button>
+
+                        </div>
+                    `;
+
+                    container.appendChild(div);
+
+                });
+
+            } catch (erro) {
+
+                console.error(erro);
+
+                container.innerHTML = `
+                    <div style="
+                        padding:15px;
+                        color:#ff5555;
+                        border:1px solid #ff4444;
+                        border-radius:8px;
+                    ">
+                        ❌ Não foi possível carregar as mensagens.
+                    </div>
+                `;
+
+            }
+
+        }
+
+
+        async function excluirMensagemChat(id) {
+
+            const confirmar = confirm(
+                "Tem certeza que deseja excluir esta mensagem?"
+            );
+
+            if (!confirmar) {
+                return;
+            }
+
+            try {
+
+                const resposta = await fetch(
+                    "/api/chat/excluir/" + id,
+                    {
+                        method: "DELETE"
+                    }
+                );
+
+                const resultado = await resposta.json();
+
+                if (!resposta.ok) {
+
+                    alert(
+                        resultado.erro ||
+                        "Não foi possível excluir a mensagem."
+                    );
+
+                    return;
+                }
+
+                alert("Mensagem excluída com sucesso!");
+
+                carregarMensagensChat();
+
+            } catch (erro) {
+
+                console.error(erro);
+
+                alert(
+                    "Erro ao tentar excluir a mensagem."
+                );
+
+            }
+
+        }
+
+
+        function escaparHtml(texto) {
+
+            const div = document.createElement("div");
+
+            div.textContent = texto ?? "";
+
+            return div.innerHTML;
+
+        }
+
+
+        // Carrega as mensagens quando o Admin abre a página
+        carregarMensagensChat();
+
+    </script>
 
   <!-- CADASTRAR NOVO JOGO -->
 <div class="card-form">
