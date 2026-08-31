@@ -2,6 +2,7 @@ import os
 import json
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
 from werkzeug.utils import secure_filename
+import sqlite3
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -366,6 +367,131 @@ def xboxclassico():
 @app.route("/chat")   
 def chat():
     return render_template("chat.html")
+
+# ============================================================
+# SISTEMA DE BATE-PAPO - PLANET GAMES
+# ============================================================
+
+CHAT_DB = "/mnt/hd2tb/meu-primeiro-site/chat.db"
+
+
+def inicializar_chat():
+    conn = sqlite3.connect(CHAT_DB)
+
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS mensagens_chat (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            tipo TEXT NOT NULL,
+            mensagem TEXT NOT NULL,
+            data_hora DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+
+    conn.commit()
+    conn.close()
+
+
+# Inicializa o banco automaticamente
+inicializar_chat()
+
+
+# ------------------------------------------------------------
+# BUSCAR MENSAGENS
+# ------------------------------------------------------------
+
+@app.route("/api/chat/mensagens", methods=["GET"])
+def buscar_mensagens_chat():
+
+    conn = sqlite3.connect(CHAT_DB)
+    conn.row_factory = sqlite3.Row
+
+    mensagens = conn.execute("""
+        SELECT
+            id,
+            nome,
+            tipo,
+            mensagem,
+            data_hora
+        FROM mensagens_chat
+        ORDER BY id DESC
+        LIMIT 100
+    """).fetchall()
+
+    conn.close()
+
+    resultado = []
+
+    for mensagem in mensagens:
+        resultado.append({
+            "id": mensagem["id"],
+            "nome": mensagem["nome"],
+            "tipo": mensagem["tipo"],
+            "mensagem": mensagem["mensagem"],
+            "data_hora": mensagem["data_hora"]
+        })
+
+    return jsonify(resultado)
+
+
+# ------------------------------------------------------------
+# ENVIAR MENSAGEM
+# ------------------------------------------------------------
+
+@app.route("/api/chat/enviar", methods=["POST"])
+def enviar_mensagem_chat():
+
+    dados = request.get_json()
+
+    if not dados:
+        return jsonify({
+            "erro": "Dados não enviados."
+        }), 400
+
+    nome = str(dados.get("nome", "")).strip()
+    tipo = str(dados.get("tipo", "")).strip()
+    mensagem = str(dados.get("mensagem", "")).strip()
+
+    # Validação
+    if not nome:
+        return jsonify({
+            "erro": "Digite seu nome."
+        }), 400
+
+    if not tipo:
+        return jsonify({
+            "erro": "Escolha o tipo da mensagem."
+        }), 400
+
+    if not mensagem:
+        return jsonify({
+            "erro": "Digite uma mensagem."
+        }), 400
+
+    # Limites de segurança
+    nome = nome[:50]
+    tipo = tipo[:50]
+    mensagem = mensagem[:1000]
+
+    conn = sqlite3.connect(CHAT_DB)
+
+    conn.execute("""
+        INSERT INTO mensagens_chat
+        (nome, tipo, mensagem)
+        VALUES (?, ?, ?)
+    """, (
+        nome,
+        tipo,
+        mensagem
+    ))
+
+    conn.commit()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Mensagem enviada com sucesso!"
+    })
 
 
 # ============================================================
