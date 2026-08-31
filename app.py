@@ -492,6 +492,39 @@ def enviar_mensagem_chat():
         "sucesso": True,
         "mensagem": "Mensagem enviada com sucesso!"
     })
+        # ============================================================
+        # EXCLUIR MENSAGEM DO BATE-PAPO
+        # ============================================================
+
+@app.route("/api/chat/excluir/<int:id>", methods=["DELETE"])
+def excluir_mensagem_chat(id):
+    try:
+        conn = sqlite3.connect(CHAT_DB)
+
+        cursor = conn.execute(
+            "DELETE FROM mensagens_chat WHERE id = ?",
+            (id,)
+        )
+
+        conn.commit()
+        conn.close()
+
+        if cursor.rowcount == 0:
+            return jsonify({
+                "sucesso": False,
+                "erro": "Mensagem não encontrada."
+            }), 404
+
+        return jsonify({
+            "sucesso": True,
+            "mensagem": "Mensagem excluída com sucesso."
+        })
+
+    except Exception as e:
+        return jsonify({
+            "sucesso": False,
+            "erro": str(e)
+        }), 500
 
 
 # ============================================================
