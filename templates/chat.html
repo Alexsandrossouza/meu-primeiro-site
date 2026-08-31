@@ -1,263 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bate-Papo - Planet Games</title>
 
-    <link rel="icon" type="image/jpeg"
+    <link rel="icon"
+          type="image/jpeg"
           href="{{ url_for('static', filename='favicon.png.jpeg') }}">
 
+    <!-- MESMO CSS DAS OUTRAS PÁGINAS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
     <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-            color: #ffffff;
-
-            background-color: #050908;
-
-            /* MESMO FUNDO DO PLANET GAMES */
-            background-image:
-                linear-gradient(
-                    rgba(3, 10, 7, 0.78),
-                    rgba(3, 10, 7, 0.88)
-                ),
-                url("{{ url_for('static', filename='background.jpg') }}");
-
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        /* ==============================
-           NAVBAR
-        ============================== */
-
-        .navbar {
-            height: 82px;
-
-            background: rgba(3, 6, 7, 0.95);
-
-            border-bottom: 1px solid #17221e;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 35px;
-
-            position: relative;
-            z-index: 10;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffffff;
-
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #00ff66;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            color: #9da8ad;
-            text-decoration: none;
-            font-size: 15px;
-
-            transition: 0.2s;
-        }
-
-        nav a:hover {
-            color: #00ff66;
-        }
-
-        /* ==============================
-           CONTAINER
-        ============================== */
+        /* =====================================================
+           CHAT PLANET GAMES
+        ===================================================== */
 
         .chat-container {
             width: 90%;
             max-width: 900px;
-
             margin: 45px auto;
-
-            background: rgba(16, 23, 26, 0.94);
-
-            border: 1px solid #24302f;
-
-            border-radius: 16px;
-
-            padding: 28px;
-
-            box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+            background: rgba(18, 23, 26, 0.94);
+            border: 1px solid #1e282c;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        .titulo {
+        .chat-title {
             text-align: center;
-            margin-bottom: 8px;
-
             font-size: 32px;
             font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        .verde {
+        .green-text {
             color: #00ff66;
         }
 
-        .subtitulo {
+        .chat-subtitle {
             text-align: center;
-
-            color: #b8c0c3;
-
-            margin-bottom: 28px;
-        }
-
-        /* ==============================
-           AVISO FIXO
-        ============================== */
-
-        .aviso-fixo {
-            background: rgba(0, 255, 102, 0.07);
-
-            border: 1px solid #00ff66;
-
-            border-radius: 12px;
-
-            padding: 20px 22px;
-
+            color: #aab4b8;
             margin-bottom: 25px;
-
-            box-shadow:
-                0 0 18px rgba(0, 255, 102, 0.08);
         }
 
-        .aviso-titulo {
-            color: #00ff66;
+        /* ÁREA DAS MENSAGENS */
 
-            font-size: 19px;
-            font-weight: bold;
+        .chat-box {
+            height: 430px;
+            overflow-y: auto;
+            background: rgba(5, 8, 9, 0.90);
+            border: 1px solid #1e282c;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
 
+        .sem-mensagens {
+            text-align: center;
+            color: #7f8c8d;
+            padding-top: 160px;
+        }
+
+        /* CADA MENSAGEM */
+
+        .mensagem {
+            background: #12191c;
+            border: 1px solid #202b2f;
+            border-radius: 10px;
+            padding: 12px 15px;
             margin-bottom: 12px;
         }
 
-        .aviso-fixo p {
-            color: #d8dddd;
-
-            line-height: 1.6;
-
-            margin: 7px 0;
-        }
-
-        /* ==============================
-           ÁREA DAS MENSAGENS
-        ============================== */
-
-        .mensagens {
-            min-height: 350px;
-
-            background: rgba(2, 5, 6, 0.78);
-
-            border: 1px solid #202b2e;
-
-            border-radius: 12px;
-
-            padding: 20px;
-
-            margin-bottom: 20px;
-        }
-
-        .mensagens-titulo {
+        .mensagem-nome {
             color: #00ff66;
-
-            font-size: 18px;
             font-weight: bold;
-
-            border-bottom: 1px solid #26312f;
-
-            padding-bottom: 12px;
-
-            margin-bottom: 20px;
-        }
-
-        .mensagem-vazia {
-            text-align: center;
-
-            color: #7f8c8d;
-
-            padding: 70px 20px;
-
             font-size: 15px;
         }
 
-        /* ==============================
-           RODAPÉ
-        ============================== */
-
-        .rodape {
-            text-align: center;
-
-            color: #667276;
-
-            font-size: 13px;
-
-            margin-top: 25px;
+        .mensagem-tipo {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 3px 8px;
+            border: 1px solid #00ff66;
+            border-radius: 10px;
+            color: #00ff66;
+            font-size: 11px;
         }
 
-        /* ==============================
-           CELULAR
-        ============================== */
+        .mensagem-texto {
+            margin-top: 8px;
+            color: #eeeeee;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
 
-        @media (max-width: 700px) {
+        .mensagem-data {
+            margin-top: 7px;
+            color: #68777b;
+            font-size: 11px;
+        }
 
-            .navbar {
-                height: auto;
+        /* FORMULÁRIO */
 
-                padding: 18px;
+        .chat-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-                flex-direction: column;
+        .chat-form input,
+        .chat-form select,
+        .chat-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #26332d;
+            background: #0b0f12;
+            color: #ffffff;
+            outline: none;
+        }
 
-                gap: 15px;
-            }
+        .chat-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
 
-            nav {
-                flex-wrap: wrap;
+        .chat-form input:focus,
+        .chat-form select:focus,
+        .chat-form textarea:focus {
+            border-color: #00ff66;
+        }
 
-                justify-content: center;
+        .chat-form button {
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #00ff66;
+            color: #000000;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-                gap: 15px;
-            }
+        .chat-form button:hover {
+            background: #00e65c;
+        }
+
+        .chat-form button:disabled {
+            opacity: 0.5;
+            cursor: wait;
+        }
+
+        .status-chat {
+            text-align: center;
+            min-height: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
 
             .chat-container {
-                width: 94%;
-
-                margin: 25px auto;
-
-                padding: 18px;
+                width: 85%;
+                padding: 20px;
             }
 
-            .titulo {
+            .chat-title {
                 font-size: 25px;
             }
 
-            .subtitulo {
-                font-size: 14px;
+            .chat-box {
+                height: 400px;
             }
         }
 
@@ -266,14 +185,19 @@
 
 <body>
 
-    <!-- ==============================
-         MENU
-    ============================== -->
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
 
     <header class="navbar">
 
-        <a href="/" class="logo">
-            🎮 PLANET <span>GAMES</span>
+        <a href="/" style="text-decoration: none; color: inherit;">
+
+            <div class="logo">
+                <span>🎮</span>
+                PLANET <span class="green-text">GAMES</span>
+            </div>
+
         </a>
 
         <nav>
@@ -288,22 +212,344 @@
     </header>
 
 
-    <!-- ==============================
+    <!-- =====================================================
          CHAT
-    ============================== -->
+    ====================================================== -->
 
     <main class="chat-container">
 
-        <h1 class="titulo">
-            💬 Bate-Papo <span class="verde">Planet Games</span>
+        <h1 class="chat-title">
+            💬 Bate-Papo <span class="green-text">Planet Games</span>
         </h1>
 
-        <div class="subtitulo">
-            Converse com outros visitantes, faça pedidos e relate problemas.
+        <p class="chat-subtitle">
+            Converse com a comunidade, peça jogos ou relate problemas.
+        </p>
+
+
+        <!-- MENSAGENS -->
+
+        <div id="chatBox" class="chat-box">
+
+            <div class="sem-mensagens">
+                💬<br><br>
+                Carregando mensagens...
+            </div>
+
         </div>
 
 
-        <!-- ==========================
+        <!-- FORMULÁRIO -->
+
+        <form id="chatForm" class="chat-form">
+
+            <input
+                type="text"
+                id="nome"
+                maxlength="50"
+                placeholder="Seu nome ou apelido"
+                required
+            >
+
+
+            <select id="tipo" required>
+
+                <option value="">
+                    Escolha o tipo da mensagem
+                </option>
+
+                <option value="Conversa">
+                    💬 Conversa
+                </option>
+
+                <option value="Pedido de jogo">
+                    🎮 Pedido de jogo
+                </option>
+
+                <option value="Problema no download">
+                    ⚠️ Problema no download
+                </option>
+
+                <option value="Problema com capa">
+                    🖼️ Problema com capa
+                </option>
+
+                <option value="Problema no site">
+                    🌐 Problema no site
+                </option>
+
+                <option value="Outro">
+                    📌 Outro
+                </option>
+
+            </select>
+
+
+            <textarea
+                id="mensagem"
+                maxlength="1000"
+                placeholder="Escreva sua mensagem..."
+                required
+            ></textarea>
+
+
+            <button type="submit" id="botaoEnviar">
+                ENVIAR MENSAGEM
+            </button>
+
+        </form>
+
+
+        <div id="statusChat" class="status-chat"></div>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT DO CHAT
+    ====================================================== -->
+
+    <script>
+
+        const chatBox = document.getElementById("chatBox");
+        const chatForm = document.getElementById("chatForm");
+        const botaoEnviar = document.getElementById("botaoEnviar");
+        const statusChat = document.getElementById("statusChat");
+
+
+        // -----------------------------------------------------
+        // ESCAPA HTML PARA EVITAR CÓDIGO INJETADO
+        // -----------------------------------------------------
+
+        function escaparHTML(texto) {
+
+            const div = document.createElement("div");
+
+            div.textContent = texto;
+
+            return div.innerHTML;
+        }
+
+        
+
+
+        // -----------------------------------------------------
+        // CARREGAR MENSAGENS
+        // -----------------------------------------------------
+
+        async function carregarMensagens() {
+
+            try {
+
+                const resposta = await fetch("/api/chat/mensagens");
+
+                if (!resposta.ok) {
+                    throw new Error("Erro ao buscar mensagens.");
+                }
+
+                const mensagens = await resposta.json();
+
+                chatBox.innerHTML = "";
+
+
+                if (mensagens.length === 0) {
+
+                    chatBox.innerHTML = `
+                        <div class="sem-mensagens">
+                            💬<br><br>
+                            Ainda não há mensagens.<br>
+                            Seja o primeiro a participar!
+                        </div>
+                    `;
+
+                    return;
+                }
+
+
+                // API retorna da mais nova para a mais antiga
+                // Vamos mostrar da mais antiga para a mais nova
+
+                mensagens.reverse();
+
+
+                mensagens.forEach(msg => {
+
+                    const mensagemDiv = document.createElement("div");
+
+                    mensagemDiv.className = "mensagem";
+
+                    mensagemDiv.innerHTML = `
+
+                        <div>
+
+                            <span class="mensagem-nome">
+                                ${escaparHTML(msg.nome)}
+                            </span>
+
+                            <span class="mensagem-tipo">
+                                ${escaparHTML(msg.tipo)}
+                            </span>
+
+                        </div>
+
+                        <div class="mensagem-texto">
+                            ${escaparHTML(msg.mensagem)}
+                        </div>
+
+                        <div class="mensagem-data">
+                            ${escaparHTML(msg.data_hora)}
+                        </div>
+
+                    `;
+
+                    chatBox.appendChild(mensagemDiv);
+
+                });
+
+
+                // Desce para a última mensagem
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+            }
+
+            catch (erro) {
+
+                console.error(erro);
+
+                chatBox.innerHTML = `
+                    <div class="sem-mensagens">
+                        ⚠️<br><br>
+                        Não foi possível carregar as mensagens.
+                    </div>
+                `;
+
+            }
+
+        }
+
+        
+
+
+        // -----------------------------------------------------
+        // ENVIAR MENSAGEM
+        // -----------------------------------------------------
+
+        chatForm.addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+
+            const nome = document.getElementById("nome").value.trim();
+
+            const tipo = document.getElementById("tipo").value;
+
+            const mensagem = document.getElementById("mensagem").value.trim();
+
+
+            if (!nome || !tipo || !mensagem) {
+
+                statusChat.textContent =
+                    "Preencha todos os campos.";
+
+                return;
+            }
+
+
+            botaoEnviar.disabled = true;
+
+            botaoEnviar.textContent = "ENVIANDO...";
+
+            statusChat.textContent = "";
+
+
+            try {
+
+                const resposta = await fetch(
+                    "/api/chat/enviar",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            nome: nome,
+                            tipo: tipo,
+                            mensagem: mensagem
+                        })
+                    }
+                );
+
+
+                const resultado = await resposta.json();
+
+
+                if (!resposta.ok) {
+
+                    throw new Error(
+                        resultado.erro ||
+                        "Não foi possível enviar."
+                    );
+
+                }
+
+
+                statusChat.textContent =
+                    "✅ Mensagem enviada!";
+
+
+                chatForm.reset();
+
+
+                await carregarMensagens();
+
+
+            }
+
+            catch (erro) {
+
+                console.error(erro);
+
+                statusChat.textContent =
+                    "❌ " + erro.message;
+
+            }
+
+
+            finally {
+
+                botaoEnviar.disabled = false;
+
+                botaoEnviar.textContent =
+                    "ENVIAR MENSAGEM";
+
+            }
+
+        });
+
+        
+
+
+        // -----------------------------------------------------
+        // INICIALIZA
+        // -----------------------------------------------------
+
+        carregarMensagens();
+
+
+        // Atualiza as mensagens automaticamente
+        // a cada 10 segundos
+
+        setInterval(
+            carregarMensagens,
+            10000
+        );
+
+    </script>
+
+         <!-- ==========================
              AVISO FIXO
         =========================== -->
 
@@ -341,31 +587,5 @@
 
         </section>
 
-
-        <!-- ==========================
-             MENSAGENS
-        =========================== -->
-
-        <section class="mensagens">
-
-            <div class="mensagens-titulo">
-                💬 Mensagens da comunidade
-            </div>
-
-            <div class="mensagem-vazia">
-                O bate-papo está sendo preparado.<br>
-                Em breve você poderá conversar com a comunidade!
-            </div>
-
-        </section>
-
-
-        <div class="rodape">
-            © Planet Games — Obrigado pela visita! 🎮💚
-        </div>
-
-    </main>
-
 </body>
 </html>
-EOF
