@@ -1,0 +1,2 @@
+#EXTINF:-1 tvg-name="HBO Xtreme FHD" tvg-logo="https://i.imgur.com/K9TvnMc.png" group-title="Canais | HBO",HBO Xtreme FHD
+http://tjtor8411.com:80/010794/FXz1sY/72138.ts
