@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Ícone da aba do navegador (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SW3JKVWY80');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Games - Xbox Clássico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO (NAVBAR) -->
+    <header class="navbar">
+        <a href="/" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
+            </div>
+        </a>
+
+        <nav>
+            <a href="/>Início"</a>
+            <a href="/produtos">Produto</a>
+            <a href="/jogos">Xbox 360</a>
+            <a href="/catalogo-completo">Catálogo x360db</a>
+            <a href="/chat">Bate-Papo</a>
+            <a href="/admin">Painel Admin</a>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DOS JOGOS -->
+    <main class="container-jogos">
+        <h1 class="titulo-pagina">Todos os Jogos Xbox Clássico</h1>
+
+        <!-- BARRA DE BUSCA -->
+        <div class="busca-container">
+            <input type="text" id="campoBusca" placeholder="Pesquise seu jogo...">
+        </div>
+
+        <!-- MENSAGEM DE NÃO ENCONTRADO -->
+        <div id="mensagemNaoEncontrado" style="display: none; text-align: center; color: #94a3b8; margin-top: 20px; font-weight: bold;">
+            Este jogo não foi encontrado em nosso site.
+        </div>
+
+        <!-- BOTÕES DE FILTRO (TAGS) -->
+        <div class="tags-container">
+            <button class="tag-btn active" onclick="filtrar('todos', this)">Todos</button>
+            <button class="tag-btn" onclick="filtrar('aventura', this)">Aventura</button>
+            <button class="tag-btn" onclick="filtrar('acao', this)">Ação</button>
+            <button class="tag-btn" onclick="filtrar('app', this)">App</button>
+            <button class="tag-btn" onclick="filtrar('corrida', this)">Corrida</button>
+            <button class="tag-btn" onclick="filtrar('emulador', this)">Emulador</button>
+            <button class="tag-btn" onclick="filtrar('futebol', this)">Futebol</button>
+            <button class="tag-btn" onclick="filtrar('luta', this)">Luta</button>
+            <button class="tag-btn" onclick="filtrar('rpg', this)">RPG</button>
+            <button class="tag-btn" onclick="filtrar('terror', this)">Terror</button>
+        </div>
+
+        <!-- GRADE COM OS JOGOS DO APP.PY -->
+        <div class="grid-jogos">
+            {% for jogo in jogos %}
+                <div class="card-jogo" data-categoria="{{ jogo.get('categoria', 'todos') }}">
+                    
+                    <!-- FOTO DO JOGO -->
+                    <div class="capa-box">
+                        {% if jogo.get('imagem') and jogo.imagem.startswith('http') %}
+                            <img src="{{ jogo.imagem }}" alt="{{ jogo.titulo }}">
+                        {% elif jogo.get('imagem') %}
+                            <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
+                        {% else %}
+                            <img src="https://via.placeholder.com/200x270?text=Sem+Capa" alt="Sem Capa">
+                        {% endif %}
+                    </div>
+
+                    <!-- INFORMAÇÕES DO CARD -->
+                    <div class="card-info">
+                        <h3>{{ jogo.get('titulo', 'Jogo sem título') }}</h3>
+                        <span class="badge">{{ jogo.get('plataforma', 'Xbox Clássico') }}</span>
+                        <p class="detalhes">Tamanho: {{ jogo.get('tamanho', 'N/A') }}</p>
+
+                        <!-- BOTÃO DE TRAILER -->
+                        {% if jogo.get('trailer') %}
+                            <button class="btn-trailer" onclick="abrirVideo('{{ jogo.trailer }}')">
+                                ▶ Assistir Trailer
+                            </button>
+                        {% endif %}
+
+                        <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
+                        <div class="botoes-container">
+                            {% if jogo.get('link_part1') %}
+                                <!-- PARTE 1 -->
+                                {% if jogo.link_part1.startswith('http') %}
+                                    <a href="{{ jogo.link_part1 }}" target="_blank" class="btn-comprar">Parte 1</a>
+                                {% else %}
+                                    <a href="/download/{{ jogo.link_part1 }}" class="btn-comprar">Parte 1</a>
+                                {% endif %}
+
+                                <!-- PARTE 2 -->
+                                {% if jogo.get('link_part2') and jogo.link_part2.startswith('http') %}
+                                    <a href="{{ jogo.link_part2 }}" target="_blank" class="btn-comprar">Parte 2</a>
+                                {% elif jogo.get('link_part2') %}
+                                    <a href="/download/{{ jogo.link_part2 }}" class="btn-comprar">Parte 2</a>
+                                {% endif %}
+
+                            {% elif jogo.get('link') %}
+                                <!-- LINK ÚNICO -->
+                                {% if jogo.link.startswith('http') %}
+                                    <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
+                                {% else %}
+                                    <a href="/download/{{ jogo.link }}" class="btn-comprar">Baixar Jogo</a>
+                                {% endif %}
+                            {% endif %}
+
+                            {% if jogo.get('video') %}
+                                <a href="{{ jogo.video }}" target="_blank" class="btn-comprar" style="margin-top: 8px;">
+                                    ▶ Assistir Vídeo
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- JANELA FLUTUANTE DO VÍDEO (MODAL) -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharVideo()">&times;</span>
+            <iframe id="youtubeIframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
