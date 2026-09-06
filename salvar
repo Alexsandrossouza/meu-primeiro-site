@@ -6,8 +6,13 @@ git push origin main
 No terminal do Proxmox:
 
 Bash
-git pull origin main
+
 systemctl restart meu-site
+
+
+
+cd /mnt/hd2tb/meu-primeiro-site
+git pull origin main
 
 ###########################
 

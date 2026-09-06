@@ -541,13 +541,6 @@ def produtos():
             "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
         },
         {
-            "ml_id": "MLB4923941273",
-            "titulo": "Dynavision3",
-            "preco": "R$ 1.000,30",
-            "imagem": "Dynavision3.webp",
-            "link_ml": "https://produto.mercadolivre.com.br/MLB-4923941273"
-        },
-        {
             "ml_id": "MLB4128396704",
             "titulo": "Estação De Retrabalho Reballing Bga Laser 10000 (Usado)",
             "preco": "R$ 3.500,00",
