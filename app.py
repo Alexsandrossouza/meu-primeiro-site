@@ -67,7 +67,7 @@ lista_inicial_de_jogos = [
         "categoria": "app",
         "imagem": "logo menor godstix.jpeg",
         "link": "https://4br.me/CBlm2IaOKT",
-        "video": "https://www.youtube.com/watch?v=Wt01fROQNUM"
+        "video": "https://youtu.be/MzQx0dNSXc8"
     },
     {
        "id": 1,
