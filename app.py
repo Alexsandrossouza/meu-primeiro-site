@@ -1,8 +1,9 @@
 import os
 import json
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify, current_app
 from werkzeug.utils import secure_filename
 import sqlite3
+from urllib.parse import quote, unquote, urlparse
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -664,6 +665,17 @@ def novo_jogo():
         imagem_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         imagem_nome = filename
 
+    # Se o Admin receber uma URL completa de uma capa do Xbox Clássico,
+    # converte a URL de volta para o nome real do arquivo.
+    # Exemplo:
+    # https://planetgames.net.br/capas/xbox-classico/All-Star%20Baseball%20%2705.jpg
+    # vira:
+    # All-Star Baseball '05.jpg
+    if imagem_nome.startswith(("http://", "https://")):
+        caminho_url = urlparse(imagem_nome).path
+        nome_url = os.path.basename(caminho_url)
+        imagem_nome = unquote(nome_url)
+
     # ============================================================
     # DADOS DO JOGO
     # ============================================================
@@ -800,10 +812,6 @@ def excluir_jogo(jogo_id):
 # ============================================================
 # ROTAS DE DOWNLOAD
 # ============================================================
-import os
-from urllib.parse import quote, unquote
-
-
 # ============================================================
 # ROTAS DE DOWNLOAD
 # ============================================================
@@ -867,13 +875,14 @@ def listar_download(subpath=''):
 # ROTAS DE DOWNLOAD   FIM
 # ============================================================
 
-import os
-import json
-from flask import render_template, request, current_app, send_from_directory
-
 @app.route('/capas/xbox-classico/<path:nome>')
 def servir_capa_xbox_classico(nome):
     pasta_covers = '/mnt/hd2tb/Download/covers/xbox classico'
+
+    # Flask entrega o parâmetro já decodificado em muitos casos.
+    # unquote também protege contra URLs que ainda estejam percent-encoded.
+    nome = unquote(nome)
+
     return send_from_directory(pasta_covers, nome)
 
 @app.route('/catalogo-completo')
