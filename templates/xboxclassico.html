@@ -99,6 +99,7 @@
                         <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
                         {% if jogo.get('link_part1') %}
 
+   {% if jogo.get('link_part1') %}
     <!-- PARTE 1 -->
     <a href="{{ jogo.link_part1 }}"
        target="_blank"
@@ -118,11 +119,18 @@
 {% elif jogo.get('link') %}
 
     <!-- LINK ÚNICO -->
-    <a href="{{ jogo.link }}"
-       target="_blank"
-       class="btn-comprar">
-        Baixar Jogo
-    </a>
+    {% if jogo.link.startswith('http') %}
+        <a href="{{ jogo.link }}"
+           target="_blank"
+           class="btn-comprar">
+            Baixar Jogo
+        </a>
+    {% else %}
+        <a href="/download/{{ jogo.link }}"
+           class="btn-comprar">
+            Baixar Jogo
+        </a>
+    {% endif %}
 
 {% endif %}
 
