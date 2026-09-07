@@ -9,7 +9,7 @@ Bash
 
 systemctl restart meu-site
 
-
+git pull --rebase origin main
 
 cd /mnt/hd2tb/meu-primeiro-site
 git pull origin main

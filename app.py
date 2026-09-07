@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify, current_app
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
 import sqlite3
 from urllib.parse import quote, unquote, urlparse
@@ -359,11 +359,26 @@ def xboxclassico():
         j_copy = dict(j)
 
         titulo = str(j.get("titulo", "")).strip()
+        imagem_salva = str(j.get("imagem", "")).strip()
         imagem = ""
 
         pasta_capas = "/mnt/hd2tb/Download/covers/xbox classico"
 
-        if titulo and os.path.isdir(pasta_capas):
+        # Usa primeiro a capa cadastrada no Admin.
+        if imagem_salva:
+            nome_capa = imagem_salva
+
+            # Se foi salva uma URL completa, pega somente o nome do arquivo.
+            if nome_capa.startswith(("http://", "https://")):
+                caminho_url = urlparse(nome_capa).path
+                nome_capa = unquote(os.path.basename(caminho_url))
+
+            if os.path.isfile(os.path.join(pasta_capas, nome_capa)):
+                imagem = "/capas/xbox-classico/" + quote(nome_capa)
+
+        # Compatibilidade com jogos antigos: se não houver imagem cadastrada,
+        # continua procurando uma capa cujo nome seja igual ao título.
+        if not imagem and titulo and os.path.isdir(pasta_capas):
             extensoes = (".jpg", ".jpeg", ".png", ".webp", ".gif")
 
             for arquivo in os.listdir(pasta_capas):
@@ -672,9 +687,14 @@ def novo_jogo():
     # vira:
     # All-Star Baseball '05.jpg
     if imagem_nome.startswith(("http://", "https://")):
-        caminho_url = urlparse(imagem_nome).path
-        nome_url = os.path.basename(caminho_url)
-        imagem_nome = unquote(nome_url)
+        caminho_url = urlparse(imagem_nome)
+
+        # Para capas hospedadas no próprio Planet Games, salva somente
+        # o nome real do arquivo. Isso permite gerar automaticamente
+        # os %20 quando o nome possui espaços.
+        if caminho_url.netloc == "planetgames.net.br":
+            nome_url = os.path.basename(caminho_url.path)
+            imagem_nome = unquote(nome_url)
 
     # ============================================================
     # DADOS DO JOGO
@@ -790,10 +810,26 @@ def editar_jogo(jogo_id):
             jogo["link"] = request.form.get("link")
 
         imagem_file = request.files.get("imagem_file")
+        imagem_url = request.form.get("imagem_url", "").strip()
+
         if imagem_file and imagem_file.filename != '' and arquivo_permitido(imagem_file.filename):
             filename = secure_filename(imagem_file.filename)
             imagem_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             jogo["imagem"] = filename
+
+        elif imagem_url:
+            # Aceita tanto o nome do arquivo quanto a URL completa.
+            # Se for uma URL do Planet Games, guarda apenas o nome real.
+            if imagem_url.startswith(("http://", "https://")):
+                caminho_url = urlparse(imagem_url)
+
+                if caminho_url.netloc == "planetgames.net.br":
+                    nome_url = os.path.basename(caminho_url.path)
+                    jogo["imagem"] = unquote(nome_url)
+                else:
+                    jogo["imagem"] = imagem_url
+            else:
+                jogo["imagem"] = imagem_url
 
         salvar_jogos()
 
@@ -892,7 +928,7 @@ def catalogo_completo():
         busca = request.args.get('busca', '', type=str).strip().lower()
         itens_por_pagina = 36
 
-        caminho_json = os.path.join(current_app.static_folder, 'x360db-main', 'games.json')
+        caminho_json = os.path.join(app.static_folder, 'x360db-main', 'games.json')
         
         todos_jogos = []
         if os.path.exists(caminho_json):
@@ -955,7 +991,7 @@ def catalogo_completo():
 
             if os.path.exists(
                 os.path.join(
-                    current_app.static_folder,
+                    app.static_folder,
                     rel_artwork_jpg
                 )
             ):
@@ -964,7 +1000,7 @@ def catalogo_completo():
 
             elif os.path.exists(
                 os.path.join(
-                    current_app.static_folder,
+                    app.static_folder,
                     rel_artwork_png
                 )
             ):
@@ -973,7 +1009,7 @@ def catalogo_completo():
 
             elif os.path.exists(
                 os.path.join(
-                    current_app.static_folder,
+                    app.static_folder,
                     rel_boxart_jpg
                 )
             ):
