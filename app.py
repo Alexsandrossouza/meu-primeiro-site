@@ -331,6 +331,28 @@ def carregar_jogos():
 lista_de_jogos = carregar_jogos()
 
 
+lista_de_jogos = carregar_jogos()
+
+
+@app.route("/jogos")
+def jogos():
+    jogos_processados = []
+
+    for j in lista_de_jogos:
+        plataforma = str(j.get("plataforma", "")).lower()
+
+        if "clássico" in plataforma or "classico" in plataforma:
+            continue
+
+        j_copy = dict(j)
+        j_copy["imagem"] = buscar_imagem_static(j.get("imagem", ""))
+        jogos_processados.append(j_copy)
+
+    return render_template(
+        "jogos.html",
+        jogos=jogos_processados
+    )
+
 @app.route("/xboxclassico")
 def xboxclassico():
 
