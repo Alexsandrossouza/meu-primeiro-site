@@ -107,7 +107,14 @@
         Parte 1
     </a>
 
-    <!-- PARTE 2 -->
+    {% if jogo.get('link_part1') %}
+
+    <a href="{{ jogo.link_part1 }}"
+       target="_blank"
+       class="btn-comprar">
+        Parte 1
+    </a>
+
     {% if jogo.get('link_part2') %}
         <a href="{{ jogo.link_part2 }}"
            target="_blank"
@@ -118,7 +125,6 @@
 
 {% elif jogo.get('link') %}
 
-    <!-- LINK ÚNICO -->
     {% if jogo.link.startswith('http') %}
         <a href="{{ jogo.link }}"
            target="_blank"
@@ -133,7 +139,6 @@
     {% endif %}
 
 {% endif %}
-
                             {% elif jogo.get('link') %}
                                 <!-- LINK ÚNICO -->
                                 {% if jogo.link.startswith('http') %}
