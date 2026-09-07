@@ -331,26 +331,13 @@ def carregar_jogos():
 lista_de_jogos = carregar_jogos()
 
 
-@app.route("/jogos")
-def jogos():
-    jogos_processados = []
-    for j in lista_de_jogos:
-        plataforma = str(j.get("plataforma", "")).lower()
-        if "clássico" in plataforma or "classico" in plataforma:
-            continue
-
-        j_copy = dict(j)
-        j_copy["imagem"] = buscar_imagem_static(j.get("imagem", ""))
-        jogos_processados.append(j_copy)
-
-    return render_template("jogos.html", jogos=jogos_processados)
-
-
 @app.route("/xboxclassico")
 def xboxclassico():
+
     jogos_processados = []
 
     for j in lista_de_jogos:
+
         plataforma = str(j.get("plataforma", "")).lower()
 
         if "clássico" not in plataforma and "classico" not in plataforma:
@@ -362,39 +349,62 @@ def xboxclassico():
         imagem_salva = str(j.get("imagem", "")).strip()
         imagem = ""
 
-        pasta_capas = "/mnt/hd2tb/Download/covers/xbox classico"
+        # ============================================================
+        # CAPA DO JOGO
+        # ============================================================
 
-        # Usa primeiro a capa cadastrada no Admin.
-        if imagem_salva:
-            nome_capa = imagem_salva
+        if imagem_salva and imagem_salva != "default.jpg":
 
-            # Se foi salva uma URL completa, pega somente o nome do arquivo.
-            if nome_capa.startswith(("http://", "https://")):
-                caminho_url = urlparse(nome_capa).path
-                nome_capa = unquote(os.path.basename(caminho_url))
+            # Se o Admin cadastrou uma URL completa,
+            # usa exatamente essa URL.
+            if imagem_salva.startswith(("http://", "https://")):
 
-            if os.path.isfile(os.path.join(pasta_capas, nome_capa)):
-                imagem = "/capas/xbox-classico/" + quote(nome_capa)
+                imagem = imagem_salva
 
-        # Compatibilidade com jogos antigos: se não houver imagem cadastrada,
-        # continua procurando uma capa cujo nome seja igual ao título.
-        if not imagem and titulo and os.path.isdir(pasta_capas):
-            extensoes = (".jpg", ".jpeg", ".png", ".webp", ".gif")
+            # Se cadastrou apenas o nome do arquivo,
+            # monta automaticamente o caminho da capa.
+            else:
 
-            for arquivo in os.listdir(pasta_capas):
-                nome_sem_extensao, extensao = os.path.splitext(arquivo)
+                imagem = "/capas/xbox-classico/" + quote(imagem_salva)
 
-                if (
-                    extensao.lower() in extensoes
-                    and nome_sem_extensao.strip().lower() == titulo.lower()
-                ):
-                    imagem = "/capas/xbox-classico/" + quote(arquivo)
-                    break
+        # ============================================================
+        # COMPATIBILIDADE COM JOGOS ANTIGOS
+        # ============================================================
+
+        if not imagem and titulo:
+
+            pasta_capas = "/mnt/hd2tb/Download/covers/xbox classico"
+
+            if os.path.isdir(pasta_capas):
+
+                extensoes = (
+                    ".jpg",
+                    ".jpeg",
+                    ".png",
+                    ".webp",
+                    ".gif"
+                )
+
+                for arquivo in os.listdir(pasta_capas):
+
+                    nome_sem_extensao, extensao = os.path.splitext(arquivo)
+
+                    if (
+                        extensao.lower() in extensoes
+                        and nome_sem_extensao.strip().lower() == titulo.lower()
+                    ):
+
+                        imagem = "/capas/xbox-classico/" + quote(arquivo)
+                        break
 
         j_copy["imagem"] = imagem
+
         jogos_processados.append(j_copy)
 
-    return render_template("xboxclassico.html", jogos=jogos_processados)
+    return render_template(
+        "xboxclassico.html",
+        jogos=jogos_processados
+    )
 
 # ============================================================
 # ROTA DO BATE-PAPO
