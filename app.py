@@ -348,23 +348,23 @@ def jogos():
 @app.route("/xboxclassico")
 def xboxclassico():
     jogos_processados = []
+
     for j in lista_de_jogos:
         plataforma = str(j.get("plataforma", "")).lower()
+
         if "clássico" not in plataforma and "classico" not in plataforma:
             continue
 
         j_copy = dict(j)
         imagem = j.get("imagem", "")
 
-    if imagem and not imagem.startswith(("http://", "https://", "/")):
-     imagem = "/capas/xbox-classico/" + quote(imagem)
+        if imagem and not imagem.startswith(("http://", "https://", "/")):
+            imagem = "/capas/xbox-classico/" + quote(imagem)
 
-    j_copy["imagem"] = imagem
-    jogos_processados.append(j_copy)
-        
+        j_copy["imagem"] = imagem
+        jogos_processados.append(j_copy)
+
     return render_template("xboxclassico.html", jogos=jogos_processados)
-
-
 
 # ============================================================
 # ROTA DO BATE-PAPO
