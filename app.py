@@ -356,10 +356,24 @@ def xboxclassico():
             continue
 
         j_copy = dict(j)
-        imagem = j.get("imagem", "")
 
-        if imagem and not imagem.startswith(("http://", "https://", "/")):
-            imagem = "/capas/xbox-classico/" + quote(imagem)
+        titulo = str(j.get("titulo", "")).strip()
+        imagem = ""
+
+        pasta_capas = "/mnt/hd2tb/Download/covers/xbox classico"
+
+        if titulo and os.path.isdir(pasta_capas):
+            extensoes = (".jpg", ".jpeg", ".png", ".webp", ".gif")
+
+            for arquivo in os.listdir(pasta_capas):
+                nome_sem_extensao, extensao = os.path.splitext(arquivo)
+
+                if (
+                    extensao.lower() in extensoes
+                    and nome_sem_extensao.strip().lower() == titulo.lower()
+                ):
+                    imagem = "/capas/xbox-classico/" + quote(arquivo)
+                    break
 
         j_copy["imagem"] = imagem
         jogos_processados.append(j_copy)
