@@ -362,7 +362,7 @@ def xboxclassico():
     j_copy["imagem"] = imagem
     jogos_processados.append(j_copy)
         
-    return render_template("jogos_xbox_classico.html", jogos=jogos_processados)
+    return render_template("xboxclassico.html", jogos=jogos_processados)
 
 
 
