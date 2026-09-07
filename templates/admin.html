@@ -19,11 +19,13 @@
     </style>
 </head>
 <body>
- <div style="display:flex; justify-content:space-between; align-items:center;">
+
+    <div style="display:flex; justify-content:space-between; align-items:center;">
         <h1>⚡ Admin - Jogos Cadastrados</h1>
         <a href="/admin/logout" style="color:#ff4444; text-decoration:none; font-weight:bold;">Sair</a>
     </div>
-        <!-- ========================================== -->
+
+    <!-- ========================================== -->
     <!-- MODERAÇÃO DO BATE-PAPO -->
     <!-- ========================================== -->
 
@@ -252,102 +254,112 @@
 
     </script>
 
-  <!-- CADASTRAR NOVO JOGO -->
-<div class="card-form">
 
-    <h2>Adicionar Novo Jogo</h2>
+    <!-- CADASTRAR NOVO JOGO -->
 
-    <form action="/admin/jogo/novo" method="POST" enctype="multipart/form-data">
+    <div class="card-form">
 
-        <input
-            type="text"
-            name="titulo"
-            placeholder="Título do Jogo"
-            required
-        >
-        <label style="margin-top:10px; display:block;">
-            Tamanho do arquivo:
-        </label>
-        <input
-            type="text"
-            name="tamanho"
-            placeholder="Ex: 3.92 GB"
-        >
+        <h2>Adicionar Novo Jogo</h2>
 
-        <!-- PLATAFORMA -->
-        <label style="margin-top:10px; display:block;">
-            Plataforma:
-        </label>
+        <form action="/admin/jogo/novo" method="POST" enctype="multipart/form-data">
 
-        <select name="plataforma" required>
-            <option value="">Selecione a plataforma</option>
-            <option value="Xbox 360">Xbox 360 - Formato: XEX</option>
-            <option value="Xbox Clássico">Xbox Clássico</option>
-        </select>
+            <input
+                type="text"
+                name="titulo"
+                placeholder="Título do Jogo"
+                required
+            >
 
-        <!-- NOME DO ARQUIVO -->
-        <label style="margin-top:10px; display:block;">
-            Nome do arquivo no servidor:
-        </label>
+            <label style="margin-top:10px; display:block;">
+                Tamanho do arquivo:
+            </label>
 
-        <input
-            type="text"
-            name="arquivo"
-            placeholder="Ex: 007 - Agent Under Fire [].7z"
-        >
+            <input
+                type="text"
+                name="tamanho"
+                placeholder="Ex: 3.92 GB"
+            >
 
-        <label style="margin-top:10px; display:block;">
-            Categoria:
-        </label>
+            <!-- PLATAFORMA -->
 
-        <input
-            type="text"
-            name="categoria"
-            placeholder="Ex: acao, aventura, terror, rpg"
-            required
-        >
+            <label style="margin-top:10px; display:block;">
+                Plataforma:
+            </label>
 
-        <input
-            type="https://planetgames.net.br/download/xbox-classico/"
-            name="link"
-            placeholder="Link externo, se houver"
-        >
+            <select name="plataforma" required>
+                <option value="">Selecione a plataforma</option>
+                <option value="Xbox 360">Xbox 360 - Formato: XEX</option>
+                <option value="Xbox Clássico">Xbox Clássico</option>
+            </select>
 
-        <!-- CAPA -->
-        <label style="margin-top:10px; display:block;">
-            Capa do Jogo:
-        </label>
+            <!-- NOME DO ARQUIVO -->
 
-        <input
-            type="file"
-            name="imagem_file"
-            accept="image/*"
-        >
+            <label style="margin-top:10px; display:block;">
+                Nome do arquivo no servidor:
+            </label>
 
-        <label style="margin-top:10px; display:block;">
-            OU nome do arquivo de capa existente:
-        </label>
+            <input
+                type="text"
+                name="arquivo"
+                placeholder="Ex: 007 - Agent Under Fire [].7z"
+            >
 
-        <input
-        type="text"
-        name="link"
-        placeholder="Link externo, se houver"
-        >
+            <label style="margin-top:10px; display:block;">
+                Categoria:
+            </label>
 
-        <button
-            type="https://planetgames.net.br/capas/xbox-classico/"
-            class="btn"
-            style="margin-top:10px;"
-        >
-            Salvar Jogo
-        </button>
+            <input
+                type="text"
+                name="categoria"
+                placeholder="Ex: acao, aventura, terror, rpg"
+                required
+            >
 
-    </form>
+            <input
+                type="text"
+                name="link"
+                placeholder="Link externo, se houver"
+            >
 
-</div>
+            <!-- CAPA -->
+
+            <label style="margin-top:10px; display:block;">
+                Capa do Jogo:
+            </label>
+
+            <input
+                type="file"
+                name="imagem_file"
+                accept="image/*"
+            >
+
+            <label style="margin-top:10px; display:block;">
+                OU nome do arquivo de capa existente:
+            </label>
+
+            <input
+                type="text"
+                name="imagem_url"
+                placeholder="Ex: Brute Force.jpg"
+            >
+
+            <button
+                type="submit"
+                class="btn"
+                style="margin-top:10px;"
+            >
+                Salvar Jogo
+            </button>
+
+        </form>
+
+    </div>
+
 
     <!-- LISTA DE JOGOS EXISTENTES -->
+
     <table>
+
         <thead>
             <tr>
                 <th>Título</th>
@@ -356,54 +368,157 @@
                 <th>Ações</th>
             </tr>
         </thead>
+
         <tbody>
+
             {% for jogo in jogos %}
+
             <tr>
+
                 <td>{{ jogo.titulo }}</td>
                 <td>{{ jogo.categoria }}</td>
                 <td>{{ jogo.tamanho }}</td>
+
                 <td>
-                    <button class="btn btn-edit" onclick="abrirEdicao('{{ jogo.id }}', '{{ jogo.titulo }}', '{{ jogo.plataforma }}', '{{ jogo.tamanho }}', '{{ jogo.categoria }}')">Editar</button>
-                    <form action="/admin/jogo/excluir/{{ jogo.id }}" method="POST" style="display:inline;" onsubmit="return confirm('Deseja excluir?');">
-                        <button type="submit" class="btn btn-danger">Excluir</button>
+
+                    <button
+                        class="btn btn-edit"
+                        onclick="abrirEdicao(
+                            '{{ jogo.id }}',
+                            '{{ jogo.titulo }}',
+                            '{{ jogo.plataforma }}',
+                            '{{ jogo.tamanho }}',
+                            '{{ jogo.categoria }}'
+                        )"
+                    >
+                        Editar
+                    </button>
+
+                    <form
+                        action="/admin/jogo/excluir/{{ jogo.id }}"
+                        method="POST"
+                        style="display:inline;"
+                        onsubmit="return confirm('Deseja excluir?');"
+                    >
+                        <button
+                            type="submit"
+                            class="btn btn-danger"
+                        >
+                            Excluir
+                        </button>
                     </form>
+
                 </td>
+
             </tr>
+
             {% endfor %}
+
         </tbody>
+
     </table>
 
-    <!-- MODAL PARA EDITAR -->
-    <div id="modalEdicao" class="modal">
-        <div class="modal-body">
-            <h3>Editar Jogo</h3>
-            <form id="formEdicao" method="POST" enctype="multipart/form-data">
-                <input type="text" id="e_titulo" name="titulo" required>
-                <input type="text" id="e_plataforma" name="plataforma">
-                <input type="text" id="e_tamanho" name="tamanho" required>
-                <input type="text" id="e_categoria" name="categoria" required>
-                
-                <label>Trocar Capa (Arquivo):</label>
-                <input type="file" name="imagem_file" accept="image/*">
 
-                <button type="submit" class="btn" style="margin-top:10px;">Atualizar</button>
-                <button type="button" class="btn btn-danger" onclick="fecharEdicao()" style="margin-top:5px;">Cancelar</button>
+    <!-- MODAL PARA EDITAR -->
+
+    <div id="modalEdicao" class="modal">
+
+        <div class="modal-body">
+
+            <h3>Editar Jogo</h3>
+
+            <form
+                id="formEdicao"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <input
+                    type="text"
+                    id="e_titulo"
+                    name="titulo"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="e_plataforma"
+                    name="plataforma"
+                >
+
+                <input
+                    type="text"
+                    id="e_tamanho"
+                    name="tamanho"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="e_categoria"
+                    name="categoria"
+                    required
+                >
+
+                <label>Trocar Capa (Arquivo):</label>
+
+                <input
+                    type="file"
+                    name="imagem_file"
+                    accept="image/*"
+                >
+
+                <button
+                    type="submit"
+                    class="btn"
+                    style="margin-top:10px;"
+                >
+                    Atualizar
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    onclick="fecharEdicao()"
+                    style="margin-top:5px;"
+                >
+                    Cancelar
+                </button>
+
             </form>
+
         </div>
+
     </div>
 
+
     <script>
+
         function abrirEdicao(id, titulo, plataforma, tamanho, categoria) {
-            document.getElementById('formEdicao').action = '/admin/jogo/editar/' + id;
+
+            document.getElementById('formEdicao').action =
+                '/admin/jogo/editar/' + id;
+
             document.getElementById('e_titulo').value = titulo;
+
             document.getElementById('e_plataforma').value = plataforma;
+
             document.getElementById('e_tamanho').value = tamanho;
+
             document.getElementById('e_categoria').value = categoria;
+
             document.getElementById('modalEdicao').style.display = 'flex';
+
         }
+
+
         function fecharEdicao() {
+
             document.getElementById('modalEdicao').style.display = 'none';
+
         }
+
     </script>
+
 </body>
 </html>
