@@ -97,49 +97,43 @@
                         {% endif %}
 
                         <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
+                            <!-- BOTÕES DE DOWNLOAD E VÍDEO -->
+
                         {% if jogo.get('link_part1') %}
 
-   {% if jogo.get('link_part1') %}
-    <!-- PARTE 1 -->
-    <a href="{{ jogo.link_part1 }}"
-       target="_blank"
-       class="btn-comprar">
-        Parte 1
-    </a>
+                            <!-- PARTE 1 -->
+                            <a href="{{ jogo.link_part1 }}"
+                               target="_blank"
+                               class="btn-comprar">
+                                Parte 1
+                            </a>
 
-    {% if jogo.get('link_part1') %}
+                            <!-- PARTE 2 -->
+                            {% if jogo.get('link_part2') %}
+                                <a href="{{ jogo.link_part2 }}"
+                                   target="_blank"
+                                   class="btn-comprar">
+                                    Parte 2
+                                </a>
+                            {% endif %}
 
-    <a href="{{ jogo.link_part1 }}"
-       target="_blank"
-       class="btn-comprar">
-        Parte 1
-    </a>
+                        {% elif jogo.get('link') %}
 
-    {% if jogo.get('link_part2') %}
-        <a href="{{ jogo.link_part2 }}"
-           target="_blank"
-           class="btn-comprar">
-            Parte 2
-        </a>
-    {% endif %}
+                            <!-- LINK ÚNICO -->
+                            {% if jogo.link.startswith('http') %}
+                                <a href="{{ jogo.link }}"
+                                   target="_blank"
+                                   class="btn-comprar">
+                                    Baixar Jogo
+                                </a>
+                            {% else %}
+                                <a href="/download/{{ jogo.link }}"
+                                   class="btn-comprar">
+                                    Baixar Jogo
+                                </a>
+                            {% endif %}
 
-{% elif jogo.get('link') %}
-
-    {% if jogo.link.startswith('http') %}
-        <a href="{{ jogo.link }}"
-           target="_blank"
-           class="btn-comprar">
-            Baixar Jogo
-        </a>
-    {% else %}
-        <a href="/download/{{ jogo.link }}"
-           class="btn-comprar">
-            Baixar Jogo
-        </a>
-    {% endif %}
-
-{% endif %}
-                            {% elif jogo.get('link') %}
+                        {% endif %}
                                 <!-- LINK ÚNICO -->
                                 {% if jogo.link.startswith('http') %}
                                     <a href="{{ jogo.link }}" target="_blank" class="btn-comprar">Baixar Jogo</a>
