@@ -354,8 +354,13 @@ def xboxclassico():
             continue
 
         j_copy = dict(j)
-        j_copy["imagem"] = buscar_imagem_static(j.get("imagem", ""))
-        jogos_processados.append(j_copy)
+        imagem = j.get("imagem", "")
+
+    if imagem and not imagem.startswith(("http://", "https://", "/")):
+     imagem = "/capas/xbox-classico/" + quote(imagem)
+
+    j_copy["imagem"] = imagem
+    jogos_processados.append(j_copy)
         
     return render_template("jogos_xbox_classico.html", jogos=jogos_processados)
 
@@ -782,7 +787,7 @@ def excluir_jogo(jogo_id):
 # ROTAS DE DOWNLOAD
 # ============================================================
 import os
-from urllib.parse import unquote
+from urllib.parse import quote, unquote
 
 
 # ============================================================
