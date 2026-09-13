@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar jogo — Planet Games</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .topo {
+            background: #1e293b;
+            padding: 22px 30px;
+            border-bottom: 1px solid #374151;
+        }
+
+        .topo h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #1f2937;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #374151;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 7px;
+            color: #cbd5e1;
+        }
+
+        input, select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #475569;
+            background: #111827;
+            color: white;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        button, .voltar {
+            padding: 12px 20px;
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        button {
+            background: #22c55e;
+            color: white;
+        }
+
+        .voltar {
+            background: #374151;
+            color: white;
+        }
+
+        .ajuda {
+            margin-top: 20px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="topo">
+    <h1>🎮 Planet Games — Adicionar jogo</h1>
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>➕ Novo jogo</h2>
+
+        <form action="{{ url_for('novo_jogo') }}" method="POST" enctype="multipart/form-data">
+
+            <label>Título</label>
+            <input name="titulo" placeholder="Nome do jogo" required>
+
+            <label>Plataforma</label>
+            <select name="plataforma" required>
+                <option value="Xbox 360">Xbox 360</option>
+                <option value="Xbox Clássico">Xbox Clássico</option>
+            </select>
+
+            <label>Arquivo</label>
+            <input name="arquivo" placeholder="Exemplo: GTA 5.rar">
+
+            <label>Categoria</label>
+            <input name="categoria" placeholder="Exemplo: ação">
+
+            <label>Tamanho</label>
+            <input name="tamanho" placeholder="Será calculado automaticamente se o arquivo existir">
+
+            <label>URL da capa</label>
+            <input name="imagem_url" placeholder="https://...">
+
+            <label>Ou enviar capa</label>
+            <input type="file" name="imagem_file">
+
+            <label>Link do download (opcional)</label>
+            <input name="link" placeholder="Link externo, se necessário">
+
+            <div class="botoes">
+
+                <button type="submit">
+                    💾 Salvar jogo
+                </button>
+
+                <a class="voltar" href="{{ url_for('admin') }}">
+                    ↩ Voltar ao Admin
+                </a>
+
+            </div>
+
+        </form>
+
+        <div class="ajuda">
+            💡 Para Xbox 360, se o arquivo já estiver em
+            <strong>/mnt/hd2tb/Download/Xbox360</strong>,
+            informe exatamente o nome do arquivo. O sistema calcula o tamanho automaticamente.
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

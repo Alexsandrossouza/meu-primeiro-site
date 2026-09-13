@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+*.log
+*.db
+
+# Backups
+*.BACKUP*
+*.bak
+*.tmp
+
+# Dados locais do servidor
+dados/
+
+# Arquivos físicos dos jogos
+*.rar
+*.7z
+*.zip
+*.iso
+
+# Arquivos secretos
+.env
+.env.*
+
+# Backups locais
+*.ANTES-*
+
+# Pasta de backup do projeto
+BACKUP-ADMIN-2026-09-12/
+
+# Arquivos de diagnóstico
+DIAGNOSTICO_PLANETGAMES.txt
+diagnostico_planetgames.sh

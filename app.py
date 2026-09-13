@@ -1,9 +1,13 @@
+from pathlib import Path
 import os
 import json
+import csv
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
 import sqlite3
 from urllib.parse import quote, unquote, urlparse
+import re
+from difflib import SequenceMatcher
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -13,6 +17,29 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FOLDER = os.path.join(BASE_DIR, 'dados')
 JOGOS_FILE = os.path.join(DATA_FOLDER, 'jogos.json')
 os.makedirs(DATA_FOLDER, exist_ok=True)
+
+# CSV DE REFERÊNCIA DO XBOX CLÁSSICO
+CSV_XBOX = os.path.join(BASE_DIR, "renomeacao_xbox_classico.csv")
+
+def carregar_ids_xbox():
+    ids = {}
+
+    if not os.path.isfile(CSV_XBOX):
+        return ids
+
+    with open(CSV_XBOX, "r", encoding="utf-8-sig", newline="") as arquivo:
+        leitor = csv.DictReader(arquivo)
+
+        for linha in leitor:
+            nome_antigo = linha.get("Nome antigo", "").strip()
+            nome_novo = linha.get("Nome novo", "").strip()
+
+            if nome_antigo and nome_novo:
+                chave = os.path.splitext(nome_novo)[0].lower()
+                chave = re.sub(r"[^a-z0-9]+", " ", chave).strip()
+                ids[chave] = os.path.splitext(nome_antigo)[0]
+
+    return ids
 
 # Configuração de upload de capas
 UPLOAD_FOLDER = os.path.join('static', 'capas')
@@ -330,6 +357,70 @@ def carregar_jogos():
 
 lista_de_jogos = carregar_jogos()
 
+# ============================================================
+# SCANNER AUTOMÁTICO — XBOX 360
+# ============================================================
+
+PASTA_XBOX360 = "/mnt/hd2tb/Download/Xbox360"
+EXTENSOES_XBOX360 = {".rar", ".7z", ".zip", ".iso"}
+
+def descobrir_jogos_xbox360():
+    """Lê os arquivos existentes na pasta Xbox 360."""
+    pasta = Path(PASTA_XBOX360)
+
+    if not pasta.exists():
+        return []
+
+    jogos = []
+
+    for arquivo in sorted(pasta.iterdir(), key=lambda x: x.name.lower()):
+        if not arquivo.is_file():
+            continue
+
+        if arquivo.suffix.lower() not in EXTENSOES_XBOX360:
+            continue
+
+        jogos.append({
+            "arquivo": arquivo.name,
+            "titulo": arquivo.stem,
+            "plataforma": "Xbox 360",
+            "caminho": str(arquivo)
+        })
+
+    return jogos
+
+
+# ============================================================
+# CONFIGURAÇÕES DO PAINEL ADMIN
+# ============================================================
+
+ADMIN_CONFIG_FILE = os.path.join(DATA_FOLDER, "admin_config.json")
+
+
+def carregar_admin_config():
+    """Carrega as configurações personalizadas do painel Admin."""
+    try:
+        with open(ADMIN_CONFIG_FILE, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+
+        return dados if isinstance(dados, dict) else {}
+
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return {}
+
+
+def salvar_admin_config(config):
+    """Salva as configurações do Admin com segurança."""
+    arquivo_temp = ADMIN_CONFIG_FILE + ".tmp"
+
+    with open(arquivo_temp, "w", encoding="utf-8") as f:
+        json.dump(config, f, ensure_ascii=False, indent=4)
+
+    os.replace(arquivo_temp, ADMIN_CONFIG_FILE)
+
+
+
+
 
 lista_de_jogos = carregar_jogos()
 
@@ -353,75 +444,232 @@ def jogos():
         jogos=jogos_processados
     )
 
+
 @app.route("/xboxclassico")
 def xboxclassico():
 
+    pasta_jogos = "/mnt/hd2tb/Download/xboxclassico"
+    pasta_capas = "/mnt/hd2tb/Download/covers/xbox classico"
+
+    extensoes_jogos = {".7z", ".zip", ".rar", ".iso"}
+    extensoes_capas = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
+
     jogos_processados = []
+    ids_xbox = carregar_ids_xbox()
 
-    for j in lista_de_jogos:
+    def normalizar_nome(nome):
+        nome = os.path.splitext(nome)[0].lower()
+        nome = re.sub(r"\[[^\]]*\]", " ", nome)
+        nome = re.sub(r"\([^)]*\)", " ", nome)
+        nome = re.sub(
+            r"\s*-\s*pal\s*-\s*[a-z]{3}\b",
+            " ",
+            nome,
+            flags=re.IGNORECASE
+        )
+        nome = re.sub(r"[^a-z0-9]+", " ", nome)
+        nome = re.sub(r"\s+", " ", nome).strip()
+        return nome
 
-        plataforma = str(j.get("plataforma", "")).lower()
+    def descobrir_genero(nome):
+        n = normalizar_nome(nome)
 
-        if "clássico" not in plataforma and "classico" not in plataforma:
-            continue
+        regras = {
+            "Corrida": [
+                "need for speed", "burnout", "forza", "project gotham",
+                "midnight club", "flatout", "nascar", "rally",
+                "r racing", "crash nitro kart", "mx unleashed",
+                "atv", "colin mcrae", "f1", "formula one"
+            ],
+            "Esporte": [
+                "fifa", "winning eleven", "pro evolution soccer", "pes ",
+                "nba", "nfl", "nhl", "mlb", "madden", "tony hawk",
+                "ssx", "top spin", "virtua tennis", "wwe", "wwf",
+                "fight night", "golf", "baseball", "football", "basketball"
+            ],
+            "Luta": [
+                "dead or alive", "mortal kombat", "street fighter",
+                "tekken", "soulcalibur", "soul calibur",
+                "king of fighters", "king of fighter", "capcom vs",
+                "marvel vs", "dragon ball z budokai", "dragon ball z sagas",
+                "bloody roar", "wwe", "wwf"
+            ],
+            "RPG": [
+                "final fantasy", "star wars knights",
+                "knights of the old republic", "kotor", "elder scrolls",
+                "morrowind", "fable", "jade empire", "baldur",
+                "fallout", "dragon quest", "phantasy star", "sudeki"
+            ],
+            "Terror": [
+                "resident evil", "silent hill", "fatal frame",
+                "project zero", "alone in the dark", "doom",
+                "the suffering", "manhunt", "cold fear", "call of cthulhu"
+            ],
+            "Simulador": [
+                "the sims", "simpsons road rage", "rollercoaster",
+                "roller coaster", "zoo tycoon", "tycoon",
+                "flight simulator", "train simulator"
+            ],
+            "Aventura": [
+                "tomb raider", "prince of persia", "indiana jones",
+                "lego", "syberia", "broken sword", "psychonauts",
+                "beyond good", "oddworld", "conker", "banjo",
+                "crash bandicoot", "sphinx"
+            ],
+            "Ação": [
+                "halo", "doom", "quake", "far cry", "splinter cell",
+                "tom clancy", "ghost recon", "rainbow six",
+                "grand theft auto", "gta", "max payne", "hitman",
+                "metal slug", "contra", "ninja gaiden", "dead to rights",
+                "mercenaries", "destroy all humans", "007",
+                "agent under fire", "nightfire", "everything or nothing",
+                "from russia with love", "spider man", "spiderman", "batman"
+            ]
+        }
 
-        j_copy = dict(j)
+        for genero, palavras in regras.items():
+            for palavra in palavras:
+                if palavra in n:
+                    return genero
 
-        titulo = str(j.get("titulo", "")).strip()
-        imagem_salva = str(j.get("imagem", "")).strip()
+        return "Ação"
+
+    # CAPAS
+    capas = {}
+
+    if os.path.isdir(pasta_capas):
+        for arquivo in os.listdir(pasta_capas):
+            caminho = os.path.join(pasta_capas, arquivo)
+
+            if not os.path.isfile(caminho):
+                continue
+
+            nome, extensao = os.path.splitext(arquivo)
+
+            if extensao.lower() not in extensoes_capas:
+                continue
+
+            chave = normalizar_nome(nome)
+
+            if chave and chave not in capas:
+                capas[chave] = arquivo
+
+    # JOGOS
+    if not os.path.isdir(pasta_jogos):
+        print(f"Pasta de jogos não encontrada: {pasta_jogos}")
+        return render_template("xboxclassico.html", jogos=[])
+
+    arquivos_jogos = [
+        arquivo
+        for arquivo in os.listdir(pasta_jogos)
+        if os.path.isfile(os.path.join(pasta_jogos, arquivo))
+        and os.path.splitext(arquivo)[1].lower() in extensoes_jogos
+    ]
+
+    arquivos_jogos.sort(key=lambda x: x.lower())
+
+    print(f"XBOX CLÁSSICO: {len(arquivos_jogos)} arquivos encontrados")
+
+    # MONTA TODOS OS CARDS
+    for indice, arquivo in enumerate(arquivos_jogos, start=1):
+
+        caminho_arquivo = os.path.join(pasta_jogos, arquivo)
+        nome_jogo = os.path.splitext(arquivo)[0].strip()
+
+        # TAMANHO
+        tamanho_bytes = os.path.getsize(caminho_arquivo)
+
+        if tamanho_bytes >= 1024 ** 3:
+            tamanho = f"{tamanho_bytes / (1024 ** 3):.2f} GB"
+        elif tamanho_bytes >= 1024 ** 2:
+            tamanho = f"{tamanho_bytes / (1024 ** 2):.2f} MB"
+        elif tamanho_bytes >= 1024:
+            tamanho = f"{tamanho_bytes / 1024:.2f} KB"
+        else:
+            tamanho = f"{tamanho_bytes} bytes"
+
+        # NOME NORMALIZADO
+        chave_jogo = normalizar_nome(nome_jogo)
+
+        # ID XBOX
+        id_xbox = ""
+
+        for nome_csv, id_arquivo in ids_xbox.items():
+            nome_csv_normalizado = normalizar_nome(nome_csv)
+
+            if nome_csv_normalizado == chave_jogo:
+                id_xbox = os.path.splitext(id_arquivo)[0]
+                break
+
+        # CAPA
         imagem = ""
 
-        # ============================================================
-        # CAPA DO JOGO
-        # ============================================================
+        # Primeiro tenta nome exato
+        if chave_jogo in capas:
+            imagem = (
+                "/capas/xbox-classico/"
+                + quote(capas[chave_jogo])
+            )
 
-        if imagem_salva and imagem_salva != "default.jpg":
+        # Se não encontrou, tenta correspondência segura
+        if not imagem:
+            palavras_jogo = set(chave_jogo.split())
 
-            # Se o Admin cadastrou uma URL completa,
-            # usa exatamente essa URL.
-            if imagem_salva.startswith(("http://", "https://")):
+            numeros_jogo = {
+                p for p in palavras_jogo
+                if any(c.isdigit() for c in p)
+                or p in {"ii", "iii", "iv", "v"}
+            }
 
-                imagem = imagem_salva
+            for chave_capa, arquivo_capa in capas.items():
 
-            # Se cadastrou apenas o nome do arquivo,
-            # monta automaticamente o caminho da capa.
-            else:
+                palavras_capa = set(chave_capa.split())
 
-                imagem = "/capas/xbox-classico/" + quote(imagem_salva)
+                if not palavras_jogo:
+                    continue
 
-        # ============================================================
-        # COMPATIBILIDADE COM JOGOS ANTIGOS
-        # ============================================================
+                numeros_capa = {
+                    p for p in palavras_capa
+                    if any(c.isdigit() for c in p)
+                    or p in {"ii", "iii", "iv", "v"}
+                }
 
-        if not imagem and titulo:
+                if numeros_jogo != numeros_capa.intersection(numeros_jogo):
+                    continue
 
-            pasta_capas = "/mnt/hd2tb/Download/covers/xbox classico"
+                if palavras_jogo.issubset(palavras_capa):
+                    imagem = (
+                        "/capas/xbox-classico/"
+                        + quote(arquivo_capa)
+                    )
+                    break
 
-            if os.path.isdir(pasta_capas):
+        # DOWNLOAD
+        link_download = (
+            "/download/xboxclassico/"
+            + quote(arquivo)
+        )
 
-                extensoes = (
-                    ".jpg",
-                    ".jpeg",
-                    ".png",
-                    ".webp",
-                    ".gif"
-                )
+        # GÊNERO
+        genero = descobrir_genero(nome_jogo)
 
-                for arquivo in os.listdir(pasta_capas):
+        # JOGO
+        jogo = {
+            "id": indice,
+            "titulo": nome_jogo,
+            "id_xbox": id_xbox,
+            "plataforma": "Xbox Clássico",
+            "tamanho": tamanho,
+            "categoria": genero,
+            "genero": genero,
+            "imagem": imagem,
+            "link": link_download,
+            "arquivo": arquivo
+        }
 
-                    nome_sem_extensao, extensao = os.path.splitext(arquivo)
+        jogos_processados.append(jogo)
 
-                    if (
-                        extensao.lower() in extensoes
-                        and nome_sem_extensao.strip().lower() == titulo.lower()
-                    ):
-
-                        imagem = "/capas/xbox-classico/" + quote(arquivo)
-                        break
-
-        j_copy["imagem"] = imagem
-
-        jogos_processados.append(j_copy)
+    print(f"XBOX CLÁSSICO: {len(jogos_processados)} jogos processados")
 
     return render_template(
         "xboxclassico.html",
@@ -599,78 +847,12 @@ def excluir_mensagem_chat(id):
 # ============================================================
 @app.route("/produtos")
 def produtos():
-    meus_anuncios = [
-        {
-            "ml_id": "MLB3666157348",
-            "titulo": "Xbox 360 RGH 120GB + 20 Jogos",
-            "preco": "R$ 1.490,00",
-            "imagem": "xbox360 call of duty.webp",
-            "link_ml": "https://www.mercadolivre.com.br/xbox-360-fat-super-elite-call-of-duty-rgh/up/MLBU3666157348" 
-        },
-        {
-            "ml_id": "MLB4128396704",
-            "titulo": "Estação De Retrabalho Reballing Bga Laser 10000 (Usado)",
-            "preco": "R$ 3.500,00",
-            "imagem": "D_NQ_NP_2X_815419-MLB110019916669_042026-F-estacao-de-retrabalho-reballing-bga-laser-10000.webp",
-            "link_ml": "https://www.mercadolivre.com.br/estacao-de-retrabalho-reballing-bga-laser-10000/up/MLBU4128396704" 
-        },
-        {
-            "ml_id": "MLB52897777",
-            "titulo": "Console Sony Playstation 5 Edição Slim Disk 1tb Branco",
-            "preco": "R$ 4.799,00",
-            "imagem": "Console Sony Playstation 5 Edição Slim Disk 1tb Branco.webp",
-            "link_ml": "https://www.mercadolivre.com.br/console-sony-playstation-5-edicao-slim-disk-1tb-branco-controle-sem-fio-dualsense-ps5-branco/p/MLB52897777"
-        },
-        {
-            "ml_id": "MLB16268160",
-            "titulo": "Controle Xbox Wireless",
-            "preco": "R$ 453,00",
-            "imagem": "Controle Xbox Wireless.webp",
-            "link_ml": "https://www.mercadolivre.com.br/controle-xbox-wireless-series-xs-carbon-black/p/MLB16268160"
-        },
-        {
-            "ml_id": "MLB5111737986",
-            "titulo": "Bateria Controle Para Xbox Séries S X 1200mah Cabo 3m",
-            "preco": "R$ 64,99",
-            "imagem": "Bateria Controle Para Xbox Séries S X 1200mah Cabo 3m.webp",
-            "link_ml": "https://www.mercadolivre.com.br/bateria-controle-para-xbox-series-s-x-1200mah-cabo-3m/up/MLBU2183606506?pdp_filters=item_id%3AMLB5111737986" 
-        },
-        {
-            "ml_id": "MLB6737836486",
-            "titulo": "Adaptador Videogame Game Stick M15 2 Controles Game Stick",
-            "preco": "R$ 189,90",
-            "imagem": "Adaptador Videogame Game Stick M15 2 Controles Game Stick.webp",
-            "link_ml": "https://www.mercadolivre.com.br/adaptador-videogame-game-stick-m15-2-controles-game-stick/up/MLBU3956288428?pdp_filters=item_id%3AMLB6737836486"
-        },
-        {
-            "ml_id": "MLB4111977276",
-            "titulo": "Pc Gamer Completo I7 3.4ghz 16gb Ssd 480gb 500w Monitor 19",
-            "preco": "R$ 2.026,58",
-            "imagem": "Pc Gamer Completo I7 3.4ghz 16gb Ssd 480gb 500w Monitor 19.webp",
-            "link_ml": "https://www.mercadolivre.com.br/pc-gamer-completo--i7-34ghz-16gb-ssd-480gb-500w-monitor-19/up/MLBU1986838950?pdp_filters=item_id%3AMLB4111977276"
-        },
-        {
-            "ml_id": "MLB65916422",
-            "titulo": "Smart TV 4K 50 LG Portal de Games Processador AI α7 Ger8 4K",
-            "preco": "R$ 2.351,31",
-            "imagem": "Smart TV 4K 50.webp",
-            "link_ml": "https://www.mercadolivre.com.br/smart-tv-4k-50-lg-qned73-portal-de-games-processador-ai-7-ger8-4k-super-upscaling-google-cast-integrado-controle-ai-magic-webos-25-modo-esportes-alerta-de-esportes/p/MLB65916422"
-        },
-        {
-            "ml_id": "MLB62709217",
-            "titulo": "Bicicleta Elétrica Starmega V8 750W Preto",
-            "preco": "R$ 5.930,15",
-            "imagem": "Bicicleta Elétrica Starmega V8 750W Preto.webp",
-            "link_ml": "https://www.mercadolivre.com.br/bicicleta-eletrica-starmega-v8-750w-preto-32kmh-bateria-48v-50km-autonomia/p/MLB62709217"
-        },
-        {
-            "ml_id": "MLB68824482",
-            "titulo": "Fonte Para Xbox 360 Slim Bivolt Conector 2 Pinos Com Cabo De Energia",
-            "preco": "R$ 99,00",
-            "imagem": "Fonte Para Xbox 360 Slim.webp",
-            "link_ml": "https://www.mercadolivre.com.br/fonte-para-xbox-360-slim-bivolt-conector-2-pinos-com-cabo-de-energia-u-maisu/p/MLB68824482"
-        }
-    ]
+    import json
+    try:
+        with open(os.path.join(DATA_FOLDER, "produtos.json"), "r", encoding="utf-8") as f:
+            meus_anuncios = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        meus_anuncios = []
     return render_template("produtos.html", anuncios=meus_anuncios)
 
 
@@ -693,16 +875,138 @@ def admin_logout():
     session.pop('admin_logged_in', None)
     return redirect(url_for("admin_login"))
 
+
+# ============================================================
+# GERENCIAMENTO DE PRODUTOS - PAINEL ADMIN
+# ============================================================
+
+def carregar_produtos():
+    arquivo = os.path.join(DATA_FOLDER, "produtos.json")
+
+    try:
+        with open(arquivo, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+
+        return dados if isinstance(dados, list) else []
+
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return []
+
+
+def salvar_produtos(produtos):
+    arquivo = os.path.join(DATA_FOLDER, "produtos.json")
+    arquivo_temp = arquivo + ".tmp"
+
+    with open(arquivo_temp, "w", encoding="utf-8") as f:
+        json.dump(produtos, f, ensure_ascii=False, indent=4)
+
+    os.replace(arquivo_temp, arquivo)
+
+
+@app.route("/admin/produto/novo", methods=["POST"])
+def admin_produto_novo():
+    if not session.get("admin_logged_in"):
+        return redirect(url_for("admin_login"))
+
+    produtos = carregar_produtos()
+
+    produto = {
+        "titulo": request.form.get("titulo", "").strip(),
+        "imagem": request.form.get("imagem", "").strip(),
+        "preco": request.form.get("preco", "").strip(),
+        "link": request.form.get("link", "").strip(),
+        "ativo": True
+    }
+
+    produtos.append(produto)
+    salvar_produtos(produtos)
+
+    flash("Produto adicionado com sucesso!")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin/produto/editar/<int:produto_id>", methods=["POST"])
+def admin_produto_editar(produto_id):
+    if not session.get("admin_logged_in"):
+        return redirect(url_for("admin_login"))
+
+    produtos = carregar_produtos()
+
+    if produto_id < 0 or produto_id >= len(produtos):
+        flash("Produto não encontrado.")
+        return redirect(url_for("admin"))
+
+    produto = produtos[produto_id]
+
+    produto["titulo"] = request.form.get("titulo", "").strip()
+    produto["imagem"] = request.form.get("imagem", "").strip()
+    produto["preco"] = request.form.get("preco", "").strip()
+    produto["link"] = request.form.get("link", "").strip()
+
+    salvar_produtos(produtos)
+
+    flash("Produto atualizado com sucesso!")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin/produto/excluir/<int:produto_id>", methods=["POST"])
+def admin_produto_excluir(produto_id):
+    if not session.get("admin_logged_in"):
+        return redirect(url_for("admin_login"))
+
+    produtos = carregar_produtos()
+
+    if produto_id < 0 or produto_id >= len(produtos):
+        flash("Produto não encontrado.")
+        return redirect(url_for("admin"))
+
+    produtos.pop(produto_id)
+    salvar_produtos(produtos)
+
+    flash("Produto removido com sucesso!")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin/produto/toggle/<int:produto_id>", methods=["POST"])
+def admin_produto_toggle(produto_id):
+    if not session.get("admin_logged_in"):
+        return redirect(url_for("admin_login"))
+
+    produtos = carregar_produtos()
+
+    if produto_id < 0 or produto_id >= len(produtos):
+        flash("Produto não encontrado.")
+        return redirect(url_for("admin"))
+
+    produto = produtos[produto_id]
+    produto["ativo"] = not produto.get("ativo", True)
+
+    salvar_produtos(produtos)
+
+    return redirect(url_for("admin"))
+
+
 @app.route("/admin")
 def admin():
     if not session.get('admin_logged_in'):
         return redirect(url_for("admin_login"))
-    return render_template("admin.html", jogos=lista_de_jogos)
-@app.route("/admin/jogo/novo", methods=["POST"])
+    jogos_xbox360 = descobrir_jogos_xbox360()
+    produtos = carregar_produtos()
+
+    return render_template(
+        "admin.html",
+        jogos=lista_de_jogos,
+        jogos_xbox360=jogos_xbox360,
+        produtos=produtos
+    )
+@app.route("/admin/jogo/novo", methods=["GET", "POST"])
 def novo_jogo():
 
     if not session.get('admin_logged_in'):
         return redirect(url_for("admin_login"))
+
+    if request.method == "GET":
+        return render_template("novo_jogo.html")
 
     imagem_file = request.files.get("imagem_file")
     imagem_nome = request.form.get("imagem_url", "").strip()
