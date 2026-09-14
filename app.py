@@ -89,7 +89,7 @@ def index():
 lista_inicial_de_jogos = [
     {
         "id": 1,
-        "titulo": "godstix 0.4.7z",
+        "titulo": "GodStix",
         "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "5 MB",
         "categoria": "app",

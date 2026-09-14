@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url('fundo.jpg.png') !important;
+    background-image: linear-gradient(rgba(6, 8, 9, 0.70), rgba(6, 8, 9, 0.70)), url('fundo.jpg.png') !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
