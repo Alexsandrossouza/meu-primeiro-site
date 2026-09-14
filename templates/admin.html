@@ -422,13 +422,12 @@ Os produtos abaixo são carregados diretamente de
 <button
     class="btn btn-azul"
     type="button"
-    onclick="abrirEdicao(
-        '{{ jogo.get('id') }}',
-        {{ jogo.get('titulo','')|tojson }},
-        {{ jogo.get('plataforma','')|tojson }},
-        {{ jogo.get('tamanho','')|tojson }},
-        {{ jogo.get('categoria','')|tojson }}
-    )">
+    onclick="abrirEdicao(this)"
+    data-id="{{ jogo.get('id') }}"
+    data-titulo="{{ jogo.get('titulo','') }}"
+    data-plataforma="{{ jogo.get('plataforma','') }}"
+    data-tamanho="{{ jogo.get('tamanho','') }}"
+    data-categoria="{{ jogo.get('categoria','') }}">
     ✏️ Editar
 </button>
 
@@ -550,41 +549,71 @@ max-width:600px;
 
 <h2>✏️ Editar jogo</h2>
 
-<form id="formEdicao" method="POST">
+<form id="formEdicao" method="POST" enctype="multipart/form-data">
 
-<label>Título</label>
-<input id="e_titulo" name="titulo">
+    <label>Título</label>
+    <input id="e_titulo" name="titulo">
 
-<label>Plataforma</label>
-<input id="e_plataforma" name="plataforma">
+    <label>Plataforma</label>
+    <input id="e_plataforma" name="plataforma">
 
-<label>Tamanho</label>
-<input id="e_tamanho" name="tamanho">
+    <label>Tamanho</label>
+    <input id="e_tamanho" name="tamanho">
 
-<label>Categoria</label>
-<input id="e_categoria" name="categoria">
+    <label>Categoria</label>
+    <input id="e_categoria" name="categoria">
 
-<div style="margin-top:20px;display:flex;gap:10px;">
+    <label style="margin-top:10px;">Capa do jogo</label>
 
-<button class="btn btn-verde" type="submit">
-    💾 Salvar
-</button>
+    <input
+        type="file"
+        id="e_capa"
+        name="imagem_file"
+        accept="image/*"
+        onchange="mostrarCapa(this)"
+    >
 
-<button class="btn btn-cinza" type="button" onclick="fecharEdicao()">
-    Cancelar
-</button>
+    <div style="margin-top:15px;">
+        <img
+            id="previewCapa"
+            src=""
+            alt="Prévia da capa"
+            style="
+                display:none;
+                max-width:180px;
+                max-height:250px;
+                border-radius:8px;
+                border:1px solid #4b5563;
+            "
+        >
+    </div>
 
-</div>
+    <div style="margin-top:20px;display:flex;gap:10px;">
+
+        <button class="btn btn-verde" type="submit">
+            💾 Salvar
+        </button>
+
+        <button class="btn btn-cinza" type="button" onclick="fecharEdicao()">
+            Cancelar
+        </button>
+
+    </div>
 
 </form>
 
 </div>
 </div>
 
-
 <script>
 
-function abrirEdicao(id, titulo, plataforma, tamanho, categoria) {
+function abrirEdicao(botao) {
+
+    const id = botao.dataset.id;
+    const titulo = botao.dataset.titulo;
+    const plataforma = botao.dataset.plataforma;
+    const tamanho = botao.dataset.tamanho;
+    const categoria = botao.dataset.categoria;
 
     document.getElementById('formEdicao').action =
         '/admin/jogo/editar/' + id;
@@ -599,6 +628,28 @@ function abrirEdicao(id, titulo, plataforma, tamanho, categoria) {
 
 function fecharEdicao() {
     document.getElementById('modalEdicao').style.display = 'none';
+}
+function mostrarCapa(input) {
+
+    const preview = document.getElementById('previewCapa');
+
+    if (input.files && input.files[0]) {
+
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+    } else {
+
+        preview.style.display = 'none';
+        preview.src = '';
+
+    }
 }
 
 </script>
