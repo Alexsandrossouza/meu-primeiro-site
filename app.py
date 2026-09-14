@@ -93,7 +93,7 @@ lista_inicial_de_jogos = [
         "plataforma": "Xbox 360 - Formato: XEX",
         "tamanho": "5 MB",
         "categoria": "app",
-        "imagem": "Godstix0.4.webp",
+        "imagem": "GodStix.PNG",
         "link": "https://4br.me/CBlm2IaOKT",
         "video": "https://youtu.be/MzQx0dNSXc8"
     },
