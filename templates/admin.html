@@ -427,7 +427,8 @@ Os produtos abaixo são carregados diretamente de
     data-titulo="{{ jogo.get('titulo','') }}"
     data-plataforma="{{ jogo.get('plataforma','') }}"
     data-tamanho="{{ jogo.get('tamanho','') }}"
-    data-categoria="{{ jogo.get('categoria','') }}">
+    data-categoria="{{ jogo.get('categoria','') }}"
+    data-link="{{ jogo.get('link','') }}">
     ✏️ Editar
 </button>
 
@@ -563,6 +564,14 @@ max-width:600px;
     <label>Categoria</label>
     <input id="e_categoria" name="categoria">
 
+    <label style="margin-top:10px;">Link de Download</label>
+    <input
+    id="e_link"
+    name="link"
+    type="url"
+    placeholder="https://..."
+    >
+
     <label style="margin-top:10px;">Capa do jogo</label>
 
     <input
@@ -614,6 +623,7 @@ function abrirEdicao(botao) {
     const plataforma = botao.dataset.plataforma;
     const tamanho = botao.dataset.tamanho;
     const categoria = botao.dataset.categoria;
+    const link = botao.dataset.link;
 
     document.getElementById('formEdicao').action =
         '/admin/jogo/editar/' + id;
@@ -622,6 +632,7 @@ function abrirEdicao(botao) {
     document.getElementById('e_plataforma').value = plataforma;
     document.getElementById('e_tamanho').value = tamanho;
     document.getElementById('e_categoria').value = categoria;
+    document.getElementById('e_link').value = link;
 
     document.getElementById('modalEdicao').style.display = 'flex';
 }

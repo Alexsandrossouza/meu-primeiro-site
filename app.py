@@ -2,12 +2,15 @@ from pathlib import Path
 import os
 import json
 import csv
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, send_file, jsonify
 from werkzeug.utils import secure_filename
 import sqlite3
 from urllib.parse import quote, unquote, urlparse
 import re
 from difflib import SequenceMatcher
+
+import mimetypes
+mimetypes.add_type("image/webp", ".webp")
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -1194,6 +1197,8 @@ def excluir_jogo(jogo_id):
 @app.route('/download/')
 @app.route('/download/<path:subpath>')
 def listar_download(subpath=''):
+
+    
 
     import os
     from flask import abort, send_from_directory
