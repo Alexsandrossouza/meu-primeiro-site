@@ -581,6 +581,23 @@ max-width:600px;
         accept="image/*"
         onchange="mostrarCapa(this)"
     >
+    <label style="margin-top:15px;">URL da capa</label>
+
+        <div style="display:flex; gap:8px;">
+    <input
+        type="text"
+        id="imagem_url"
+        name="imagem_url"
+        placeholder="https://..."
+        style="flex:1;"
+    >
+
+    <button type="button" onclick="buscarCapaEdicao()">
+        🔎 Buscar capa
+    </button>
+</div>
+
+<div id="resultadoCapaEdicao" style="margin-top:10px;"></div>
 
     <div style="margin-top:15px;">
         <img
@@ -663,6 +680,78 @@ function mostrarCapa(input) {
     }
 }
 
+</script>
+
+<script>
+async function buscarCapaEdicao() {
+
+    const titulo = document.querySelector('input[name="titulo"]').value.trim();
+    const resultado = document.getElementById("resultadoCapaEdicao");
+    const campoImagem = document.getElementById("imagem_url");
+
+    if (!titulo) {
+        resultado.innerHTML = "⚠️ Digite primeiro o nome do jogo.";
+        return;
+    }
+
+    resultado.innerHTML = "🔎 Procurando capa...";
+
+    try {
+        const resposta = await fetch(
+            `/admin/buscar-capa?titulo=${encodeURIComponent(titulo)}`
+        );
+
+        const dados = await resposta.json();
+
+        if (!dados.resultados || dados.resultados.length === 0) {
+            resultado.innerHTML = "❌ Nenhuma capa encontrada.";
+            return;
+        }
+
+        resultado.innerHTML = "";
+
+        dados.resultados.forEach(jogo => {
+
+            const div = document.createElement("div");
+
+            div.style.marginTop = "10px";
+            div.style.padding = "10px";
+            div.style.border = "1px solid #444";
+            div.style.borderRadius = "8px";
+
+            div.innerHTML = `
+                <img src="${jogo.capa}"
+                     style="width:120px; border-radius:6px; display:block; margin-bottom:8px;">
+
+                <strong>${jogo.titulo}</strong>
+
+                <br><br>
+
+                <button type="button">
+                    ✅ Usar esta capa
+                </button>
+            `;
+
+            div.querySelector("button").addEventListener("click", function () {
+                campoImagem.value = jogo.capa;
+
+                resultado.innerHTML = `
+                    <div style="color:#00ff88;">
+                        ✅ Capa selecionada!
+                    </div>
+                    <img src="${jogo.capa}"
+                         style="width:120px; margin-top:8px; border-radius:6px;">
+                `;
+            });
+
+            resultado.appendChild(div);
+        });
+
+    } catch (erro) {
+        console.error(erro);
+        resultado.innerHTML = "❌ Erro ao buscar a capa.";
+    }
+}
 </script>
 
 </body>
