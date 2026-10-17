@@ -33,3 +33,21 @@ Parar o site: sudo systemctl stop meu-site
 
 
 ssh planet-games@192.168.0.147
+
+
+
+
+git add -f dados/produtos.json
+
+
+git commit -m "Atualiza anuncio"
+
+
+git push origin main
+
+3. Atualizar o servidor
+Como vimos, o servidor não atualiza sozinho. No Proxmox → Container 100 → Console, faça:
+cd /mnt/hd2tb/meu-primeiro-site
+
+Depois:
+git fetch origin

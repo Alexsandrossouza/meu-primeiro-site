@@ -2,18 +2,19 @@ from pathlib import Path
 import os
 import json
 import csv
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, send_file, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory, send_file, Response, jsonify
+import requests
 from werkzeug.utils import secure_filename
 import sqlite3
 from urllib.parse import quote, unquote, urlparse
 import re
 from difflib import SequenceMatcher
+app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY")
 
 import mimetypes
 mimetypes.add_type("image/webp", ".webp")
 
-app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY")
 
 # Arquivo permanente onde os jogos cadastrados pelo Admin ficam salvos
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -84,6 +85,27 @@ def buscar_imagem_static(nome_imagem):
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    base_url = request.url_root.rstrip("/")
+
+    urls = [
+        f"{base_url}/",
+    ]
+
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+
+    for url in urls:
+        xml += "  <url>\n"
+        xml += f"    <loc>{url}</loc>\n"
+        xml += "  </url>\n"
+
+    xml += "</urlset>"
+
+    return Response(xml, mimetype="application/xml")
 
 # ============================================================
 # 2. ROTA DA PÁGINA DE JOGOS
@@ -690,11 +712,12 @@ def chat():
 # SISTEMA DE BATE-PAPO - PLANET GAMES
 # ============================================================
 
-CHAT_DB = "/mnt/hd2tb/meu-primeiro-site/chat.db"
+CHAT_DB = os.path.join(BASE_DIR, "chat.db")
 
 
 def inicializar_chat():
     conn = sqlite3.connect(CHAT_DB)
+    
 
     conn.execute("""
         CREATE TABLE IF NOT EXISTS mensagens_chat (
@@ -845,6 +868,35 @@ def excluir_mensagem_chat(id):
         }), 500
 
 
+@app.route("/imagem-proxy")
+def imagem_proxy():
+    url = request.args.get("url", "").strip()
+
+    if not url.startswith(("https://http2.mlstatic.com/", "https://http.mlstatic.com/")):
+        return "URL de imagem não permitida", 400
+
+    try:
+        resposta = requests.get(
+            url,
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Referer": "https://www.mercadolivre.com.br/"
+            },
+            timeout=15
+        )
+
+        if resposta.status_code != 200:
+            return "Imagem não encontrada", resposta.status_code
+
+        return resposta.content, 200, {
+            "Content-Type": resposta.headers.get("Content-Type", "image/webp"),
+            "Cache-Control": "public, max-age=3600"
+        }
+
+    except requests.RequestException:
+        return "Erro ao buscar imagem", 502
+
+
 # ============================================================
 # 3. ROTA DA PÁGINA DE PRODUTOS
 # ============================================================
@@ -853,10 +905,10 @@ def produtos():
     import json
     try:
         with open(os.path.join(DATA_FOLDER, "produtos.json"), "r", encoding="utf-8") as f:
-            meus_anuncios = json.load(f)
+         anuncios = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        meus_anuncios = []
-    return render_template("produtos.html", anuncios=meus_anuncios)
+         anuncios = []
+    return render_template("produtos.html", anuncios=anuncios)
 
 
 # ============================================================
@@ -1002,6 +1054,94 @@ def admin():
         jogos_xbox360=jogos_xbox360,
         produtos=produtos
     )
+  #=================================
+  # criar a busca automática
+  #=================================
+
+@app.route("/admin/buscar-capa")
+def admin_buscar_capa():
+    if not session.get("admin_logged_in"):
+        return jsonify({"erro": "Não autorizado"}), 401
+
+    titulo_busca = request.args.get("titulo", "").strip().lower()
+
+    if not titulo_busca:
+        return jsonify({"erro": "Digite o nome do jogo"}), 400
+
+    caminho_json = os.path.join(
+        app.static_folder,
+        "x360db-main",
+        "games.json"
+    )
+
+    if not os.path.exists(caminho_json):
+        return jsonify({"erro": "Catálogo de capas não encontrado"}), 404
+
+    try:
+        with open(caminho_json, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+
+        candidatos = []
+
+        if isinstance(dados, dict):
+            for id_jogo, info in dados.items():
+                if isinstance(info, dict):
+                    nome = info.get("name", info.get("title", id_jogo))
+                else:
+                    nome = str(info)
+
+                nome = str(nome)
+
+                if titulo_busca in nome.lower():
+                    candidatos.append((id_jogo, nome))
+
+        elif isinstance(dados, list):
+            for item in dados:
+                id_jogo = str(item.get("id", ""))
+                nome = item.get(
+                    "nome",
+                    item.get("name", item.get("title", id_jogo))
+                )
+
+                if titulo_busca in str(nome).lower():
+                    candidatos.append((id_jogo, str(nome)))
+
+        resultados = []
+
+        for id_jogo, nome in candidatos[:10]:
+            id_jogo = str(id_jogo).strip()
+
+            caminhos = [
+                f"x360db-main/titles/{id_jogo}/artwork/boxart.jpg",
+                f"x360db-main/titles/{id_jogo}/artwork/boxart.png",
+                f"x360db-main/titles/{id_jogo}/boxart.jpg"
+            ]
+
+            capa = None
+
+            for caminho in caminhos:
+                if os.path.exists(
+                    os.path.join(app.static_folder, caminho)
+                ):
+                    capa = url_for("static", filename=caminho)
+                    break
+
+            if capa:
+                resultados.append({
+                    "id": id_jogo,
+                    "titulo": nome,
+                    "capa": capa
+                })
+
+        return jsonify({
+            "resultados": resultados
+        })
+
+    except Exception as e:
+        return jsonify({
+            "erro": str(e)
+        }), 500
+
 @app.route("/admin/jogo/novo", methods=["GET", "POST"])
 def novo_jogo():
 

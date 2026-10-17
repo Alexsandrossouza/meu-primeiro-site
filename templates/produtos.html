@@ -1,102 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <!-- Ícone da aba do navegador (Favicon) -->
-    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
-
-    <!-- O restante das suas tags head continua aqui -->
-</head>
-    <!-- GOOGLE ANALYTICS AQUI -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-SW3JKVWY80');
-    </script>
-
+    <!-- Configurações básicas -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título -->
     <title>Planet Games - Xbox 360</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <script src="/static/script.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg"
+          href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Analytics -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-SW3JKVWY80">
+    </script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-SW3JKVWY80');
+    </script>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
+
 <body>
 
+    <!-- MENU -->
     <header class="navbar">
-    <!-- 1. Clicar no logo também vai levar para o Início -->
-    <a href="/" style="text-decoration: none; color: inherit;">
-        <div class="logo">
-            <span class="icon">🎮</span> PLANET <span class="green-text">GAMES</span>
-        </div>
-    </a>
 
-    <nav class="nav-links">
-       <a href="/">Início</a>
-       <a href="/jogos">Xbox 360</a>
-       <a href="/xboxclassico">Xbox Clássico</a>
-       <a href="/chat">Bate-Papo</a>
-       <a href="/admin">Painel Admin</a>
-    </nav>
-           
+        <!-- Logo -->
+        <a href="/" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <span class="icon">🎮</span>
+                PLANET
+                <span class="green-text">GAMES</span>
+            </div>
+        </a>
+
+        <!-- Navegação -->
+        <nav class="nav-links">
+            <a href="/">Início</a>
+            <a href="/jogos">Xbox 360</a>
+            <a href="/xboxclassico">Xbox Clássico</a>
+            <a href="/chat">Bate-Papo</a>
+            <a href="/admin">Painel Admin</a>
+        </nav>
+
     </header>
-        <main class="container-produtos">
-        <h1 class="titulo-pagina">Anúncios no Mercado Livre</h1>
+
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="container-produtos">
+
+        <h1 class="titulo-pagina">
+            Anúncios no Mercado Livre
+        </h1>
+
+
         <!-- BARRA DE BUSCA -->
         <div class="busca-container">
-            <input type="text" id="campoBusca" placeholder="Pesquise seu produto...">
+            <input
+                type="text"
+                id="campoBusca"
+                placeholder="Pesquise seu produto..."
+            >
         </div>
 
+
         <!-- MENSAGEM DE NÃO ENCONTRADO -->
-        <div id="mensagemNaoEncontrado" style="display: none; text-align: center; color: #94a3b8; margin-top: 20px; font-weight: bold;">
+        <div
+            id="mensagemNaoEncontrado"
+            style="
+                display: none;
+                text-align: center;
+                color: #94a3b8;
+                margin-top: 20px;
+                font-weight: bold;
+            "
+        >
             Este produto não foi encontrado em nosso site.
         </div>
 
-        <div class="grid-jogos">
+
+        <!-- ANÚNCIOS -->
+        <div class="grid-jogos" id="ofertas">
+
             {% for anuncio in anuncios %}
-                <div class="card-jogo">
-                    <div class="capa-box">
-                        <img src="{{ url_for('static', filename=anuncio.imagem) }}" alt="{{ anuncio.titulo }}">
-                    </div>
 
-                    <div class="card-info">
-                        <h3>{{ anuncio.titulo }}</h3>
-                        <span class="badge" style="border-color: #00ff66; color: #00ff66;">Mercado Livre</span>
-                        <p class="detalhes" style="font-size: 1.2rem; color: #ffffff; font-weight: bold; margin-top: 5px;">
-                            {{ anuncio.preco }}
-                        </p>
+            <div class="card-jogo">
 
-                        <div class="botoes-container">
-                            <a href="{{ anuncio.link_ml }}" target="_blank" class="btn-comprar">Ver no Mercado Livre</a>
-                        </div>
-                    </div>
+                <!-- IMAGEM -->
+                <div class="capa-box">
+
+                    {% if anuncio.imagem and (anuncio.imagem.startswith('http://') or anuncio.imagem.startswith('https://')) %}
+
+                        <img
+                            src="{{ url_for('imagem_proxy', url=anuncio.imagem) }}"
+                            alt="{{ anuncio.titulo }}"
+                        >
+
+                    {% else %}
+
+                        <img
+                            src="{{ url_for('static', filename=anuncio.imagem) }}"
+                            alt="{{ anuncio.titulo }}"
+                        >
+
+                    {% endif %}
+
                 </div>
+
+
+                <!-- INFORMAÇÕES -->
+                <div class="card-info">
+
+                    <h3>
+                        {{ anuncio.titulo }}
+                    </h3>
+
+
+                    <span
+                        class="badge"
+                        style="border-color: #00ff66; color: #00ff66;"
+                    >
+                        Mercado Livre
+                    </span>
+
+
+                    <!-- PREÇO -->
+                    <p
+                        class="detalhes"
+                        style="
+                            font-size: 1.2rem;
+                            color: #ffffff;
+                            font-weight: bold;
+                            margin-top: 5px;
+                        "
+                    >
+                        {{ anuncio.preco }}
+                    </p>
+
+
+                    <!-- BOTÃO -->
+                    <div class="botoes-container">
+
+                        <a
+                            href="{{ anuncio.link }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-comprar"
+                        >
+                            Ver no Mercado Livre
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
             {% endfor %}
+
         </div>
+
     </main>
 
+
+    <!-- HERO -->
     <main class="hero">
+
         <div class="hero-left">
-            <div class="badge">● ESTOQUE LIMITADO</div>
-            <h1>O clássico que <br><span class="glow-text">nunca envelhece.</span></h1>
-            <p class="subtitle">
-                Xbox 360 revisado, testado e pronto para jogar. Reviva GTA V, Halo, Forza e centenas de clássicos com a qualidade Planet Games.                
-            </p>
-            <div class="hero-buttons">
-                <button <a href="#ofertas" class="btn-verde btn-ofertas" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Ver ofertas</a>
-                <button class="btn-outline">Saiba mais</button>
+
+            <div class="badge">
+                ● ESTOQUE LIMITADO
             </div>
+
+            <h1>
+                O clássico que
+                <br>
+                <span class="glow-text">
+                    nunca envelhece.
+                </span>
+            </h1>
+
+            <p class="subtitle">
+                Xbox 360 revisado, testado e pronto para jogar.
+                Reviva GTA V, Halo, Forza e centenas de clássicos
+                com a qualidade Planet Games.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#ofertas"
+                    class="btn-verde btn-ofertas"
+                    style="
+                        text-decoration: none;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                    "
+                >
+                    Ver ofertas
+                </a>
+
+                <button class="btn-outline">
+                    Saiba mais
+                </button>
+
+            </div>
+
         </div>
 
+
+        <!-- IMAGEM FIXA DO HERO -->
         <div class="hero-right">
+
             <div class="image-container">
-                <img src="{{ url_for('static', filename='fundo.jpg.png') }}" alt="Xbox 360" class="xbox-img">
+                <!--
+                    Não usamos anuncio.imagem aqui,
+                    porque esta área fica fora do FOR.
+                -->
             </div>
+
         </div>
+
     </main>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
