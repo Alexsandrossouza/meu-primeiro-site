@@ -74,13 +74,15 @@
                 <div class="card-jogo" data-categoria="{{ jogo.categoria }}">
                     
                     <!-- FOTO DO JOGO -->
-                    <div class="capa-box">
+                    <a href="{{ url_for('jogo_detalhe', slug=jogo.slug) }}" class="link-jogo">
+                        <div class="capa-box">
                         {% if jogo.imagem.startswith('http') %}
                             <img src="{{ jogo.imagem }}" alt="{{ jogo.titulo }}">
                         {% else %}
                             <img src="{{ url_for('static', filename=jogo.imagem) }}" alt="{{ jogo.titulo }}">
                         {% endif %}
-                    </div>
+                        </div>
+                        </a>
 
                     <!-- INFORMAÇÕES DO CARD -->
                     <div class="card-info">

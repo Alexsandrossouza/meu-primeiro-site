@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ jogo.get('titulo', jogo.get('nome', 'Jogo')) }} - Planet Games</title>
+
+    <meta name="description"
+          content="Confira informações, capa, plataforma, tamanho e detalhes de {{ jogo.get('titulo', jogo.get('nome', 'Jogo')) }} no Planet Games.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical"
+          href="{{ request.url }}">
+
+    <link rel="icon"
+          type="image/jpeg"
+          href="{{ url_for('static', filename='favicon.png.jpeg') }}?v=3">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .pagina-jogo {
+            min-height: calc(100vh - 70px);
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .jogo-detalhe {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(10, 18, 20, 0.94);
+            border: 1px solid rgba(0, 255, 100, 0.25);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 255, 100, 0.08);
+        }
+
+        .jogo-detalhe-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 35px;
+            align-items: start;
+        }
+
+        .jogo-capa {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #111;
+            border: 1px solid rgba(0, 255, 100, 0.3);
+        }
+
+        .jogo-capa img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .jogo-info h1 {
+            margin: 0 0 20px;
+            color: #ffffff;
+            font-size: 34px;
+        }
+
+        .jogo-info p {
+            color: #d8d8d8;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .jogo-info strong {
+            color: #00ff66;
+        }
+
+        .jogo-badge {
+            display: inline-block;
+            margin: 5px 0 20px;
+            padding: 7px 14px;
+            border-radius: 20px;
+            border: 1px solid #00ff66;
+            color: #00ff66;
+            font-size: 14px;
+        }
+
+        .botoes-jogo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .botao-jogo {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: #00e65c;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .botao-jogo:hover {
+            background: #00ff73;
+            transform: translateY(-2px);
+        }
+
+        .botao-secundario {
+            background: #151b1d;
+            color: #00ff66;
+            border: 1px solid #00ff66;
+        }
+
+        .botao-secundario:hover {
+            background: #00ff66;
+            color: #000;
+        }
+
+        .descricao-jogo {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .descricao-jogo h2 {
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .descricao-jogo p {
+            color: #cfcfcf;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 700px) {
+            .jogo-detalhe-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .jogo-capa {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .jogo-info h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="/" style="text-decoration:none;">
+        <div class="logo">
+            <span class="icon">🎮</span>
+            PLANET <span class="green-text">GAMES</span>
+        </div>
+    </a>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/produtos">Produto</a>
+        <a href="/jogos">Xbox 360</a>
+        <a href="/xboxclassico">Xbox Clássico</a>
+        <a href="/catalogo-completo">Catálogo x360db</a>
+        <a href="/chat">Bate-Papo</a>
+        <a href="/admin">Painel Admin</a>
+    </nav>
+
+</header>
+
+
+<main class="pagina-jogo">
+
+    <section class="jogo-detalhe">
+        <a href="/jogos" class="voltar-jogos">
+    ← Voltar para Xbox 360
+        </a>
+
+        <div class="jogo-detalhe-grid">
+
+            <div class="jogo-capa">
+
+                {% if jogo.get('imagem') %}
+
+                    <img
+                        src="{{ jogo.get('imagem') }}"
+                        alt="Capa de {{ jogo.get('titulo', jogo.get('nome', 'Jogo')) }}"
+                    >
+
+                {% else %}
+
+                    <img
+                        src="{{ url_for('static', filename='default.jpg') }}"
+                        alt="Sem capa"
+                    >
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="jogo-info">
+
+                <h1>
+                    {{ jogo.get('titulo', jogo.get('nome', 'Jogo sem título')) }}
+                </h1>
+
+
+                {% if jogo.get('plataforma') %}
+
+                    <span class="jogo-badge">
+                        {{ jogo.get('plataforma') }}
+                    </span>
+
+                {% endif %}
+
+
+                {% if jogo.get('tamanho') %}
+
+                    <p>
+                        <strong>Tamanho:</strong>
+                        {{ jogo.get('tamanho') }}
+                    </p>
+
+                {% endif %}
+
+
+                {% if jogo.get('categoria') %}
+
+                    <p>
+                        <strong>Categoria:</strong>
+                        {{ jogo.get('categoria') }}
+                    </p>
+
+                {% endif %}
+
+
+                {% if jogo.get('id') %}
+
+                    <p>
+                        <strong>ID:</strong>
+                        {{ jogo.get('id') }}
+                    </p>
+
+                {% endif %}
+
+
+                <div class="botoes-jogo">
+
+                    {% if jogo.get('link_part1') %}
+
+                        <a
+                            href="{{ jogo.get('link_part1') }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="botao-jogo"
+                        >
+                            Baixar Parte 1
+                        </a>
+
+                        {% if jogo.get('link_part2') %}
+
+                            <a
+                                href="{{ jogo.get('link_part2') }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="botao-jogo"
+                            >
+                                Baixar Parte 2
+                            </a>
+
+                        {% endif %}
+
+                    {% elif jogo.get('link') %}
+
+                        <a
+                            href="{{ jogo.get('link') }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="botao-jogo"
+                        >
+                            Baixar Jogo
+                        </a>
+
+                    {% endif %}
+
+
+                    {% if jogo.get('video') %}
+
+                        <a
+                            href="{{ jogo.get('video') }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="botao-jogo botao-secundario"
+                        >
+                            ▶ Assistir Vídeo
+                        </a>
+
+                    {% endif %}
+
+
+                    {% if jogo.get('trailer') %}
+
+                        <a
+                            href="{{ jogo.get('trailer') }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="botao-jogo botao-secundario"
+                        >
+                            ▶ Trailer
+                        </a>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="descricao-jogo">
+
+            <h2>
+                {{ jogo.get('titulo', jogo.get('nome', 'Jogo')) }}
+            </h2>
+
+            <p>
+                Confira informações e detalhes de
+                <strong>
+                    {{ jogo.get('titulo', jogo.get('nome', 'este jogo')) }}
+                </strong>
+                no Planet Games.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

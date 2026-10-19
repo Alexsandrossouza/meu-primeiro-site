@@ -87,25 +87,81 @@ def index():
     return render_template("index.html")
 
 
+# ============================================================
+# SITEMAP XML - PLANET GAMES
+# ============================================================
+
 @app.route("/sitemap.xml")
 def sitemap():
-    base_url = request.url_root.rstrip("/")
+    base_url = "https://planetgames.net.br"
 
     urls = [
-        f"{base_url}/",
+        "/",
+        "/jogos",
+        "/xboxclassico",
+        "/produtos",
+        "/chat",
     ]
+
+    # Adiciona automaticamente outras rotas públicas estáticas
+    # que existirem no Flask.
+    rotas_excluir = {
+        "/sitemap.xml",
+        "/robots.txt",
+        "/admin",
+        "/admin/login",
+        "/admin/logout",
+    }
+
+    for regra in app.url_map.iter_rules():
+        caminho = str(regra)
+
+        # Ignora rotas com parâmetros, por enquanto.
+        if "<" in caminho:
+            continue
+
+        # Somente rotas GET/HEAD
+        if "GET" not in regra.methods and "HEAD" not in regra.methods:
+            continue
+
+        if caminho in rotas_excluir:
+            continue
+
+        if caminho.startswith("/static"):
+            continue
+
+        if caminho not in urls:
+            urls.append(caminho)
+
+    # Remove duplicados mantendo a ordem
+    urls = list(dict.fromkeys(urls))
 
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 
     for url in urls:
         xml += "  <url>\n"
-        xml += f"    <loc>{url}</loc>\n"
+        xml += f"    <loc>{base_url}{url}</loc>\n"
         xml += "  </url>\n"
 
     xml += "</urlset>"
 
     return Response(xml, mimetype="application/xml")
+
+
+# ============================================================
+# ROBOTS.TXT - GOOGLE
+# ============================================================
+
+@app.route("/robots.txt")
+def robots_txt():
+    conteudo = """User-agent: *
+Allow: /
+
+Sitemap: https://planetgames.net.br/sitemap.xml
+"""
+
+    return Response(conteudo, mimetype="text/plain")
 
 # ============================================================
 # 2. ROTA DA PÁGINA DE JOGOS
@@ -449,6 +505,22 @@ def salvar_admin_config(config):
 
 lista_de_jogos = carregar_jogos()
 
+def criar_slug(texto):
+    import re
+    import unicodedata
+
+    texto = str(texto).strip().lower()
+
+    # Remove acentos
+    texto = unicodedata.normalize("NFKD", texto)
+    texto = texto.encode("ascii", "ignore").decode("ascii")
+
+    # Troca espaços e caracteres especiais por hífen
+    texto = re.sub(r"[^a-z0-9]+", "-", texto)
+
+    # Remove hífens do começo e do final
+    return texto.strip("-")
+
 
 @app.route("/jogos")
 def jogos():
@@ -457,16 +529,50 @@ def jogos():
     for j in lista_de_jogos:
         plataforma = str(j.get("plataforma", "")).lower()
 
+        # Não mostra os jogos do Xbox Clássico nesta página
         if "clássico" in plataforma or "classico" in plataforma:
             continue
 
         j_copy = dict(j)
-        j_copy["imagem"] = buscar_imagem_static(j.get("imagem", ""))
+
+        titulo_jogo = j.get("titulo", j.get("nome", ""))
+
+        # Cria o endereço da página individual
+        j_copy["slug"] = criar_slug(titulo_jogo)
+
+        # Mantém a capa exatamente como já funciona
+        j_copy["imagem"] = buscar_imagem_static(
+            j.get("imagem", "")
+        )
+
         jogos_processados.append(j_copy)
 
     return render_template(
         "jogos.html",
         jogos=jogos_processados
+    )
+
+@app.route("/jogos/<slug>")
+def jogo_detalhe(slug):
+    jogo_encontrado = None
+
+    for j in lista_de_jogos:
+        titulo = j.get("titulo", j.get("nome", ""))
+
+        if criar_slug(titulo) == slug:
+            jogo_encontrado = dict(j)
+            break
+
+    if jogo_encontrado is None:
+        return "Jogo não encontrado", 404
+
+    jogo_encontrado["imagem"] = buscar_imagem_static(
+        jogo_encontrado.get("imagem", "")
+    )
+
+    return render_template(
+        "jogo_detalhe.html",
+        jogo=jogo_encontrado
     )
 
 
